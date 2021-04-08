@@ -1,25 +1,28 @@
 import styled from 'styled-components/native';
 
-export const StyledHeader = styled.View`
-    position: absolute;
-    top: 0;
-    left: 0;
-    justify-content: center;
+export const Header = styled.View`
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 90px;
-    display: flex;
-    border: 1px solid black;
-    background-color: white;
-    z-index: 100;
+    width: ${({width}) => width};
+    background-color: cyan;
+    position: absolute;
+    top: 0px;
+`;
 
-    > View {
-        margin: 0;
-        width: 60px;
-        height: 50px;
-        border-radius: 50%;
-        text-align: center;
-        border: 1px solid black;
-        margin-right: 10px;
-    }
+export const Profile = styled.View`
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: white;
+    margin: 50px 5px 5px 5px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+`;
+
+export const Hours = styled.Text`
+    text-align: center;
 `;
