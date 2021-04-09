@@ -9,13 +9,12 @@ export const StyledView = styled.View`
     border: 1px solid black;
     width: ${({width}) => width};
     height: 40px;
-    margin: 50px 5px 5px 5px;
+    padding-left: 10px;
 `;
 
 export const StyledTextInput = styled.TextInput`
     background-color: transparent;
     width: ${({width}) => width};
-    padding-left: 15px;
 `;
 
 export const StyledImage = styled.View`
