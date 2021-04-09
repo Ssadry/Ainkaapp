@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 
 export const Ask = styled.View`
-    background-color: yellow;
     width: ${({width}) => width};
     justify-content: center;
 `;

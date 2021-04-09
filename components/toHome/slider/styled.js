@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 
 export const Slider = styled.View`
-    background-color: red;
     flex-direction: row;
     justify-content: space-between;
 `;
@@ -9,6 +8,7 @@ export const Slider = styled.View`
 export const SliderButton = styled.TouchableHighlight`
     width: 40px;
     justify-content: center;
+    border: 1px solid black;
 `;
 
 export const SliderButtonText = styled.Text`
@@ -19,14 +19,14 @@ export const SliderButtonText = styled.Text`
 export const SliderContent = styled.View`
     flex: 1;
     flex-direction: row;
-    background-color: cyan;
     align-items: center;
     overflow: hidden;
 `;
 
 export const SliderElement = styled.View`
-    background-color: red;
-    width: 90px;
+    width: 80px;
+    border: 1px solid black;
+    margin-left: 5px;
 
     justify-content: center;
     align-items: center;
@@ -34,7 +34,6 @@ export const SliderElement = styled.View`
 `;
 
 export const SliderElementImage = styled.Image`
-    background-color: green;
-    width: 90px;
-    height: 90px;
+    width: 80px;
+    height: 80px;
 `;

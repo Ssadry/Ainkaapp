@@ -1,19 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import React from 'react';
-import Home from './components/pages/home';
-import styled from 'styled-components';
+import Navigation from './components/navigation/index';
 
-export default function App() {
-  return (
-    <Container>
-      <Home/>
-      <StatusBar style="auto"/>
-    </Container>
-  );
-}
-
-const Container = styled.View`
-  flex: 1;
-  flex-direction: column;
-`;
-
+export default () => <Navigation/>

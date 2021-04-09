@@ -18,16 +18,22 @@ export default ({screenSize}) => {
                         <Article width={widthArticle}/>
                         <Article width={widthArticle}/>
                         <Article width={widthArticle}/>
-
+                        <Article width={widthArticle}/>
+                        <Article width={widthArticle}/>
+                        <Article width={widthArticle}/>
+                        <Article width={widthArticle}/>
                     </StyledHalfContent>
 
                     {/*Right content*/}
                     <StyledHalfContent width={widthHalfContent}>
+                    <Article width={widthArticle}/>
                         <Article width={widthArticle}/>
                         <Article width={widthArticle}/>
                         <Article width={widthArticle}/>
-
-
+                        <Article width={widthArticle}/>
+                        <Article width={widthArticle}/>
+                        <Article width={widthArticle}/>
+                        <Article width={widthArticle}/>
                     </StyledHalfContent>
                 </StyledContent>
             </ScrollView>

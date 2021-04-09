@@ -28,5 +28,4 @@ export default () => {
 
 const Container = styled.View`
     flex: 1;
-    background-color: blue;
 `;

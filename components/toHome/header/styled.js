@@ -5,7 +5,6 @@ export const Header = styled.View`
     justify-content: space-between;
     align-items: center;
     width: ${({screenSize}) => screenSize.width};
-    background-color: cyan;
     margin-top: 40px;
 `;
 

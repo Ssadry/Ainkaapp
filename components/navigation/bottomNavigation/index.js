@@ -7,9 +7,11 @@ const Tab = createBottomTabNavigator();
 
 export default () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="home" component={Home}/>
-      <Tab.Screen name="profile" component={Profile}/>
+    <Tab.Navigator tabStyle={{
+      backgroundColor: 'red'
+    }}>
+      <Tab.Screen name="Home" component={Home}/>
+      <Tab.Screen name="Profile" component={Profile}/>
     </Tab.Navigator>
   );
 }
