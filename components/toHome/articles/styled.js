@@ -27,6 +27,7 @@ export const StyledArticle = styled.View`
 export const StyledArticleImage = styled.Image`
     width: ${({width}) => width };
     height: ${({width}) => width};
+    border: 1px solid black;
 `;
 
 export const StyledArticleText = styled.Text`

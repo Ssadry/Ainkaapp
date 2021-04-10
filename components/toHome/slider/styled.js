@@ -34,6 +34,7 @@ export const SliderElement = styled.View`
 `;
 
 export const SliderElementImage = styled.Image`
+    border: 1px solid black;
     width: 80px;
     height: 80px;
 `;
