@@ -5,7 +5,6 @@ export const Articles = styled.View`
     flex-direction: row;
     padding-bottom: 315px;
     border: 1px solid black;
-    background-color: cyan;
 `;
 
 export const Column = styled.View`
@@ -13,5 +12,4 @@ export const Column = styled.View`
     width: ${({width}) => width};
     align-items: center;
     margin: 5px;
-    background-color: green;
 `;

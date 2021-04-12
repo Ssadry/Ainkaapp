@@ -6,7 +6,6 @@ export const Article = styled.View`
     align-items: center;
     margin-top: 5px;
     margin-bottom: 5px;
-    background-color: red;
 `; 
 
 export const Image = styled.Image`
