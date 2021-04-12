@@ -1,36 +1,15 @@
 import styled from 'styled-components/native';
 
-export const StyledContent = styled.View`
-    display: flex;
+export const Articles = styled.View`
     flex-direction: row;
     justify-content: center;
-    width: ${({width}) => width};
-    margin-top: 5px;
+    align-items: center;
     padding-bottom: 315px;
     border: 1px solid black;
 `;
 
-export const StyledHalfContent = styled.View`
+export const Column = styled.View`
     width: ${({width}) => width};
     align-items: center;
     margin: 5px;
-`;
-
-export const StyledArticle = styled.View`
-    width: ${({width}) => width};
-    margin-bottom: 5px;
-    border: 1px solid black;
-    justify-content: center;
-    align-items: center;
-`; 
-
-export const StyledArticleImage = styled.Image`
-    width: ${({width}) => width };
-    height: ${({width}) => width};
-    border: 1px solid black;
-`;
-
-export const StyledArticleText = styled.Text`
-    margin-top: 5px;
-    margin-bottom: 5px;
 `;

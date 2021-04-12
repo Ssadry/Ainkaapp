@@ -1,10 +1,10 @@
 import React from 'react';
-import {Ask, StyledText} from './styled';
+import {Banner, StyledText} from './styled';
 
 export default ({screenSize}) => {
     return (
-        <Ask width={screenSize.width}>
+        <Banner width={screenSize.width}>
             <StyledText>¿Qué quieres aprender hoy?</StyledText>
-        </Ask>
+        </Banner>
     )
 }

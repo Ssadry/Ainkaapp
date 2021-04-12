@@ -29,29 +29,33 @@ export default () => {
     >
       <Tab.Screen name="Home" component={Home} 
         options={{
-            title: "Home",
-            tabBarIcon: () => <FontAwesomeIcon icon={faHome} size="35px"/>
-        }}
-      />
-      <Tab.Screen name="Chat" component={Chat} 
-        options={{
-            title: 'Chat',
-            tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size="35px"/>,
-            tabBarVisible: false
-        }}
-      />
-      <Tab.Screen name="Profile" component={Profile}
-        options={{
-            title: "Profile",
-            tabBarIcon: () => <FontAwesomeIcon icon={faUser} size="35px"/>
-        }}
-      />
-      <Tab.Screen name="Services" component={Services}
-        options={{
-            title: "Services",
-            tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px"/>
+            title: '',
+            tabBarIcon: () => <FontAwesomeIcon icon={faHome}/>
         }}
       />
     </Tab.Navigator>
   );
 }
+
+
+/*
+        }}
+      />
+      <Tab.Screen name="Chat" component={Chat} 
+        options={{
+            title: '',
+            tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size="35px"/>
+        }}
+      />
+      <Tab.Screen name="Profile" component={Profile}
+        options={{
+            title: '',
+            tabBarIcon: () => <FontAwesomeIcon icon={faUser} size="35px"/>
+        }}
+      />
+      <Tab.Screen name="Services" component={Services}
+        options={{
+            title: '',
+            tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px"/>
+        }}
+*/

@@ -16,8 +16,6 @@ export default ({state, descriptors, navigation, activeBackgroundColor, activeTi
                     const tintColor = isFocused ? activeTintColor : inactiveTintColor;
                     const backgroundColor = isFocused ? activeBackgroundColor : inactiveBackgroundColor;
                     const tabBarVisible = state.tabBarVisible;
-
-                    alert(label + " - " + index + " - " + options.tabBarVisible);
                     
                     const onPress = () => {
                         navigation.navigate(route.name);

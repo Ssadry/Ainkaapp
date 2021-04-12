@@ -3,15 +3,12 @@ import React from 'react';
 import {SliderButton, SliderButtonText, SliderContent} from './styled';
 import SliderElement from './element/index';
 
-const HEIGHT_PERCENTAJE = 15;
-
-export default ({screenSize}) => {
-    const height = screenSize.height * (HEIGHT_PERCENTAJE / 100);
+export default () => {
     const handlePress = () => alert('Pressed!');
     const left = "<", right = ">";
 
     return (
-        <Slider height={height}>
+        <Slider>
             <SliderButton onPress={handlePress} underlayColor="#DDDDDD">
                 <SliderButtonText>{left}</SliderButtonText>
             </SliderButton>
