@@ -1,15 +1,17 @@
 import styled from 'styled-components/native';
 
 export const Articles = styled.View`
+    flex: 1;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 315px;
     border: 1px solid black;
+    background-color: cyan;
 `;
 
 export const Column = styled.View`
+    flex: 1;
     width: ${({width}) => width};
     align-items: center;
     margin: 5px;
+    background-color: green;
 `;

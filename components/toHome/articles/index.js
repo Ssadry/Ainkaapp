@@ -7,7 +7,7 @@ import Article from './article/index';
 export default ({screenSize}) => {
     const columnWidth = screenSize.width * 0.5;
 
-    const totalArticles = 10;
+    const totalArticles = 11;
     const halfArticles = totalArticles / 2;
     const amountLeftArticles = Math.round(halfArticles);
     const amountRightArticles = amountLeftArticles > halfArticles ? amountLeftArticles - 1 : amountLeftArticles;

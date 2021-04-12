@@ -1,12 +1,12 @@
 import styled from 'styled-components/native';
+import { RFValue } from "react-native-responsive-fontsize";
 
 export const Article = styled.View`
-    flex: 1;
     border: 1px solid black;
-    justify-content: center;
     align-items: center;
     margin-top: 5px;
     margin-bottom: 5px;
+    background-color: red;
 `; 
 
 export const Image = styled.Image`
@@ -18,4 +18,5 @@ export const Image = styled.Image`
 export const Text = styled.Text`
     margin-top: 5px;
     margin-bottom: 5px;
+    font-size: ${RFValue(10, 500)};
 `;

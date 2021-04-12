@@ -1,11 +1,22 @@
 import styled from 'styled-components/native';
+import { RFValue } from "react-native-responsive-fontsize";
 
 export const Header = styled.View`
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: ${({screenSize}) => screenSize.width};
     margin-top: 40px;
+`;
+
+export const SearchBarContainer = styled.View`
+    margin-right: 5px;
+    margin-left: 5px;
+`;
+
+export const ProfileContainer = styled.View`
+    margin-left: 5px;
+    margin-right: 5px;
 `;
 
 export const Profile = styled.View`
@@ -19,4 +30,5 @@ export const Profile = styled.View`
 
 export const Hours = styled.Text`
     text-align: center;
+    font-size: ${RFValue(10, 580)};
 `;

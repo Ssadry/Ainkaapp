@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { SafeAreaView } from 'react-native';
-import {StyledView, StyledTextInput, Icon} from './styled';
+import {SearchBar, TextInput, Icon} from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 
@@ -13,12 +13,12 @@ export default ({width}) => {
 
     return (
         <SafeAreaView>
-            <StyledView width={width}>
-                <StyledTextInput placeholder="Buscar..." value={text} onChangeText={setText} width={textInputWidth}/>
+            <SearchBar width={width}>
+                <TextInput placeholder="Buscar..." value={text} onChangeText={setText} width={textInputWidth}/>
                 <Icon width={imageWidth}>
                     <FontAwesomeIcon icon={faSearch}/>
                 </Icon>
-            </StyledView>
+            </SearchBar>
         </SafeAreaView>
     )
 }

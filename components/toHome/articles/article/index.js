@@ -3,7 +3,7 @@ import React from 'react';
 
 export default ({width}) => {
     return (
-        <Article>
+        <Article width={width * 0.8}>
             <Image source={require('../../../../assets/icon.png')} width={width * 0.8}/>
             <Text>Soy un textito :D</Text>
         </Article>
