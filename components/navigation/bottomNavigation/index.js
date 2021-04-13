@@ -14,48 +14,43 @@ export default () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Yoquese"
-      tabBar={props => 
-        <CustomTabScreen 
-            state={props.state} 
-            descriptors={props.descriptors}
-            navigation={props.navigation}
-            activeBackgroundColor="gray"
-            activeTintColor="black"
-            inactiveBackgroundColor="white"
-            inactiveTintColor="gray"
-            tabBarVisible={props.tabBarVisible}
+      initialRouteName="Home"
+      tabBar={props =>
+        <CustomTabScreen
+          state={props.state}
+          descriptors={props.descriptors}
+          navigation={props.navigation}
+          activeBackgroundColor="gray"
+          activeTintColor="black"
+          inactiveBackgroundColor="white"
+          inactiveTintColor="gray"
+          tabBarVisible={props.tabBarVisible}
         />}
     >
-      <Tab.Screen name="Home" component={Home} 
+      <Tab.Screen name="Home" component={Home}
         options={{
-            title: '',
-            tabBarIcon: () => <FontAwesomeIcon icon={faHome}/>
+          title: '',
+          tabBarIcon: () => <FontAwesomeIcon icon={faHome} />
+        }}
+      />
+      <Tab.Screen name="Chat" component={Chat}
+        options={{
+          title: '',
+          tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size="35px" />
+        }}
+      />
+      <Tab.Screen name="Profile" component={Profile}
+        options={{
+          title: '',
+          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size="35px" />
+        }}
+      />
+      <Tab.Screen name="Services" component={Services}
+        options={{
+          title: '',
+          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px" />
         }}
       />
     </Tab.Navigator>
   );
 }
-
-
-/*
-        }}
-      />
-      <Tab.Screen name="Chat" component={Chat} 
-        options={{
-            title: '',
-            tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size="35px"/>
-        }}
-      />
-      <Tab.Screen name="Profile" component={Profile}
-        options={{
-            title: '',
-            tabBarIcon: () => <FontAwesomeIcon icon={faUser} size="35px"/>
-        }}
-      />
-      <Tab.Screen name="Services" component={Services}
-        options={{
-            title: '',
-            tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px"/>
-        }}
-*/

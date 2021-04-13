@@ -3,27 +3,24 @@ import styled from 'styled-components/native';
 export const Slider = styled.View`
     flex-direction: row;
     justify-content: space-between;
+    overflow: hidden;
 `;
 
-export const SliderButton = styled.TouchableHighlight`
-    width: 40px;
-    justify-content: center;
-    border: 1px solid black;
-`;
-
-export const SliderButtonText = styled.Text`
-    text-align: center;
-    padding: 10px;
-`;
-
-export const SliderContent = styled.View`
+export const Content = styled.View`
     flex: 1;
     flex-direction: row;
     align-items: center;
     overflow: hidden;
 `;
 
-export const SliderElement = styled.View`
+export const Container = styled.View`
+    position: relative;
+    left: ${({ pos }) => pos};
+    flex-direction: row;
+    transition: 0.3;
+`;
+
+export const Element = styled.View`
     width: 80px;
     border: 1px solid black;
     margin-left: 5px;
@@ -33,7 +30,7 @@ export const SliderElement = styled.View`
     margin-right: 10px;
 `;
 
-export const SliderElementImage = styled.Image`
+export const Image = styled.Image`
     border: 1px solid black;
     width: 80px;
     height: 80px;

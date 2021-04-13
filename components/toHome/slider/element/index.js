@@ -1,13 +1,13 @@
-import {SliderElement} from '../styled';
+import { Element } from '../styled';
 import React from 'react';
-import {Text} from 'react-native';
-import {SliderElementImage} from '../styled';
+import { Text } from 'react-native';
+import { Image } from '../styled';
 
 export default () => {
     return (
-        <SliderElement>
-            <SliderElementImage source={require('../../../../assets/icon.png')} style={{resizeMode: 'stretch'}}/>
+        <Element>
+            <Image source={require('../../../../assets/icon.png')} />
             <Text>Texto</Text>
-        </SliderElement>
+        </Element>
     )
 }

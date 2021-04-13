@@ -1,8 +1,10 @@
 import React from 'react';
-import {SliderButton} from '../styled';
+import { Button, Text } from './styled';
 
-export default () => {
+export default ({ children, handlePress }) => {
     return (
-        <SliderButton/>
+        <Button onPress={() => handlePress()} underlayColor="#DDDDDD" >
+            <Text>{children}</Text>
+        </Button >
     )
 }
