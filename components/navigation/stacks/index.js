@@ -1,15 +1,15 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../../pages/home';
-import Profile from '../../pages/profile';
+import Login from '../../pages/login';
 
 const Stack = createStackNavigator();
 
-export default ()=> {
+export default () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: true}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 }

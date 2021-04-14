@@ -3,4 +3,4 @@ import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigation from './bottomNavigation';
 import Main from './stacks/index';
 
-export default () => <NavigationContainer><BottomNavigation /></NavigationContainer>
+export default () => <NavigationContainer><Main /></NavigationContainer>

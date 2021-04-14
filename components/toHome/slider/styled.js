@@ -17,7 +17,6 @@ export const Container = styled.View`
     position: relative;
     left: ${({ pos }) => pos};
     flex-direction: row;
-    transition: 0.3;
 `;
 
 export const Element = styled.View`
