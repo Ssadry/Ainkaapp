@@ -1,10 +1,12 @@
 import React from 'react';
-import { Button } from './styled';
+import { Button, Text } from './styled';
 
-export default () => {
+export default ({ children }) => {
     return (
         <Button>
-
+            <Text>
+                {children}
+            </Text>
         </Button>
     )
 }

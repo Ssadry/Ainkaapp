@@ -1,9 +1,17 @@
 import styled from 'styled-components/native';
 
-export const Button = styled.TouchableOpacity`
-    width: 50px;
-    height: 20px;
+export const Container = styled.View`
+    margin-top: 5px;
+    margin-bottom: 5px;
+`;
+
+export const Input = styled.TextInput`
+    width: 300px;
+    height: 30px;
     background-color: white;
-    border-radius: 5px;
     border: 1px solid black;
+`;
+
+export const Title = styled.Text`
+    margin-bottom: 10px;
 `;

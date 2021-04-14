@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
 
-export const LogoContainer = styled.View`
+export const Container = styled.View`
     justify-content: center;
     align-items: center;
-    flex: 0.9;
-    border: 1px solid black;
+    margin-top: 20px;
 `;

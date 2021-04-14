@@ -1,13 +1,12 @@
 import React from 'react';
-import { Container, Input, Title } from './styled';
+import { Container, Text } from './styled';
 
 export default ({ children }) => {
     return (
         <Container>
-            <Title>
+            <Text>
                 {children}
-            </Title>
-            <Input />
+            </Text>
         </Container>
     )
 }
