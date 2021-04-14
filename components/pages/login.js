@@ -3,11 +3,11 @@ import { View } from 'react-native';
 import LogoContainer from '../../components/toLogin/containers/logo/index';
 import FormContainer from '../../components/toLogin/containers/form/index';
 
-export default () => {
+export default ({ navigation }) => {
     return (
-        <View style={{ backgroundColor: 'cyan', flex: 1 }}>
+        <View style={{ flex: 1 }}>
             <LogoContainer />
-            <FormContainer />
+            <FormContainer navigation={navigation} />
         </View>
     )
 }

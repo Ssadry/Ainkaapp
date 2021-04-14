@@ -4,7 +4,10 @@ import Button from '../../../toLogin/form/button/index';
 import Input from '../../../toLogin/form/input/index';
 import LetterButtonsContainer from '../form/letterButtons/index';
 
-export default () => {
+export default ({ navigation }) => {
+    const goToHome = () => {
+        navigation.navigate('Home');
+    }
     return (
         <FormContainer>
             <Input>
@@ -13,7 +16,7 @@ export default () => {
             <Input>
                 Contraseña
             </Input>
-            <Button>
+            <Button click={goToHome}>
                 INICIAR SESIÓN
             </Button>
             <LetterButtonsContainer />
