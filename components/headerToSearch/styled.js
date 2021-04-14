@@ -5,7 +5,7 @@ export const Header = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: ${({screenSize}) => screenSize.width};
+    width: ${({width}) => width};
     margin-top: 40px;
 `;
 

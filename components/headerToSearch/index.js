@@ -4,11 +4,11 @@ import SearchBar from './searchBar/index';
 
 const WIDTH_PERCENTAJE = 80;
 
-export default ({screenSize}) => {
-    const searchBarWidth = screenSize.width * (WIDTH_PERCENTAJE / 100);
+export default ({width}) => {
+    const searchBarWidth = width * (WIDTH_PERCENTAJE / 100);
 
     return (
-        <Header screenSize={screenSize}>
+        <Header width={width}>
             <SearchBarContainer>
                 <SearchBar width={searchBarWidth}/>
             </SearchBarContainer>
