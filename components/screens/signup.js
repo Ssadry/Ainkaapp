@@ -13,8 +13,8 @@ export default () => {
 }
 
 export const Container = styled.View`
-    background-color: cyan;
     flex: 1;
     padding-left: 20px;
     padding-right: 20px;
+    justify-content: space-evenly;
 `;
