@@ -11,5 +11,5 @@ export const Column = styled.View`
     flex: 1;
     width: ${({width}) => width};
     align-items: center;
-    margin: 5px;
+    margin: 4px;
 `;

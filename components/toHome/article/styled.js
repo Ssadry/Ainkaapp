@@ -4,8 +4,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 export const Article = styled.View`
     border: 1px solid black;
     align-items: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
 `; 
 
 export const Image = styled.Image`

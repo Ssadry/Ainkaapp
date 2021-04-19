@@ -14,13 +14,15 @@ export default () => {
     const [currentState, setCurrentState] = useState(names.categories);
 
     return (
-        <View style={{ backgroundColor: 'cyan', flex: 1 }}>
+        <View style={{ flex: 1 }}>
             <Header width={width}/>
             <Switch width={width} 
                     setCurrentState={setCurrentState} 
                     currentState={currentState} 
                     names={names}/>
-            <Content/>
+            <Content width={width} 
+                    currentState={currentState} 
+                    states={names}/>
         </View>
     );
 }

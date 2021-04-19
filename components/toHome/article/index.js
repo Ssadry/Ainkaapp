@@ -3,8 +3,8 @@ import React from 'react';
 
 export default ({width}) => {
     return (
-        <Article width={width * 0.8}>
-            <Image source={require('../../../../assets/icon.png')} width={width * 0.8}/>
+        <Article width={width}>
+            <Image source={require('../../../assets/icon.png')} width={width}/>
             <Text>Soy un textito :D</Text>
         </Article>
     )
