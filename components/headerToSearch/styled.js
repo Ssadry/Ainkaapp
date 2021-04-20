@@ -1,11 +1,11 @@
 import styled from 'styled-components/native';
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const Header = styled.View`
+export const Container = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: ${({width}) => width};
+    width: ${({ width }) => width};
     margin-top: 40px;
 `;
 

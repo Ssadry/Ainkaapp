@@ -1,11 +1,12 @@
 import React from 'react';
-import {Container, ImageContainer, Image, Text} from './styled';
+import Icon from '../../../../assets/icon.png';
+import { Container, ImageContainer, Image, Text } from './styled';
 
-export default ({width}) => {
+export default ({ width }) => {
     return (
         <Container>
             <ImageContainer width={width}>
-                <Image source={require('../../../../../assets/icon.png')} width={width}/>
+                <Image source={Icon} width={width} />
             </ImageContainer>
             <Text>
                 Categoría
