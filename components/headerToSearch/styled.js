@@ -7,6 +7,7 @@ export const Container = styled.View`
     align-items: center;
     width: ${({ width }) => width};
     margin-top: 40px;
+    margin-bottom: 20px;
 `;
 
 export const SearchBarContainer = styled.View`

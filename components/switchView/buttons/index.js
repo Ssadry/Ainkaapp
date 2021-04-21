@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Button } from './styled';
-import { Text } from 'react-native';
+import { Container, Button, Text } from './styled';
 
 export default ({ currentState, setCurrentState, leftText, rightText }) => {
     return (

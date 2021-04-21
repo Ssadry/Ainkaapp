@@ -5,6 +5,7 @@ import Signup from '../../screens/signup';
 import Services from '../../screens/services';
 import ServicesAndProfiles from '../../screens/servicesAndProfiles';
 import ChatsAndRequests from '../../screens/chatsAndRequests';
+import FavoriteProfilesAndServicies from '../../screens/favoriteProfilesAndServicies';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +14,7 @@ export default () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {/*<Stack.Screen name="Login" component={Login} />*/}
       {/*<Stack.Screen name="Home" component={Home} />*/}
-      <Stack.Screen name="Chats and requests" component={ServicesAndProfiles} />
+      <Stack.Screen name='Favorite profiles and servicies' component={FavoriteProfilesAndServicies} />
     </Stack.Navigator>
   );
 }
