@@ -5,7 +5,7 @@ import Description from '../toFavoriteProfilesAndServices/description';
 import Content from '../toFavoriteProfilesAndServices/content';
 
 export default () => {
-    const [currentState, setCurrentState] = useState(0);
+    const [currentState, setCurrentState] = useState(1);
     const description = ['Servicios que te gustan', 'Perfiles que te interesan'];
 
     return (
@@ -21,7 +21,7 @@ export default () => {
                     {description[currentState]}
                 </Description>
             </ContentSwitch>
-            <Content/>
+            <Content currentState={currentState}/>
         </Container>
     )
 }

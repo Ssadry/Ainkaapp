@@ -5,4 +5,5 @@ export const Container = styled.View`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    display: ${({currentState, pos}) => currentState === pos ? 'flex' : 'none'};
 `;
