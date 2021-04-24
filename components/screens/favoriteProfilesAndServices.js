@@ -28,7 +28,6 @@ export default () => {
 
 export const Container = styled.View`
     flex: 1;
-    background-color: cyan;
 `;
 
 export const ContentSwitch = styled.View`
