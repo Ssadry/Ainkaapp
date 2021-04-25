@@ -1,13 +1,17 @@
 import React from 'react';
-import { View } from 'react-native';
 import LogoContainer from '../../components/toLogin/containers/logo/index';
 import FormContainer from '../../components/toLogin/containers/form/index';
+import styled from 'styled-components/native';
 
 export default ({ navigation }) => {
     return (
-        <View style={{ flex: 1 }}>
+        <Container>
             <LogoContainer />
             <FormContainer navigation={navigation} />
-        </View>
+        </Container>
     )
 }
+
+export const Container = styled.View`
+    flex: 1;
+`;

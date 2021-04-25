@@ -19,6 +19,8 @@ export default () => {
     const [isSelected, setSelection] = useState(false);
 
     const canContinue = () => {
+        return true;
+        
         if (!name.trim()) return false;
         else if (!nacionality.trim()) return false;
         else if (!phone.trim()) return false;

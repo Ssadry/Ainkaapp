@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container, Text } from './styled';
 
-export default ({ children }) => {
+export default ({ children, click }) => {
     return (
-        <Container>
+        <Container onPress={() => click()}>
             <Text>
                 {children}
             </Text>

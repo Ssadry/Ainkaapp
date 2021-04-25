@@ -8,6 +8,11 @@ export default ({ navigation }) => {
     const goToHome = () => {
         navigation.navigate('Home');
     }
+
+    const goToSignup = () => {
+        navigation.navigate('Singup');
+    }
+    
     return (
         <FormContainer>
             <Input>
@@ -19,7 +24,7 @@ export default ({ navigation }) => {
             <Button click={goToHome}>
                 INICIAR SESIÓN
             </Button>
-            <LetterButtonsContainer />
+            <LetterButtonsContainer goToSignup={goToSignup} goToHome={goToHome}/>
         </FormContainer>
     )
 }

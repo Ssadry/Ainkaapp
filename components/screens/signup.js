@@ -3,7 +3,7 @@ import Welcome from '../toSignup/welcome/index';
 import Form from '../toSignup/form/index';
 import styled from 'styled-components/native';
 
-export default () => {
+export default ({navigation}) => {
     return (
         <Container>
             <Welcome/>

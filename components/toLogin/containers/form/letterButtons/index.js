@@ -2,13 +2,13 @@ import React from 'react';
 import { Container } from './styled';
 import LetterButton from '../../../form/letterButton/index';
 
-export default () => {
+export default ({goToSignup, goToHome}) => {
     return (
         <Container>
-            <LetterButton>
+            <LetterButton click={goToSignup}>
                 Crear cuenta
             </LetterButton>
-            <LetterButton>
+            <LetterButton click={goToHome}>
                 ¿Olvidaste la contraseña?
             </LetterButton>
         </Container>
