@@ -5,6 +5,10 @@ export const CustomTabScreen = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
 `;
 
 export const Button = styled.TouchableOpacity`

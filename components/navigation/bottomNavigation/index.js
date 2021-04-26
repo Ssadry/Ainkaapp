@@ -4,6 +4,7 @@ import Home from '../../screens/home';
 import Profile from '../../screens/profile';
 import Services from '../../screens/services';
 import Chat from '../../screens/chat';
+import FavoriteProfilesAndServices from '../../screens/favoriteProfilesAndServices'
 import CustomTabScreen from '../customTabScreen/index';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faUser, faEnvelope, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -27,28 +28,44 @@ export default () => {
           tabBarVisible={props.tabBarVisible}
         />}
     >
-      <Tab.Screen name="Home" component={Home}
+      <Tab.Screen 
+        name="Home" 
+        component={Home}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHome} />
+          tabBarIcon: () => <FontAwesomeIcon icon={faHome} size="35px"/>
         }}
       />
-      <Tab.Screen name="Chat" component={Chat}
+      <Tab.Screen
+        name="Heart"
+        component={FavoriteProfilesAndServices}
+        options={{
+          title: '',
+          tabBarIcon: () => <FontAwesomeIcon icon={faHeart} size="35px"/>
+        }}
+      />
+      <Tab.Screen 
+        name="Services" 
+        component={Services}
+        options={{
+          title: '',
+          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px" />
+        }}
+      />
+      <Tab.Screen 
+        name="Chat" 
+        component={Chat}
         options={{
           title: '',
           tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size="35px" />
         }}
       />
-      <Tab.Screen name="Profile" component={Profile}
+      <Tab.Screen 
+        name="Profile" 
+        component={Profile}
         options={{
           title: '',
           tabBarIcon: () => <FontAwesomeIcon icon={faUser} size="35px" />
-        }}
-      />
-      <Tab.Screen name="Services" component={Services}
-        options={{
-          title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px" />
         }}
       />
     </Tab.Navigator>

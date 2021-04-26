@@ -15,22 +15,24 @@ export default ({state, descriptors, navigation, activeBackgroundColor, activeTi
                     const isFocused = state.index === index;
                     const tintColor = isFocused ? activeTintColor : inactiveTintColor;
                     const backgroundColor = isFocused ? activeBackgroundColor : inactiveBackgroundColor;
-                    const tabBarVisible = state.tabBarVisible;
                     
                     const onPress = () => {
-                        navigation.navigate(route.name);
+                        if (route.name !== 'Services') 
+                            navigation.navigate(route.name);
+                        else
+                            global.postAdIsActived = !global.postAdIsActived;
                     };
         
                     return (
                         <Button key={index} onPress={onPress} backgroundColor={backgroundColor}>
-                            {
-                                options.tabBarIcon !== undefined && options.tabBarIcon({ color: tintColor, size: 28 })
-                            }
-                            {
-                                <Text tintColor={tintColor}>
-                                    {label}
-                                </Text>
-                            }
+                        {
+                            options.tabBarIcon !== undefined && options.tabBarIcon({ color: tintColor, size: 28 })
+                        }
+                        {
+                            <Text tintColor={tintColor}>
+                                {label}
+                            </Text>
+                        }
                     </Button>
                     );
                 })}

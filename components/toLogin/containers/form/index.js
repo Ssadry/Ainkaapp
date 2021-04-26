@@ -6,7 +6,7 @@ import LetterButtonsContainer from '../form/letterButtons/index';
 
 export default ({ navigation }) => {
     const goToHome = () => {
-        navigation.navigate('Home');
+        navigation.navigate('MyRouter');
     }
 
     const goToSignup = () => {

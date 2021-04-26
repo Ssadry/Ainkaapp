@@ -5,7 +5,7 @@ import Password from './password';
 import CheckBox from './checkBox';
 import Button from './button';
 
-export default () => {
+export default ({navigation}) => {
     const [name, setName] = useState('');
     const [nacionality, setNacionality] = useState('');
     const [phone, setPhone] = useState('');
@@ -19,7 +19,7 @@ export default () => {
     const [isSelected, setSelection] = useState(false);
 
     const canContinue = () => {
-        return true;
+        navigation.navigate('Home');
         
         if (!name.trim()) return false;
         else if (!nacionality.trim()) return false;
@@ -29,7 +29,6 @@ export default () => {
         else if (!confirmPassword.trim()) return false;
         else if (!isSelected) return false;
 
-        alert('Ya podés pasar, boludo.');
         return true;
     }
 

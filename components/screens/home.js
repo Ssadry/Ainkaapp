@@ -35,7 +35,11 @@ export default () => {
             <Header width={screenSize.width}/>
             <Banner screenSize={screenSize}/>
             <Slider/>
-            <ScrollToElements width={screenSize.width} elements={articles} display={'flex'}/>
+            <ScrollToElements 
+                width={screenSize.width} 
+                elements={articles} 
+                display={'flex'}
+            />
         </View>
     )
 };

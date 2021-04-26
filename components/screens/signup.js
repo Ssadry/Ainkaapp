@@ -4,10 +4,11 @@ import Form from '../toSignup/form/index';
 import styled from 'styled-components/native';
 
 export default ({navigation}) => {
+
     return (
         <Container>
             <Welcome/>
-            <Form/>
+            <Form navigation={navigation}/>
         </Container>
     )
 }
