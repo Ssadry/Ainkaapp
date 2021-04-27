@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {CustomTabScreen, Button, Text} from './styled';
 import {SafeAreaView} from 'react-native';
+import {AppContext} from '../../../application/provider';
 
 export default ({state, descriptors, navigation, activeBackgroundColor, activeTintColor, inactiveBackgroundColor, inactiveTintColor, tabBarVisible}) => {
     
     const {routes} = state;
+    const [popUpIsVisible, setPopUpIsVisible] = useContext(AppContext);
     
     return (
         <SafeAreaView>
@@ -17,10 +19,12 @@ export default ({state, descriptors, navigation, activeBackgroundColor, activeTi
                     const backgroundColor = isFocused ? activeBackgroundColor : inactiveBackgroundColor;
                     
                     const onPress = () => {
-                        if (route.name !== 'Services') 
+                        if (route.name !== 'Services') {
+                            setPopUpIsVisible(false);
                             navigation.navigate(route.name);
-                        else
-                            global.postAdIsActived = !global.postAdIsActived;
+                        } else {
+                            setPopUpIsVisible(!popUpIsVisible);
+                        }
                     };
         
                     return (

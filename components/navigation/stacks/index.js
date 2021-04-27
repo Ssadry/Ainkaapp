@@ -10,7 +10,6 @@ import ChatsAndRequests from '../../screens/chatsAndRequests';
 import FavoriteProfilesAndServices from '../../screens/favoriteProfilesAndServices';
 import Tests from '../../screens/tests';
 import BottomNavigation from '../bottomNavigation';
-import PublicarAnuncio from '../../screens/publicarAnuncio';
 
 const Stack = createStackNavigator();
 

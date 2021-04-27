@@ -4,8 +4,11 @@ import Banner from '../toHome/banner/index';
 import Slider from '../toHome/slider/index';
 import ScrollToElements from '../scrollToElements/index';
 import Article from '../toHome/article/index';
+import Default from '../toHome/containers/default';
+import Searching from '../toHome/containers/searching';
 
-import { Dimensions, View } from 'react-native';
+import { Dimensions } from 'react-native';
+import styled from 'styled-components/native';
 
 const WINDOW = 'window';
 
@@ -31,15 +34,24 @@ export default () => {
     ];
 
     return (
-        <View style={{flex: 1}}>
-            <Header width={screenSize.width}/>
-            <Banner screenSize={screenSize}/>
-            <Slider/>
-            <ScrollToElements 
-                width={screenSize.width} 
-                elements={articles} 
-                display={'flex'}
-            />
-        </View>
+        <Container>
+            <Default>
+                <Header width={screenSize.width}/>
+                <Banner screenSize={screenSize}/>
+                <Slider/>
+                <ScrollToElements 
+                    width={screenSize.width} 
+                    elements={articles} 
+                    display={'flex'}
+                />
+            </Default>
+            <Searching>
+                
+            </Searching>
+        </Container>
     )
 };
+
+export const Container = styled.View`
+    flex: 1;
+`;
