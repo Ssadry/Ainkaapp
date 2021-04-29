@@ -1,9 +1,8 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
 
 export const ImageBackground = styled.ImageBackground`
     height: 200px;
-    width: ${Dimensions.get('window').width};
+    width: ${({width}) => width + 'px'};
     flex-direction: row;
     justify-content: flex-end;
 `;

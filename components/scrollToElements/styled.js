@@ -9,7 +9,7 @@ export const Articles = styled.View`
 
 export const Column = styled.View`
     flex: 1;
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
     align-items: center;
     margin: 4px;
 `;

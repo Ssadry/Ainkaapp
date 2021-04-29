@@ -11,10 +11,7 @@ import {
     Location,
     Hours,
     IconsContainer,
-    Description,
-    PostAdButton,
-    Text,
-    PosAdButtonContainer
+    Description
 } from './styled';
 import Icon from '../../../assets/icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
@@ -41,8 +38,8 @@ export default () => {
                             Ubicación
                         </Location>
                         <IconsContainer>
-                            <FontAwesomeIcon icon={faUser} size='30px'/>
-                            <FontAwesomeIcon icon={faGlobe} size='30px'/>
+                            <FontAwesomeIcon icon={faUser} size={30}/>
+                            <FontAwesomeIcon icon={faGlobe} size={30}/>
                         </IconsContainer>
                     </BottomBasicInfo>
                     <Description>

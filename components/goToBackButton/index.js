@@ -9,7 +9,7 @@ export default () => {
         <Container>
             <TouchableOpacity onPress={() => alert("xd")}>
                 <Text>
-                    <FontAwesomeIcon icon={faArrowLeft} size='20px'/>
+                    <FontAwesomeIcon icon={faArrowLeft} size={20}/>
                 </Text>
             </TouchableOpacity>
         </Container>

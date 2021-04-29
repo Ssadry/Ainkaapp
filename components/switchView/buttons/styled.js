@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: ${Dimensions.get('window').width * 0.5};
+    width: ${Dimensions.get('window').width * 0.5 + 'px'};
     background-color: ${({ currentState, pos }) => currentState === pos ? 'gray' : 'transparent'};
     justify-content: center;
     align-items: center;

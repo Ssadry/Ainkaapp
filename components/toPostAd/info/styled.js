@@ -18,7 +18,7 @@ export const Bottom = styled.View`
 `;
 
 export const Image = styled.Image`
-    width: ${width};
+    width: ${width + 'px'};
     height: 200px;
 `;
 
@@ -47,7 +47,7 @@ export const Hours = styled.Text`
 `;
 
 export const Location = styled.Text`
-    font-size: 15px;
+    font-size: 16px;
 `;
 
 export const IconsContainer = styled.View`

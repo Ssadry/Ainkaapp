@@ -1,9 +1,9 @@
 import React from 'react';
 import {Container} from './styled';
 
-export default () => {
+export default ({searchText}) => {
     return (
-        <Container>
+        <Container searchText={searchText}>
 
         </Container>
     )

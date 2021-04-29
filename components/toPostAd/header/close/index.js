@@ -9,7 +9,7 @@ export default () => {
 
     return (
         <Container onPress={() => setPopUpIsVisible(false)}>
-            <FontAwesomeIcon icon={faTimes} size='30px'/>
+            <FontAwesomeIcon icon={faTimes} size={30}/>
         </Container>
     )
 }

@@ -7,11 +7,10 @@ export const Container = styled.View`
 `;
 
 export const ImageContainer = styled.View`
-    width: ${({width}) => width};
-    height: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
+    height: ${({width}) => width + 'px'};
     margin-bottom: 10px;
     background-color: white;
-    border: 1px solid black;
     border-radius: 100px;
     overflow: hidden;
     justify-content: center;
@@ -19,8 +18,8 @@ export const ImageContainer = styled.View`
 `;
 
 export const Image = styled.Image`
-    width: ${({width}) => width};
-    height: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
+    height: ${({width}) => width + 'px'};
 `;
 
 export const Text = styled.Text`

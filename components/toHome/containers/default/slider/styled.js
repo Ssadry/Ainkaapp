@@ -15,7 +15,7 @@ export const Content = styled.View`
 
 export const Container = styled.View`
     position: relative;
-    left: ${({ pos }) => pos};
+    left: ${({ pos }) => pos + 'px'};
     flex-direction: row;
 `;
 
@@ -27,10 +27,10 @@ export const Element = styled.View`
     justify-content: center;
     align-items: center;
     margin-right: 10px;
+    overflow: hidden;
 `;
 
 export const Image = styled.Image`
-    border: 1px solid black;
     width: 80px;
     height: 80px;
 `;

@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import { Dimensions, View } from 'react-native';
-import Header from '../headerToSearch/index';
+import HeaderToSearch from '../headerToSearch/index';
 import SwitchButton from '../switchView/buttons';
 import Content from '../toServicesAndProfiles/content/index';
 
 export default () => {
     const { width } = Dimensions.get('window');
     const [currentState, setCurrentState] = useState(0);
+    const [searchText, setSearchText] = useState(true);
 
     return (
         <View style={{ flex: 1 }}>
-            <Header width={width} />
+            <HeaderToSearch 
+                searchText={searchText} 
+                setSearchText={setSearchText}
+            />
             <SwitchButton
                 currentState={currentState}
                 setCurrentState={setCurrentState}

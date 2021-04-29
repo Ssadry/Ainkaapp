@@ -2,13 +2,14 @@ import React from 'react';
 import {Header, Top, TopLeft, Image, Text, Hours, Title, Icons, User, Settings, Bottom, Button, ButtonText} from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faEllipsisV, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../../../assets/icon.png';
 
 export default ({width}) => {
     return (
         <Header>
             <Top>
                 <TopLeft>
-                    <Image source={require('../../../assets/icon.png')} style={{resizeMode: 'stretch'}}/>
+                    <Image source={Icon} style={{resizeMode: 'stretch'}}/>
                     <Text>
                         <Hours>
                             1 H

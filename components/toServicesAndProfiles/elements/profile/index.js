@@ -23,11 +23,11 @@ export default ({ width }) => {
                 Nombre de usuario
             </Name>
             <StarsContainer>
-                <FontAwesomeIcon icon={faStar} size="20px" />
-                <FontAwesomeIcon icon={faStar} size="20px" />
-                <FontAwesomeIcon icon={faStar} size="20px" />
-                <FontAwesomeIcon icon={faStar} size="20px" />
-                <FontAwesomeIcon icon={faStar} size="20px" />
+                <FontAwesomeIcon icon={faStar} size={20}/>
+                <FontAwesomeIcon icon={faStar} size={20}/>
+                <FontAwesomeIcon icon={faStar} size={20}/>
+                <FontAwesomeIcon icon={faStar} size={20}/>
+                <FontAwesomeIcon icon={faStar} size={20}/>
             </StarsContainer>
             <Description>
                 Descripción

@@ -56,7 +56,7 @@ export const Bottom = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
     height: 50px;
     justify-content: center;
     align-items: center;

@@ -14,8 +14,8 @@ import {
     InterestText
 } from './styled';
 import Icon from '../../../../../assets/icon.png';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default () => {
     return (

@@ -1,29 +1,24 @@
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {Dimensions} from 'react-native';
 import React from 'react';
 import Header from '../toProfile/header/index';
 import Services from '../toProfile/services/index';
+import styled from 'styled-components/native';
 
 const WINDOW = 'window';
+const {width} = Dimensions.get(WINDOW);
 
 export default () => {
 
-    const screenSize = {
-        width : Dimensions.get(WINDOW).width,
-        height : Dimensions.get(WINDOW).height
-    }
-
     return (
-        <View style={styled.header}>
-            <Header width={screenSize.width}/>
-            <Services width={screenSize.width}/>
-        </View>
+        <Container>
+            <Header width={width}/>
+            <Services width={width}/>
+        </Container>
     )
 }
 
-const styled = StyleSheet.create({
-    header : {
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: Dimensions.get(WINDOW).width,
-    }
-});
+export const Container = styled.View`
+    justify-content: center;
+    align-items: center;
+    width: ${width + 'px'};
+`;

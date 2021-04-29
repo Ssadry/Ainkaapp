@@ -14,16 +14,16 @@ export default () => {
                     <SeeAndLike>
                         <Icons>
                             <Eye>
-                                <FontAwesomeIcon icon={faEye} size="30px"/>
+                                <FontAwesomeIcon icon={faEye} size={30}/>
                             </Eye>
                             <Heart>
-                                <FontAwesomeIcon icon={faHeart} size="30px"/>
+                                <FontAwesomeIcon icon={faHeart} size={30}/>
                             </Heart>
                         </Icons>
                     </SeeAndLike>
                     <Connected>
                         <Globe>
-                            <FontAwesomeIcon icon={faGlobe} size="30px"/>
+                            <FontAwesomeIcon icon={faGlobe} size={30}/>
                         </Globe>
                         <GlobeText>
                             DISP. ONLINE

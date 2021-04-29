@@ -16,13 +16,10 @@ const Stack = createStackNavigator();
 export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-
-      <Stack.Screen name='Login' component={Login}/>
-      <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='Singup' component={Signup}/>
-      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-
-      {/*<Stack.Screen name='PublicarAnuncio' component={PublicarAnuncio}/>*/}
+        <Stack.Screen name='Login' component={Login}/>
+        <Stack.Screen name='Singup' component={Signup}/>
+        <Stack.Screen name='MyRouter' component={BottomNavigation}/>
+        <Stack.Screen name='Home' component={Home}/>
     </Stack.Navigator>
   );
 }

@@ -33,7 +33,7 @@ export default () => {
         component={Home}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHome} size="35px"/>
+          tabBarIcon: () => <FontAwesomeIcon icon={faHome} size={30}/>
         }}
       />
       <Tab.Screen
@@ -41,7 +41,7 @@ export default () => {
         component={FavoriteProfilesAndServices}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHeart} size="35px"/>
+          tabBarIcon: () => <FontAwesomeIcon icon={faHeart} size={30}/>
         }}
       />
       <Tab.Screen 
@@ -49,7 +49,7 @@ export default () => {
         component={Services}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size="35px" />
+          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size={30}/>
         }}
       />
       <Tab.Screen 
@@ -57,7 +57,7 @@ export default () => {
         component={Chat}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size="35px" />
+          tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size={30}/>
         }}
       />
       <Tab.Screen 
@@ -65,7 +65,7 @@ export default () => {
         component={Profile}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size="35px" />
+          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size={30}/>
         }}
       />
     </Tab.Navigator>

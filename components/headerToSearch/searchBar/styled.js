@@ -7,19 +7,19 @@ export const SearchBar = styled.View`
     background-color: white;
     border-radius: 15px;
     border: 1px solid black;
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
     height: 40px;
     overflow: hidden;
 `;
 
 export const TextInput = styled.TextInput`
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
     padding-left: 15px;
     height: 40px;
 `;
 
 export const Icon = styled.View`
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
 `;

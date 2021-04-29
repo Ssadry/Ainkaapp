@@ -1,11 +1,10 @@
 import styled from 'styled-components/native';
-import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: ${({ width }) => width};
+    width: ${({ width }) => width + 'px'};
     margin-top: 40px;
     margin-bottom: 20px;
 `;
@@ -31,5 +30,5 @@ export const Profile = styled.View`
 
 export const Hours = styled.Text`
     text-align: center;
-    font-size: ${RFValue(10, 580)};
+    font-size: 16px;
 `;

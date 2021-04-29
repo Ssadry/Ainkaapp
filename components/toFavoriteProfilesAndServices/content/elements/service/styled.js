@@ -50,7 +50,6 @@ export const PhotoContainer = styled.View`
 export const Photo = styled.Image`
     width: ${containerPhotoSize + 'px'};
     height: ${containerPhotoSize + 'px'};
-    border: 1px solid red;
 `;
 
 export const UserName = styled.Text`

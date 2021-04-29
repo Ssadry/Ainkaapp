@@ -8,10 +8,10 @@ export const Container = styled.View`
 `;
 
 export const ImageContainer = styled.View`
+    width: ${({width}) => width + 'px'};
+    height: ${({width}) => width + 'px'};
     border: 1px solid black;
     border-radius: 100px;
-    width: ${({width}) => width};
-    height: ${({width}) => width};
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -19,8 +19,8 @@ export const ImageContainer = styled.View`
 `;
 
 export const Image = styled.Image`
-    width: ${({width}) => width};
-    height: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
+    height: ${({width}) => width + 'px'};
 `;
 
 export const Name = styled.Text`
