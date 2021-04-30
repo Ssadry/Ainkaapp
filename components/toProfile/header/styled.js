@@ -8,9 +8,19 @@ export const Header = styled.View`
 
 export const Icons = styled.View`
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 10px;
+`;
+
+export const LeftIcons = styled.View`
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const RightIcons = styled.View`
+    flex-direction: row;
 `;
 
 export const Settings = styled.View`

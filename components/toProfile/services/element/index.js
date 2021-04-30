@@ -1,12 +1,11 @@
 import React from 'react';
 import {Container, Image, Text, Description, Hours} from './styled';
+import Icon from '../../../../assets/icon.png';
 
-export default () => {
-    let Image_Http_URL ={ uri: 'https://reactnativecode.com/wp-content/uploads/2017/05/react_thumb_install.png'};
-
+export default ({click}) => {
     return (
-        <Container>
-            <Image source={require('../../../../assets/icon.png')} style={{resizeMode: 'stretch'}}/>
+        <Container onPress={() => click()}>
+            <Image source={Icon} style={{resizeMode: 'stretch'}}/>
             <Text>
                 <Hours>10 h</Hours>
                 <Description>

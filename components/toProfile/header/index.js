@@ -19,7 +19,9 @@ import {
     Counter,
     PulledApart,
     PulledApartNumber,
-    PulledApartText
+    PulledApartText,
+    LeftIcons,
+    RightIcons
 } from './styled';
 import { 
     faShareAlt, 
@@ -30,17 +32,23 @@ import {
     faMapMarkerAlt,
     faGlobe
 } from '@fortawesome/free-solid-svg-icons'
+import GoToBackButton from '../../goToBackButton';
 
-export default ({width}) => {
+export default ({width, navigation}) => {
     return (
         <Header width={width}>
             <Icons>
-                <Settings>
-                    <FontAwesomeIcon icon={faEllipsisH} size="30px"/>
-                </Settings>
-                <Share>
-                    <FontAwesomeIcon icon={faShareAlt} size="30px"/>
-                </Share>
+                <LeftIcons>
+                    <GoToBackButton navigation={navigation}/>
+                </LeftIcons>
+                <RightIcons>
+                    <Settings>
+                        <FontAwesomeIcon icon={faEllipsisH} size={30}/>
+                    </Settings>
+                    <Share>
+                        <FontAwesomeIcon icon={faShareAlt} size={30}/>
+                    </Share>
+                </RightIcons>
             </Icons>
             <User>
                 <Info>
@@ -49,22 +57,22 @@ export default ({width}) => {
                             Andry Alexis Reyes Cruz
                         </Name>
                         <Starts>
-                            <FontAwesomeIcon icon={faStar} size="20px"/>
-                            <FontAwesomeIcon icon={faStar} size="20px"/>
-                            <FontAwesomeIcon icon={faStar} size="20px"/>
-                            <FontAwesomeIcon icon={faStar} size="20px"/>
-                            <FontAwesomeIcon icon={faStar} size="20px"/>
+                            <FontAwesomeIcon icon={faStar} size={20}/>
+                            <FontAwesomeIcon icon={faStar} size={20}/>
+                            <FontAwesomeIcon icon={faStar} size={20}/>
+                            <FontAwesomeIcon icon={faStar} size={20}/>
+                            <FontAwesomeIcon icon={faStar} size={20}/>
                             <Amount>(0)</Amount>
                         </Starts>
                     </Personal>
                     <Photo>
-                        <FontAwesomeIcon icon={faUserCircle} size="100px"/>
+                        <FontAwesomeIcon icon={faUserCircle} size={100}/>
                     </Photo>
                 </Info>
                 <Details>
                         <Content>
                             <Icon>
-                                <FontAwesomeIcon icon={faChartBar} size="20px"/>
+                                <FontAwesomeIcon icon={faChartBar} size={20}/>
                             </Icon>
                             <Text>
                                 1 agregado 2 no sé qué
@@ -72,7 +80,7 @@ export default ({width}) => {
                         </Content>
                         <Content>
                             <Icon>
-                                <FontAwesomeIcon icon={faMapMarkerAlt} size="20px"/>
+                                <FontAwesomeIcon icon={faMapMarkerAlt} size={20}/>
                             </Icon>
                             <Text>
                                 Ubicación
@@ -80,7 +88,7 @@ export default ({width}) => {
                         </Content>
                         <Content>
                             <Icon>
-                                <FontAwesomeIcon icon={faGlobe} size="20px"/>
+                                <FontAwesomeIcon icon={faGlobe} size={20}/>
                             </Icon>
                             <Text>
                                 ONLINE

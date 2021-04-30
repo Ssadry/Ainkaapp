@@ -3,7 +3,12 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    padding: 10px;
+`;
+
+export const Element = styled.View`
+    justify-content: center;
+    align-items: center;
 `;
 
 export const ImageContainer = styled.View`
@@ -15,6 +20,7 @@ export const ImageContainer = styled.View`
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    border: 1px solid black;
 `;
 
 export const Image = styled.Image`

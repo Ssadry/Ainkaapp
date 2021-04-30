@@ -14,7 +14,7 @@ export const SearchBarContainer = styled.View`
     margin-left: 5px;
 `;
 
-export const ProfileContainer = styled.View`
+export const ProfileContainer = styled.TouchableOpacity`
     margin-left: 5px;
     margin-right: 5px;
 `;

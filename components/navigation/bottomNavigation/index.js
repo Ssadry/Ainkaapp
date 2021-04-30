@@ -25,7 +25,6 @@ export default () => {
           activeTintColor="black"
           inactiveBackgroundColor="white"
           inactiveTintColor="gray"
-          tabBarVisible={props.tabBarVisible}
         />}
     >
       <Tab.Screen 
