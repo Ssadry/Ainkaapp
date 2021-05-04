@@ -6,12 +6,12 @@ export const Container = styled.TouchableOpacity`
     align-items: center;
     width: 150px;
     margin-top: 5px;
+    overflow: hidden;
 `;
 
 export const Image = styled.Image`
     width: 150px;
     height: 150px;
-    border: 1px solid black;
 `;
 
 export const Text = styled.View`

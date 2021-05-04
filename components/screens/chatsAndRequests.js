@@ -5,14 +5,14 @@ import SwitchButtons from '../switchView/buttons';
 import Description from '../toChatsAndRequests/description';
 import Content from '../toChatsAndRequests/content';
 
-export default () => {
+export default ({navigation}) => {
     const [currentState, setCurrentState] = useState(0);
     const chatDescription = 'Consulta tus chats...';
     const requestDescription = 'Alguien quiere contactar contigo...';
 
     return (
         <Container>
-            <Header />
+            <Header navigation={navigation}/>
             <SwitchButtons
                 currentState={currentState}
                 setCurrentState={setCurrentState}
@@ -22,7 +22,10 @@ export default () => {
             <Description>
                 {currentState == 0 ? chatDescription : requestDescription}
             </Description>
-            <Content currentState={currentState}/>
+            <Content 
+                currentState={currentState} 
+                navigation={navigation}
+            />
         </Container>
     )
 }

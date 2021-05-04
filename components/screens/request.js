@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import TopImage from '../toServices/topImage/index';
-import Service from '../toServices/service/index';
-import User from '../toServices/user/index';
-import Petition from '../toServices/petition/index';
+import Header from '../toRequest/header';
+import Content from '../toRequest/content';
+import Buttons from '../toRequest/buttons';
 import {Dimensions} from 'react-native';
 
 export default ({navigation}) => {
@@ -11,13 +10,12 @@ export default ({navigation}) => {
 
     return (
         <Container>
-            <TopImage 
-                width={width} 
+            <Header navigation={navigation}/>
+            <Buttons 
+                width={width}
                 navigation={navigation}
             />
-            <Service />
-            <User />
-            <Petition />
+            <Content/>
         </Container>
     )
 }

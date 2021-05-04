@@ -20,7 +20,7 @@ export default ({state, descriptors, navigation, activeBackgroundColor, activeTi
                         const backgroundColor = isFocused ? activeBackgroundColor : inactiveBackgroundColor;
                         
                         const onPress = () => {
-                            if (route.name !== 'Services') {
+                            if (route.name !== 'PostAd') {
                                 setPopUpIsVisible(false);
                                 navigation.navigate(route.name);
                             } else {

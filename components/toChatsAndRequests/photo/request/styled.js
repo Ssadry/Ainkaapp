@@ -11,6 +11,6 @@ export const Container = styled.View`
 `;
 
 export const Image = styled.Image`
-    width: ${({width}) => width};
-    height: ${({height}) => height};
+    width: ${({width}) => width + 'px'};
+    height: ${({height}) => height + 'px'};
 `;

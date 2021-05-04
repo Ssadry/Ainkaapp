@@ -1,9 +1,9 @@
 import React from 'react';
 import {Container, Left, Right, Title, Message} from './styled';
 
-export default ({title, message, photo}) => {
+export default ({title, message, photo, click}) => {
     return (
-        <Container> 
+        <Container onPress={() => click()}> 
             <Left>
                 {photo}
             </Left>

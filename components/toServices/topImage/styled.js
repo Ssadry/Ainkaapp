@@ -3,12 +3,12 @@ import styled from 'styled-components/native';
 export const ImageBackground = styled.ImageBackground`
     height: 200px;
     width: ${({width}) => width + 'px'};
-    flex-direction: row;
-    justify-content: flex-end;
+    padding: 10px;
 `;
 
 export const Icons = styled.View`
     text-align: right;
-    margin-right: 20px;
     margin-top: 40px;
+    flex-direction: row;
+    justify-content: space-between;
 `;

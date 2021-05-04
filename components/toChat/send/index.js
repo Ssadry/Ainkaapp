@@ -14,7 +14,7 @@ export default () => {
             <Right>
                 <ButtonContainer>
                     <Button>
-                        <FontAwesomeIcon icon={faPaperPlane} size="15px"/>
+                        <FontAwesomeIcon icon={faPaperPlane} size={15}/>
                     </Button>
                 </ButtonContainer>
             </Right>

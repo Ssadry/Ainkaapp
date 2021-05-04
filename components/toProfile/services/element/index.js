@@ -5,7 +5,7 @@ import Icon from '../../../../assets/icon.png';
 export default ({click}) => {
     return (
         <Container onPress={() => click()}>
-            <Image source={Icon} style={{resizeMode: 'stretch'}}/>
+            <Image source={Icon} resizeMode='stretch'/>
             <Text>
                 <Hours>10 h</Hours>
                 <Description>

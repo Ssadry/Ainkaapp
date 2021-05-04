@@ -10,8 +10,14 @@ export default ({navigation}) => {
     return (
         <Container>
             <HeaderToSearch setSearchText={setSearchText} click={() => navigation.navigate('Profile')}/>
-            <Default searchText={searchText}/>
-            <Searching searchText={searchText} click={() => navigation.navigate('WatchProfile')}/>
+            <Default 
+                searchText={searchText}
+                navigation={navigation}
+            />
+            <Searching 
+                searchText={searchText} 
+                click={() => navigation.navigate('WatchProfile')}
+            />
         </Container>
     )
 };

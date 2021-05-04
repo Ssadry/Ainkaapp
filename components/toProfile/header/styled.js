@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Header = styled.View`
     margin-top: 40px;
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
     border: 1px solid black;
 `;
 
@@ -96,7 +96,7 @@ export const Counter = styled.View`
 export const PulledApart = styled.View`
     justify-content: center;
     align-items: center;
-    width: ${({width}) => width};
+    width: ${({width}) => width + 'px'};
 `;
 
 export const PulledApartNumber = styled.Text`

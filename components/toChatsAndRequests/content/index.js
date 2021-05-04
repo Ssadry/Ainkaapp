@@ -5,7 +5,7 @@ import Element from '../element';
 import ChatPhoto from '../photo/chat';
 import RequestPhoto from '../photo/request';
 
-export default ({currentState}) => {
+export default ({currentState, navigation}) => {
     const [chatTitles, setChatTitles] = useState(
         [
             'Título del servicio.',
@@ -53,13 +53,27 @@ export default ({currentState}) => {
     const chatElements = [chatTitles.length];
 
     chatTitles.forEach((title, i) => {
-        chatElements[i] = <Element title={title} message={chatMessages[i]} photo={<ChatPhoto/>}/>
+        chatElements[i] = 
+            <Element
+                key={i}
+                title={title}
+                message={chatMessages[i]} 
+                photo={<ChatPhoto/>}
+                click={() => navigation.navigate('Request')}
+            />
     });
 
     const requestElements = [chatTitles.length];
 
     requestsTitles.forEach((title, i) => {
-        requestElements[i] = <Element title={title} message={requestMessages[i]} photo={<RequestPhoto/>}/>
+        requestElements[i] = 
+            <Element 
+                key={i}
+                title={title} 
+                message={requestMessages[i]} 
+                photo={<RequestPhoto/>}
+                click={() => false}
+            />
     });
 
     return (

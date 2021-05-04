@@ -7,9 +7,9 @@ const contentWidth = width * 0.9;
 const leftWidth = contentWidth * 0.4;
 const rightWidth = contentWidth * 0.6;
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
     background-color: white;
-    width: ${contentWidth};
+    width: ${contentWidth + 'px'};
     flex-direction: row;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -18,12 +18,12 @@ export const Container = styled.View`
 `;
 
 export const Left = styled.View`
-    width: ${leftWidth};
+    width: ${leftWidth + 'px'};
     justify-content: center;
 `;
 
 export const Right = styled.View`
-    width: ${rightWidth};
+    width: ${rightWidth + 'px'};
     padding: 10px;
     overflow: hidden;
     justify-content: center;

@@ -12,7 +12,10 @@ export default ({navigation}) => {
     return (
         <Container>
             <Header width={width}/>
-            <Services width={width}/>
+            <Services 
+                width={width}
+                click={() => navigation.navigate('Services')}
+            />
         </Container>
     )
 }

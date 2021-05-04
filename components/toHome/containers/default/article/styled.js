@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { RFValue } from "react-native-responsive-fontsize";
 
-export const Article = styled.View`
+export const Article = styled.TouchableOpacity`
     border: 1px solid black;
     align-items: center;
     margin: 5px;

@@ -4,10 +4,14 @@ export const Header = styled.View`
 
 `;
 
-export const Top = styled.View`
-    margin-top: 40px;
+export const GoToBackButtonContainer = styled.View`
     margin-left: 10px;
     margin-right: 10px;
+`;
+
+export const Top = styled.View`
+    margin-top: 30px;
+    padding: 10px;
     background-color: white;
     flex-direction: row;
     justify-content: space-between;
