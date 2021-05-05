@@ -1,15 +1,19 @@
 import React from 'react';
 import {Article, Image, Text} from './styled';
-import Icon from '../../../../../assets/icon.png';
 
-export default ({width, click}) => {
+export default ({width, click, img, children}) => {
     return (
         <Article 
             width={width} 
             onPress={() => click()}
         >
-            <Image source={Icon} width={width}/>
-            <Text>Soy un textito :D</Text>
+            <Image 
+                source={img} 
+                width={width}
+            />
+            <Text>
+                {children}
+            </Text>
         </Article>
     )
 }

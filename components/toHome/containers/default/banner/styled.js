@@ -10,5 +10,5 @@ export const Text = styled.Text`
     text-align: center;
     margin-top: 25px;
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 25px;
 `;
