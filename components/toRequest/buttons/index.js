@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Line} from './styled';
 import Button from './button';
 
-export default ({width, navigation}) => {
+export default ({width, navigation, setPopUpIsVisible}) => {
     const buttonWidth = width * 0.5 - 1;
 
     return (
@@ -16,7 +16,7 @@ export default ({width, navigation}) => {
             <Line/>
             <Button 
                 width={buttonWidth}
-                click={() => navigation.navigate('Request')}
+                click={() => setPopUpIsVisible(true)}
             >
                 Rechazar
             </Button>

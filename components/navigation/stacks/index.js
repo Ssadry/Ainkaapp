@@ -10,6 +10,7 @@ import Services from '../../screens/services';
 import Chat from '../../screens/chat';
 import FavoriteProfilesAndServices from '../../screens/favoriteProfilesAndServices';
 import Tests from '../../screens/tests';
+import ChatsAndRequests from '../../screens/chatsAndRequests';
 import Request from '../../screens/request';
 import BottomNavigation from '../bottomNavigation';
 
@@ -27,6 +28,7 @@ export default () => {
       <Stack.Screen name='Chat' component={Chat}/>
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Request' component={Request}/>
+      <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/>
     </Stack.Navigator>
   );
 }

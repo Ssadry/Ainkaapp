@@ -3,7 +3,13 @@ import {CustomTabScreen, Button, Text} from './styled';
 import {SafeAreaView} from 'react-native';
 import {AppContext} from '../../../application/provider';
 
-export default ({state, descriptors, navigation, activeBackgroundColor, activeTintColor, inactiveBackgroundColor, inactiveTintColor}) => {
+export default ({state, 
+                descriptors, 
+                navigation, 
+                activeBackgroundColor, 
+                activeTintColor, 
+                inactiveBackgroundColor, 
+                inactiveTintColor}) => {
     
     const {routes} = state;
     const [popUpIsVisible, setPopUpIsVisible] = useContext(AppContext);
