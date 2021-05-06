@@ -1,4 +1,5 @@
 import React from 'react';
+import {ScrollView} from 'react-native';
 import { Container } from './styled';
 import Article from '../article';
 import facebook from '../../../../../assets/services/Aprende_a_usar_Facebook.jpg';
@@ -67,10 +68,12 @@ export default ({width, click}) => {
                     </Article>
 
     return (
-        <Container width={width}>
-            {
-                articles.map(article => article)
-            }
-        </Container>
+        <ScrollView>
+            <Container width={width}>
+                {
+                    articles.map(article => article)
+                }
+            </Container>
+        </ScrollView>
     )
 }

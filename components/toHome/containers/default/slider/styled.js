@@ -3,16 +3,20 @@ import styled from 'styled-components/native';
 export const Slider = styled.View`
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom-width: 1px;
+    background-color: red;
 `;
 
 export const Content = styled.View`
     flex-direction: row;
     align-items: center;
+    background-color: green;
 `;
 
 export const Container = styled.View`
     position: relative;
-    left: ${({ pos }) => pos + 'px'};
+    left: 0px;
     flex-direction: row;
 `;
 

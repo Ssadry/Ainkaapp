@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, Text } from './styled';
+import {Container, Text} from './styled';
 
-export default ({ children, handlePress }) => {
+export default ({ children }) => {
     return (
-        <Button onPress={() => handlePress()} underlayColor="#DDDDDD" >
+        <Container>
             <Text>{children}</Text>
-        </Button >
+        </Container >
     )
 }

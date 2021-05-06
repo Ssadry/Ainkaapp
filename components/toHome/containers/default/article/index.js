@@ -6,7 +6,10 @@ export default ({width, click, img, children}) => {
 
     return (
         <Container width={width}>        
-            <Article onPress={() => click()}>
+            <Article 
+                width={articleWidth}
+                onPress={() => click()}
+            >
                 <Image 
                     source={img} 
                     width={articleWidth}

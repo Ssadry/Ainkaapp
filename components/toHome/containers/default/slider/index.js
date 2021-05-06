@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {ScrollView} from 'react-native';
 import { Slider, Content, Container } from './styled';
 import SliderElement from './element/index';
-import Button from './button/index';
+import Icon from './button/index';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
+    /*
     const [contentWidth] = useState(0);
-
     const [containerWidth, setContainerWidth] = useState(0);
     const [containerPos, setContainerPos] = useState(0);
-    const [offsetScroll, setOffsetScroll] = useState(0);
     const STEP = 50;
 
     const tooMuchElements = containerWidth < contentWidth;
@@ -17,48 +18,45 @@ export default () => {
 
     const toRight = () => {
         setContainerPos(containerPos <= diffBtwnContainerContent ? diffBtwnContainerContent : containerPos - STEP);
-        alert("Container pos: " + containerPos + " | " + "OffsetScroll: " + offsetScroll);
     }
 
     const toLeft = () => {
         setContainerPos(containerPos >= 0 ? 0 : containerPos + STEP);
     }
-    const left = "<", right = ">";
+    */
+
+    const amountElements = 7;
+    const elements = [amountElements];
+    for (let i = 0; i < amountElements; i++)
+        elements[i] = <SliderElement key={i}/>
 
     return (
         <Slider>
-            <Button handlePress={toLeft}>
-                {left}
-            </Button>
-            <ScrollView 
-                horizontal={true}
-                onScroll={(event) => {
-                    const {x} = event.nativeEvent.contentOffset;
-                    setOffsetScroll(x);
-                }}
-                >
+            <Icon>
+                <FontAwesomeIcon icon={faCaretLeft}/>
+            </Icon>
+            <ScrollView horizontal={true}>
                 <Content>
                     <Container 
+                        /*
                         pos={containerPos}
-                        onLayout={({ nativeEvent }) => {
-                            let { width } = nativeEvent.layout;
-                            setContainerWidth(-width );
-                        }}
+                        onLayout={
+                            ({nativeEvent}) => {
+                                let {width} = nativeEvent.layout;
+                                setContainerWidth(-width);
+                            }
+                        }
+                        */
                     >
-                        <SliderElement />
-                        <SliderElement />
-                        <SliderElement />
-                        <SliderElement />
-                        <SliderElement />
-                        <SliderElement />
-                        <SliderElement />
-                        <SliderElement />
+                        {
+                            elements.map(element => element)
+                        }
                     </Container>
                 </Content>
             </ScrollView>
-            <Button handlePress={toRight}>
-                {right}
-            </Button>
+            <Icon>
+                <FontAwesomeIcon icon={faCaretRight}/>
+            </Icon>
         </Slider>
     )
 }

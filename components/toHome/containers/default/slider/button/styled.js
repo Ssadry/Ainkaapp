@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Button = styled.TouchableHighlight`
+export const Container = styled.View`
     width: 40px;
     justify-content: center;
     border: 1px solid black;
