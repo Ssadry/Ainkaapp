@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import styled from 'styled-components/native';
-import {AppContext} from '../../application/provider';
+import {AppContext} from '../application/provider';
 import {Dimensions} from 'react-native';
-import Header from '../toPostAd/header';
-import Info from '../toPostAd/info';
-import Button from '../toPostAd/button';
+import Header from '../components/toPostAd/header';
+import Info from '../components/toPostAd/info';
+import Button from '../components/toPostAd/button';
 
 const WINDOW = 'window';
 const marginBottom = 70;
@@ -12,7 +12,7 @@ const {width} = Dimensions.get(WINDOW);
 const height = Dimensions.get(WINDOW).height - marginBottom;
 
 export default () => {
-    const [popUpIsVisible, setPopUpIsVisible] = useContext(AppContext);
+    const [popUpIsVisible] = useContext(AppContext);
 
     return (
         <Container isVisible={popUpIsVisible}>

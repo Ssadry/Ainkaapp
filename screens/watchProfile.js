@@ -1,19 +1,17 @@
 import {Dimensions} from 'react-native';
 import React from 'react';
-import Header from '../toProfile/header/index';
-import Services from '../toProfile/services/index';
+import Header from '../components/toProfile/header/index';
+import Services from '../components/toProfile/services/index';
 import styled from 'styled-components/native';
 
-const WINDOW = 'window';
-const {width} = Dimensions.get(WINDOW);
+const {width} = Dimensions.get('window');
 
 export default ({navigation}) => {
-
     return (
         <Container>
-            <Header width={width}/>
+            <Header width={width} navigation={navigation}/>
             <Services 
-                width={width}
+                width={width} 
                 click={() => navigation.navigate('Services')}
             />
         </Container>

@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { RFValue } from "react-native-responsive-fontsize";
 
 export const Banner = styled.View`
     width: ${({width}) => width + 'px'};

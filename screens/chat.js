@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Dimensions } from 'react-native';
-import Header from '../toChat/header/index';
-import Messages from '../toChat/messages/index';
-import Send from '../toChat/send/index';
+import Header from '../components/toChat/header/index';
+import Messages from '../components/toChat/messages/index';
+import Send from '../components/toChat/send/index';
 
 export default ({navigation}) => {
     return (

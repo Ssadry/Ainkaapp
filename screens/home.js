@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import HeaderToSearch from '../../components/headerToSearch/index';
-import Default from '../toHome/containers/default';
-import Searching from '../toHome/containers/searching';
+import HeaderToSearch from '../components/headerToSearch';
+import Default from '../components/toHome/containers/default';
+import Searching from '../components/toHome/containers/searching';
 import styled from 'styled-components/native';
 
 export default ({navigation}) => {

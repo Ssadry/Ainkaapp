@@ -1,6 +1,6 @@
 import React from 'react';
-import LogoContainer from '../../components/toLogin/containers/logo/index';
-import FormContainer from '../../components/toLogin/containers/form/index';
+import LogoContainer from '../components/toLogin/containers/logo';
+import FormContainer from '../components/toLogin/containers/form';
 import styled from 'styled-components/native';
 
 export default ({ navigation }) => {

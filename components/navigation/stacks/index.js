@@ -1,17 +1,17 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Login from '../../screens/login';
-import Signup from '../../screens/signup';
-import Home from '../../screens/home';
-import Profile from '../../screens/profile';
-import WatchProfile from '../../screens/watchProfile';
-import Services from '../../screens/services';
-import Chat from '../../screens/chat';
-import FavoriteProfilesAndServices from '../../screens/favoriteProfilesAndServices';
-import Tests from '../../screens/tests';
-import ChatsAndRequests from '../../screens/chatsAndRequests';
-import Request from '../../screens/request';
+import Login from '../../../screens/login';
+import Signup from '../../../screens/signup';
+import Home from '../../../screens/home';
+import Profile from '../../../screens/profile';
+import WatchProfile from '../../../screens/watchProfile';
+import Services from '../../../screens/services';
+import Chat from '../../../screens/chat';
+import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices';
+import Tests from '../../../screens/tests';
+import ChatsAndRequests from '../../../screens/chatsAndRequests';
+import Request from '../../../screens/request';
 import BottomNavigation from '../bottomNavigation';
 
 const Stack = createStackNavigator();

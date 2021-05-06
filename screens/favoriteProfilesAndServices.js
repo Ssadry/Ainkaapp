@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components/native';
-import SwitchView from '../switchView/buttons';
-import Description from '../toFavoriteProfilesAndServices/description';
-import Content from '../toFavoriteProfilesAndServices/content';
+import SwitchView from '../components/switchView/buttons';
+import Description from '../components/toFavoriteProfilesAndServices/description';
+import Content from '../components/toFavoriteProfilesAndServices/content';
 
 export default () => {
     const [currentState, setCurrentState] = useState(1);

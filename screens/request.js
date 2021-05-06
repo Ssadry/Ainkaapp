@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components/native';
-import Header from '../toRequest/header';
-import Content from '../toRequest/content';
-import Buttons from '../toRequest/buttons';
+import Header from '../components/toRequest/header';
+import Content from '../components/toRequest/content';
+import Buttons from '../components/toRequest/buttons';
 import {Dimensions, BackHandler} from 'react-native';
-import PopUp from '../popUp';
+import PopUp from '../components/popUp';
 
 export default ({navigation}) => {
     const {width} = Dimensions.get('window');

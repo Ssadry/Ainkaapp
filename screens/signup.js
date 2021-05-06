@@ -1,6 +1,6 @@
 import React from 'react';
-import Welcome from '../toSignup/welcome/index';
-import Form from '../toSignup/form/index';
+import Welcome from '../components/toSignup/welcome';
+import Form from '../components/toSignup/form';
 import styled from 'styled-components/native';
 
 export default ({navigation}) => {
