@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
 
+const width = 150, height = 150;
+
 export const Logo = styled.View`
-    width: 150px;
-    height: 150px;
+    width: ${width + 'px'};
+    height: ${height + 'px'};
     border-radius: 150px;
     overflow: hidden;
     border: 1px solid black;
@@ -11,6 +13,6 @@ export const Logo = styled.View`
 `;
 
 export const Image = styled.Image`
-    width: 90px;
-    height: 90px;
+    width: 100%;
+    height: 100%;
 `;

@@ -5,7 +5,7 @@ export const Container = styled.View`
     justify-content: center;
     align-items: center;
     width: ${({ width }) => width + 'px'};
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
 `;
 

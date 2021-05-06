@@ -3,14 +3,11 @@ import styled from 'styled-components/native';
 export const Slider = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    overflow: hidden;
 `;
 
 export const Content = styled.View`
-    flex: 1;
     flex-direction: row;
     align-items: center;
-    overflow: hidden;
 `;
 
 export const Container = styled.View`

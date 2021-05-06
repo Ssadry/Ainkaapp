@@ -21,7 +21,9 @@ export default ({searchText, click}) => {
         <Category width={elementWidth} key={8}/>,
         <Category width={elementWidth} key={9}/>,
         <Category width={elementWidth} key={10}/>,
-        <Category width={elementWidth} key={11}/>
+        <Category width={elementWidth} key={11}/>,
+        <Category width={elementWidth} key={12}/>,
+        <Category width={elementWidth} key={13}/>
     ];
 
     const profiles = [

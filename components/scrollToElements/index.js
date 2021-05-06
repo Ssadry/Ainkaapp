@@ -20,7 +20,7 @@ export default ({width, elements, display}) => {
         rightElements[i] = elements[i + amountLeftElements - 1];
 
     return (
-        <SafeAreaView style={{ flex: 1, display: display}}>
+        <SafeAreaView style={{ display: display}}>
             <ScrollView>
                 <Articles>
                     <Column width={columnWidth}>

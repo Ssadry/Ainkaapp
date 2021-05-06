@@ -1,19 +1,20 @@
 import React from 'react';
-import {Article, Image, Text} from './styled';
+import {Article, Image, Text, Container} from './styled';
 
 export default ({width, click, img, children}) => {
+    const articleWidth = width * 0.9;
+
     return (
-        <Article 
-            width={width} 
-            onPress={() => click()}
-        >
-            <Image 
-                source={img} 
-                width={width}
-            />
-            <Text>
-                {children}
-            </Text>
-        </Article>
+        <Container width={width}>        
+            <Article onPress={() => click()}>
+                <Image 
+                    source={img} 
+                    width={articleWidth}
+                />
+                <Text>
+                    {children}
+                </Text>
+            </Article>
+        </Container>
     )
 }
