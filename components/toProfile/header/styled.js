@@ -1,9 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Header = styled.View`
-    margin-top: 40px;
     width: ${({width}) => width + 'px'};
-    border: 1px solid black;
 `;
 
 export const Icons = styled.View`

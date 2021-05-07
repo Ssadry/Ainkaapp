@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import { RFValue } from "react-native-responsive-fontsize";
 
 export const Container = styled.View`
     width: ${({width}) => width + 'px'};
@@ -23,7 +22,6 @@ export const Image = styled.Image`
 `;
 
 export const Text = styled.Text`
-    font-size: ${RFValue(10, 500) + 'px'};
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin: 5px;
+    text-align: center;
 `;

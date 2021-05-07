@@ -1,12 +1,16 @@
 import React from 'react';
-import {Container, Element, Photo, TitleAndHours, Description, Title, Hours} from './styled';
+import {Container, Element, PhotoContainer, Photo, TitleAndHours, Description, Title, Hours} from './styled';
 import Icon from '../../../../../assets/icon.png';
 
-export default () => {
+export default ({width}) => {
+    const elementWidth = width * 0.9;
+
     return (
-        <Container>
-            <Element>
-                <Photo source={Icon}/>
+        <Container width={width}>
+            <Element width={elementWidth}>
+                <PhotoContainer width={elementWidth}>
+                    <Photo source={Icon}/>
+                </PhotoContainer>
                 <TitleAndHours>
                     <Title numberOfLines={1}>
                         Título del servicio

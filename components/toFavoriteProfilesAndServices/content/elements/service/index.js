@@ -17,12 +17,15 @@ import Icon from '../../../../../assets/icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-export default () => {
+export default ({width}) => {
+    const elementWidth = width * 0.90;
+    const photoWidth = elementWidth * 0.9;
+
     return (
-        <Container>
-            <Element>
+        <Container width={width}>
+            <Element width={elementWidth}>
                 <Top>
-                    <PhotoContainer>
+                    <PhotoContainer width={photoWidth}>
                         <Photo source={Icon}/>
                     </PhotoContainer>
                 </Top>

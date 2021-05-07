@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Content = styled.View`
+    display: ${({currentState, pos}) => currentState === pos ? 'flex' : 'none'};
+    width: ${({width}) => width + 'px'};
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    display: ${({currentState, pos}) => currentState === pos ? 'flex' : 'none'};
 `;

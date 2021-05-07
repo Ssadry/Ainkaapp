@@ -8,7 +8,6 @@ const WINDOW = 'window';
 const {width} = Dimensions.get(WINDOW);
 
 export default ({navigation}) => {
-
     return (
         <Container>
             <Header width={width}/>
@@ -21,7 +20,5 @@ export default ({navigation}) => {
 }
 
 export const Container = styled.View`
-    justify-content: center;
-    align-items: center;
-    width: ${width + 'px'};
+    flex: 1;
 `;

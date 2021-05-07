@@ -2,9 +2,9 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     width: ${({width}) => width + 'px'};
-    padding: 10px;
     align-items: center;
     justify-content: center;
+    flex: 1;
 `;
 
 export const Element = styled.TouchableOpacity`

@@ -2,7 +2,6 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex-direction: row;
-    margin-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
     justify-content: space-between;
@@ -10,7 +9,6 @@ export const Container = styled.View`
 `;
 
 export const GoToBackButtonContainer = styled.View`
-    margin-top: 20px;
 `;
 
 export const PhotoContainer = styled.View`

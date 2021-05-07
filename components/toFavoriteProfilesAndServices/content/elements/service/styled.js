@@ -1,26 +1,15 @@
 import styled from 'styled-components/native';
-import {Dimensions} from 'react-native';
-
-const {width} = Dimensions.get('window');
-const containerWidth = width * 0.497;
-const contentWidth = containerWidth * 0.9;
-
-const containerHeight = 400;
-const contentHeight = containerHeight * 0.9;
-
-const containerPhotoSize = contentWidth * 0.7;
 
 export const Container = styled.View`
-    width: ${containerWidth + 'px'};
-    height: ${containerHeight + 'px'};
+    width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
 `;
 
 export const Element = styled.View`
-    width: ${contentWidth + 'px'};
-    height: ${contentHeight + 'px'};
-    border: 1px solid black;     
+    width: ${({width}) => width + 'px'};
+    border-width: 1px;
+    margin: 10px;
     overflow: hidden;
 `;
 
@@ -37,19 +26,19 @@ export const Bottom = styled.View`
 `;
 
 export const PhotoContainer = styled.View`
-    height: ${containerPhotoSize + 'px'};
-    width: ${containerPhotoSize + 'px'};
     overflow: hidden;
     border-radius: 600px;
     border: 1px solid black;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    width: ${({width}) => width + 'px'};
+    height: ${({width}) => width + 'px'};
 `;
 
 export const Photo = styled.Image`
-    width: ${containerPhotoSize + 'px'};
-    height: ${containerPhotoSize + 'px'};
+    width: 100%;
+    height: 100%;
 `;
 
 export const UserName = styled.Text`

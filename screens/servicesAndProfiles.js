@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Dimensions, View } from 'react-native';
+import { Dimensions } from 'react-native';
 import HeaderToSearch from '../headerToSearch/index';
 import SwitchButton from '../switchView/buttons';
 import Content from '../toServicesAndProfiles/content/index';
+import styled from 'styled-components/native';
 
 export default () => {
     const { width } = Dimensions.get('window');
@@ -10,7 +11,7 @@ export default () => {
     const [searchText, setSearchText] = useState(true);
 
     return (
-        <View style={{ flex: 1 }}>
+        <Container>
             <HeaderToSearch 
                 searchText={searchText} 
                 setSearchText={setSearchText}
@@ -25,6 +26,10 @@ export default () => {
                 width={width}
                 currentState={currentState}
             />
-        </View>
+        </Container>
     );
 }
+
+export const Container = styled.View`
+    flex: 1;
+`;

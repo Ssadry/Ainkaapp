@@ -20,9 +20,15 @@ export default ({ width, click }) => {
 
     return (
         <Container width={width}>
-            <Element width={elementWidth} onPress={() => click()}>
+            <Element 
+                width={elementWidth} 
+                onPress={() => click()}
+            >
                 <ImageContainer width={imageWidth}>
-                    <Image source={Icon} width={imageWidth} />
+                    <Image 
+                        source={Icon} 
+                        width={imageWidth}
+                    />
                 </ImageContainer>
                 <Name>
                     Nombre de usuario

@@ -1,41 +1,36 @@
 import React, {useState} from 'react';
-import {Container, Categories, Profiles, Content} from './styled';
+import {Container, Content} from './styled';
 import Category from './elements/category';
 import Profile from './elements/profile';
 import SwitchButtons from '../../../switchView/buttons';
 import {ScrollView, Dimensions} from 'react-native';
 
+const types = {
+    CATEGORY : 'category',
+    PROFILE : 'profile'
+}
+
 export default ({searchText, click}) => {
     const {width} = Dimensions.get('window');
     const elementWidth = width * 0.5;
+
+    const createArray = (type, amount) => {
+        const arr = [amount];
+        switch(type) {
+            case types.CATEGORY:
+                for (let i = 0; i < amount; i++) arr[i] = <Category width={elementWidth} key={i}/>
+                break;
+            case types.PROFILE:
+                for (let i = 0; i < amount; i++) arr[i] = <Profile width={elementWidth} key={i} click={click}/>
+                break;
+        }
+        return arr;
+    }
+    
     const [currentState, setCurrentState] = useState(0);
 
-    const categories = [
-        <Category width={elementWidth} key={0}/>,
-        <Category width={elementWidth} key={1}/>,
-        <Category width={elementWidth} key={2}/>,
-        <Category width={elementWidth} key={3}/>,
-        <Category width={elementWidth} key={5}/>,
-        <Category width={elementWidth} key={6}/>,
-        <Category width={elementWidth} key={7}/>,
-        <Category width={elementWidth} key={8}/>,
-        <Category width={elementWidth} key={9}/>,
-        <Category width={elementWidth} key={10}/>,
-        <Category width={elementWidth} key={11}/>,
-        <Category width={elementWidth} key={12}/>,
-        <Category width={elementWidth} key={13}/>
-    ];
-
-    const profiles = [
-        <Profile width={elementWidth} key={0} click={click}/>,
-        <Profile width={elementWidth} key={1} click={click}/>,
-        <Profile width={elementWidth} key={2} click={click}/>,
-        <Profile width={elementWidth} key={3} click={click}/>,
-        <Profile width={elementWidth} key={4} click={click}/>,
-        <Profile width={elementWidth} key={5} click={click}/>,
-        <Profile width={elementWidth} key={6} click={click}/>,
-        <Profile width={elementWidth} key={7} click={click}/>
-    ];
+    const categories = createArray(types.CATEGORY, 13);
+    const profiles = createArray(types.PROFILE, 7);
 
     return (
         <Container searchText={searchText}>
@@ -46,23 +41,21 @@ export default ({searchText, click}) => {
                 rightText={'Perfiles'}
             />
             <ScrollView>
-                <Content>
-                    <Categories 
-                        currentState={currentState}
-                        pos={0}
-                    >
-                        {
-                            categories.map(category => category)
-                        }
-                    </Categories>
-                    <Profiles 
-                        currentState={currentState}
-                        pos={1}
-                    >
-                        {
-                            profiles.map(profile => profile)
-                        }
-                    </Profiles>
+                <Content 
+                    currentState={currentState}
+                    pos={0}
+                >
+                    {
+                        categories.map(category => category)
+                    }
+                </Content>
+                <Content 
+                    currentState={currentState}
+                    pos={1}
+                >
+                    {
+                        profiles.map(profile => profile)
+                    }
                 </Content>
             </ScrollView>
         </Container>

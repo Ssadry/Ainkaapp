@@ -1,35 +1,21 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
-import {Container, Lateral} from './styled';
+import {Container} from './styled';
 import Element from './element/index';
 
 export default ({width, click}) => {
-    const lateralWidth = width * 0.5;
+    const halfWidth = width * 0.5;
+
+    const amountElements = 23;
+    const elements = [amountElements];
+    for (let i = 0; i < amountElements; i++) elements[i] = <Element key={i} click={click} width={halfWidth}/>
 
     return (
         <ScrollView>
             <Container width={width}>
-                <Lateral width={lateralWidth}>
-                    <Element key={0} click={click}/>
-                    <Element key={1} click={click}/>
-                    <Element key={2} click={click}/>
-                    <Element key={3} click={click}/>
-                    <Element key={4} click={click}/>
-                    <Element key={5} click={click}/>
-                    <Element key={6} click={click}/>
-                    <Element key={7} click={click}/>
-                    <Element key={8} click={click}/>
-                    <Element key={9} click={click}/> 
-                </Lateral>
-                <Lateral width={lateralWidth}>
-                    <Element key={0} click={click}/>
-                    <Element key={1} click={click}/>
-                    <Element key={2} click={click}/>
-                    <Element key={3} click={click}/>
-                    <Element key={4} click={click}/>
-                    <Element key={5} click={click}/>
-                    <Element key={6} click={click}/>
-                </Lateral>
+                {
+                    elements.map(element => element)
+                }
             </Container>
         </ScrollView>
     )

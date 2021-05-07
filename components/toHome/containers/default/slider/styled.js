@@ -5,13 +5,11 @@ export const Slider = styled.View`
     justify-content: space-between;
     margin-bottom: 10px;
     border-bottom-width: 1px;
-    background-color: red;
 `;
 
 export const Content = styled.View`
     flex-direction: row;
     align-items: center;
-    background-color: green;
 `;
 
 export const Container = styled.View`

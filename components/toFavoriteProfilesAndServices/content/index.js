@@ -1,42 +1,52 @@
 import React from 'react';
-import {Container} from './styled';
+import {Content} from './styled';
 import Profile from './elements/profile';
 import Service from './elements/service';
-import {ScrollView} from 'react-native';
+import {ScrollView, Dimensions} from 'react-native';
+
+const contentWidth = Dimensions.get('window').width;
+const elementWidth = contentWidth * 0.5;
+
+const type = {
+    PROFILE : 'profile',
+    SERVICE : 'service'
+}
+
+const getArray = (component, len) => {
+    const arr = [len];
+
+    switch (component) {
+        case type.PROFILE:
+            for (let i = 0; i < len; i++) arr[i] = <Profile key={i} width={elementWidth}/>;
+            break;
+        case type.SERVICE:
+            for (let i = 0; i < len; i++) arr[i] = <Service key={i} width={elementWidth}/>;
+            break;
+    }
+
+    return arr;
+}
 
 export default ({currentState}) => {
-    const profiles = [
-        <Profile key={0}/>,
-        <Profile key={1}/>,
-        <Profile key={2}/>,
-        <Profile key={3}/>,
-        <Profile key={4}/>,
-        <Profile key={5}/>,
-        <Profile key={6}/>,
-        <Profile key={7}/>,
-        <Profile key={8}/>
-    ]
-
-    const services = [
-        <Service key={0}/>,
-        <Service key={1}/>,
-        <Service key={2}/>,
-        <Service key={3}/>,
-        <Service key={4}/>,
-        <Service key={5}/>,
-        <Service key={6}/>,
-        <Service key={7}/>,
-        <Service key={8}/>
-    ]
+    const profiles = getArray(type.PROFILE, 13);
+    const services = getArray(type.SERVICE, 15);
     
     return (
-        <ScrollView>
-            <Container currentState={currentState} pos={0}>
-                {profiles.map(profile => profile)}
-            </Container>
-            <Container currentState={currentState} pos={1}>
+        <ScrollView style={{flex: 1}}>
+            <Content 
+                currentState={currentState} 
+                pos={1}
+                width={contentWidth}
+            >
                 {services.map(service => service)}
-            </Container>
+            </Content>
+            <Content 
+                currentState={currentState} 
+                pos={0}
+                width={contentWidth}
+            >
+                {profiles.map(profile => profile)}
+            </Content>
         </ScrollView>
     )
 }

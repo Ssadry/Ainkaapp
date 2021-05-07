@@ -14,7 +14,7 @@ export default ({width, click, img, children}) => {
                     source={img} 
                     width={articleWidth}
                 />
-                <Text>
+                <Text adjustsFontSizeToFit={true}>
                     {children}
                 </Text>
             </Article>
