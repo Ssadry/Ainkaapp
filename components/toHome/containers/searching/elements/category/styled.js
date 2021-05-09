@@ -3,12 +3,14 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     justify-content: center;
     align-items: center;
+    border-width: 1px;
 `;
 
 export const Element = styled.View`
     justify-content: center;
     align-items: center;
     border-width: 1px;
+    margin: 10px;
 `;
 
 export const ImageContainer = styled.View`
@@ -23,8 +25,8 @@ export const ImageContainer = styled.View`
 `;
 
 export const Image = styled.Image`
-    width: ${({width}) => width + 'px'};
-    height: ${({width}) => width + 'px'};
+    width: 100%;
+    height: 100%;
 `;
 
 export const Text = styled.Text`

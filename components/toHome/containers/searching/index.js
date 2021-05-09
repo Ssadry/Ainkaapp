@@ -11,6 +11,7 @@ const types = {
 }
 
 export default ({searchText, click}) => {
+    const [currentState, setCurrentState] = useState(0);
     const {width} = Dimensions.get('window');
     const elementWidth = width * 0.5;
 
@@ -26,8 +27,6 @@ export default ({searchText, click}) => {
         }
         return arr;
     }
-    
-    const [currentState, setCurrentState] = useState(0);
 
     const categories = createArray(types.CATEGORY, 13);
     const profiles = createArray(types.PROFILE, 7);
@@ -40,22 +39,18 @@ export default ({searchText, click}) => {
                 leftText={'Categorías'}
                 rightText={'Perfiles'}
             />
-            <ScrollView>
+            <ScrollView style={{flex: 1, borderWidth: 1}}>
                 <Content 
                     currentState={currentState}
                     pos={0}
                 >
-                    {
-                        categories.map(category => category)
-                    }
+                    {categories.map(category => category)}
                 </Content>
                 <Content 
                     currentState={currentState}
                     pos={1}
                 >
-                    {
-                        profiles.map(profile => profile)
-                    }
+                    {profiles.map(profile => profile)}
                 </Content>
             </ScrollView>
         </Container>

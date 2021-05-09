@@ -16,7 +16,7 @@ export default ({ width }) => {
         <Container width={width}>
             <Element width={elementWidth}>
                 <ImageContainer width={imageWidth}>
-                    <Image source={Icon} width={imageWidth} />
+                    <Image source={Icon}/>
                 </ImageContainer>
                 <Text>
                     Categoría
