@@ -3,13 +3,12 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     justify-content: center;
     align-items: center;
-    border-width: 1px;
+    margin-top: 1px;
 `;
 
 export const Element = styled.View`
     justify-content: center;
     align-items: center;
-    border-width: 1px;
     margin: 10px;
 `;
 

@@ -30,7 +30,7 @@ export default ({state,
                                 setPopUpIsVisible(false);
                                 navigation.navigate(route.name);
                             } else {
-                                setPopUpIsVisible(!popUpIsVisible);
+                                setPopUpIsVisible(true);
                             }
                         };
             

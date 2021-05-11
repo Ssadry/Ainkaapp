@@ -11,7 +11,6 @@ const {width} = Dimensions.get(WINDOW);
 const {height} = Dimensions.get(WINDOW);
 
 export default () => {
-
     return (
         <Container>
             <Provider>

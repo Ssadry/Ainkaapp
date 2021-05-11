@@ -4,14 +4,14 @@ export const Container = styled.View`
     width: ${({width}) => width + 'px'};
     align-items: center;
     justify-content: center;
-    flex: 1;
+    margin-top: 10px;
 `;
 
 export const Element = styled.TouchableOpacity`
     width: ${({width}) => width + 'px'};
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    border-width: 1px;
 `;
 
 export const ImageContainer = styled.View`

@@ -1,7 +1,6 @@
 import {Dimensions, Text} from 'react-native';
 import React, {lazy, Suspense} from 'react';
 import Header from '../components/toProfile/header';
-//import Services from '../components/toProfile/services';
 import styled from 'styled-components/native';
 
 const LazyServices = lazy(() => import('../components/toProfile/services'));

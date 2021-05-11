@@ -2,11 +2,10 @@ import React, {lazy, Suspense} from 'react';
 import {Container} from './styled';
 import Banner from './banner';
 import Slider from './slider';
-//import Content from './content';
 import {Dimensions, Text} from 'react-native';
 
-const WINDOW = 'window';
 const LazyContent = lazy(() => import('./content'));
+const WINDOW = 'window';
 
 export default ({searchText, navigation}) => {
     const screenSize = {

@@ -69,10 +69,8 @@ export default ({width, click}) => {
 
     return (
         <ScrollView>
-            <Container width={width}>
-                {
-                    articles.map(article => article)
-                }
+            <Container>
+                {articles.map(article => article)}
             </Container>
         </ScrollView>
     )

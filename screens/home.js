@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, lazy, Suspense} from 'react';
 import HeaderToSearch from '../components/headerToSearch';
-import Default from '../components/toHome/containers/default';
-import Searching from '../components/toHome/containers/searching';
 import styled from 'styled-components/native';
+import {Text} from 'react-native';
+
+const LazyDefault = lazy(() => import('../components/toHome/containers/default'));
+const LazySearching = lazy(() => import('../components/toHome/containers/searching'));
 
 export default ({navigation}) => {
     const [searchText, setSearchText] = useState('');
@@ -13,14 +15,18 @@ export default ({navigation}) => {
                 setSearchText={setSearchText} 
                 click={() => navigation.navigate('Profile')}
             />
-            <Default 
-                searchText={searchText}
-                navigation={navigation}
-            />
-            <Searching 
-                searchText={searchText} 
-                click={() => navigation.navigate('WatchProfile')}
-            />
+            <Suspense fallback={<Text>Cargando...</Text>}>
+                <LazyDefault 
+                    searchText={searchText}
+                    navigation={navigation}
+                />
+            </Suspense>
+            <Suspense fallback={<Text>Cargando...</Text>}>
+                <LazySearching 
+                    searchText={searchText} 
+                    click={() => navigation.navigate('WatchProfile')}
+                />
+            </Suspense>
         </Container>
     )
 };

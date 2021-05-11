@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, lazy, Suspense} from 'react';
 import {Container, Content} from './styled';
-import Category from './elements/category';
-import Profile from './elements/profile';
 import SwitchButtons from '../../../switchView/buttons';
-import {ScrollView, Dimensions} from 'react-native';
+import {ScrollView, Dimensions, Text} from 'react-native';
+
+const LazyCategory = lazy(() => import('./elements/category'));
+const LazyProfile = lazy(() => import('./elements/profile'));
 
 const types = {
     CATEGORY : 'category',
@@ -19,10 +20,10 @@ export default ({searchText, click}) => {
         const arr = [amount];
         switch(type) {
             case types.CATEGORY:
-                for (let i = 0; i < amount; i++) arr[i] = <Category width={elementWidth} key={i}/>
+                for (let i = 0; i < amount; i++) arr[i] = <LazyCategory width={elementWidth} key={i}/>
                 break;
             case types.PROFILE:
-                for (let i = 0; i < amount; i++) arr[i] = <Profile width={elementWidth} key={i} click={click}/>
+                for (let i = 0; i < amount; i++) arr[i] = <LazyProfile width={elementWidth} key={i} click={click}/>
                 break;
         }
         return arr;
@@ -39,19 +40,23 @@ export default ({searchText, click}) => {
                 leftText={'Categorías'}
                 rightText={'Perfiles'}
             />
-            <ScrollView style={{flex: 1, borderWidth: 1}}>
-                <Content 
-                    currentState={currentState}
-                    pos={0}
-                >
-                    {categories.map(category => category)}
-                </Content>
-                <Content 
-                    currentState={currentState}
-                    pos={1}
-                >
-                    {profiles.map(profile => profile)}
-                </Content>
+            <ScrollView>
+                <Suspense fallback={<Text>Cargando categorías...</Text>}>
+                    <Content 
+                        currentState={currentState}
+                        pos={0}
+                    >
+                        {categories.map(category => category)}
+                    </Content>
+                </Suspense>
+                <Suspense fallback={<Text>Cargando perfiles...</Text>}>
+                    <Content 
+                        currentState={currentState}
+                        pos={1}
+                    >
+                        {profiles.map(profile => profile)}
+                    </Content>
+                </Suspense>
             </ScrollView>
         </Container>
     )
