@@ -6,7 +6,7 @@ import { Text, TouchableOpacity, BackHandler } from 'react-native';
 
 export default ({navigation}) => {
 
-    function handleBackButtonClick() {
+    const handleBackButtonClick = () => {
         if (navigation != undefined)
             navigation.goBack();
         return true;
