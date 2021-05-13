@@ -21,12 +21,12 @@ export default () => {
 
     return (
         <Container>
-            <Animated.View style={[{transform: [{translateY: bottomValue}]}]}>
+            <Animated.View style={[{transform: [{translateY: height}]}]}>
                 <Pop/>
             </Animated.View>
             <Button onPress={() => {
                 height *= -1;
-                move(height);
+                move(0);
             }}>
                 <Text>
                     Mover
@@ -37,10 +37,14 @@ export default () => {
 }
 
 export const Pop = () => {
-    const algo = () => alert("xd");
+    const [popIsVisible, setPopIsVisible] = useState(false);
+    
+
     return (
-        <ContainerPop onPress={() => alert('xd')}>
-            <Close onPress={algo}/>
+        <ContainerPop 
+            onPress={() => alert('cyan')}
+        >
+            <Close onPress={() => alert('rojo')}/>
             <ContentPop>
                 Hola :)
             </ContentPop>
@@ -57,9 +61,9 @@ export const Container = styled.View`
 export const ContainerPop = styled.TouchableOpacity`
     width: ${width + 'px'};
     height: ${height + 'px'};
-    background-color: cyan;
+    background-color: green;
     position: relative;
-    bottom: ${0 + 'px'};
+    bottom: ${-height + 'px'};
     justify-content: center;
     align-items: center;
 `;
