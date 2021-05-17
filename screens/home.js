@@ -1,32 +1,27 @@
-import React, {useState, lazy, Suspense} from 'react';
+import React from 'react';
 import HeaderToSearch from '../components/headerToSearch';
 import styled from 'styled-components/native';
-import {Text} from 'react-native';
-
-const LazyDefault = lazy(() => import('../components/toHome/containers/default'));
-const LazySearching = lazy(() => import('../components/toHome/containers/searching'));
+import Default from '../components/toHome/containers/default';
+import Searching from '../components/toHome/containers/searching';
 
 export default ({navigation}) => {
-    const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = React.useState('');
 
     return (
         <Container>
             <HeaderToSearch 
                 setSearchText={setSearchText} 
-                click={() => navigation.navigate('Profile')}
+                click={_ => navigation.navigate('Profile')}
             />
-            <Suspense fallback={<Text>Cargando...</Text>}>
-                <LazyDefault 
-                    searchText={searchText}
-                    navigation={navigation}
-                />
-            </Suspense>
-            <Suspense fallback={<Text>Cargando...</Text>}>
-                <LazySearching 
-                    searchText={searchText} 
-                    click={() => navigation.navigate('WatchProfile')}
-                />
-            </Suspense>
+            <Default 
+                searchText={searchText}
+                navigation={navigation}
+            />
+            {/* El componente 'Searching' solo se visualiza cuando se escribe algo en el buscador. */}
+            <Searching 
+                searchText={searchText} 
+                click={_ => navigation.navigate('WatchProfile')}
+            />
         </Container>
     )
 };

@@ -1,27 +1,35 @@
 import React from 'react';
-import { Container, Button, Text } from './styled';
+import { Container, Button, Text, BottomLine } from './styled';
+import { Dimensions } from 'react-native';
 
-export default ({ currentState, setCurrentState, leftText, rightText }) => {
+const {width} = Dimensions.get('window');
+
+export default ({ currentState, setCurrentState, allTexts }) => {    
+    const buttonWidth = width / allTexts.length * 0.7;
+
     return (
-        <Container>
-            <Button
-                onPress={() => setCurrentState(0)}
-                currentState={currentState}
-                pos={0}
-            >
-                <Text>
-                    {leftText}
-                </Text>
-            </Button>
-            <Button
-                onPress={() => setCurrentState(1)}
-                currentState={currentState}
-                pos={1}
-            >
-                <Text>
-                    {rightText}
-                </Text>
-            </Button>
+        <Container width={width}>
+            {
+                allTexts.map((text, i) => 
+                    <Button
+                        key={i}
+                        onPress={_ => setCurrentState(i)}
+                        width={buttonWidth}
+                    >
+                        <Text 
+                            currentState={currentState}
+                            pos={i}
+                        >
+                            {text}
+                        </Text>
+                        <BottomLine 
+                            width={buttonWidth}
+                            pos={i}
+                            currentState={currentState}
+                        />
+                    </Button>
+                )
+            }
         </Container>
     )
 }

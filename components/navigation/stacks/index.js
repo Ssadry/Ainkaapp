@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
 export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='Login' component={Login}/>
+      {/* <Stack.Screen name='Login' component={Login}/>
       <Stack.Screen name='Singup' component={Signup}/>
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Profile' component={Profile}/>
@@ -28,7 +28,8 @@ export default () => {
       <Stack.Screen name='Chat' component={Chat}/>
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Request' component={Request}/>
-      <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/>
+      <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/> */}
+      <Stack.Screen name='Home' component={Home}/>
     </Stack.Navigator>
   );
 }

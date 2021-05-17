@@ -30,43 +30,45 @@
 // `;
 
 import React from 'react';
-import {Platform, StatusBar, Animated} from 'react-native';
-import styled from 'styled-components/native';
+import {View, Text} from 'react-native';
 
 export default () => {
+    const arr = [
+        <ToArray/>,
+        <ToArray/>,
+        <ToArray/>,
+        <ToArray/>,
+    ];
     return (
-        <Container 
-            statusBarHeight={StatusBar.currentHeight}
-            platform={Platform.OS}
-        >
-            <Content>
-                <Button onPress={() => alert('xd')}>
-                    <TextButton>
-                        Púlsame
-                    </TextButton>
-                </Button>
-            </Content>
-        </Container>
+        <View style={{justifyContent: 'center', alignItems: 'center', paddingTop: 40}}>
+            <AnotherComponent arr={arr}/>
+        </View>
     )
 }
 
-export const Container = styled.SafeAreaView`
-    padding-top: ${({statusBarHeight, platform}) => platform === 'android' ? statusBarHeight + 'px' : 0 + 'px'};
-    flex: 1;
-`;
+export const AnotherComponent = ({arr}) => {
+    return (
+        <View>
+            <Text>
+                {
+                    arr.map((num, i) => {
+                        const v = 700;
+                        num.props.width = v;
+console.log(num)
+                        return num
+                    })
+                }
+            </Text>
+        </View>
+    )
+}
 
-export const Content = styled.View`
-    flex: 1;
-    background-color: cyan;
-`;
-
-export const Button = styled.TouchableOpacity`
-    background-color: white;
-    border-width: 1px; 
-`;
-
-export const TextButton = styled.Text`
-    font-size: 20px;
-    text-align: center;
-    margin: 20px;
-`;
+export const ToArray = ({width}) => {
+    return (
+        <View style={{width: width, backgroundColor: 'cyan', borderWidth: 1, justifyContent: 'center', alignItems: 'center'}}>
+            <Text>
+                Andry
+            </Text>
+        </View>
+    )
+}
