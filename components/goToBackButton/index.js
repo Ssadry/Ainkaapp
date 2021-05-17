@@ -5,23 +5,24 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { Text, TouchableOpacity, BackHandler } from 'react-native';
 
 export default ({navigation}) => {
+    const HARDWARE_BACK_PRESS = React.useRef('hardwareBackPress');
 
-    const handleBackButtonClick = () => {
-        if (navigation != undefined)
-            navigation.goBack();
+    const handleBackButtonClick = _ => {
+        console.log(navigation)
+        navigation.goBack();
         return true;
     }
     
     useEffect(() => {
-        BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);
+        BackHandler.addEventListener(HARDWARE_BACK_PRESS, handleBackButtonClick);
         return () => {
-            BackHandler.removeEventListener('hardwareBackPress', handleBackButtonClick);
+            BackHandler.removeEventListener(HARDWARE_BACK_PRESS, handleBackButtonClick);
         };
     }, []);
 
     return (
         <Container>
-            <TouchableOpacity onPress={() => handleBackButtonClick()}>
+            <TouchableOpacity onPress={handleBackButtonClick}>
                 <Text>
                     <FontAwesomeIcon icon={faArrowLeft} size={20}/>
                 </Text>

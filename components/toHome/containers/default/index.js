@@ -8,6 +8,8 @@ const LazyContent = lazy(() => import('./content'));
 const WINDOW = 'window';
 
 export default ({searchText, navigation}) => {
+
+    
     const screenSize = {
         width : Dimensions.get(WINDOW).width,
         height : Dimensions.get(WINDOW).height
