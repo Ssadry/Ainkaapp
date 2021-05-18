@@ -1,19 +1,14 @@
 import React from 'react';
 import {Container} from './styled';
 
-export default ({width, currentState, contentState, columns, children}) => {
-    const elementWidth = width / columns;
-
+export default ({width, currentState, contentState, children}) => {
     return (
         <Container
             width={width}
             currentState={currentState}
             contentState={contentState}
         >
-            {children.map(element => {
-                // element.width = elementWidth + 'px';
-                return element;
-            })}
+            {children.map(element => element)}
         </Container>
     )
 }

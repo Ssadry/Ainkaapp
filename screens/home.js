@@ -5,7 +5,7 @@ import Default from '../components/toHome/containers/default';
 import Searching from '../components/toHome/containers/searching';
 
 export default ({navigation}) => {
-    const [searchText, setSearchText] = React.useState('');
+    const [searchText, setSearchText] = React.useState('andry');
 
     return (
         <Container>

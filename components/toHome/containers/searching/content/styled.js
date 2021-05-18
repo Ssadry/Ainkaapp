@@ -6,4 +6,6 @@ export const Container = styled.View`
     display: ${({currentState, contentState}) => currentState === contentState ? 'flex' : 'none'};
     flex: 1;
     width: ${({width}) => width + 'px'};
+    justify-content: center;
+    align-items: center;
 `;

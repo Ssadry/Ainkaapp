@@ -10,16 +10,19 @@ const LazyNeed = lazy(_ => import ('./elements/need'));
 
 const types = {
     CATEGORY : {
-        NAME : 'Categorías',
-        AMOUNT : 13
+        NAME : 'category',
+        AMOUNT : 23,
+        COLUMNS : 3
     },
     NEED : {
-        NAME : 'Necesidades',
-        AMOUNT : 9
+        NAME : 'need',
+        AMOUNT : 9,
+        COLUMNS : 2
     },
     PROFILE : {
-        NAME : 'Perfiles',
-        AMOUNT : 17
+        NAME : 'profile',
+        AMOUNT : 17,
+        COLUMNS: 2
     },
 }
 
@@ -27,20 +30,24 @@ const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const {width} = Dimensions.get('window');
 
 export default ({searchText, click}) => {
-    const [currentState, setCurrentState] = useState(0);
+    const [currentState, setCurrentState] = useState(1);
 
     const createArray = (type, amount) => {
         const arr = [amount];
+        let elementWidth;
         
         switch(type) {
             case types.CATEGORY.NAME:
-                for (let i = 0; i < amount; i++) arr[i] = <LazyCategory key={i}/>
+                elementWidth = width / types.CATEGORY.COLUMNS * 0.8;
+                for (let i = 0; i < amount; i++) arr[i] = <LazyCategory width={elementWidth} key={i}/>
                 break;
             case types.NEED.NAME:
-                for (let i = 0; i < amount; i++) arr[i] = <LazyNeed key={i}/>
+                elementWidth = width / types.NEED.COLUMNS * 0.9;
+                for (let i = 0; i < amount; i++) arr[i] = <LazyNeed width={elementWidth} key={i}/>
                 break;
             case types.PROFILE.NAME:
-                for (let i = 0; i < amount; i++) arr[i] = <LazyProfile key={i} click={click}/>
+                elementWidth = width / types.PROFILE.COLUMNS * 0.8;
+                for (let i = 0; i < amount; i++) arr[i] = <LazyProfile width={elementWidth} key={i} click={click}/>
                 break;
         }
         return arr;
@@ -63,7 +70,6 @@ export default ({searchText, click}) => {
                         width={width}
                         currentState={currentState}
                         contentState={0}
-                        columns={3}
                     >
                         {categories}
                     </Content>
@@ -73,7 +79,6 @@ export default ({searchText, click}) => {
                         width={width}
                         currentState={currentState}
                         contentState={1}
-                        columns={2}
                     >
                         {needs}
                     </Content>
@@ -83,7 +88,6 @@ export default ({searchText, click}) => {
                         width={width}
                         currentState={currentState}
                         contentState={2}
-                        columns={3}
                     >
                         {profiles}
                     </Content>
