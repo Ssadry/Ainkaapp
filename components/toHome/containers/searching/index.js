@@ -30,7 +30,7 @@ const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const {width} = Dimensions.get('window');
 
 export default ({searchText, click}) => {
-    const [currentState, setCurrentState] = useState(1);
+    const [currentState, setCurrentState] = useState(2);
 
     const createArray = (type, amount) => {
         const arr = [amount];
@@ -38,7 +38,7 @@ export default ({searchText, click}) => {
         
         switch(type) {
             case types.CATEGORY.NAME:
-                elementWidth = width / types.CATEGORY.COLUMNS * 0.8;
+                elementWidth = width / types.CATEGORY.COLUMNS * 0.9;
                 for (let i = 0; i < amount; i++) arr[i] = <LazyCategory width={elementWidth} key={i}/>
                 break;
             case types.NEED.NAME:
@@ -46,7 +46,7 @@ export default ({searchText, click}) => {
                 for (let i = 0; i < amount; i++) arr[i] = <LazyNeed width={elementWidth} key={i}/>
                 break;
             case types.PROFILE.NAME:
-                elementWidth = width / types.PROFILE.COLUMNS * 0.8;
+                elementWidth = width / types.PROFILE.COLUMNS * 0.9;
                 for (let i = 0; i < amount; i++) arr[i] = <LazyProfile width={elementWidth} key={i} click={click}/>
                 break;
         }

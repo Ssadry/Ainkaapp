@@ -39,7 +39,6 @@ export const BottomRight = styled.View`
 export const Title = styled.Text`
     color: white;
     width: ${({width}) => width + 'px'};
-    text-align: center;
 `;
 
 export const HoursContainer = styled.View`

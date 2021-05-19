@@ -4,21 +4,29 @@ export const Container = styled.View`
     width: ${({width}) => width + 'px'};
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
 `;
 
-export const Element = styled.TouchableOpacity`
+export const Content = styled.TouchableOpacity`
     width: ${({width}) => width + 'px'};
     align-items: center;
     justify-content: center;
     border-width: 1px;
+    margin: 20px;
+    border-radius: ${({width}) => width * 0.05 + 'px'};
+`;
+
+export const BookMark = styled.View`
+    width: ${({width}) => width + 'px'};
+    align-items: flex-end;
+    margin-right: 10px;
+    margin-top: 10px;
 `;
 
 export const ImageContainer = styled.View`
     width: ${({width}) => width + 'px'};
     height: ${({width}) => width + 'px'};
     border: 1px solid black;
-    border-radius: 100px;
+    border-radius: ${({width}) => width * 0.2 + 'px'};
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -35,26 +43,22 @@ export const Name = styled.Text`
 
 `;
 
-export const StarsContainer = styled.View`
-    margin-bottom: 10px;
-    margin-top: 10px;
-    flex-direction: row;
-`;
-
-export const Description = styled.Text`
-
-`;
-
 export const InterestsContainer = styled.View`
+    width: ${({width}) => width + 'px'};
     margin-bottom: 10px;
     margin-top: 10px;
     flex-direction: row;
+    justify-content: space-evenly;
 `;
 
-export const Interests = styled.Text`
-    text-align: center;
-    border: 1px solid black;
-    margin: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+export const InterestsContent = styled.View`
+    width: ${({width}) => width + 'px'};
+    height: ${({width}) => width + 'px'};
+    border-width: 1px;
+    overflow: hidden;
+`;
+
+export const InterestImage = styled.Image`
+    width: 100%;
+    height: 100%;
 `;

@@ -17,7 +17,7 @@ export default ({width}) => {
                     width={contentWidth}
                 >
                     <BookMark>
-                        <FontAwesomeIcon icon={faBookmark}/>
+                        <FontAwesomeIcon icon={faBookmark} color='gray'/>
                     </BookMark>
                 </Top>
                 <Bottom onLayout={({nativeEvent}) => {
@@ -29,13 +29,11 @@ export default ({width}) => {
                         numberOfLines={2}
                         width={titleWidth}
                     >
-                        Título necesidad
+                        Título de la necesidad
                     </Title>
                     <BottomRight width={brWidth}>
                         <HoursContainer width={brWidth * 0.5}>
-                            <HoursText
-                                numberOfLines={1}
-                            >
+                            <HoursText numberOfLines={1}>
                                 1h
                             </HoursText>
                         </HoursContainer>
