@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Login from '../../../screens/login';
 import Signup from '../../../screens/signup';
 import Home from '../../../screens/home';
+import WatchMoreItems from '../../../screens/watchMoreItems';
 import Profile from '../../../screens/profile';
 import WatchProfile from '../../../screens/watchProfile';
 import Services from '../../../screens/services';
@@ -30,6 +31,10 @@ export default () => {
       <Stack.Screen name='Request' component={Request}/>
       <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/> */}
       <Stack.Screen name='Home' component={Home}/>
+      <Stack.Screen 
+        name='WatchMoreItems' 
+        component={WatchMoreItems}
+      />
     </Stack.Navigator>
   );
 }

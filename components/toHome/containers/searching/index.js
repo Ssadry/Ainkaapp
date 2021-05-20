@@ -30,7 +30,7 @@ const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const {width} = Dimensions.get('window');
 
 export default ({searchText, click}) => {
-    const [currentState, setCurrentState] = useState(2);
+    const [currentState, setCurrentState] = useState(1);
 
     const createArray = (type, amount) => {
         const arr = [amount];
@@ -43,7 +43,7 @@ export default ({searchText, click}) => {
                 break;
             case types.NEED.NAME:
                 elementWidth = width / types.NEED.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = <LazyNeed width={elementWidth} key={i}/>
+                for (let i = 0; i < amount; i++) arr[i] = <LazyNeed width={elementWidth} key={i} title={'Título de una necesidad'}/>
                 break;
             case types.PROFILE.NAME:
                 elementWidth = width / types.PROFILE.COLUMNS * 0.9;

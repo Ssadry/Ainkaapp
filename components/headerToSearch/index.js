@@ -1,24 +1,18 @@
 import React from 'react';
-import { Container, Profile, Hours, SearchBarContainer, ProfileContainer } from './styled';
+import { Container } from './styled';
 import SearchBar from './searchBar/index';
-import {Dimensions} from 'react-native';
 
-const {width} = Dimensions.get('window');
-const searchBarWidth = width * 0.8;
+export default ({ searchText, setSearchText, width, click }) => {
+    const searchBarContainerWidth = width * 0.8;
 
-export default ({ searchText, setSearchText, click }) => (
-    <Container width={width}>
-        <SearchBarContainer>
+    return (
+        <Container width={width}>
             <SearchBar 
-                width={searchBarWidth}
+                width={searchBarContainerWidth}
                 setText={setSearchText}
                 searchText={searchText}
+                click={click}
             />
-        </SearchBarContainer>
-        <ProfileContainer onPress={_ => click()}>
-            <Profile>
-                <Hours>10 H</Hours>
-            </Profile>
-        </ProfileContainer>
-    </Container>
-)
+        </Container>
+    )
+}

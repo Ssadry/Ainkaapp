@@ -4,7 +4,7 @@ import Icon from '../../../../../../assets/icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBookmark, faLink } from '@fortawesome/free-solid-svg-icons';
 
-export default ({width}) => {
+export default ({width, title}) => {
     const contentWidth = width * 0.9;
     const [titleWidth, setTitleWidth] = React.useState(0);
     const [brWidth, setBRWidth] = React.useState(0);
@@ -16,8 +16,8 @@ export default ({width}) => {
                     source={Icon}
                     width={contentWidth}
                 >
-                    <BookMark>
-                        <FontAwesomeIcon icon={faBookmark} color='gray'/>
+                    <BookMark onPress={() => alert('Guardado')}>
+                        <FontAwesomeIcon icon={faBookmark} color='gray' size={25}/>
                     </BookMark>
                 </Top>
                 <Bottom onLayout={({nativeEvent}) => {
@@ -29,7 +29,7 @@ export default ({width}) => {
                         numberOfLines={2}
                         width={titleWidth}
                     >
-                        Título de la necesidad
+                        {title}
                     </Title>
                     <BottomRight width={brWidth}>
                         <HoursContainer width={brWidth * 0.5}>
@@ -37,7 +37,7 @@ export default ({width}) => {
                                 1h
                             </HoursText>
                         </HoursContainer>
-                        <FontAwesomeIcon icon={faLink} color='white'/>
+                        <FontAwesomeIcon icon={faLink} color='white' size={25}/>
                     </BottomRight>
                 </Bottom>
             </Content>

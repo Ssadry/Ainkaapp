@@ -20,7 +20,7 @@ export const Top = styled.ImageBackground`
     align-items: flex-end;
 `;
 
-export const BookMark = styled.View`
+export const BookMark = styled.TouchableOpacity`
     margin: 5px;
 `;
 

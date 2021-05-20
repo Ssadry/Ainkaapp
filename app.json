@@ -1,15 +1,16 @@
 {
   "expo": {
-   "name": "Your App Name",
+   "name": "Ainkaa",
    "icon": "./assets/icon.png",
    "version": "1.0.0",
    "slug": "your-app-slug",
+   "orientation": "portrait",
    "ios": {
-     "bundleIdentifier": "com.yourcompany.yourappname",
+     "bundleIdentifier": "com.yourcompany.ainkaa",
      "buildNumber": "1.0.0"
    },
    "android": {
-     "package": "com.yourcompany.yourappname",
+     "package": "com.yourcompany.ainkaa",
      "versionCode": 1
    }
   }

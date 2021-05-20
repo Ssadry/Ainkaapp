@@ -1,9 +1,9 @@
 import React from 'react';
 import {Container, Text} from './styled';
 
-export default ({ children, borderSide }) => {
+export default ({ children }) => {
     return (
-        <Container borderSide={borderSide}>
+        <Container>
             <Text>{children}</Text>
         </Container >
     )

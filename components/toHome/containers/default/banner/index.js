@@ -4,7 +4,7 @@ import {Banner, Text} from './styled';
 export default ({screenSize}) => {
     return (
         <Banner width={screenSize.width}>
-            <Text>¿Qué quieres aprender hoy?</Text>
+            <Text adjustFontSizeToFit>¡Qué bien verte de nuevo Carlos!</Text>
         </Banner>
     )
 }

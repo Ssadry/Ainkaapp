@@ -8,5 +8,5 @@ export const Banner = styled.View`
 export const Text = styled.Text`
     text-align: center;
     margin-bottom: 25px;
-    font-size: 25px;
+    font-size: 20px;
 `;

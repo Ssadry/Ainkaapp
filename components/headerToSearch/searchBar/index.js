@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import { SafeAreaView } from 'react-native';
-import { SearchBar, TextInput, Icon } from './styled';
+import React from 'react';
+import { Container, SearchBar, TextInput, Icon, ProfileContainer, Profile, Hours } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 
-const PERCENTAJE_SEARCH = 90, PERCENTAJE_IMAGE = 10;
-
-export default ({width, setText, searchText}) => {
-    const textInputWidth = width * (PERCENTAJE_SEARCH / 100);
-    const imageWidth = width * (PERCENTAJE_IMAGE / 100);
+export default ({width, setText, searchText, click}) => {
+    const searchBarWidth = width * 0.85;
+    const profileContainerWidth = width * 0.1;
+    const textInputWidth = searchBarWidth * 0.85;
+    const imageWidth = searchBarWidth * 0.15;
+    const profileWidth = profileContainerWidth * 0.99;
 
     return (
-        <SafeAreaView>
-            <SearchBar width={width}>
+        <Container width={width}>
+            <SearchBar width={searchBarWidth}>
                 <TextInput 
                     placeholder="Buscar..." 
                     value={searchText} 
@@ -20,9 +20,17 @@ export default ({width, setText, searchText}) => {
                     width={textInputWidth}
                 />
                 <Icon width={imageWidth}>
-                    <FontAwesomeIcon icon={faSearch}/>
+                    <FontAwesomeIcon icon={faSearch} resizeMode='stretch'/>
                 </Icon>
             </SearchBar>
-        </SafeAreaView>
+            <ProfileContainer 
+                onPress={_ => click()}
+                width={profileContainerWidth}
+            >
+                <Profile width={profileWidth}>
+                    <Hours adjustFontSizeToFit={true} numberOfLines={1}>10 h</Hours>
+                </Profile>
+            </ProfileContainer>
+        </Container>
     )
 }
