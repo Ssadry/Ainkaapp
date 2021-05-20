@@ -1,9 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, Dimensions, Image } from "react-native"
 
-export const SLIDER_WIDTH = Dimensions.get('window').width + 80
+export const SLIDER_WIDTH = Dimensions.get('screen').width + 80
+export const SLIDER_HEIGHT = Dimensions.get('screen').height;
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.7)
-
+export const ITEM_HEIGHT = Math.round(SLIDER_HEIGHT * 0.5)
 
 const CarouselCardItem = ({ item, index }) => {
   return (
@@ -20,6 +21,7 @@ const CarouselCardItem = ({ item, index }) => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 0.97,
     backgroundColor: 'white',
     borderRadius: 8,
     width: ITEM_WIDTH,
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: ITEM_WIDTH,
-    height: 300,
+    height: ITEM_HEIGHT,
   },
   header: {
     color: "#222",

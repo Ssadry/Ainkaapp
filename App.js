@@ -24,7 +24,7 @@
 // `;
 
 import React from 'react'
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native'
 import CarouselCards from './CarouselCards'
 
 export default function App() {
@@ -37,10 +37,12 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 50
+    paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+    paddingBottom: 0
   },
 });
 
