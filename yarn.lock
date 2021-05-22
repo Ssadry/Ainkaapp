@@ -3257,6 +3257,13 @@
     "snapdragon" "^0.8.1"
     "to-regex" "^3.0.1"
 
+"expo-app-loading@^1.0.3":
+  "integrity" "sha512-zLheUgBCQoyybJrGxw81MWfxvlnHb7zatjLbmkNosqMwqq3MOPC/P4HwF6qYsrVUFO6PIzb4yq3lFO3RkCCfhw=="
+  "resolved" "https://registry.npmjs.org/expo-app-loading/-/expo-app-loading-1.0.3.tgz"
+  "version" "1.0.3"
+  dependencies:
+    "expo-splash-screen" "~0.10.2"
+
 "expo-application@~2.4.1":
   "integrity" "sha512-VHDvXz55LIYdLoE1aR0AFycB1jz4ggbMToUbKAbCEjro+PdUNm/Gj8gQeFgH6wL2oAztQH4qJ+uiOwrw8SFK+Q=="
   "resolved" "https://registry.npmjs.org/expo-application/-/expo-application-2.4.1.tgz"
@@ -3346,6 +3353,13 @@
   "integrity" "sha512-dNhKcoUUn+1kmEfFVxSU7h+YsqODqlExZQJcQgxgeiuCeeDvJWkE10t3jjrO6aNfrdM5i/X2l3oh401EDslWsQ=="
   "resolved" "https://registry.npmjs.org/expo-secure-store/-/expo-secure-store-9.3.0.tgz"
   "version" "9.3.0"
+
+"expo-splash-screen@~0.10.2":
+  "integrity" "sha512-ngelW7g5yFqk3LWbyLDDxi3LYXEfgGFCJddL/Q8S/C1pMUc5foW2j9i/q+akK8i5mjYtSx3+Bk/qbyX92QIF/w=="
+  "resolved" "https://registry.npmjs.org/expo-splash-screen/-/expo-splash-screen-0.10.2.tgz"
+  "version" "0.10.2"
+  dependencies:
+    "@expo/configure-splash-screen" "0.3.4"
 
 "expo-sqlite@~8.5.0":
   "integrity" "sha512-8VMFrjagl8qE+BWqdacl2I0KLwF6SPMFHqJHHB5vlT/cxOi4PAk1SpmCIvALgZhrtO6UXG6eOG27gICONZtlVg=="

@@ -9,11 +9,11 @@ import Profile from '../../../screens/profile';
 import WatchProfile from '../../../screens/watchProfile';
 import Services from '../../../screens/services';
 import Chat from '../../../screens/chat';
-import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices';
 import Tests from '../../../screens/tests';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
 import Request from '../../../screens/request';
 import BottomNavigation from '../bottomNavigation';
+import CheckIn from '../../../screens/checkIn';
 
 const Stack = createStackNavigator();
 
@@ -22,19 +22,16 @@ export default () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       {/* <Stack.Screen name='Login' component={Login}/>
       <Stack.Screen name='Singup' component={Signup}/>
-      <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Profile' component={Profile}/>
       <Stack.Screen name='WatchProfile' component={WatchProfile}/>
       <Stack.Screen name='Services' component={Services}/>
       <Stack.Screen name='Chat' component={Chat}/>
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Request' component={Request}/>
-      <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/> */}
+      <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/>
       <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen 
-        name='WatchMoreItems' 
-        component={WatchMoreItems}
-      />
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
+      <Stack.Screen name='CheckIn' component={CheckIn}/>
     </Stack.Navigator>
   );
 }
