@@ -1,5 +1,13 @@
 import React from 'react';
-import {Container, Title, Button, ButtonTitle, ButtonDescription, NextButton, NextText} from './styled';
+import {
+    Container, 
+    Title, 
+    Button, 
+    ButtonTitle, 
+    ButtonDescription, 
+    NextButton, 
+    NextText
+} from './styled';
 
 const data = [
     {
@@ -27,16 +35,24 @@ for (let i = 0; i < data.length; i++)
                     </ButtonDescription>
                 </Button>
 
-export default Choose = ({setCurrentPos}) => {
+export default Choose = ({setCurrentPos, currentPos}) => {
+    const [widthContainer, setWidthContainer] = React.useState(0);
+
     return (
-        <Container>
+        <Container onLayout={
+            ({nativeEvent}) => {
+                const {width} = nativeEvent.layout;
+                setWidthContainer(width);
+            }
+        }        
+        >
             <Title>
                 ¡Elige tu membresía!
             </Title>
             {
                 buttons.map(button => button)
             }
-            <NextButton onPress={() => setCurrentPos(-100)}>
+            <NextButton onPress={() => setCurrentPos(currentPos - widthContainer)}>
                 <NextText>
                     Siguiente
                 </NextText>

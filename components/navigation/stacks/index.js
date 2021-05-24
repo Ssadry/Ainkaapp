@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Login from '../../../screens/login';
 import Signup from '../../../screens/signup';
 import Home from '../../../screens/home';
 import WatchMoreItems from '../../../screens/watchMoreItems';
@@ -20,8 +19,7 @@ const Stack = createStackNavigator();
 export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name='Login' component={Login}/>
-      <Stack.Screen name='Singup' component={Signup}/>
+      {/* <Stack.Screen name='Singup' component={Signup}/>
       <Stack.Screen name='Profile' component={Profile}/>
       <Stack.Screen name='WatchProfile' component={WatchProfile}/>
       <Stack.Screen name='Services' component={Services}/>

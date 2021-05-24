@@ -3,30 +3,44 @@ import styled from 'styled-components/native';
 import Carousel from '../components/toCheckIn/myCarousel/card';
 import Pagination from '../components/toCheckIn/myCarousel/pagination';
 import Choose from '../components/toCheckIn/choose';
-import Form from '../components/toCheckIn/form';
+import Form from '../components/toCheckIn/loginOrSignup';
 import Welcome from '../components/toCheckIn/welcome';
 import {Dimensions} from 'react-native';
 
-const {width} = Dimensions.get('screen');
-const {height} = Dimensions.get('screen');
+const SCREEN = 'screen';
+const {width} = Dimensions.get(SCREEN);
+const {height} = Dimensions.get(SCREEN);
 
-const carouselHeight = height * 0.8;
-const paginationHeight = height * 0.2;
+const carouselHeight = height * 0.85;
+const paginationHeight = height * 0.15;
 
 export default () => {
     const [currentPos, setCurrentPos] = React.useState(0);
 
     const data = [
         {
-            screen: <Choose setCurrentPos={setCurrentPos}/>
+            screen: 
+                <Choose 
+                    setCurrentPos={setCurrentPos}
+                    currentPos={currentPos}
+                />
         },
         {
-            screen: <Form setCurrentPos={setCurrentPos}/>
+            screen: 
+                <Form 
+                    setCurrentPos={setCurrentPos}
+                    currentPos={currentPos}
+                />
         },
         {
-            screen: <Welcome setCurrentPos={setCurrentPos}/>
+            screen: 
+                <Welcome 
+                    setCurrentPos={setCurrentPos}
+                    currentPos={currentPos}
+                />
         }
     ]
+
     return (
         <Container>
             <Carousel
