@@ -5,6 +5,6 @@ export const Container = styled.View`
     height: ${({height}) => height + 'px'};
     position: relative;
     bottom: 0px;
-    left: ${({currentPos}) => currentPos + 'px'};
+    left: ${({currentPage, itemWidth}) => currentPage * -itemWidth + 'px'};
     flex-direction: row;
 `;

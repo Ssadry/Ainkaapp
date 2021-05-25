@@ -4,9 +4,9 @@ import SwitchButtons from '../../../switchView/buttons';
 import {ScrollView, Dimensions, Text} from 'react-native';
 import Content from './content';
 
-const LazyCategory = lazy(_ => import('./elements/category'));
-const LazyProfile = lazy(_ => import('./elements/profile'));
-const LazyNeed = lazy(_ => import ('./elements/need'));
+const LazyCategory = lazy(_ => import('../../../slider/item/category'));
+const LazyProfile = lazy(_ => import('../../../slider/item/profile'));
+const LazyNeed = lazy(_ => import ('../../../slider/item/need'));
 
 const types = {
     CATEGORY : {

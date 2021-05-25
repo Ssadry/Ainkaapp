@@ -1,11 +1,11 @@
 import React, {lazy, Suspense} from 'react';
 import {Container} from './styled';
 import Banner from './banner';
-import Slider from './slider';
+import Slider from '../../../slider';
 import {Dimensions, Text, ScrollView} from 'react-native';
 
 const LazyContent = lazy(() => import('./content'));
-const LazySliderItem = lazy(() => import('./slider/element'));
+const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
 
 const WINDOW = 'window';
 const screenSize = {
@@ -21,12 +21,12 @@ export default ({searchText, navigation}) => {
     const items = [];
     for (let i = 0; i < AMOUNT_SLIDER_ITEMS; i++)
         items[i] = 
-            <React.Suspense 
+            <Suspense 
                 key={i} 
                 fallback={<Text>Cargando...</Text>}
             >
-                <LazySliderItem width={sliderItemWidth}/>
-            </React.Suspense>
+                <LazyServiceItem width={sliderItemWidth}/>
+            </Suspense>
     
     return (
         <Container searchText={searchText}>

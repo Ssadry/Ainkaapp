@@ -35,7 +35,7 @@ for (let i = 0; i < data.length; i++)
                     </ButtonDescription>
                 </Button>
 
-export default Choose = ({setCurrentPos, currentPos}) => {
+export default Choose = ({changePage}) => {
     const [widthContainer, setWidthContainer] = React.useState(0);
 
     return (
@@ -52,7 +52,7 @@ export default Choose = ({setCurrentPos, currentPos}) => {
             {
                 buttons.map(button => button)
             }
-            <NextButton onPress={() => setCurrentPos(currentPos - widthContainer)}>
+            <NextButton onPress={() => changePage(1)}>
                 <NextText>
                     Siguiente
                 </NextText>

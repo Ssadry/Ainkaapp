@@ -79,8 +79,8 @@
 
 import React from 'react';
 import {Container} from './styled';
-import Need from '../../searching/elements/need';
-import SliderWidthTitles from '../sliderWidthTitles';
+import Need from '../../../../slider/item/need';
+import SliderWidthTitles from '../../../../slider/withTitles';
 
 const AMOUNT_SLIDER_ITEMS = 12;
 const ITEMS_DISPLAYED = 1.8;

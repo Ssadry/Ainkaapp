@@ -13,6 +13,7 @@ import ChatsAndRequests from '../../../screens/chatsAndRequests';
 import Request from '../../../screens/request';
 import BottomNavigation from '../bottomNavigation';
 import CheckIn from '../../../screens/checkIn';
+import Saved from '../../../screens/saved';
 
 const Stack = createStackNavigator();
 
@@ -28,8 +29,10 @@ export default () => {
       <Stack.Screen name='Request' component={Request}/>
       <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/>
       <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
-      <Stack.Screen name='CheckIn' component={CheckIn}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      <Stack.Screen name='Home' component={Home}/> */}
+      <Stack.Screen name='Home' component={Home}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
     </Stack.Navigator>
   );
 }

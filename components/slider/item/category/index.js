@@ -1,0 +1,31 @@
+import React from 'react';
+import Icon from '../../../../assets/icon.png';
+import { 
+    Container,
+    Content,
+    ImageContainer, 
+    Image, 
+    Text,
+    Element
+} from './styled';
+
+export default ({ width }) => {
+    const contentWidth = width * 0.8;
+    const elementWidth = contentWidth * 0.9;
+    const imageWidth = elementWidth * 0.8;
+    
+    return (
+        <Container width={width}>
+            <Content width={contentWidth}>
+                <Element width={elementWidth}>
+                    <ImageContainer width={imageWidth}>
+                        <Image source={Icon}/>
+                    </ImageContainer>
+                    <Text>
+                        Categoría
+                    </Text>
+                </Element>
+            </Content>
+        </Container>
+    )
+}
