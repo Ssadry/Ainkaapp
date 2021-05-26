@@ -4,7 +4,7 @@ import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
 import Services from '../../../screens/services';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
-import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
+import Saved from '../../../screens/saved'
 import CustomTabScreen from '../customTabScreen/index';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faUser, faEnvelope, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -20,9 +20,7 @@ export default () => {
           state={props.state}
           descriptors={props.descriptors}
           navigation={props.navigation}
-          activeBackgroundColor="gray"
-          activeTintColor="black"
-          inactiveBackgroundColor="white"
+          activeTintColor="green"
           inactiveTintColor="gray"
         />
       }
@@ -31,32 +29,28 @@ export default () => {
         name="Home" 
         component={Home}
         options={{
-          title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHome} size={25}/>
+          title: ''
         }}
       />
       <Tab.Screen
         name="Heart"
-        component={FavoriteProfilesAndServices}
+        component={Saved}
         options={{
-          title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHeart} size={25}/>
+          title: ''
         }}
       />
       <Tab.Screen 
         name="PostAd" 
         component={Services}
         options={{
-          title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size={25}/>
+          title: ''
         }}
       />
       <Tab.Screen 
         name="ChatAndRequests" 
         component={ChatsAndRequests}
         options={{
-          title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size={25}/>
+          title: ''
         }}
       />
       <Tab.Screen 
@@ -64,7 +58,7 @@ export default () => {
         component={Profile}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size={25}/>
+          // tabBarIcon: () => <FontAwesomeIcon icon={faUser} size={ICON_SIZE}/>
         }}
       />
     </Tab.Navigator>
