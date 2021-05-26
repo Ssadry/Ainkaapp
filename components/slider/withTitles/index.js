@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, Top, Bottom, TextButton, LeftText, RightText} from './styled';
-import Slider from '..';
+import Slider from '../../slider';
 
 export default ({numberItemsDisplayed, items, setItemsWidth, leftText, rightText, navigation}) => {
     return (

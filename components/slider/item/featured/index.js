@@ -44,7 +44,7 @@ export default ({ width, title, hours }) => {
                         <HoursContainer>
                             <Hours>
                                 {
-                                    hours + 'px'
+                                    hours + 'h'
                                 }
                             </Hours>
                         </HoursContainer>

@@ -29,7 +29,7 @@ export const BookMark = styled.TouchableOpacity`
 
 export const Info = styled.View`
     width: ${({width}) => width + 'px'};
-    background-color: rgba(170, 170, 170, 1);
+    background-color: red;
     justify-content: space-between;
     padding: 5px;
     flex-direction: row;

@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ScrollView = styled.ScrollView`
+    /* border-width: 1px; */
 `;
 
 export const Slider = styled.View`

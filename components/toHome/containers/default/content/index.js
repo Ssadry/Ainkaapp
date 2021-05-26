@@ -80,7 +80,8 @@
 import React from 'react';
 import {Container} from './styled';
 import Need from '../../../../slider/item/need';
-import SliderWidthTitles from '../../../../slider/withTitles';
+import Featured from '../../../../slider/item/featured';
+import SliderWithTitles from '../../../../slider/withTitles';
 
 const AMOUNT_SLIDER_ITEMS = 12;
 const ITEMS_DISPLAYED = 1.8;
@@ -88,47 +89,120 @@ const ITEMS_DISPLAYED = 1.8;
 export default ({navigation}) => {
     const [itemsWidth, setItemsWidth] = React.useState(0);
 
-    const needs = [], featured = [];
-    for (let i = 0; i < AMOUNT_SLIDER_ITEMS; i++) {
-        needs[i] = 
-            <Need key={i} width={itemsWidth} title={'Título de la necesidad'}/>
-        featured[i] =
-            <Need key={i} width={itemsWidth} title={'Título destacado'}/>
-    }
-
-    const slider = [
+    const myNeeds = [
         {
-            items: featured,
+            title: 'Título de la necesidad 1',
+            hours: 3
+        },
+        {
+            title: 'Título de la necesidad 2',
+            hours: 5
+        },
+        {
+            title: 'Título de la necesidad 3',
+            hours: 8
+        },
+        {
+            title: 'Título de la necesidad 4',
+            hours: 9
+        },
+        {
+            title: 'Título de la necesidad 5',
+            hours: 2
+        },
+        {
+            title: 'Título de la necesidad 6',
+            hours: 10
+        },
+        {
+            title: 'Título de la necesidad 7',
+            hours: 30
+        }
+    ];
+
+    const myFeatureds = [
+        {
+            title: 'Título destacado 1',
+            hours: 5
+        },
+        {
+            title: 'Título destacado 2',
+            hours: 6
+        },
+        {
+            title: 'Título destacado 3',
+            hours: 7
+        },
+        {
+            title: 'Título destacado 4',
+            hours: 2
+        },
+        {
+            title: 'Título destacado 5',
+            hours: 13
+        },
+        {
+            title: 'Título destacado 6',
+            hours: 45
+        },
+    ];
+
+    const mySliders = [
+        {
+            items: () => 
+                myFeatureds.map((featured, i) => 
+                    <Featured 
+                        key={i}
+                        width={itemsWidth}
+                        title={featured.title}
+                        hours={featured.hours}
+                    />   
+                ),
             leftText: 'Destacados',
+            rightText: 'Ver más'
         },
         {
-            items: featured,
+            items: () => 
+                myNeeds.map((need, i) => 
+                    <Need 
+                        key={i}
+                        width={itemsWidth}
+                        title={need.title}
+                        hours={need.hours}
+                    />   
+                ),
             leftText: 'Necesidades',
+            rightText: 'Ver más'
         },
         {
-            items: featured,
-            leftText: 'Ofertas',
+            items: () => 
+                myNeeds.map((need, i) => 
+                    <Need 
+                        key={i}
+                        width={itemsWidth}
+                        title={need.title}
+                        hours={need.hours}
+                    />   
+                ),
+            leftText: 'Necesidades',
+            rightText: 'Ver más'
         },
-    ]
-
-    const sliders = [];
-    for (let i = 0; i < slider.length; i++) {
-        sliders[i] = 
-            <SliderWidthTitles 
-                key={i}
-                numberItemsDisplayed={ITEMS_DISPLAYED}
-                items={slider[i].items}
-                setItemsWidth={setItemsWidth}
-                leftText={slider[i].leftText}
-                rightText={'Ver más'}
-                navigation={navigation}
-            />
-    }
+    ];
 
     return (
         <Container>
             {
-                sliders.map(slider => slider)
+                mySliders.map((mySlider, i) => 
+                    <SliderWithTitles 
+                        key={i}
+                        numberItemsDisplayed={ITEMS_DISPLAYED}
+                        items={Object.values(mySlider.items()).map(item => item)}
+                        setItemsWidth={setItemsWidth}
+                        leftText={mySlider.leftText}
+                        rightText={mySlider.rightText}
+                        navigation={navigation}
+                    />
+                )
             }
         </Container>
     )

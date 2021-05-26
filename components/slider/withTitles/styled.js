@@ -7,8 +7,8 @@ export const Container = styled.View`
 export const Top = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    margin-left: 50px;
-    margin-right: 40px;
+    margin-left: 30px;
+    margin-right: 30px;
     margin-top: 10px;
 `;
 
