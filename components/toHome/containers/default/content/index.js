@@ -83,7 +83,6 @@ import Need from '../../../../slider/item/need';
 import Featured from '../../../../slider/item/featured';
 import SliderWithTitles from '../../../../slider/withTitles';
 
-const AMOUNT_SLIDER_ITEMS = 12;
 const ITEMS_DISPLAYED = 1.8;
 
 export default ({navigation}) => {
@@ -91,58 +90,58 @@ export default ({navigation}) => {
 
     const myNeeds = [
         {
-            title: 'Título de la necesidad 1',
+            title: 'Necesidad',
             hours: 3
         },
         {
-            title: 'Título de la necesidad 2',
+            title: 'Necesidad',
             hours: 5
         },
         {
-            title: 'Título de la necesidad 3',
+            title: 'Necesidad',
             hours: 8
         },
         {
-            title: 'Título de la necesidad 4',
+            title: 'Necesidad',
             hours: 9
         },
         {
-            title: 'Título de la necesidad 5',
+            title: 'Necesidad',
             hours: 2
         },
         {
-            title: 'Título de la necesidad 6',
+            title: 'Necesidad',
             hours: 10
         },
         {
-            title: 'Título de la necesidad 7',
+            title: 'Necesidad',
             hours: 30
         }
     ];
 
     const myFeatureds = [
         {
-            title: 'Título destacado 1',
+            title: 'Destacado',
             hours: 5
         },
         {
-            title: 'Título destacado 2',
+            title: 'Destacado',
             hours: 6
         },
         {
-            title: 'Título destacado 3',
+            title: 'Destacado',
             hours: 7
         },
         {
-            title: 'Título destacado 4',
+            title: 'Destacado',
             hours: 2
         },
         {
-            title: 'Título destacado 5',
+            title: 'Destacado',
             hours: 13
         },
         {
-            title: 'Título destacado 6',
+            title: 'Destacado',
             hours: 45
         },
     ];
@@ -154,7 +153,7 @@ export default ({navigation}) => {
                     <Featured 
                         key={i}
                         width={itemsWidth}
-                        title={featured.title}
+                        title={featured.title + ' - ' + i}
                         hours={featured.hours}
                     />   
                 ),
@@ -167,7 +166,7 @@ export default ({navigation}) => {
                     <Need 
                         key={i}
                         width={itemsWidth}
-                        title={need.title}
+                        title={need.title + ' - ' + i}
                         hours={need.hours}
                     />   
                 ),
@@ -180,11 +179,11 @@ export default ({navigation}) => {
                     <Need 
                         key={i}
                         width={itemsWidth}
-                        title={need.title}
+                        title={need.title + ' - ' + i}
                         hours={need.hours}
                     />   
                 ),
-            leftText: 'Necesidades',
+            leftText: 'Prueba',
             rightText: 'Ver más'
         },
     ];

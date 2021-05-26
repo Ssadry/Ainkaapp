@@ -9,7 +9,7 @@ import {
     Element
 } from './styled';
 
-export default ({ width }) => {
+export default ({ width, title = 'Default' }) => {
     const contentWidth = width * 0.8;
     const elementWidth = contentWidth * 0.9;
     const imageWidth = elementWidth * 0.8;
@@ -22,7 +22,7 @@ export default ({ width }) => {
                         <Image source={Icon}/>
                     </ImageContainer>
                     <Text>
-                        Categoría
+                        {title}
                     </Text>
                 </Element>
             </Content>

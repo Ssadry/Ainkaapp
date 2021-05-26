@@ -28,22 +28,16 @@ export const BookMark = styled.TouchableOpacity`
 `;
 
 export const Info = styled.View`
+    background-color: rgba(170, 170, 170, 1);
     width: ${({width}) => width + 'px'};
-    background-color: red;
     justify-content: space-between;
     padding: 5px;
-    flex-direction: row;
 `;
 
 export const Title = styled.Text`
     font-weight: bold;
     color: white;
     flex: 0.8;
-`;
-
-export const Icons = styled.View`
-    justify-content: center;
-    align-items: center;
 `;
 
 export const HoursContainer = styled.View`
@@ -58,4 +52,22 @@ export const Hours = styled.Text`
     color: white;
     text-align: center;
     margin: 5px;
+`;
+
+export const Top = styled.View`
+    justify-content: space-between;
+    flex-direction: row;
+`;
+
+export const Bottom = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+export const StarsContainer = styled.View`
+    flex-direction: row;
+`;
+
+export const Star = styled.View`
+    margin: 2px;
 `;

@@ -6,12 +6,15 @@ import {
     BookMark,
     Info,
     Title,
-    Icons,
     HoursContainer,
-    Hours
+    Hours,
+    StarsContainer,
+    Top,
+    Bottom,
+    Star
 } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBookmark, faLink } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faLink, faStar } from '@fortawesome/free-solid-svg-icons'
 import Icon from '../../../../assets/icon.png';
 
 export default ({ width, title, hours }) => {
@@ -34,13 +37,13 @@ export default ({ width, title, hours }) => {
                     </BookMark>
                 </ImageBackground>
                 <Info width={contentWidth}>
-                    <Title
-                        adjustFontSizeToFit
-                        numberOfLines={2}
-                    >
-                        {title}
-                    </Title>
-                    <Icons>
+                    <Top>
+                        <Title
+                            adjustFontSizeToFit
+                            numberOfLines={2}
+                        >
+                            {title}
+                        </Title>
                         <HoursContainer>
                             <Hours>
                                 {
@@ -48,12 +51,31 @@ export default ({ width, title, hours }) => {
                                 }
                             </Hours>
                         </HoursContainer>
+                    </Top>
+                    <Bottom>
+                        <StarsContainer>
+                            <Star>
+                                <FontAwesomeIcon icon={faStar} color='white'/>
+                            </Star>
+                            <Star>
+                                <FontAwesomeIcon icon={faStar} color='white'/>
+                            </Star>
+                            <Star>
+                                <FontAwesomeIcon icon={faStar} color='white'/>
+                            </Star>
+                            <Star>
+                                <FontAwesomeIcon icon={faStar} color='white'/>
+                            </Star>
+                            <Star>
+                                <FontAwesomeIcon icon={faStar} color='white'/>
+                            </Star>
+                        </StarsContainer>
                         <FontAwesomeIcon 
                             icon={faLink} 
                             color={'white'} 
                             size={25}
                         />
-                    </Icons>
+                    </Bottom>
                 </Info>
             </Content>
         </Container>

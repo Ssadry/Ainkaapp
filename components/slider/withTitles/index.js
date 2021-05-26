@@ -11,8 +11,8 @@ export default ({numberItemsDisplayed, items, setItemsWidth, leftText, rightText
                 </LeftText>
                 <TextButton onPress={() => {
                     navigation.navigate('WatchMoreItems', {
-                        title : leftText,
-                        items : items
+                        title: leftText,
+                        items: items
                     })
                 }}>
                     <RightText>

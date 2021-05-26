@@ -10,4 +10,6 @@ export const Container = styled.View`
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-left: 40px;
+    padding-right: 40px;
 `;

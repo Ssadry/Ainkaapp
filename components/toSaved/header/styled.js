@@ -12,3 +12,14 @@ export const Title = styled.Text`
     margin-left: 20px;
     font-size: 30px;
 `;
+
+export const TitleAndIcon = styled.View`
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const Plus = styled.TouchableOpacity`
+    
+`;

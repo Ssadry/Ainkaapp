@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import { Container, Content, ImageContainer, Image } from './styled';
 import Icon from '../../../../assets/icon.png';
 
-export default ({width}) => {
+export default ({width, title}) => {
     const contentWidth = width * 0.8;
     const imagenContainerWidth = contentWidth * 0.5;
     const borderRadiusContent = imagenContainerWidth * 0.5;
@@ -17,7 +17,7 @@ export default ({width}) => {
                 <ImageContainer width={imagenContainerWidth}>
                     <Image source={Icon}/>
                 </ImageContainer>
-                <Text>Cocina</Text>
+                <Text>{title}</Text>
             </Content>
         </Container>
     )
