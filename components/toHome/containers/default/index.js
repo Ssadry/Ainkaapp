@@ -16,7 +16,7 @@ const screenSize = {
 const AMOUNT_SLIDER_ITEMS = 9;
 
 export default ({searchText, navigation}) => {
-    const [sliderItemWidth, setSliderItemWidth] = React.useState(0);
+    const [sliderItemWidth, setSliderItemWidth] = React.useState(100);
 
     const items = [];
     for (let i = 0; i < AMOUNT_SLIDER_ITEMS; i++)

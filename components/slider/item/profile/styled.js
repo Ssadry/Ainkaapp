@@ -16,11 +16,10 @@ export const Content = styled.TouchableOpacity`
 `;
 
 export const BookMark = styled.View`
-    margin-right: 5px;
-    margin-top: 5px;
-    position: absolute;
-    right: 0px;
-    top: 0px;
+    width: ${({width}) => width + 'px'};
+    align-items: flex-end;
+    margin-right: 10px;
+    margin-top: 10px;
 `;
 
 export const ImageContainer = styled.View`
@@ -32,7 +31,7 @@ export const ImageContainer = styled.View`
     align-items: center;
     overflow: hidden;
     margin-bottom: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 `;
 
 export const Image = styled.Image`

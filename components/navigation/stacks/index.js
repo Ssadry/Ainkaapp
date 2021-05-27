@@ -25,12 +25,12 @@ export default () => {
       <Stack.Screen name='WatchProfile' component={WatchProfile}/>
       <Stack.Screen name='Services' component={Services}/>
       <Stack.Screen name='Chat' component={Chat}/>
+      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Request' component={Request}/>
       <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/>
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
       <Stack.Screen name='Home' component={Home}/> */}
-      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Saved' component={Saved}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
     </Stack.Navigator>

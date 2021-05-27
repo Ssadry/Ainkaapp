@@ -25,16 +25,7 @@ export default ({ width, click }) => {
     const interests = [];
 
     for (let i = 0; i < AMOUNT_INTERESTS; i++)
-        interests[i] = 
-            <InterestsContent 
-                key={i} 
-                width={interestWidth}
-            >
-                <InterestImage 
-                    source={Icon} 
-                    resizeMode='stretch'
-                />
-            </InterestsContent>;
+        interests[i] = <InterestsContent key={i} width={interestWidth}><InterestImage source={Icon} resizeMode='stretch'/></InterestsContent>;
 
     return (
         <Container width={width}>
@@ -42,8 +33,8 @@ export default ({ width, click }) => {
                 width={contentWidth} 
                 onPress={() => click()}
             >
-                <BookMark>
-                    <FontAwesomeIcon icon={faBookmark} color='gray' size={25}/>
+                <BookMark width={contentWidth}>
+                    <FontAwesomeIcon icon={faBookmark} color='gray'/>
                 </BookMark>
                 <ImageContainer width={imageWidth}>
                     <Image 
