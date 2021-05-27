@@ -4,7 +4,8 @@ import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
 import Services from '../../../screens/services';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
-import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
+// import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
+import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faUser, faEnvelope, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +15,7 @@ const Tab = createBottomTabNavigator();
 export default () => {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Saved"
       tabBar={props =>
         <CustomTabScreen
           state={props.state}
@@ -36,8 +37,8 @@ export default () => {
         }}
       />
       <Tab.Screen
-        name="Heart"
-        component={FavoriteProfilesAndServices}
+        name="Saved"
+        component={Saved}
         options={{
           title: '',
           tabBarIcon: () => <FontAwesomeIcon icon={faHeart} size={25}/>

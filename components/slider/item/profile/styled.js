@@ -16,10 +16,11 @@ export const Content = styled.TouchableOpacity`
 `;
 
 export const BookMark = styled.View`
-    width: ${({width}) => width + 'px'};
-    align-items: flex-end;
-    margin-right: 10px;
-    margin-top: 10px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin-top: 5px;
+    margin-right: 5px;
 `;
 
 export const ImageContainer = styled.View`
