@@ -4,8 +4,6 @@ import styled from 'styled-components/native';
 import Header from '../components/toSaved/header';
 import SliderWithTitles from '../components/slider/withTitles';
 import Need from '../components/slider/item/need';
-import Service from '../components/slider/item/service';
-import Category from '../components/slider/item/category'; //
 import Featured from '../components/slider/item/featured';
 import Profile from '../components/slider/item/profile';
 import {featured, needs, profiles} from '../components/toSaved/data';
@@ -30,16 +28,16 @@ export default ({navigation}) => {
                 key={i}     
                 width={itemsWidth} 
                 title={need.title + ' - ' + i} 
-                hours={need.hours}/>
-            );
+                hours={need.hours}
+            />);
     
     const itemsProfiles = 
         profiles.map((profile, i) => 
             <Profile 
                 key={i} 
                 width={itemsWidth} 
-                title={profile.title + ' - ' + i}/>
-            );
+                title={profile.title + ' - ' + i}
+            />);
 
     const sliders = [
         {

@@ -6,8 +6,8 @@ import {
     ChecksContainer,
     Content
 } from './styled';
-import Input from './form/input';
-import Check from './form/check';
+import Input from '../../form/input';
+import Check from '../../form/check';
 import Button from './form/button';
 
 export default Signup = ({changePage}) => {

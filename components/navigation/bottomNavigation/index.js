@@ -4,11 +4,11 @@ import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
 import Services from '../../../screens/services';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
+import PostAd from '../../../screens/postAd';
 // import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome, faUser, faEnvelope, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -19,12 +19,9 @@ export default () => {
       tabBar={props =>
         <CustomTabScreen
           state={props.state}
-          descriptors={props.descriptors}
           navigation={props.navigation}
-          activeBackgroundColor="gray"
-          activeTintColor="black"
-          inactiveBackgroundColor="white"
-          inactiveTintColor="gray"
+          activeTintColor="green"
+          inactiveTintColor="black"
         />
       }
     >
@@ -33,7 +30,6 @@ export default () => {
         component={Home}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHome} size={25}/>
         }}
       />
       <Tab.Screen
@@ -41,15 +37,13 @@ export default () => {
         component={Saved}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faHeart} size={25}/>
         }}
       />
       <Tab.Screen 
         name="PostAd" 
-        component={Services}
+        component={PostAd}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faPlus} size={25}/>
         }}
       />
       <Tab.Screen 
@@ -57,7 +51,6 @@ export default () => {
         component={ChatsAndRequests}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size={25}/>
         }}
       />
       <Tab.Screen 
@@ -65,7 +58,6 @@ export default () => {
         component={Profile}
         options={{
           title: '',
-          tabBarIcon: () => <FontAwesomeIcon icon={faUser} size={25}/>
         }}
       />
     </Tab.Navigator>

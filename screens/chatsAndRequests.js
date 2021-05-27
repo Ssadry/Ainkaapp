@@ -16,8 +16,7 @@ export default ({navigation}) => {
             <SwitchButtons
                 currentState={currentState}
                 setCurrentState={setCurrentState}
-                leftText={'Tus chats'}
-                rightText={'Te solicitan'}
+                allTexts={['Tus chats', 'Te solicitan']}
             />
             <Description>
                 {currentState == 0 ? chatDescription : requestDescription}

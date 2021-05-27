@@ -14,6 +14,7 @@ import Request from '../../../screens/request';
 import BottomNavigation from '../bottomNavigation';
 import CheckIn from '../../../screens/checkIn';
 import Saved from '../../../screens/saved';
+import Login from '../../../screens/login';
 
 const Stack = createStackNavigator();
 
@@ -26,14 +27,14 @@ export default () => {
       <Stack.Screen name='Services' component={Services}/>
       <Stack.Screen name='Chat' component={Chat}/>
       <Stack.Screen name='Request' component={Request}/>
-      <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/>
-      <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
-      <Stack.Screen name='Home' component={Home}/> */}
-        <Stack.Screen name='MyRouter' component={BottomNavigation}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
+      {/* <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/> */}
+
+      {/* <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Saved' component={Saved}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
+      <Stack.Screen name='Login' component={Login}/>
     </Stack.Navigator>
   );
 }
