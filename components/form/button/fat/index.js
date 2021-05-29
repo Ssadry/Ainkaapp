@@ -1,14 +1,11 @@
 import React from 'react';
 import {Container, Text} from './styled';
 
-export default Button = ({children, click}) => {
+export default Button = ({children, click, color = 'gray'}) => {
     return (
         <Container
-            onPress={
-                () => {
-                    click(1);
-                }
-            }
+            onPress={click}
+            color={color}
         >
             <Text>
                 {children}

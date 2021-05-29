@@ -1,15 +1,28 @@
 import React from 'react';
-import {Container} from './styled';
-import Button from '../../form/button';
+import {Container, SlimButtons} from './styled';
+import FatButton from '../../form/button/fat';
+import SlimButton from '../../form/button/slim';
 
 export default Content = () => {
     return (
         <Container>
-            <Button
+            <FatButton
                 click={() => alert('Iniciar sesión')}
             >
                 INICIAR SESIÓN
-            </Button>
+            </FatButton>
+            <SlimButtons>
+                <SlimButton
+                    click={() => alert('Poh te jodes')}
+                >
+                    ¿Olvidaste la contraseña?
+                </SlimButton>
+                <SlimButton
+                    click={() => alert('Unido')}
+                >
+                    Únete a la comunidad AINKAA
+                </SlimButton>
+            </SlimButtons>
         </Container>
     )
 }

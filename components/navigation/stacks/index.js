@@ -34,7 +34,7 @@ export default () => {
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Saved' component={Saved}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
-      <Stack.Screen name='Login' component={Login}/>
+      <Stack.Screen name='Home' component={Home}/>
     </Stack.Navigator>
   );
 }

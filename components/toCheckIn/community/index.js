@@ -12,17 +12,17 @@ export default ({changePage}) => {
         <Container>
             <TextContainer>
                 <Title>
-                    Bienvenido a Ainkaa
+                    Principios de la comunidad Ainkaa
                 </Title>
                 <Paraph>
-                    Estos son nuestros principios
+
                 </Paraph>
             </TextContainer>
             <ButtonContainer>
                 <FatButton
                     click={() => changePage(1)}
                 >
-                    SIGUIENTE
+                    COMENZAR
                 </FatButton>
             </ButtonContainer>
         </Container>

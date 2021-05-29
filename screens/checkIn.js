@@ -5,6 +5,7 @@ import Pagination from '../components/toCheckIn/myCarousel/pagination';
 import Choose from '../components/toCheckIn/choose';
 import Signup from '../components/toCheckIn/singup';
 import Welcome from '../components/toCheckIn/welcome';
+import Community from '../components/toCheckIn/community';
 import {Dimensions} from 'react-native';
 
 const SCREEN = 'screen';
@@ -17,20 +18,16 @@ export default () => {
     const [currentPos, setCurrentPos] = React.useState(0);
     const [currentPage, setCurrentPage] = React.useState(0);
 
-    console.log(currentPage)
-
     const changePage = (index) => {
         setCurrentPos(width * -(currentPos + index));
         setCurrentPage(currentPage + index);
     }
 
+    const nextScreen = () => {
+        alert('Cambio de pantalla');
+    }
+
     const data = [
-        {
-            screen: 
-                <Choose 
-                    changePage={changePage}
-                />
-        },
         {
             screen: 
                 <Signup 
@@ -42,7 +39,13 @@ export default () => {
                 <Welcome 
                     changePage={changePage}
                 />
-        }
+        },
+        {
+            screen: 
+                <Community 
+                    changePage={nextScreen}
+                />
+        },
     ];
 
     return (

@@ -3,10 +3,10 @@ import { Container } from './styled';
 import SearchBar from './searchBar/index';
 
 export default ({ searchText, setSearchText, width, click }) => {
-    const searchBarContainerWidth = width * 0.8;
+    const searchBarContainerWidth = width * 0.75;
 
     return (
-        <Container width={width}>
+        <Container>
             <SearchBar 
                 width={searchBarContainerWidth}
                 setText={setSearchText}

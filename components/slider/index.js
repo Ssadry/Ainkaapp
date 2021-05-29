@@ -2,13 +2,13 @@ import React from 'react';
 import { Slider, Content, Container, ScrollView } from './styled';
 import Arrow from './arrow/index';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 export default ({numberItemsDisplayed, items, setItemsWidth}) => {
     return (
         <Slider>
             <Arrow>
-                <FontAwesomeIcon icon={faCaretLeft}/>
+                <FontAwesomeIcon icon={faChevronLeft}/>
             </Arrow>
             <ScrollView
                 horizontal={true} 
@@ -29,7 +29,7 @@ export default ({numberItemsDisplayed, items, setItemsWidth}) => {
                 </Content>
             </ScrollView>
             <Arrow>
-                <FontAwesomeIcon icon={faCaretRight}/>
+                <FontAwesomeIcon icon={faChevronRight}/>
             </Arrow>
         </Slider>
     )

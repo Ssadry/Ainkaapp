@@ -4,14 +4,25 @@ export const Container = styled.View`
     flex: 1;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 `;
 
 export const Circle = styled.View`
-    width: 20px;
-    height: 20px;
+    background-color: ${({index, currentPage}) => index === currentPage ? 'white' : 'transparent'};
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 15px;
-    border: 1px solid gray;
-    background-color: ${({index, currentPage}) => index === currentPage ? 'gray' : 'white'};
-    margin: 15px;
+    width: 30px;
+    height: 30px;
+    border: ${({index, currentPage}) => index === currentPage ? '1px solid gray' : '0px solid gray'};
+`;
+
+export const Text = styled.Text`
+    color: ${({index, currentPage}) => index === currentPage ? 'black' : 'gray'};
+    text-align: center;
+    margin: 10px;
+    font-weight: ${({index, currentPage}) => index === currentPage ? 'bold' : 'normal'};
 `;

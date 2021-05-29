@@ -8,57 +8,83 @@ import {
 } from './styled';
 import Input from '../../form/input';
 import Check from '../../form/check';
-import Button from './form/button';
+import FatButtom from '../../form/button/fat';
+
+const isEmpty = (value) => value === '';
+const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const validateLenght = (characters, length) => characters.length >= length;
 
 export default Signup = ({changePage}) => {
+    const [containerWidth, setContainerWidth] = React.useState(0);
+    let contentWidth = containerWidth * 0.8;
+
     const [name, setName] = React.useState('');
     const [nacionality, setNacionality] = React.useState('');
     const [phone, setPhone] = React.useState(0);
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const [confirmPassword, setConfirmPassowrd] = React.useState('');
+    const [confirmPassword, setConfirmPassword] = React.useState('');
     const [privacity, setPrivacity] = React.useState(false);
     const [upgrade, setUpgrade] = React.useState(false);
-
-    const [containerWidth, setContainerWidth] = React.useState(0);
-    let contentWidth = containerWidth * 0.8;
 
     const inputs = [
         {
             placeHolder: 'Nombre y apellidos *',
             setValue: setName,
             value: name,
-            canTextHide: false
+            canTextHide: false,
+            isCorrect: !isEmpty(name),
+            errorText: 'Campo obligatorio.',
+            keyboardType: 'default'
         },
         {
             placeHolder: 'Nacionalidad *',
             setValue: setNacionality,
             value: nacionality,
-            canTextHide: false
+            canTextHide: false,
+            isCorrect: !isEmpty(nacionality),
+            errorText: 'Campo obligatorio.',
+            keyboardType: 'default'
         },
         {
             placeHolder: 'Teléfono *',
             setValue: setPhone,
             value: phone,
-            canTextHide: false
+            canTextHide: false,
+            isCorrect: validateLenght(phone, 9),
+            errorText: 'Mínimo 9 dígitos.',
+            keyboardType: 'numeric'
         },
         {
             placeHolder: 'Correo electrónico *',
             setValue: setEmail,
             value: email,
-            canTextHide: false
+            canTextHide: false,
+            isCorrect: validateEmail(email),
+            errorText: 'Correo no válido.',
+            keyboardType: 'email-address'
         },
         {
             placeHolder: 'Contraseña *',
             setValue: setPassword,
             value: password,
-            canTextHide: true
+            canTextHide: true,
+            isCorrect: validateLenght(password, 8),
+            errorText: 'Mínimo 8 caracteres.',
+            keyboardType: 'default'
         },
         {
             placeHolder: 'Confirmar contraseña *',
-            setValue: setConfirmPassowrd,
+            setValue: setConfirmPassword,
             value: confirmPassword,
-            canTextHide: true
+            canTextHide: true,
+            isCorrect: validateLenght(confirmPassword, 8),
+            errorText: 'Mínimo 8 caracteres.',
+            keyboardType: 'default'
         },
     ];   
     
@@ -73,7 +99,7 @@ export default Signup = ({changePage}) => {
             setValue: setUpgrade,
             value: upgrade
         }
-    ]
+    ];
 
     return (
         <Container
@@ -100,6 +126,9 @@ export default Signup = ({changePage}) => {
                                 setValue={input.setValue}
                                 value={input.value}
                                 canTextHide={input.canTextHide}
+                                isCorrect={input.isCorrect}
+                                errorText={input.errorText}
+                                keyboardType={input.keyboardType}
                             />
                         )
                     }
@@ -117,11 +146,17 @@ export default Signup = ({changePage}) => {
                         )
                     }
                 </ChecksContainer>
-                <Button
-                    click={changePage}
+                <FatButtom
+                    click={() => alert('Iniciando sesión con google...')}
+                    color='red'
+                >
+                    INICIAR SESIÓN CON GOOGLE
+                </FatButtom>
+                <FatButtom
+                    click={() => changePage(1)}
                 >
                     CREAR CUENTA
-                </Button>
+                </FatButtom>
             </Content>
         </Container>
     )

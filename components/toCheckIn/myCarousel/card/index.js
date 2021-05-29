@@ -2,7 +2,7 @@ import React from 'react';
 import {Container} from './styled';
 import Item from '../item';
 
-const Card = ({items, itemWidth, height, currentPage}) => {
+export default Card = ({items, itemWidth, height, currentPage}) => {
     return (
         <Container
             width={items.length * itemWidth}
@@ -16,5 +16,3 @@ const Card = ({items, itemWidth, height, currentPage}) => {
         </Container>
     )
 }
-
-export default Card;

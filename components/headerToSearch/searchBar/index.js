@@ -1,14 +1,14 @@
 import React from 'react';
-import { Container, SearchBar, TextInput, Icon, ProfileContainer, Profile, Hours } from './styled';
+import { Container, SearchBar, TextInput, Icon, ProfileContainer, Profile, Hours, NotificationPoint } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
 
 export default ({width, setText, searchText, click}) => {
-    const searchBarWidth = width * 0.85;
+    const searchBarWidth = width * 0.8;
     const profileContainerWidth = width * 0.1;
     const textInputWidth = searchBarWidth * 0.85;
     const imageWidth = searchBarWidth * 0.15;
-    const profileWidth = profileContainerWidth * 0.99;
+    const notificationPointWidth = profileContainerWidth * 0.7;
 
     return (
         <Container width={width}>
@@ -20,16 +20,27 @@ export default ({width, setText, searchText, click}) => {
                     width={textInputWidth}
                 />
                 <Icon width={imageWidth}>
-                    <FontAwesomeIcon icon={faSearch} resizeMode='stretch'/>
+                    <FontAwesomeIcon 
+                        icon={faSearch} 
+                        resizeMode='stretch'
+                    />
                 </Icon>
             </SearchBar>
             <ProfileContainer 
                 onPress={_ => click()}
                 width={profileContainerWidth}
             >
-                <Profile width={profileWidth}>
-                    <Hours adjustFontSizeToFit={true} numberOfLines={1}>10 h</Hours>
+                <Profile width={profileContainerWidth}>
+                    <Hours 
+                        adjustFontSizeToFit={true} 
+                        numberOfLines={1}
+                    >
+                        2h
+                    </Hours>
                 </Profile>
+                <NotificationPoint
+                        width={notificationPointWidth}
+                />
             </ProfileContainer>
         </Container>
     )

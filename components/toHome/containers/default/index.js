@@ -25,12 +25,15 @@ export default ({searchText, navigation}) => {
                 key={i} 
                 fallback={<Text>Cargando...</Text>}
             >
-                <LazyServiceItem width={sliderItemWidth}/>
+                <LazyServiceItem 
+                    width={sliderItemWidth}
+                    title={'Cocina'}
+                />
             </Suspense>
     
     return (
-        <Container searchText={searchText}>
-            <ScrollView>
+        <ScrollView>
+            <Container searchText={searchText}>
                 <Banner screenSize={screenSize}/>
                 <Slider
                     numberItemsDisplayed={4}
@@ -41,7 +44,7 @@ export default ({searchText, navigation}) => {
                     
                     <LazyContent navigation={navigation}/>
                 </Suspense>
-            </ScrollView>
-        </Container>   
+            </Container>   
+        </ScrollView>
     )
 }
