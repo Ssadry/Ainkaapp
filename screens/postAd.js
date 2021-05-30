@@ -1,20 +1,15 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
-import {AppContext} from '../application/provider';
-import {Dimensions} from 'react-native';
 import Header from '../components/toPostAd/header';
-import Info from '../components/toPostAd/info';
-import Button from '../components/toPostAd/button';
+import Content from '../components/toPostAd/content';
 
-
-export default () => {
-    // const [popUpIsVisible] = useContext(AppContext);
-
+export default ({navigation}) => {
     return (
         <Container>
-            <Header/>
-            <Info/>
-            <Button/>
+            <Header
+                navigation={navigation}
+            />
+            <Content/>
         </Container>
     )
 }

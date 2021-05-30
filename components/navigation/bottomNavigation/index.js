@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 export default () => {
   return (
     <Tab.Navigator
-      initialRouteName="Saved"
+      initialRouteName="PostAd"
       tabBar={props =>
         <CustomTabScreen
           state={props.state}

@@ -1,14 +1,18 @@
 import React from 'react';
-import {Container, Button, Text} from './styled';
+import Icon from '../../../assets/icon.png'
+import {Container, IconContainer, Image, Text} from './styled';
 
-export default () => {
+export default Button = ({
+    text = 'Default'
+}) => {
     return (
         <Container>
-            <Button>
-                <Text>
-                    PUBLICAR ANUNCIO
-                </Text>
-            </Button>
+            <IconContainer>
+                <Image source={Icon}/>
+            </IconContainer>
+            <Text>
+                {text}
+            </Text>
         </Container>
     )
 }

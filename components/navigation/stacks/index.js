@@ -15,6 +15,7 @@ import BottomNavigation from '../bottomNavigation';
 import CheckIn from '../../../screens/checkIn';
 import Saved from '../../../screens/saved';
 import Login from '../../../screens/login';
+import PostAd from '../../../screens/postAd';
 
 const Stack = createStackNavigator();
 
@@ -32,9 +33,11 @@ export default () => {
 
       {/* <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='Saved' component={Saved}/> */}
-      <Stack.Screen name='Saved' component={Saved}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      <Stack.Screen name='Saved' component={Saved}/> 
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
+
+      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
+      <Stack.Screen name='PostAd' component={PostAd}/>
     </Stack.Navigator>
   );
 }
