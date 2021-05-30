@@ -1,9 +1,9 @@
 import React from 'react';
 import {Banner, Text} from './styled';
 
-export default ({screenSize}) => {
+export default () => {
     return (
-        <Banner width={screenSize.width}>
+        <Banner>
             <Text adjustFontSizeToFit>¡Qué bien verte de nuevo Carlos!</Text>
         </Banner>
     )

@@ -2,16 +2,10 @@ import React, {lazy, Suspense} from 'react';
 import {Container} from './styled';
 import Banner from './banner';
 import Slider from '../../../slider';
-import {Dimensions, Text, ScrollView} from 'react-native';
+import {Text, ScrollView} from 'react-native';
 
 const LazyContent = lazy(() => import('./content'));
 const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
-
-const WINDOW = 'window';
-const screenSize = {
-    width : Dimensions.get(WINDOW).width,
-    height : Dimensions.get(WINDOW).height
-}
 
 const AMOUNT_SLIDER_ITEMS = 9;
 
@@ -34,7 +28,7 @@ export default ({searchText, navigation}) => {
     return (
         <ScrollView>
             <Container searchText={searchText}>
-                <Banner screenSize={screenSize}/>
+                <Banner/>
                 <Slider
                     numberItemsDisplayed={4}
                     items={items}

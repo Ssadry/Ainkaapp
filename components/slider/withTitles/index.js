@@ -2,7 +2,15 @@ import React from 'react';
 import {Container, Top, Bottom, TextButton, LeftText, RightText} from './styled';
 import Slider from '../../slider';
 
-export default ({numberItemsDisplayed, items, setItemsWidth, leftText, rightText, navigation}) => {
+export default ({
+    numberItemsDisplayed, 
+    items,
+    itemName,
+    setItemsWidth, 
+    leftText, 
+    rightText, 
+    navigation
+}) => {
     return (
         <Container>
             <Top>
@@ -12,8 +20,8 @@ export default ({numberItemsDisplayed, items, setItemsWidth, leftText, rightText
                 <TextButton onPress={() => {
                     navigation.navigate('WatchMoreItems', {
                         title: leftText,
-                        items: items
-                    })
+                        itemName: itemName,
+                    });
                 }}>
                     <RightText>
                         {rightText}

@@ -9,13 +9,14 @@ import Profile from '../components/slider/item/profile';
 import {featured, needs, profiles} from '../components/toSaved/data';
 
 const ITEMS_DISPLAYED = 1.85;
+console.log(Featured.name);
 
 export default ({navigation}) => {
     const [itemsWidth, setItemsWidth] = React.useState(0);
 
     const itemFeatured = 
         featured.map((ftd, i) => 
-            <Featured 
+            <Featured
                 key={i} 
                 width={itemsWidth} 
                 title={ftd.title + ' - ' + i}
@@ -42,20 +43,20 @@ export default ({navigation}) => {
     const sliders = [
         {
             items: itemFeatured,
-            setItemsWidth: setItemsWidth,
             leftText: 'Servicios',
+            itemName: Featured.name,
             rightText: 'Ver más',
         },
         {
             items: itemsNeeds,
-            setItemsWidth: setItemsWidth,
             leftText: 'Necesidad',
+            itemName: Need.name,
             rightText: 'Ver más',
         },
         {
             items: itemsProfiles,
-            setItemsWidth: setItemsWidth,
             leftText: 'Perfiles',
+            itemName: Profile.name,
             rightText: 'Ver más',
         }
     ]
@@ -74,6 +75,7 @@ export default ({navigation}) => {
                                 key={i}
                                 numberItemsDisplayed={ITEMS_DISPLAYED}
                                 items={slider.items.map(item => item)}
+                                itemName={slider.itemName}
                                 setItemsWidth={setItemsWidth}
                                 leftText={slider.leftText}
                                 rightText={slider.rightText}

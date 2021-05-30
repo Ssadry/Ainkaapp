@@ -10,7 +10,7 @@ LogBox.ignoreLogs([
 
 export default ({navigation, route}) => {
     const {title} = route.params;
-    const {items} = route.params;
+    const {itemName} = route.params;
 
     return (
         <Container>
@@ -18,9 +18,9 @@ export default ({navigation, route}) => {
                 navigation={navigation}
                 title={title}
             />
-            <Content>
-                {items}
-            </Content>
+            <Content
+                itemName={itemName}
+            />
         </Container>
     )
 }

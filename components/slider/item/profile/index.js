@@ -16,7 +16,11 @@ import Icon from '../../../../assets/icon.png';
 
 const AMOUNT_INTERESTS = 4;
 
-export default ({ width, click, title = 'Usar name' }) => {
+export default ({ 
+    width, 
+    click = () => alert('click'),
+    title = 'User name' 
+}) => {
     const contentWidth = width * 0.9;
     const imageWidth = contentWidth * 0.6;
     const interestContainerWidth = contentWidth * 0.9;

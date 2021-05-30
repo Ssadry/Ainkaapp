@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBookmark, faLink, faStar } from '@fortawesome/free-solid-svg-icons'
 import Icon from '../../../../assets/icon.png';
 
-export default ({ width, title, hours }) => {
+export default Featured = ({ width, title, hours }) => {
     const contentWidth = width * 0.9;
     return (
         <Container width={width}>
@@ -81,3 +81,4 @@ export default ({ width, title, hours }) => {
         </Container>
     )
 }
+
