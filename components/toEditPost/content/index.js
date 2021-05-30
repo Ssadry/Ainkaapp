@@ -38,7 +38,7 @@ export default Content = ({route: {category}}) => {
                         canTextHide={false}
                         isCorrect={title.trim().length > 0}
                         errorText={'Título obligatorio.'}
-                        maxLength={10}
+                        maxLength={15}
                     />
                     <Input 
                         width={formWidth}

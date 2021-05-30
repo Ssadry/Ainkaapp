@@ -2,7 +2,6 @@ import React from 'react';
 import {Container, TextInput, IconButton, Line, Content, TextsContainer, ErrorText, LengthText} from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { text } from '@fortawesome/fontawesome-svg-core';
 
 export default Input = ({
     width, 
@@ -35,7 +34,7 @@ export default Input = ({
                     numberOfLines={numberOfLines}
                     multiline={multiline}
                     onEndEditing={() => setHasBeenFocused(true)}
-                    maxLength={maxLength === -1 ? value.length + 2 : maxLength}
+                    maxLength={maxLength === -1 ? value.length + 1 : maxLength}
                 />
                 <IconButton 
                     isVisible={canTextHide}
@@ -54,6 +53,7 @@ export default Input = ({
             >
                 <LengthText
                     maxLength={maxLength}
+                    currentValueLength={value.length}
                     hasBeenFocused={hasBeenFocused}
                 >
                     {maxLength - value.length} caracteres restantes

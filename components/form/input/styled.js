@@ -40,7 +40,7 @@ export const TextsContainer = styled.View`
 `;
 
 export const LengthText = styled.Text`
-    color: ${({maxLength, hasBeenFocused}) => maxLength === -1 ? 'transparent' : !hasBeenFocused ? 'gray' : 'transparent'};
+    color: ${({maxLength, hasBeenFocused, currentValueLength}) => maxLength === -1 || currentValueLength === 0 ? 'transparent' : !hasBeenFocused ? 'gray' : 'transparent'};
     font-size: 12px;
 `;
 
