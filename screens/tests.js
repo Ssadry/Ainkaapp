@@ -6,7 +6,6 @@ import * as ImagePicker from 'expo-image-picker';
 export default () => {
     const [image, setImage] = useState(null);
 
-    //Si la plataforma que está ejecutando este código o es OS, pide permiso para acceder a los archivos.
     useEffect(() => {
         (async () => {
             if (Platform.OS !== 'web') {
@@ -90,7 +89,6 @@ export const Text = styled.Text`
 `;
 
 export const Image = styled.Image`
-    border: 1px solid black;
     background-color: red;
     width: 300px;
     height: 300px;

@@ -34,8 +34,9 @@ export default ({searchText, navigation}) => {
                     items={items}
                     setItemsWidth={setSliderItemWidth}
                 />
-                <Suspense fallback={<Text>Cargando...</Text>}>
-                    
+                <Suspense 
+                    fallback={<Text>Cargando...</Text>}
+                >    
                     <LazyContent navigation={navigation}/>
                 </Suspense>
             </Container>   

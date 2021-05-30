@@ -37,7 +37,8 @@ export default () => {
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
 
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-      <Stack.Screen name='PostAd' component={PostAd}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      
     </Stack.Navigator>
   );
 }

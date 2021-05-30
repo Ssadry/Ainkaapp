@@ -32,10 +32,16 @@ export const Line = styled.View`
     background-color: ${({isCorrect, hasBeenFocused}) => isCorrect ? hasBeenFocused ? 'green' : 'black' : hasBeenFocused ? 'red' : 'black'};
 `;
 
-export const ErrorTextContainer = styled.View`
-    justify-content: flex-end;
+export const TextsContainer = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
     width: ${({width}) => width + 'px'};
     margin-top: 2px;
+`;
+
+export const LengthText = styled.Text`
+    color: ${({maxLength, hasBeenFocused}) => maxLength === -1 ? 'transparent' : !hasBeenFocused ? 'gray' : 'transparent'};
+    font-size: 12px;
 `;
 
 export const ErrorText = styled.Text`

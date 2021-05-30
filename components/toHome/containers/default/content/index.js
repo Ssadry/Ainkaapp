@@ -79,7 +79,8 @@ export default ({navigation}) => {
                     />   
                 ),
             leftText: 'Destacados',
-            rightText: 'Ver más'
+            rightText: 'Ver más',
+            itemName: Featured.name
         },
         {
             items: () => 
@@ -92,7 +93,8 @@ export default ({navigation}) => {
                     />   
                 ),
             leftText: 'Necesidades',
-            rightText: 'Ver más'
+            rightText: 'Ver más',
+            itemName: Need.name
         },
         {
             items: () => 
@@ -105,7 +107,8 @@ export default ({navigation}) => {
                     />   
                 ),
             leftText: 'Prueba',
-            rightText: 'Ver más'
+            rightText: 'Ver más',
+            itemName: Need.name
         },
     ];
 
@@ -117,6 +120,7 @@ export default ({navigation}) => {
                         key={i}
                         numberItemsDisplayed={ITEMS_DISPLAYED}
                         items={Object.values(mySlider.items()).map(item => item)}
+                        itemName={mySlider.itemName}
                         setItemsWidth={setItemsWidth}
                         leftText={mySlider.leftText}
                         rightText={mySlider.rightText}

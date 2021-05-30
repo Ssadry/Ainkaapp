@@ -4,7 +4,8 @@ import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
 import Services from '../../../screens/services';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
-import PostAd from '../../../screens/postAd';
+import PostAd from '../../../screens/postAd'; ////////////////////
+import EditPost from '../../../screens/editPost';
 // import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
@@ -41,7 +42,7 @@ export default () => {
       />
       <Tab.Screen 
         name="PostAd" 
-        component={PostAd}
+        component={EditPost}
         options={{
           title: '',
         }}
