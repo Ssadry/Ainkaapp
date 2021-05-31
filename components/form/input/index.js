@@ -8,7 +8,7 @@ export default Input = ({
     placeHolder = 'Place holder',
     setValue, 
     value, 
-    canTextHide, 
+    canTextHide = false,
     isCorrect = false, 
     errorText = 'Error text',
     keyboardType = 'default',
@@ -26,7 +26,7 @@ export default Input = ({
             <Content>
                 <TextInput 
                     placeholder={placeHolder}
-                    onChangeText={(text) => setValue(text.trim())}
+                    onChangeText={(text) => setValue(text)}
                     defaultText={value}
                     secureTextEntry={secureTextEntry}
                     keyboardType={keyboardType}

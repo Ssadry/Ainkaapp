@@ -6,7 +6,7 @@ import Input from '../../../components/form/input';
 const {width} = Dimensions.get('screen');
 const formWidth = width * 0.8;
 
-export default Content = ({route: {category}}) => {
+export default Content = ({category}) => {
     // const {category} = route.params ?? {category: 'Category'};
     const c = category ?? 'Category';
 

@@ -35,7 +35,7 @@ export default ({width, setText, searchText, click}) => {
                         adjustFontSizeToFit={true} 
                         numberOfLines={1}
                     >
-                        2h
+                        3h
                     </Hours>
                 </Profile>
                 <NotificationPoint

@@ -5,7 +5,7 @@ import Profile from '../../../screens/profile';
 import Services from '../../../screens/services';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
 import PostAd from '../../../screens/postAd'; ////////////////////
-import EditPost from '../../../screens/editPost';
+// import EditPost from '../../../screens/editPost';
 // import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 export default () => {
   return (
     <Tab.Navigator
-      initialRouteName="PostAd"
+      initialRouteName="Home"
       tabBar={props =>
         <CustomTabScreen
           state={props.state}
@@ -42,7 +42,7 @@ export default () => {
       />
       <Tab.Screen 
         name="PostAd" 
-        component={EditPost}
+        component={PostAd}
         options={{
           title: '',
         }}

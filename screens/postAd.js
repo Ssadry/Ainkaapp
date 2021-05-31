@@ -9,7 +9,9 @@ export default ({navigation}) => {
             <Header
                 navigation={navigation}
             />
-            <Content/>
+            <Content
+                navigation={navigation}
+            />
         </Container>
     )
 }

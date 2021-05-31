@@ -16,12 +16,17 @@ import CheckIn from '../../../screens/checkIn';
 import Saved from '../../../screens/saved';
 import Login from '../../../screens/login';
 import PostAd from '../../../screens/postAd';
+import EditPost from '../../../screens/editPost';
 
 const Stack = createStackNavigator();
 
 export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name='CheckIn' component={CheckIn}/>
+      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      <Stack.Screen name='EditPost' component={EditPost}/>
       {/* <Stack.Screen name='Singup' component={Signup}/>
       <Stack.Screen name='Profile' component={Profile}/>
       <Stack.Screen name='WatchProfile' component={WatchProfile}/>
@@ -35,10 +40,6 @@ export default () => {
       <Stack.Screen name='Home' component={Home}/>
       <Stack.Screen name='Saved' component={Saved}/> 
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
-
-      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
-      
     </Stack.Navigator>
   );
 }

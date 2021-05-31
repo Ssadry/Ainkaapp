@@ -14,7 +14,7 @@ const {height} = Dimensions.get(SCREEN);
 
 const carouselHeight = height * 0.8;
 
-export default () => {
+export default ({navigation}) => {
     const [currentPos, setCurrentPos] = React.useState(0);
     const [currentPage, setCurrentPage] = React.useState(0);
 
@@ -24,7 +24,7 @@ export default () => {
     }
 
     const nextScreen = () => {
-        alert('Cambio de pantalla');
+        navigation.navigate('MyRouter');
     }
 
     const data = [
