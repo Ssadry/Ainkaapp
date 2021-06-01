@@ -1,10 +1,12 @@
 import React from 'react';
-import {Container, Profile, Hours, NotificationPoint} from './styled';
+import {Container, Profile, Text, NotificationPoint} from './styled';
 
 export default Hours = ({
     click = () => alert('click'),
+    width = 40,
     children = '3h'
 }) => {
+    const notificationPointWidth = width * 0.6;
     return (
         <Container
             onPress={click}
@@ -13,16 +15,16 @@ export default Hours = ({
             <Profile 
                 width={width}
             >
-                <Hours 
+                <Text 
                     adjustFontSizeToFit={true} 
                     numberOfLines={1}
                 >
                     {children}
-                </Hours>
-            </Profile>
+                </Text>
             <NotificationPoint
                 width={notificationPointWidth}
             />
+            </Profile>
         </Container>
     )
 }

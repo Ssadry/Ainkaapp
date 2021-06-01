@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, SearchBar, TextInput, Icon, Hours } from './styled';
+import { Container, SearchBar, TextInput, Icon, HoursContainer } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch} from '@fortawesome/free-solid-svg-icons'
+import Hours from '../../hours';
 
 export default ({width, setText, searchText, click}) => {
     const searchBarWidth = width * 0.8;
@@ -11,7 +12,7 @@ export default ({width, setText, searchText, click}) => {
     // const notificationPointWidth = profileContainerWidth * 0.7;
 
     return (
-        <Container width={width}>
+        <Container>
             <SearchBar width={searchBarWidth}>
                 <TextInput 
                     placeholder="Buscar..." 
@@ -26,12 +27,14 @@ export default ({width, setText, searchText, click}) => {
                     />
                 </Icon>
             </SearchBar>
-            <Hours 
-                click={click}
-                width={profileContainerWidth}
-            >
-                3h
-            </Hours>
+            <HoursContainer>
+                <Hours 
+                    click={click}
+                    width={profileContainerWidth}
+                >
+                    3h
+                </Hours>
+            </HoursContainer>
             {/* <ProfileContainer 
                 onPress={_ => click()}
                 width={profileContainerWidth}

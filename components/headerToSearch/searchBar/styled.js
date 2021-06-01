@@ -28,6 +28,10 @@ export const Icon = styled.View`
     align-items: center;
 `;
 
+export const HoursContainer = styled.View`
+    margin-left: 15px;
+`;
+
 // export const ProfileContainer = styled.TouchableOpacity`
 //     height: 40px;
 //     width: 40px;
