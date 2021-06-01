@@ -4,7 +4,12 @@ import {Container, Text, CheckBoxContainer} from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCheckSquare, faSquareFull } from '@fortawesome/free-solid-svg-icons'
 
-export default Check = ({setValue, value, text, width}) => {
+export default Check = ({
+    setValue, 
+    value, 
+    text = 'Default',
+    width = 200
+}) => {
     return (
         <Container
             width={width}

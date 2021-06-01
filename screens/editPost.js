@@ -4,7 +4,7 @@ import Header from '../components/toEditPost/header';
 import Content from '../components/toEditPost/content';
 
 export default ({navigation, route}) => {
-    const category = route.params.category;
+    const category = route?.params?.category ?? 'Category';
     return (
         <Container>
             <Header

@@ -23,23 +23,11 @@ const Stack = createStackNavigator();
 export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name='CheckIn' component={CheckIn}/>
+      {/* <Stack.Screen name='CheckIn' component={CheckIn}/>
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
       <Stack.Screen name='EditPost' component={EditPost}/>
-      {/* <Stack.Screen name='Singup' component={Signup}/>
-      <Stack.Screen name='Profile' component={Profile}/>
-      <Stack.Screen name='WatchProfile' component={WatchProfile}/>
-      <Stack.Screen name='Services' component={Services}/>
-      <Stack.Screen name='Chat' component={Chat}/>
-      <Stack.Screen name='Request' component={Request}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
-      {/* <Stack.Screen name='ChatsAndRequest' component={ChatsAndRequests}/> */}
 
-      {/* <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-      <Stack.Screen name='Home' component={Home}/>
-      <Stack.Screen name='Saved' component={Saved}/> 
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
     </Stack.Navigator>
   );
 }

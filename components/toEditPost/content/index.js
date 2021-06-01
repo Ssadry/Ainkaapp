@@ -1,18 +1,90 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ScrollView, Dimensions } from 'react-native';
-import {Container, UploadPhoto, UplodadPhotoText, Form, Line, Category} from './styled';
+import {Container, UploadPhoto, UplodadPhotoText, Form, Line, Title, CategoriesChecksContainer} from './styled';
 import Input from '../../../components/form/input';
+import Check from '../../../components/form/check';
 
-const {width} = Dimensions.get('screen');
+const width = Math.round(Dimensions.get('screen').width);
 const formWidth = width * 0.8;
+const checksWidth = formWidth * 0.5;
 
 export default Content = ({category}) => {
-    // const {category} = route.params ?? {category: 'Category'};
-    const c = category ?? 'Category';
+    const [title, setTitle] = useState('');
+    const [location, setLocation] = useState('');
+    const [description, setDescription] = useState('');
 
-    const [title, setTitle] = React.useState('');
-    const [location, setLocation] = React.useState('');
-    const [description, setDescription] = React.useState('');
+    const [categoriesCheckeds, setCategoriesCheckeds] = useState({
+        art: false,
+        music: false,
+        kitchen: false,
+        sport: false,
+        idiom: false,
+        craft: false,
+        leisure: false,
+        technology: false,
+        transport: false,
+        others: false
+    });
+
+    const handleChangeCheckeds = (name, value) => {
+        setCategoriesCheckeds((prevCategoriesCheckeds) => ({
+            ...prevCategoriesCheckeds,
+            [name]: value
+        }));
+    };
+
+    const checks = [
+        {
+            name: 'art',
+            value: categoriesCheckeds.art,
+            text: 'Arte',
+        },
+        {
+            name: 'music',
+            value: categoriesCheckeds.music,
+            text: 'Música',
+        },
+        {
+            name: 'kitchen',
+            value: categoriesCheckeds.kitchen,
+            text: 'Cocina',
+        },
+        {
+            name: 'sport',
+            value: categoriesCheckeds.sport,
+            text: 'Deporte',
+        },
+        {
+            name: 'idiom',
+            value: categoriesCheckeds.idiom,
+            text: 'Idioma',
+        },
+        {
+            name: 'craft',
+            value: categoriesCheckeds.craft,
+            text: 'Manualidad',
+        },  
+        {
+            name: 'leisure',
+            value: categoriesCheckeds.leisure,
+            text: 'Ocio',
+        }, 
+        {
+            name: 'technology',
+            value: categoriesCheckeds.technology,
+            text: 'Tecnología',
+        },  
+        {
+            name: 'transport',
+            value: categoriesCheckeds.transport,
+            text: 'Transporte',
+        },           
+        {
+            name: 'others',
+            value: categoriesCheckeds.others,
+            text: 'Otros',
+        },
+    ];
 
     return (
         <ScrollView>
@@ -36,7 +108,7 @@ export default Content = ({category}) => {
                         setValue={setTitle}
                         value={title}
                         canTextHide={false}
-                        isCorrect={title.trim().length > 0}
+                        isCorrect={title.length > 0}
                         errorText={'Título obligatorio.'}
                         maxLength={15}
                     />
@@ -56,13 +128,38 @@ export default Content = ({category}) => {
                         setValue={setDescription}
                         value={description}
                         canTextHide={false}
-                        isCorrect={description.trim().length > 0}
+                        isCorrect={description.length > 0}
                         errorText={'Descripción obligatoria.'}
                         multiline={true}
+                        maxLength={200}
                     />
-                    <Category>
-                        Category: {c}
-                    </Category>
+                    <Title>
+                        Categoría: {category}
+                    </Title>
+                    <Line 
+                        width={formWidth}
+                    />
+                    <CategoriesChecksContainer
+                        width={formWidth}
+                    >
+                        {
+                            checks.map((check, i) =>
+                                <Check 
+                                    key={i}
+                                    width={checksWidth}
+                                    setValue={(value) => handleChangeCheckeds(check.name, value)}
+                                    value={check.value}
+                                    text={check.text}
+                                />
+                            )
+                        }
+                    </CategoriesChecksContainer>
+                    <Title>
+                        Tiempo de duración del servicio*
+                    </Title>
+                    <Line 
+                        width={formWidth}
+                    />
                 </Form>
             </Container>
         </ScrollView>

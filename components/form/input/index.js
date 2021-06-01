@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 export default Input = ({
-    width, 
+    width = 200,
     placeHolder = 'Place holder',
     setValue, 
     value, 
@@ -14,7 +14,7 @@ export default Input = ({
     keyboardType = 'default',
     numberOfLines = 1,
     multiline = false,
-    maxLength = -1
+    maxLength = null
 }) => {
     const [secureTextEntry, setSecureTextEntry] = React.useState(canTextHide);
     const [hasBeenFocused, setHasBeenFocused] = React.useState(false);
@@ -34,7 +34,7 @@ export default Input = ({
                     numberOfLines={numberOfLines}
                     multiline={multiline}
                     onEndEditing={() => setHasBeenFocused(true)}
-                    maxLength={maxLength === -1 ? value.length + 1 : maxLength}
+                    maxLength={maxLength}
                 />
                 <IconButton 
                     isVisible={canTextHide}
