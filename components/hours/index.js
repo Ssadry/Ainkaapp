@@ -1,10 +1,28 @@
 import React from 'react';
-import {Container} from './styled';
+import {Container, Profile, Hours, NotificationPoint} from './styled';
 
-export default Hours = () => {
+export default Hours = ({
+    click = () => alert('click'),
+    children = '3h'
+}) => {
     return (
-        <Container>
-            
+        <Container
+            onPress={click}
+            width={width}
+        >
+            <Profile 
+                width={width}
+            >
+                <Hours 
+                    adjustFontSizeToFit={true} 
+                    numberOfLines={1}
+                >
+                    {children}
+                </Hours>
+            </Profile>
+            <NotificationPoint
+                width={notificationPointWidth}
+            />
         </Container>
     )
 }
