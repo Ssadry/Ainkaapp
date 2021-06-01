@@ -9,7 +9,7 @@ export default () => {
     useEffect(() => {
         (async () => {
             if (Platform.OS !== 'web') {
-                const {status} = await ImagePicker.requestCameraPermissionsAsync();
+                const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync();
                 if (status !== 'granted') 
                     alert('Che, boludo, necesitamos permisos para espiarte.');
             }
@@ -35,8 +35,7 @@ export default () => {
         });
 
         if (!result.cancelled) setImage(result.uri);
-        else alert('¿en serio? ¿ninguna imagen?');
-        
+        else alert('¿en serio? ¿ninguna imagen?'); 
     }
 
     const takePhoto = async() => {

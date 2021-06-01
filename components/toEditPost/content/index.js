@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import { ScrollView, Dimensions } from 'react-native';
-import {Container, UploadPhoto, UplodadPhotoText, Form, Line, Title, CategoriesChecksContainer} from './styled';
+import Slider from '@react-native-community/slider';
+import {Container, Form, Line, Title, CategoriesChecksContainer, SliderContainer, Hours, MySlider, ModalitiesChecksContainer, ButtonContainer} from './styled';
 import Input from '../../../components/form/input';
 import Check from '../../../components/form/check';
+import FatButton from '../../../components/form/button/fat';
+import UploadPhoto from './uploadPhoto';
 
 const width = Math.round(Dimensions.get('screen').width);
 const formWidth = width * 0.8;
@@ -13,77 +16,107 @@ export default Content = ({category}) => {
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
 
-    const [categoriesCheckeds, setCategoriesCheckeds] = useState({
-        art: false,
-        music: false,
-        kitchen: false,
-        sport: false,
-        idiom: false,
-        craft: false,
-        leisure: false,
-        technology: false,
-        transport: false,
-        others: false
+    const [allChecks, setAllChecks] = useState({
+       categories: {
+            art: false,
+            music: false,
+            kitchen: false,
+            sport: false,
+            idiom: false,
+            craft: false,
+            leisure: false,
+            technology: false,
+            transport: false,
+            others: false
+       },
+       modalities: {
+            faceToFace: false, 
+            online: false,
+            freeNegociation: false
+       }
     });
 
-    const handleChangeCheckeds = (name, value) => {
-        setCategoriesCheckeds((prevCategoriesCheckeds) => ({
-            ...prevCategoriesCheckeds,
-            [name]: value
-        }));
-    };
+    const [value, setValue] = useState(0);
+    const [sliderContainerWidth, setSliderContainerWidth] = useState(100);
 
-    const checks = [
+    const handleChangeCheckeds = (type, name, value) => {
+        setAllChecks((prevChecks) => ({
+            ...prevChecks,
+            [type]: {
+                [name]: value
+            }
+        }));
+    }
+
+    const categories = [
         {
             name: 'art',
-            value: categoriesCheckeds.art,
+            value: allChecks.categories.art,
             text: 'Arte',
         },
         {
             name: 'music',
-            value: categoriesCheckeds.music,
+            value: allChecks.categories.music,
             text: 'Música',
         },
         {
             name: 'kitchen',
-            value: categoriesCheckeds.kitchen,
+            value: allChecks.categories.kitchen,
             text: 'Cocina',
         },
         {
             name: 'sport',
-            value: categoriesCheckeds.sport,
+            value: allChecks.categories.sport,
             text: 'Deporte',
         },
         {
             name: 'idiom',
-            value: categoriesCheckeds.idiom,
+            value: allChecks.categories.idiom,
             text: 'Idioma',
         },
         {
             name: 'craft',
-            value: categoriesCheckeds.craft,
+            value: allChecks.categories.craft,
             text: 'Manualidad',
         },  
         {
             name: 'leisure',
-            value: categoriesCheckeds.leisure,
+            value: allChecks.categories.leisure,
             text: 'Ocio',
         }, 
         {
             name: 'technology',
-            value: categoriesCheckeds.technology,
+            value: allChecks.categories.technology,
             text: 'Tecnología',
         },  
         {
             name: 'transport',
-            value: categoriesCheckeds.transport,
+            value: allChecks.categories.transport,
             text: 'Transporte',
         },           
         {
             name: 'others',
-            value: categoriesCheckeds.others,
+            value: allChecks.categories.others,
             text: 'Otros',
         },
+    ];
+
+    const modatilies = [
+        {
+            name: 'faceToFace',
+            value: allChecks.modalities.faceToFace,
+            text: 'Presencial'
+        },
+        {
+            name: 'online',
+            value: allChecks.modalities.online,
+            text: 'Online'
+        },
+        {
+            name: 'freeNegociation',
+            value: allChecks.modalities.freeNegociation,
+            text: 'Negociación libre'
+        }
     ];
 
     return (
@@ -91,14 +124,7 @@ export default Content = ({category}) => {
             <Container>
                 <UploadPhoto
                     width={width}
-                >
-                    <UplodadPhotoText>
-                        Subir foto
-                    </UplodadPhotoText>
-                    <Line
-                        width={width}
-                    />
-                </UploadPhoto>
+                />
                 <Form
                     width={formWidth}
                 >
@@ -139,17 +165,15 @@ export default Content = ({category}) => {
                     <Line 
                         width={formWidth}
                     />
-                    <CategoriesChecksContainer
-                        width={formWidth}
-                    >
+                    <CategoriesChecksContainer>
                         {
-                            checks.map((check, i) =>
+                            categories.map((category, i) =>
                                 <Check 
                                     key={i}
                                     width={checksWidth}
-                                    setValue={(value) => handleChangeCheckeds(check.name, value)}
-                                    value={check.value}
-                                    text={check.text}
+                                    setValue={(value) => handleChangeCheckeds('categories', category.name, value)}
+                                    value={category.value}
+                                    text={category.text}
                                 />
                             )
                         }
@@ -160,6 +184,59 @@ export default Content = ({category}) => {
                     <Line 
                         width={formWidth}
                     />
+                    <SliderContainer
+                        onLayout={
+                            ({nativeEvent}) => {
+                                const {width} = nativeEvent.layout;
+                                setSliderContainerWidth(width);
+                            }
+                        }
+                    >
+                        <MySlider
+                            width={sliderContainerWidth * 0.9}
+                        >
+                            <Slider
+                                style={{width: sliderContainerWidth * 0.9, height: 70}}
+                                minimumValue={0}
+                                maximumValue={3}
+                                step={1}
+                                onValueChange={(value) => setValue(value)}
+                                minimumTrackTintColor="green"
+                                maximumTrackTintColor="#000000"
+                            />
+                        </MySlider>
+                        <Hours
+                            width={sliderContainerWidth * 0.1}
+                        >
+                            {value} h
+                        </Hours>
+                    </SliderContainer>
+                    <Title>
+                        Modalidad
+                    </Title>
+                    <Line 
+                        width={formWidth}
+                    />
+                    <ModalitiesChecksContainer>
+                        {
+                            modatilies.map((modality, i) =>
+                                <Check 
+                                    key={i}
+                                    width={checksWidth}
+                                    setValue={(value) => handleChangeCheckeds('modalities', modality.name, value)}
+                                    value={modality.value}
+                                    text={modality.text}
+                                />
+                            )
+                        }
+                    </ModalitiesChecksContainer>
+                    <ButtonContainer>
+                        <FatButton 
+
+                        >
+                            PUBLICAR ANUNCIO
+                        </FatButton>
+                    </ButtonContainer>
                 </Form>
             </Container>
         </ScrollView>

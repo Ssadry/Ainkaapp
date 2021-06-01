@@ -17,6 +17,7 @@ import Saved from '../../../screens/saved';
 import Login from '../../../screens/login';
 import PostAd from '../../../screens/postAd';
 import EditPost from '../../../screens/editPost';
+import ServiceOrNeed from '../../../screens/serviceOrNeed';
 
 const Stack = createStackNavigator();
 
@@ -26,7 +27,7 @@ export default () => {
       {/* <Stack.Screen name='CheckIn' component={CheckIn}/>
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
-      <Stack.Screen name='EditPost' component={EditPost}/>
+      <Stack.Screen name='ServiceOrNeed' component={ServiceOrNeed}/>
 
     </Stack.Navigator>
   );
