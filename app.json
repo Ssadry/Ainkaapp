@@ -4,6 +4,7 @@
    "icon": "./assets/icon.png",
    "version": "1.0.0",
    "slug": "your-app-slug",
+   "sdkVersion": "41.0.0",
    "orientation": "portrait",
    "ios": {
      "bundleIdentifier": "com.yourcompany.ainkaa",

@@ -4,12 +4,14 @@ import Logo from '../components/toLogin/logo';
 import Form from '../components/toLogin/form';
 import Buttons from '../components/toLogin/buttons';
 
-export default () => {
+export default ({navigation}) => {
     return (
         <Container>
             <Logo/>
             <Form/>
-            <Buttons/>
+            <Buttons
+                navigation={navigation}
+            />
         </Container>
     )
 }

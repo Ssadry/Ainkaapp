@@ -3,22 +3,22 @@ import {Container, SlimButtons} from './styled';
 import FatButton from '../../form/button/fat';
 import SlimButton from '../../form/button/slim';
 
-export default Content = () => {
+export default Content = ({navigation}) => {
     return (
         <Container>
             <FatButton
-                click={() => alert('Iniciar sesión')}
+                click={() => navigation.navigate('MyRouter')}
             >
                 INICIAR SESIÓN
             </FatButton>
             <SlimButtons>
                 <SlimButton
-                    click={() => alert('Poh te jodes')}
+                    click={() => alert('Habértela apuntado')}
                 >
                     ¿Olvidaste la contraseña?
                 </SlimButton>
                 <SlimButton
-                    click={() => alert('Unido')}
+                    click={() => navigation.navigate('CheckIn')}
                 >
                     Únete a la comunidad AINKAA
                 </SlimButton>

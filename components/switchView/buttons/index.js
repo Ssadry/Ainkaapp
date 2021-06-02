@@ -1,10 +1,18 @@
 import React from 'react';
-import { Container, Button, Text, BottomLine } from './styled';
+import { Container, Button, Text, BottomLine, NotificationsPoints } from './styled';
 import { Dimensions } from 'react-native';
 
-const {width} = Dimensions.get('window');
+const {width} = Dimensions.get('screen');
 
-export default ({ currentState, setCurrentState, allTexts }) => {    
+export default ({ 
+    currentState, 
+    setCurrentState, 
+    allTexts = ['Default'],
+    notificationsPoints = [false]
+}) => {
+    if (notificationsPoints.length < allTexts.length)
+        allTexts.forEach((i) => notificationsPoints[i] = false);
+    
     const buttonWidth = width / allTexts.length * 0.7;
 
     return (
@@ -22,6 +30,9 @@ export default ({ currentState, setCurrentState, allTexts }) => {
                         >
                             {text}
                         </Text>
+                        <NotificationsPoints
+                            isVisible={notificationsPoints[i]}
+                        />
                         <BottomLine 
                             width={buttonWidth}
                             pos={i}

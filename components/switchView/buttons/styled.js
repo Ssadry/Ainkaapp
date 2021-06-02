@@ -26,3 +26,14 @@ export const BottomLine = styled.View`
     background-color: ${({pos, currentState}) => currentState === pos ? 'green' : 'transparent'};
     width: ${({width}) => width + 'px'};
 `;
+
+export const NotificationsPoints = styled.View`
+    position: ${({isVisible}) => isVisible ? 'absolute' : 'relative'};;
+    top: -5px;
+    right: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 5px;
+    display: ${({isVisible}) => isVisible ? 'flex' : 'none'};
+`;

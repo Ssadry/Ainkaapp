@@ -18,17 +18,18 @@ import Login from '../../../screens/login';
 import PostAd from '../../../screens/postAd';
 import EditPost from '../../../screens/editPost';
 import ServiceOrNeed from '../../../screens/serviceOrNeed';
+import Inbox from '../../../screens/inbox';
 
 const Stack = createStackNavigator();
 
 export default () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name='CheckIn' component={CheckIn}/>
+      <Stack.Screen name='Login' component={Login}/>
+      <Stack.Screen name='CheckIn' component={CheckIn}/>
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/> */}
-      <Stack.Screen name='ServiceOrNeed' component={ServiceOrNeed}/>
-
+      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
+      <Stack.Screen name='EditPost' component={EditPost}/>
     </Stack.Navigator>
   );
 }
