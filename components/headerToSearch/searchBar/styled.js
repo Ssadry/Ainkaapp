@@ -12,7 +12,6 @@ export const SearchBar = styled.View`
     background-color: white;
     border-radius: ${({width}) => width * 0.1 + 'px'};
     width: ${({width}) => width + 'px'};
-    height: 40px;
     overflow: hidden;
 `;
 

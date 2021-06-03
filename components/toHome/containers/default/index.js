@@ -1,8 +1,8 @@
 import React, {lazy, Suspense} from 'react';
-import {Container} from './styled';
+import {Container, ScrollView} from './styled';
 import Banner from './banner';
 import Slider from '../../../slider';
-import {Text, ScrollView} from 'react-native';
+import {Text} from 'react-native';
 
 const LazyContent = lazy(() => import('./content'));
 const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
@@ -26,8 +26,10 @@ export default ({searchText, navigation}) => {
             </Suspense>
     
     return (
-        <ScrollView>
-            <Container searchText={searchText}>
+        <ScrollView
+            searchText={searchText}
+        >
+            <Container>
                 <Banner/>
                 <Slider
                     numberItemsDisplayed={4}

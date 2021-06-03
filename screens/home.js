@@ -3,7 +3,7 @@ import HeaderToSearch from '../components/headerToSearch';
 import styled from 'styled-components/native';
 import Default from '../components/toHome/containers/default';
 import Searching from '../components/toHome/containers/searching';
-import {Dimensions} from 'react-native';
+import {Dimensions, View} from 'react-native';
 
 export default ({navigation}) => {
     const [searchText, setSearchText] = React.useState('');
@@ -13,7 +13,7 @@ export default ({navigation}) => {
             <HeaderToSearch 
                 setSearchText={setSearchText} 
                 click={_ => navigation.navigate('Profile')}
-                width={Dimensions.get('screen').width}
+                width={Math.round(Dimensions.get('screen').width)}
             />
             <Default 
                 searchText={searchText}
@@ -29,5 +29,6 @@ export default ({navigation}) => {
 };
 
 export const Container = styled.View`
-    background-color: white;
+    flex: 1;
+    background-color: red;
 `;

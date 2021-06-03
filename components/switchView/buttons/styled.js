@@ -6,6 +6,7 @@ export const Container = styled.View`
     align-items: center;
     border-bottom-width: 1px;
     width: ${({width}) => width + 'px'};
+    background-color: greenyellow;
 `;
 
 export const Button = styled.TouchableOpacity`

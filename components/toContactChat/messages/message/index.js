@@ -1,12 +1,11 @@
 import React from 'react';
 import {Container, Text} from './styled';
 
-export default ({width, children, click}) => {
+export default Message = ({
+    children = 'Esto es un mensaje por defecto.'
+}) => {
     return (
-        <Container 
-            width={width}
-            onPress={() => click()}
-        >
+        <Container>
             <Text>
                 {children}
             </Text>

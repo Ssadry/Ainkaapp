@@ -14,9 +14,11 @@ export default Inbox = () => {
                 currentState={currentState}
                 setCurrentState={setCurrentState}
                 allTexts={['Chats', 'Solicitudes', 'Contactos']}
-                notificationsPoints={[true, false, false]}
+                notificationsPoints={[true, true, false]}
             />
-            <Content/>
+            <Content
+                currentState={currentState}
+            />
         </Container>
     )
 }

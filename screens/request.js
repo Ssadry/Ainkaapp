@@ -1,51 +1,30 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components/native';
-import Header from '../components/toRequest/header';
 import Content from '../components/toRequest/content';
-import Buttons from '../components/toRequest/buttons';
-import {Dimensions, BackHandler} from 'react-native';
-import PopUp from '../components/popUp';
+import {ScrollView} from 'react-native';
+import Icon from '../assets/icon.png';
 
-export default ({navigation}) => {
-    const {width} = Dimensions.get('window');
-    const [popUpIsVisible, setPopUpIsVisible] = useState(false);
-
-    function handleBackButtonClick() {
-        if (navigation != undefined)
-            navigation.goBack();
-        return true;
-    }
+export default ({navigation, route}) => {
+    const topPhoto = route?.params?.topPhoto ?? Icon;
+    const title = route?.params?.title ?? 'Título por defecto';
+    const isNeed = route?.params?.isNeed ?? true;
+    const handleButton = route?.params?.button ?? (() => alert('click'));
+    const textButton = route?.params?.textButton ?? 'TEXTO POR DEFECTO'
     
-    useEffect(() => {
-        BackHandler.addEventListener('hardwareBackPress', handleBackButtonClick);
-        return () => {
-            BackHandler.removeEventListener('hardwareBackPress', handleBackButtonClick);
-        };
-    }, []);
-
-    const userPromisesMe = () => {
-        setPopUpIsVisible(false);
-        handleBackButtonClick();
-    }
-
     return (
-        <Container>
-            <Header navigation={navigation}/>
-            <Buttons 
-                width={width}
-                navigation={navigation}
-                setPopUpIsVisible={setPopUpIsVisible}
-            />
-            <Content/>
-            <PopUp 
-                isVisible={popUpIsVisible}
-                setPopUpIsVisible={setPopUpIsVisible}
-                userPromisesMe={userPromisesMe}
-            />
-        </Container>
+        <ScrollView>
+            <Container>
+                <Content
+                    title={title}
+                    isNeed={isNeed}
+                    button={handleButton}
+                    textButton={textButton}
+                />
+            </Container>
+        </ScrollView>
     )
 }
 
-export const Container = styled.View`
+const Container = styled.View`
     flex: 1;
 `;

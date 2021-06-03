@@ -110,6 +110,20 @@ export default ({navigation}) => {
             rightText: 'Ver más',
             itemName: Need.name
         },
+        {
+            items: () => 
+                myNeeds.map((need, i) => 
+                    <Need 
+                        key={i}
+                        width={itemsWidth}
+                        title={need.title + ' - ' + i}
+                        hours={need.hours}
+                    />   
+                ),
+            leftText: 'Prueba 1',
+            rightText: 'Ver más',
+            itemName: Need.name
+        },
     ];
 
     return (

@@ -1,7 +1,7 @@
 import React, {useState, lazy, Suspense} from 'react';
 import {Container} from './styled';
 import SwitchButtons from '../../../switchView/buttons';
-import {ScrollView, Dimensions, Text} from 'react-native';
+import {ScrollView, Dimensions, Text, View} from 'react-native';
 import Content from './content';
 
 const LazyCategory = lazy(_ => import('../../../slider/item/category'));
@@ -27,10 +27,10 @@ const types = {
 }
 
 const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
-const {width} = Dimensions.get('window');
+const width = Math.round(Dimensions.get('screen').width);
 
 export default ({searchText, click}) => {
-    const [currentState, setCurrentState] = useState(1);
+    const [currentState, setCurrentState] = useState(0);
 
     const createArray = (type, amount) => {
         const arr = [amount];
@@ -64,35 +64,39 @@ export default ({searchText, click}) => {
                 setCurrentState={setCurrentState}
                 allTexts={buttonsName}
             />
-            <ScrollView>
-                <Suspense fallback={<Text>Cargando categorías...</Text>}>
-                    <Content 
-                        width={width}
-                        currentState={currentState}
-                        contentState={0}
-                    >
-                        {categories}
-                    </Content>
-                </Suspense>
-                <Suspense fallback={<Text>Cargando necesidades...</Text>}>
-                    <Content 
-                        width={width}
-                        currentState={currentState}
-                        contentState={1}
-                    >
-                        {needs}
-                    </Content>
-                </Suspense>
-                <Suspense fallback={<Text>Cargando perfiles...</Text>}>
-                    <Content 
-                        width={width}
-                        currentState={currentState}
-                        contentState={2}
-                    >
-                        {profiles}
-                    </Content>
-                </Suspense>
-            </ScrollView>
+            <Suspense 
+                fallback={<Text>Cargando categorías...</Text>}
+            >
+                <Content 
+                    width={width}
+                    currentState={currentState}
+                    contentState={0}
+                >
+                    {categories}
+                </Content>
+            </Suspense>
+            <Suspense 
+                fallback={<Text>Cargando necesidades...</Text>}
+            >
+                <Content 
+                    width={width}
+                    currentState={currentState}
+                    contentState={1}
+                >
+                    {needs}
+                </Content>
+            </Suspense>
+            <Suspense 
+                fallback={<Text>Cargando perfiles...</Text>}
+            >
+                <Content 
+                    width={width}
+                    currentState={currentState}
+                    contentState={2}
+                >
+                    {profiles}
+                </Content>
+            </Suspense>
         </Container>
     )
 }

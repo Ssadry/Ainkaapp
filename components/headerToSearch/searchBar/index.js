@@ -35,22 +35,6 @@ export default ({width, setText, searchText, click}) => {
                     3h
                 </Hours>
             </HoursContainer>
-            {/* <ProfileContainer 
-                onPress={_ => click()}
-                width={profileContainerWidth}
-            >
-                <Profile>
-                    <Hours 
-                        adjustFontSizeToFit={true} 
-                        numberOfLines={1}
-                    >
-                        3h
-                    </Hours>
-                </Profile>
-                <NotificationPoint
-                        width={notificationPointWidth}
-                />
-            </ProfileContainer> */}
         </Container>
     )
 }
