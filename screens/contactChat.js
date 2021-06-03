@@ -5,13 +5,7 @@ import Messages from '../components/toContactChat/messages';
 import Send from '../components/toContactChat/send';
 
 export default ContactChat = () => {
-    const [messages, setMessages] = React.useState([
-        'Este es el primer mensaje',
-        'Segundo mensaje',
-        'Hey',
-        'Ñe',
-        'Tengo hambre'
-    ]);
+    const [messages, setMessages] = React.useState(['a', 'v']);
     const scrollViewRef = React.useRef();
 
     return (
@@ -23,7 +17,7 @@ export default ContactChat = () => {
             />
             <Send
                 click={() => setMessages([...messages, `Entry ${messages.length}`])}
-                scrollToEnd={() => scrollViewRef.current.scrollToEnd({animated: false})}
+                scrollToEnd={() => scrollViewRef.current.scrollToEnd({animated: true})}
             />
         </Container>
     )

@@ -7,6 +7,7 @@ export const Container = styled.View`
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 15px;
+    justify-content: flex-end;
 `;
 
 export const Text = styled.Text`

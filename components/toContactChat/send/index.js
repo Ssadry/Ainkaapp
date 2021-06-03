@@ -10,7 +10,7 @@ export default ({click, scrollToEnd}) => {
                 <InputContainer>
                     <TextInput 
                         placeholder="Escribe..."
-                        onFocus={scrollToEnd}
+                        onFocus={() => scrollToEnd()}
                     />
                 </InputContainer>
             </Left>
