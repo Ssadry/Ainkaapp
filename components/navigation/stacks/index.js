@@ -31,7 +31,7 @@ export default () => {
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
       <Stack.Screen name='EditPost' component={EditPost}/> */}
-      <Stack.Screen name='ContactChat' component={ContactChat}/>
+      <Stack.Screen name='Profile' component={Profile}/>
     </Stack.Navigator>
   );
 }

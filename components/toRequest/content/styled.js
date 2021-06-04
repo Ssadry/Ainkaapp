@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex: 1;
+    background-color: aqua;
 `;
 
 export const MyContent = styled.View`
@@ -59,7 +60,7 @@ export const Images = styled.View`
 `;
 
 export const Info = styled.View`
-    margin-top: 20px;
+    margin-top: 50px;
     justify-content: space-between;
     align-items: center;
 `;
@@ -85,6 +86,7 @@ export const Paraph = styled.Text`
 `;
 
 export const ButtonContainer = styled.View`
+    flex: 1;
     width: ${({width}) => width + 'px'};
     flex-direction: row;
     justify-content: center;

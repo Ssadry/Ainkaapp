@@ -8,7 +8,7 @@ export default Messages = ({messages, scrollViewRef}) => {
             <ScrollView
                 ref={scrollViewRef}
                 onContentSizeChange={() => scrollViewRef.current.scrollToEnd({animated: true})}
-                contentContainerStyle={{justifyContent: 'flex-end', alignItems: 'flex-end', backgroundColor: 'red', borderWidth: 4}}
+                contentContainerStyle={{justifyContent: 'flex-end', alignItems: 'flex-end'}}
             >
                     {
                         messages.map((message, i) => 

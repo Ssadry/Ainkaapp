@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import Content from '../components/toRequest/content';
-import {ScrollView} from 'react-native';
+import {ScrollView, Dimensions} from 'react-native';
 import Icon from '../assets/icon.png';
+
+const height = Math.round(Dimensions.get('screen').height);
 
 export default ({navigation, route}) => {
     const topPhoto = route?.params?.topPhoto ?? Icon;
@@ -27,4 +29,6 @@ export default ({navigation, route}) => {
 
 const Container = styled.View`
     flex: 1;
+    background-color: red;
+    height: ${height + 'px'};
 `;

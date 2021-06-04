@@ -1,22 +1,18 @@
-import {Dimensions, Text} from 'react-native';
-import React, {lazy, Suspense} from 'react';
-import Header from '../components/toProfile/header';
+import React from 'react';
+import TopSettings from '../components/toProfile/topSettings';
+import Content from '../components/toProfile/content';
+import TopPhoto from '../components/toProfile/topPhoto';
+import {ScrollView} from 'react-native';
 import styled from 'styled-components/native';
-
-const LazyServices = lazy(() => import('../components/toProfile/services'));
-const WINDOW = 'window';
-const {width} = Dimensions.get(WINDOW);
 
 export default ({navigation}) => {
     return (
         <Container>
-            <Header width={width}/>
-            <Suspense fallback={<Text>Cargando servicios...</Text>}>
-                <LazyServices 
-                    width={width}
-                    click={() => navigation.navigate('Services')}
-                />
-            </Suspense>
+            <TopSettings/>
+            <ScrollView>
+                <TopPhoto/>
+                <Content/>
+            </ScrollView>
         </Container>
     )
 }

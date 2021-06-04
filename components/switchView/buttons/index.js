@@ -2,9 +2,8 @@ import React from 'react';
 import { Container, Button, Text, BottomLine, NotificationsPoints } from './styled';
 import { Dimensions } from 'react-native';
 
-const {width} = Dimensions.get('screen');
-
-export default ({ 
+export default ({
+    width = Dimensions.get('screen').width,
     currentState, 
     setCurrentState, 
     allTexts = ['Default'],
