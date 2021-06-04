@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-    width: ${({width}) => width + 'px'};
+    min-width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
     margin-left: 5px;

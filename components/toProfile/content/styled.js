@@ -12,12 +12,24 @@ export const Profile = styled.View`
     top: -75.5px;
 `;
 
+export const HoursContainer = styled.View`
+    justify-content: center;
+    align-items: center;
+    position: ${({isOwnProfile}) => isOwnProfile ? 'absolute' : 'relative'};;
+    top: -20px;
+    left: -20px;
+    display: ${({isOwnProfile}) => isOwnProfile ? 'flex' : 'none'};
+`;
+
 export const PhotoProfileContainer = styled.View`
     width: 150px;
     height: 150px;
+`;
+
+export const AnotherPhotoProfileContainer = styled.View`
+    overflow: hidden;
     border: 1px solid gray;
     border-radius: 20px;
-    overflow: hidden;
 `;
 
 export const PhotoProfile = styled.Image`
@@ -33,6 +45,10 @@ export const Name = styled.Text`
 
 export const Info = styled.View`
     flex: 1;
+    position: relative;
+    top: -75.5px;
+    margin-top: 30px;
+    margin-bottom: -75.5px;
 `;
 
 export const BarContainer = styled.View`

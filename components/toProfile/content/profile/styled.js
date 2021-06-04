@@ -98,6 +98,7 @@ export const Description = styled.Text`
 
 export const ImagesContainer = styled.View`
     flex-direction: row;
+    flex-wrap: wrap;
 `;
 
 export const ImageContainer = styled.View`

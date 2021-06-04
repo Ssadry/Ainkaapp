@@ -5,13 +5,16 @@ import TopPhoto from '../components/toProfile/topPhoto';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 
-export default ({navigation}) => {
+export default ({navigation, route}) => {
+    const isOwnProfile = route?.params?.isOwnProfile ?? true;
     return (
         <Container>
             <TopSettings/>
             <ScrollView>
                 <TopPhoto/>
-                <Content/>
+                <Content
+                    isOwnProfile={isOwnProfile}
+                />
             </ScrollView>
         </Container>
     )

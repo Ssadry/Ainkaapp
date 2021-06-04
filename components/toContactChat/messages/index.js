@@ -10,15 +10,15 @@ export default Messages = ({messages, scrollViewRef}) => {
                 onContentSizeChange={() => scrollViewRef.current.scrollToEnd({animated: true})}
                 contentContainerStyle={{justifyContent: 'flex-end', alignItems: 'flex-end'}}
             >
-                    {
-                        messages.map((message, i) => 
-                            <Message
-                                key={i}
-                            >
-                                {message}
-                            </Message>
-                        )
-                    }
+                {
+                    messages.map((message, i) => 
+                        <Message
+                            key={i}
+                        >
+                            {message}
+                        </Message>
+                    )
+                }
             </ScrollView>
     )
 }

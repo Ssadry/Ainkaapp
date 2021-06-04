@@ -15,7 +15,7 @@ import { faBookmark, faLink } from '@fortawesome/free-solid-svg-icons'
 import Icon from '../../../../assets/icon.png';
 
 export default Need = ({
-    width = 100, 
+    width = 200, 
     title = 'Need', 
     hours = -1 
 }) => {

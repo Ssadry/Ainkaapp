@@ -12,5 +12,5 @@ export const Line = styled.View`
 `;
 
 export const PhotoServicie = styled.View`
-    height: 80px;
+    height: 130px;
 `;

@@ -98,24 +98,6 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                             resizeMode='stretch'
                         />
                     </ImageContainer>
-                    <ImageContainer>
-                        <Image
-                            source={Icon}
-                            resizeMode='stretch'
-                        />
-                    </ImageContainer>
-                    <ImageContainer>
-                        <Image
-                            source={Icon}
-                            resizeMode='stretch'
-                        />
-                    </ImageContainer>
-                    <ImageContainer>
-                        <Image
-                            source={Icon}
-                            resizeMode='stretch'
-                        />
-                    </ImageContainer>
                 </ImagesContainer>
                 <Title>
                     Me puedes encontrar también en...
@@ -134,7 +116,7 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                             Facebook:
                         </SocialWebTitle>
                         <SocialWebText>
-                            fjw´ñrjogñirnjwgfñoignrtñgnteogñintoginrtogin
+                            fjw´ñrjogñirnjwgfñoignrtñgnteo
                         </SocialWebText>
                     </SocialWeb>
                     <SocialWeb>
