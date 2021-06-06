@@ -3,35 +3,58 @@ import {Container, IconsContainer, Icon} from './styled';
 import GoToBackButton from '../../goToBackButton';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBookmark, faShareAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import Dropdown from '../../dropdown';
 
-export default Header = ({navigation}) => {
+export default Header = ({
+    navigation,
+    changeSettingsVisibility = () => alert('Ajustes activados'),
+    settingsAreActivated = false
+}) => {
+    const [settingsLayout, setSettginsLayout] = React.useState({
+        x: 0, 
+        y: 0, 
+        width: 50, 
+        height: 25,
+    });
     return (
-        <Container>
-            <GoToBackButton
-                navigation={navigation}
-            />
-            <IconsContainer
-                onPress={() => alert('Todavía no sé qué debe hacer este botón.')}
+    <Container>
+        <GoToBackButton
+            navigation={navigation}
+        />
+        <IconsContainer>
+            <Icon>
+                <FontAwesomeIcon 
+                    icon={faBookmark}
+                    size={25}
+                />
+            </Icon>
+            <Icon>
+                <FontAwesomeIcon 
+                    icon={faShareAlt}
+                    size={25}
+                />
+            </Icon>
+            <Icon
+                onLayout={
+                    ({nativeEvent}) => {
+                        const {layout} = nativeEvent
+                        setSettginsLayout(layout);
+                    }
+                }
+                onPress={changeSettingsVisibility}
             >
-                <Icon>
-                    <FontAwesomeIcon 
-                        icon={faBookmark}
-                        size={25}
-                    />
-                </Icon>
-                <Icon>
-                    <FontAwesomeIcon 
-                        icon={faShareAlt}
-                        size={25}
-                    />
-                </Icon>
-                <Icon>
-                    <FontAwesomeIcon 
-                        icon={faEllipsisV}
-                        size={25}
-                    />
-                </Icon>
-            </IconsContainer>
-        </Container>
+                <FontAwesomeIcon 
+                    icon={faEllipsisV}
+                    size={25}
+                />
+            </Icon>
+            <Dropdown
+                parentLayout={settingsLayout}
+                isActive={settingsAreActivated}
+                optionsArray={['Reportar problemas']}
+                optionsHandle={[() => alert('problema reportado')]}
+            />
+        </IconsContainer>
+    </Container>
     )
 }

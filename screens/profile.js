@@ -4,18 +4,27 @@ import Content from '../components/toProfile/content';
 import TopPhoto from '../components/toProfile/topPhoto';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components/native';
+import Background from '../components/dropdown/background';
 
 export default ({navigation, route}) => {
-    const isOwnProfile = route?.params?.isOwnProfile ?? true;
+    const [settingsAreActivated, setSettingsAreActivated] = React.useState(false);
+    const {isOwnProfile} = route?.params ?? true;
     return (
         <Container>
-            <TopSettings/>
+            <TopSettings
+                changeSettingsVisibility={() => setSettingsAreActivated(!settingsAreActivated)}
+                settingsAreActivated={settingsAreActivated}
+            />
             <ScrollView>
                 <TopPhoto/>
                 <Content
                     isOwnProfile={isOwnProfile}
                 />
             </ScrollView>
+            <Background
+                click={() => setSettingsAreActivated(!settingsAreActivated)}
+                isActivated={settingsAreActivated}
+            />
         </Container>
     )
 }

@@ -20,6 +20,7 @@ import EditPost from '../../../screens/editPost';
 import ServiceOrNeed from '../../../screens/serviceOrNeed';
 import Inbox from '../../../screens/inbox';
 import ContactChat from '../../../screens/contactChat';
+import EditProfile from '../../../screens/editProfile';
 
 const Stack = createStackNavigator();
 
@@ -31,7 +32,7 @@ export default () => {
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
       <Stack.Screen name='EditPost' component={EditPost}/> */}
-      <Stack.Screen name='Profile' component={Profile}/>
+      <Stack.Screen name='EditProfile' component={EditProfile}/>
     </Stack.Navigator>
   );
 }

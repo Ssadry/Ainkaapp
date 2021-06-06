@@ -1,17 +1,20 @@
 import React from 'react';
 import {Container, IconsContainer, Icon} from './styled';
-import GoToBackButton from '../../../goToBackButton';
+import GoToBackButton from '../../goToBackButton';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons'
-import Dropdown from '../../../dropdown';
+import { faPen, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import Dropdown from '../../dropdown';
 
 export default Header = ({
     navigation,
     changeSettingsVisibility = () => alert('Ajustes activados'),
     settingsAreActivated = false
 }) => {
-    const [parentLayout, setParentLayout] = React.useState({
-        x: 0, y: 0, width: 100, height: 20
+    const [settingsLayout, setSettginsLayout] = React.useState({
+        x: 0, 
+        y: 0, 
+        width: 50, 
+        height: 25,
     });
     return (
         <Container>
@@ -19,11 +22,18 @@ export default Header = ({
                 navigation={navigation}
             />
             <IconsContainer>
+                <Icon>
+                    <FontAwesomeIcon 
+                        icon={faPen}
+                        size={25}
+                        color={'green'}
+                    />
+                </Icon>
                 <Icon
                     onLayout={
                         ({nativeEvent}) => {
-                            const {layout} = nativeEvent;
-                            setParentLayout(layout);
+                            const {layout} = nativeEvent
+                            setSettginsLayout(layout);
                         }
                     }
                     onPress={changeSettingsVisibility}
@@ -34,10 +44,10 @@ export default Header = ({
                     />
                 </Icon>
                 <Dropdown
-                    parentLayout={parentLayout}
-                    optionsArray={['Reportar', 'Eliminar contacto']}
-                    optionsHandle={[() => alert('Reportado'), () => alert('Eliminar contacto')]}
+                    parentLayout={settingsLayout}
                     isActive={settingsAreActivated}
+                    optionsArray={['Reportar problemas']}
+                    optionsHandle={[() => alert('problema reportado')]}
                 />
             </IconsContainer>
         </Container>
