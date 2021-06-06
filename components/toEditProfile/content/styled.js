@@ -1,88 +1,77 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    padding-left: ${({myPadding}) => myPadding * 0.5 + 'px'};
-    padding-right: ${({myPadding}) => myPadding * 0.5 + 'px'};
-`;
-
-export const Profile = styled.View`
     flex: 1;
     justify-content: center;
     align-items: center;
-    position: relative;
-    /* top: -75.5px; */
 `;
 
-export const PhotoProfileContainer = styled.View`
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    border: 1px solid gray;
-    border-radius: 20px;
+export const Line = styled.View`
+    width: ${({width}) => width + 'px'};
+    height: 1px;
+    margin-bottom: 20px;
+    background-color: gray;
+`;
+
+export const Form = styled.View`
+    margin-top: 20px;
+`;
+
+export const Title = styled.Text`
+    margin-top: 10px;
+    margin-bottom: 5px;
+    align-self: flex-start;
+    font-size: 15px;
+`;
+
+export const CategoriesChecksContainer = styled.View`
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+`;
+
+export const ButtonContainer = styled.View`
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
+`;
+
+export const ProfileContainer = styled.ImageBackground`
+    width: 150px;
+    height: 150px;
+    border-width: 1px;
+    margin-top: -75px;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const UploadPhoto = styled.ImageBackground`
+    width: ${({width}) => width + 'px'};
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const Button = styled.TouchableOpacity`
+    margin-top: -90px;
 `;
 
 export const ButtonProfile = styled.TouchableOpacity`
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+    
 `;
 
-export const PhotoProfile = styled.ImageBackground`
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-`;
-
-export const ChangePhotoText = styled.Text`
-    text-align: center;
+export const Text = styled.Text`
     font-size: 20px;
-`;
-
-export const Info = styled.View`
-    flex: 1;
-    position: relative;
-    /* top: -75.5px; */
-    margin-top: 30px;
-    /* margin-bottom: -75.5px; */
-`;
-
-export const BarContainer = styled.View`
-    min-height: 100px;
-`;
-
-export const EmptyBar = styled.View`
-    width: 300px;
-    height: 30px;
-    background-color: rgb(220, 220, 220);
-    border-radius: 20px;
-    flex-direction: row;
-    align-items: center;
-`;
-
-export const FillBar = styled.View`
-    background-color: rgb(180, 180, 180);
-    width: 200px;
-    max-width: 300px;
-    min-width: 0px;
-    height: 30px;
-    border-radius: 20px;
-`;
-
-export const Star = styled.View`
-    margin-left: -25px;
-`;
-
-export const Total = styled.Text`
     text-align: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: black;
+`;
+
+export const BottomLine = styled.View`
+    width: ${({width}) => width + 'px'};
+    height: 1px;
+    background-color: gray;
     position: absolute;
-    bottom: -40px;
-    right: 10px;
+    bottom: 0px;
+    left: 0px;;
 `;

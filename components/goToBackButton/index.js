@@ -8,9 +8,11 @@ export default ({navigation}) => {
     const HARDWARE_BACK_PRESS = React.useRef('hardwareBackPress');
 
     const handleBackButtonClick = _ => {
-        console.log(navigation)
-        navigation.goBack();
-        return true;
+        if (navigation.canGoBack()) {
+            navigation.goBack();
+            return true;
+        }
+        return false;
     }
     
     useEffect(() => {
