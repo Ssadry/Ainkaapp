@@ -9,11 +9,11 @@ export const Container = styled.View`
 `;
 
 export const Content = styled.View`
-    border-width: 1px;
+    border-width: 5px;
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 55px;
 `;
 
 export const Element = styled.View`
@@ -31,7 +31,7 @@ export const ImageContainer = styled.View`
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    margin-top: 15px;
+    margin-top: 30px;
 `;
 
 export const Image = styled.Image`
@@ -41,5 +41,6 @@ export const Image = styled.Image`
 
 export const Text = styled.Text`
     text-align: center;
-    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 `;
