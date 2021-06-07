@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-    display: ${({searchText}) => searchText.trim() != '' ? 'flex' : 'none'};
-    background-color: grey;
+    display: ${({textInputIsOnFocus}) => textInputIsOnFocus ? 'flex' : 'none'};
     flex: 1;
+    margin-top: 30px;
 `;

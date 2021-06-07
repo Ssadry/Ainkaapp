@@ -7,5 +7,4 @@ export const Container = styled.View`
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
-    background-color: royalblue;
 `;

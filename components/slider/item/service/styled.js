@@ -4,19 +4,19 @@ export const Container = styled.View`
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
-    border: 1px solid transparent;
+    /* border: 1px solid transparent; */
 `;
 
 export const Content = styled.View`
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
-    border-width: 1px;
     border-radius: ${({borderRadius}) => borderRadius + 'px'};
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 15px;
     padding-bottom: 15px;
+    border: 1px solid black;
 `;
 
 export const ImageContainer = styled.View`

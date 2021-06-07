@@ -1,7 +1,7 @@
 import React, {useState, lazy, Suspense} from 'react';
 import {Container} from './styled';
 import SwitchButtons from '../../../switchView/buttons';
-import {ScrollView, Dimensions, Text, View} from 'react-native';
+import {Dimensions, Text} from 'react-native';
 import Content from './content';
 
 const LazyCategory = lazy(_ => import('../../../slider/item/category'));
@@ -29,7 +29,7 @@ const types = {
 const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const width = Math.round(Dimensions.get('screen').width);
 
-export default ({searchText, click}) => {
+export default ({textInputIsOnFocus, click}) => {
     const [currentState, setCurrentState] = useState(0);
 
     const createArray = (type, amount) => {
@@ -58,7 +58,7 @@ export default ({searchText, click}) => {
     const profiles = createArray(types.PROFILE.NAME, types.PROFILE.AMOUNT);
 
     return (
-        <Container searchText={searchText}>
+        <Container textInputIsOnFocus={textInputIsOnFocus}>
             <SwitchButtons 
                 currentState={currentState}
                 setCurrentState={setCurrentState}

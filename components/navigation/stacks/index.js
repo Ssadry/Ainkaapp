@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Signup from '../../../screens/signup';
+// import Signup from '../../../screens/signup';
 import Home from '../../../screens/home';
 import WatchMoreItems from '../../../screens/watchMoreItems';
 import Profile from '../../../screens/profile';
@@ -21,6 +21,7 @@ import ServiceOrNeed from '../../../screens/serviceOrNeed';
 import Inbox from '../../../screens/inbox';
 import ContactChat from '../../../screens/contactChat';
 import EditProfile from '../../../screens/editProfile';
+import Splash from '../../../screens/splash';
 
 const Stack = createStackNavigator();
 
@@ -32,7 +33,9 @@ export default () => {
       <Stack.Screen name='MyRouter' component={BottomNavigation}/>
       <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
       <Stack.Screen name='EditPost' component={EditPost}/> */}
-      <Stack.Screen name='EditProfile' component={EditProfile}/>
+      <Stack.Screen name='Home' component={Home}/>
+      {/* <Stack.Screen name='CheckIn' component={CheckIn}/> */}
+
     </Stack.Navigator>
   );
 }

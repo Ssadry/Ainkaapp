@@ -31,29 +31,14 @@ export const HoursContainer = styled.View`
     margin-left: 15px;
 `;
 
-// export const ProfileContainer = styled.TouchableOpacity`
-//     height: 40px;
-//     width: 40px;
-// `;
-
-// export const Profile = styled.View`
-//     height: 40px;
-//     width: 40px;
-//     border-radius: 20px;
-//     background-color: rgb(180, 180, 180);
-//     justify-content: center;
-// `;
-
-// export const Hours = styled.Text`
-//     text-align: center;
-// `;
-
-// export const NotificationPoint = styled.View`
-//     position: absolute;
-//     left: ${({width}) => width * -0.4 + 'px'};
-//     bottom: ${({width}) => width * -0.3 + 'px'};
-//     width: ${({width}) => width + 'px'};
-//     height: ${({width}) => width + 'px'};
-//     border-radius: ${({width}) => width * 0.5 + 'px'};
-//     background-color: rgb(120, 120, 120);
-// `;
+export const GoToDefaultContent = styled.TouchableOpacity`
+    width: 45px;
+    height: 45px;
+    margin-right: 5px;
+    position: ${({textInputIsOnFocus}) => textInputIsOnFocus ? 'absolute' : 'relative'};;
+    top: 0px;
+    left: -65px;
+    justify-content: center;
+    align-items: center;
+    display: ${({textInputIsOnFocus}) => textInputIsOnFocus ? 'flex' : 'none'};
+`;
