@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Container, TextInput, IconButton, Line, Content, TextsContainer, ErrorText, LengthText} from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -16,8 +16,8 @@ export default Input = ({
     multiline = false,
     maxLength = null
 }) => {
-    const [secureTextEntry, setSecureTextEntry] = React.useState(canTextHide);
-    const [hasBeenFocused, setHasBeenFocused] = React.useState(false);
+    const [secureTextEntry, setSecureTextEntry] = useState(canTextHide);
+    const [hasBeenFocused, setHasBeenFocused] = useState(false);
 
     return (
         <Container

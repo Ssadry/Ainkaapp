@@ -1,10 +1,10 @@
 import React, {createContext, useState} from 'react';
 
 export default ({children}) => {
-    const [popUpIsVisible, setPopUpIsVisible] = useState(false);
-
+    const [routeName] = useState({});
+    console.log(routeName);
     return (
-        <AppContext.Provider value={[popUpIsVisible, setPopUpIsVisible]}>
+        <AppContext.Provider value={[routeName]}>
             {children}
         </AppContext.Provider>
     )

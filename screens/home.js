@@ -3,11 +3,18 @@ import HeaderToSearch from '../components/headerToSearch';
 import styled from 'styled-components/native';
 import Default from '../components/toHome/containers/default';
 import Searching from '../components/toHome/containers/searching';
-import {Dimensions} from 'react-native';
+import {Dimensions, BackHandler} from 'react-native';
 
-export default ({navigation}) => {
+const Home = ({navigation}) => {
     const [searchText, setSearchText] = React.useState('');
     const [textInputIsOnFocus, setTextInputIsOnFocus] = React.useState(false);
+
+    // React.useEffect(() => {
+    //     BackHandler.addEventListener('hardwareBackPress', () => {
+    //         console.log('xd');
+    //     });
+    //     return BackHandler.removeEventListener('hardwareBackPress', () => true);
+    // }, [])
 
     return (
         <Container>
@@ -31,6 +38,8 @@ export default ({navigation}) => {
     )
 };
 
-export const Container = styled.View`
+export default Home;
+
+const Container = styled.View`
     flex: 1;
 `;

@@ -1,11 +1,15 @@
 import React from 'react';
 import Icon from '../assets/icon.png';
 import styled from 'styled-components/native';
+import {AppContext} from '../application/provider';
 
-export default Splash = ({navigation}) => {
+const Splash = ({navigation}) => {
+    const [routeName] = React.useContext(AppContext);
+
     setTimeout(() => {
-        // alert('xd')
-    }, 5000);
+        navigation.navigate('BottomNavigation');
+    }, 2000);
+
     return (
         <Container>
             <Logo
@@ -14,6 +18,8 @@ export default Splash = ({navigation}) => {
         </Container>
     )
 }
+
+export default Splash;
 
 const Container = styled.View`
     flex: 1;

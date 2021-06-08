@@ -1,5 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {AppContext} from '../../../application/provider';
+
 import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
 import Services from '../../../screens/services';
@@ -10,13 +12,19 @@ import PostAd from '../../../screens/postAd'; ////////////////////
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
 
-
 const Tab = createBottomTabNavigator();
 
-export default () => {
+const BottomNavigation = () => {
+  const [routeName] = React.useContext(AppContext);
+  routeName.home = Home.name;
+  routeName.saved = Saved.name;
+
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName={routeName.home}
+      // backBehavior={() => {
+      //   console.log('ñe')
+      // }}
       tabBar={props =>
         <CustomTabScreen
           state={props.state}
@@ -27,14 +35,20 @@ export default () => {
       }
     >
       <Tab.Screen 
-        name="Home" 
+        name={routeName.home}
         component={Home}
         options={{
           title: '',
         }}
+        listeners={({navigation, route}) => ({
+          tabPress: e => {
+            e.preventDefault();
+            console.log('xd');
+          }
+        })}
       />
       <Tab.Screen
-        name="Saved"
+        name={routeName.saved}
         component={Saved}
         options={{
           title: '',
@@ -64,3 +78,5 @@ export default () => {
     </Tab.Navigator>
   );
 }
+
+export default BottomNavigation;

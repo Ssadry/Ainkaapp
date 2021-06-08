@@ -11,7 +11,7 @@ import {featured, needs, profiles} from '../components/toSaved/data';
 const ITEMS_DISPLAYED = 1.85;
 console.log(Featured.name);
 
-export default ({navigation}) => {
+const Saved = ({navigation}) => {
     const [itemsWidth, setItemsWidth] = React.useState(0);
 
     const itemFeatured = 
@@ -88,6 +88,8 @@ export default ({navigation}) => {
         </Container>
     )
 }
+
+export default Saved;
 
 export const Container = styled.View`
     flex: 1;

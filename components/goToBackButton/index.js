@@ -4,13 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { Text, TouchableOpacity, BackHandler } from 'react-native';
 
-export default ({navigation}) => {
+export default ({
+    navigation = null
+}) => {
     const HARDWARE_BACK_PRESS = React.useRef('hardwareBackPress');
 
     const handleBackButtonClick = _ => {
-        if (navigation.canGoBack()) {
-            navigation.goBack();
-            return true;
+        if (navigation != null) {
+            if (navigation.canGoBack()) {
+                navigation.goBack();
+                return true;
+            }
         }
         return false;
     }
@@ -23,7 +27,9 @@ export default ({navigation}) => {
     }, []);
 
     return (
-        <Container>
+        <Container
+            navigation={navigation}
+        >
             <TouchableOpacity onPress={handleBackButtonClick}>
                 <Text>
                     <FontAwesomeIcon icon={faArrowLeft} size={20}/>
