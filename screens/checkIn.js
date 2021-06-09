@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import styled from 'styled-components/native';
 import Carousel from '../components/toCheckIn/myCarousel/card';
 import Pagination from '../components/toCheckIn/myCarousel/pagination';
@@ -6,7 +6,7 @@ import Choose from '../components/toCheckIn/choose';
 import Signup from '../components/toCheckIn/singup';
 import Welcome from '../components/toCheckIn/welcome';
 import Community from '../components/toCheckIn/community';
-import {Dimensions} from 'react-native';
+import {Dimensions, BackHandler} from 'react-native';
 import {AppContext} from '../application/provider';
 
 const {width, height} = Dimensions.get('screen');
@@ -14,6 +14,11 @@ const {width, height} = Dimensions.get('screen');
 const carouselHeight = height * 0.8;
 
 const CheckIn = ({navigation}) => {
+    useEffect(() => {
+        BackHandler.addEventListener('hardwareBackPress', () => true);
+        return BackHandler.removeEventListener('hardwareBackPress', () => true);
+    }, []);
+
     const [routeName] = useContext(AppContext);
     const [currentPos, setCurrentPos] = React.useState(0);
     const [currentPage, setCurrentPage] = React.useState(0);

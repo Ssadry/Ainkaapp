@@ -15,11 +15,11 @@ console.log(Featured.name);
 const Saved = ({navigation}) => {
     const [itemsWidth, setItemsWidth] = React.useState(0);
 
-    const params = new URLSearchParams();
-    params.append('UserID', 1);
-    params.append('UserFav', 2);
+    // const params = new URLSearchParams();
+    // params.append('UserID', 1);
+    // params.append('UserFav', 2);
 
-    post('https://pablomonteserin.com/sites/ainkaa/index.php/users/addfavoriteuser', params);
+    // post('https://pablomonteserin.com/sites/ainkaa/index.php/users/addfavoriteuser', params);
 
     const itemFeatured = 
         featured.map((ftd, i) => 

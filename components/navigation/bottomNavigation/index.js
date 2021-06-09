@@ -4,27 +4,37 @@ import {AppContext} from '../../../application/provider';
 
 import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
-import Services from '../../../screens/services';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
-import PostAd from '../../../screens/postAd'; ////////////////////
-// import EditPost from '../../../screens/editPost';
-// import FavoriteProfilesAndServices from '../../../screens/favoriteProfilesAndServices'
+import PostAd from '../../../screens/postAd';
+
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
+import { CommonActions } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-const BottomNavigation = () => {
+const BottomNavigation = ({navigation}) => {
   const [routeName] = React.useContext(AppContext);
   routeName.home = Home.name;
   routeName.saved = Saved.name;
 
+  React.useEffect(() => {
+    navigation.dispatch((state) => {
+      console.log(state.routes);
+      const routes = state.routes.filter(r => r.name !== routeName.login);
+      return CommonActions.reset({
+          ...state,
+          routes,
+          index: routes.length - 1,
+        });
+    });
+  
+  })
+
   return (
     <Tab.Navigator
-      initialRouteName={routeName.saved}
-      // backBehavior={() => {
-      //   console.log('ñe')
-      // }}
+      initialRouteName={routeName.home}
+      // backBehavior={true}
       tabBar={props =>
         <CustomTabScreen
           state={props.state}
@@ -40,12 +50,6 @@ const BottomNavigation = () => {
         options={{
           title: '',
         }}
-        listeners={({navigation, route}) => ({
-          tabPress: e => {
-            e.preventDefault();
-            console.log('xd');
-          }
-        })}
       />
       <Tab.Screen
         name={routeName.saved}

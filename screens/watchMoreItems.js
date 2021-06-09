@@ -1,9 +1,17 @@
 import React from 'react';
+import {BackHandler} from 'react-native';
 import styled from 'styled-components/native';
 import Header from '../components/toWatchMoreItems/header';
 import Content from '../components/toWatchMoreItems/content';
 
-export default ({navigation, route}) => {
+const handler = () => {
+
+}
+
+const WatchMoreItems = ({navigation, route}) => {
+    // BackHandler.addEventListener('hardwareBackPress', handler);
+    // BackHandler.removeEventListener('hardwareBackPress', handler);
+
     const {title} = route.params;
     const {itemName} = route.params;
 
@@ -17,8 +25,10 @@ export default ({navigation, route}) => {
                 itemName={itemName}
             />
         </Container>
-    )
-}
+    );
+};
+
+export default WatchMoreItems;
 
 export const Container = styled.View`
     flex: 1;

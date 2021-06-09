@@ -32,14 +32,15 @@ export default () => {
   routeName.login = Login.name;
   routeName.bottomNavigation = BottomNavigation.name;
   routeName.checkIn = CheckIn.name;
+  routeName.watchMoreItems = WatchMoreItems.name;
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name={routeName.splash} component={Splash}/> */}
-      {/* <Stack.Screen name={routeName.login} component={Login}/>
+      <Stack.Screen name={routeName.splash} component={Splash}/>
+      <Stack.Screen name={routeName.login} component={Login}/>
       <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>
-      <Stack.Screen name={routeName.checkIn} component={CheckIn}/>            */}
-      <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>
+      <Stack.Screen name={routeName.checkIn} component={CheckIn}/>         
+      <Stack.Screen name={routeName.watchMoreItems} component={WatchMoreItems}/>         
     </Stack.Navigator>
   );
 }

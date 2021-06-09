@@ -3,7 +3,7 @@ import {Container, SlimButtons} from './styled';
 import FatButton from '../../form/button/fat';
 import SlimButton from '../../form/button/slim';
 import {AppContext} from '../../../application/provider';
-import {post, get} from '../../../services';
+import {post} from '../../../services';
 // import firebase, {db} from '../../../application/firebase';
 
 export default Content = ({
@@ -19,25 +19,24 @@ export default Content = ({
         <Container>
             <FatButton
                 click={() => {
-                    const canGoToHome = emailIsCorrect && passwordIsCorrect;
-                    if (canGoToHome) {
-                        // const user = async() => await db.collection('users').add({
-                        //     email: email,
-                        //     password: password
-                        // });
-                        // // const firebaseId = user.id;
+                    // const canGoToHome = emailIsCorrect && passwordIsCorrect;
+                    // if (canGoToHome) {
+                    //     // const user = async() => await db.collection('users').add({
+                    //     //     email: email,
+                    //     //     password: password
+                    //     // });
+                    //     // // const firebaseId = user.id;
 
-                        // navigation.navigate(routeName.bottomNavigation);
-
-                    }
-
-                    // const params = new URLSearchParams();
-                    // params.append('Google', 0);
-                    // params.append('EmailUser', 'Tg@ggc.com');
-                    // params.append('PassUser', '12345678');
-
-                    // post('https://pablomonteserin.com/sites/ainkaa/index.php/users/login', params);
-                    get('https://pablomonteserin.com/sites/ainkaa/index.php/users/showlistusers');
+                    //     // navigation.navigate(routeName.bottomNavigation);
+                    //     const params = new URLSearchParams();
+                    //     params.append('Google', 0);
+                    //     params.append('EmailUser', email);
+                    //     params.append('PassUser', password);
+    
+                    //     post('https://pablomonteserin.com/sites/ainkaa/index.php/users/login', params);
+                    //     navigation.navigate(routeName.bottomNavigation);
+                    // }
+                    navigation.navigate(routeName.bottomNavigation);
                 }}
             >
                 INICIAR SESIÓN
