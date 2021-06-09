@@ -7,12 +7,19 @@ import Need from '../components/slider/item/need';
 import Featured from '../components/slider/item/featured';
 import Profile from '../components/slider/item/profile';
 import {featured, needs, profiles} from '../components/toSaved/data';
+import {post} from '../services';
 
 const ITEMS_DISPLAYED = 1.85;
 console.log(Featured.name);
 
 const Saved = ({navigation}) => {
     const [itemsWidth, setItemsWidth] = React.useState(0);
+
+    const params = new URLSearchParams();
+    params.append('UserID', 1);
+    params.append('UserFav', 2);
+
+    post('https://pablomonteserin.com/sites/ainkaa/index.php/users/addfavoriteuser', params);
 
     const itemFeatured = 
         featured.map((ftd, i) => 

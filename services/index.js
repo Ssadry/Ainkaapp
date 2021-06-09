@@ -22,11 +22,9 @@ export const getServiceById = (id) => {
 }
 
 export const get = (url) => {
-    const [data, setData] = React.useState();
     axios
         .get(url)
-        .then(res => setData(res.data))
+        .then(res => console.log(res.data))
         .catch(err => console.log(err)
     );
-    return data;
 }

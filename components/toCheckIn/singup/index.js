@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Container,
     Title,
     FormContainer,
     ChecksContainer,
-    Content
+    Content,
+    BothPasswords
 } from './styled';
 import Input from '../../form/input';
 import Check from '../../form/check';
 import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
+import {post} from '../../../services';
+
 
 const isEmpty = (value) => value === '';
 const validateEmail = (email) => {
@@ -20,23 +23,40 @@ const validateEmail = (email) => {
 const validateLenght = (characters, length) => characters.length >= length;
 
 export default Signup = ({changePage}) => {
-    const [containerWidth, setContainerWidth] = React.useState(0);
+    const [containerWidth, setContainerWidth] = useState(0);
     let contentWidth = containerWidth * 0.8;
 
-    const [name, setName] = React.useState('');
-    const [nacionality, setNacionality] = React.useState('');
-    const [phone, setPhone] = React.useState('');
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
-    const [confirmPassword, setConfirmPassword] = React.useState('');
+    const [name, setName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const [privacity, setPrivacity] = React.useState(false);
-    const [upgrade, setUpgrade] = React.useState(false);
+    const [privacity, setPrivacity] = useState(false);
+    const [upgrade, setUpgrade] = useState(false);
+
+    const [valuesAreCorrect, setValuesAreCorrect] = useState({
+       name : false,
+       lastName : false,
+       email : false,
+       password : false,
+       confirmPassword : false, 
+    });
+
+    const changeCorrectValues = (type, value) => {
+        setValuesAreCorrect((prev) => ({
+            ...prev,
+            [type] : value
+        }));
+    };
 
     const inputs = [
         {
-            placeHolder: 'Nombre y apellidos *',
-            setValue: setName,
+            placeHolder: 'Nombre *',
+            setValue: (text) => {
+                setName(text);
+                changeCorrectValues('name', !isEmpty(text));
+            },
             value: name,
             canTextHide: false,
             isCorrect: !isEmpty(name),
@@ -45,28 +65,24 @@ export default Signup = ({changePage}) => {
             maxLength: 30
         },
         {
-            placeHolder: 'Nacionalidad *',
-            setValue: setNacionality,
-            value: nacionality,
+            placeHolder: 'Apellidos *',
+            setValue: (text) => {
+                setLastName(text);
+                changeCorrectValues('lastName', !isEmpty(text));
+            },
+            value: lastName,
             canTextHide: false,
-            isCorrect: !isEmpty(nacionality),
+            isCorrect: !isEmpty(lastName),
             errorText: 'Campo obligatorio.',
             keyboardType: 'default',
-            maxLength: -1
-        },
-        {
-            placeHolder: 'Teléfono *',
-            setValue: setPhone,
-            value: phone,
-            canTextHide: false,
-            isCorrect: validateLenght(phone, 9),
-            errorText: 'Mínimo 9 dígitos.',
-            keyboardType: 'numeric',
-            maxLength: 9
+            maxLength: 30
         },
         {
             placeHolder: 'Correo electrónico *',
-            setValue: setEmail,
+            setValue: (text) => {
+                setEmail(text);
+                changeCorrectValues('email', validateEmail(text));
+            },
             value: email,
             canTextHide: false,
             isCorrect: validateEmail(email),
@@ -75,23 +91,27 @@ export default Signup = ({changePage}) => {
         },
         {
             placeHolder: 'Contraseña *',
-            setValue: setPassword,
+            setValue: (text) => {
+                setPassword(text);
+                changeCorrectValues('password', validateLenght(text, 8));
+            },
             value: password,
             canTextHide: true,
             isCorrect: validateLenght(password, 8),
             errorText: 'Mínimo 8 caracteres.',
             keyboardType: 'default',
-            maxLength: 8
         },
         {
             placeHolder: 'Confirmar contraseña *',
-            setValue: setConfirmPassword,
+            setValue: (text) => {
+                setConfirmPassword(text);
+                changeCorrectValues('confirmPassword', validateLenght(text, 8));
+            },
             value: confirmPassword,
             canTextHide: true,
             isCorrect: validateLenght(confirmPassword, 8),
             errorText: 'Mínimo 8 caracteres.',
             keyboardType: 'default',
-            maxLength: 8
         },
     ];   
     
@@ -142,6 +162,11 @@ export default Signup = ({changePage}) => {
                                 )
                             }
                         </FormContainer>
+                        <BothPasswords
+                            isVisible={password === confirmPassword}
+                        >
+                            Las contraseñas no coindiden.
+                        </BothPasswords>
                         <ChecksContainer>
                             {
                                 checks.map((check, i) =>
@@ -162,7 +187,19 @@ export default Signup = ({changePage}) => {
                             INICIAR SESIÓN CON GOOGLE
                         </FatButtom>
                         <FatButtom
-                            click={() => changePage(1)}
+                            click={() => {
+                                if (!Object.values(valuesAreCorrect).includes(false) && password === confirmPassword) {
+                                    const params = new URLSearchParams();
+                                    params.append('Google', 0);
+                                    params.append('EmailUser', email);
+                                    params.append('PassUser', password);
+                                    params.append('NameUser', name);
+                                    params.append('LastNameUser', lastName);
+    
+                                    post('https://pablomonteserin.com/sites/ainkaa/index.php/users/register', params);
+                                    // changePage(1);
+                                }
+                            }}
                         >
                             CREAR CUENTA
                         </FatButtom>

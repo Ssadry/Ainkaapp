@@ -99,3 +99,28 @@ const Container = styled.SafeAreaView`
 //         </View>
 //     )
 // }
+
+//FIRESBASEEEEEEEEEEEEEEE
+
+// import React from 'react';
+// import styled from 'styled-components/native';
+// import firebase, {db} from './firebase';
+
+// export default () => {
+//     const user = db.collection('users').add({
+//         email: "sr.andryalexisreyescruz@gmail.com",
+//         password: "ledewdewdeol"
+//    });
+//    const firebaseId = user.id;
+//    console.log(firebaseId);
+
+//     return (
+//         <Container>
+
+//         </Container>
+//     )
+// }
+
+// const Container = styled.View`
+//     flex: 1;
+// `;

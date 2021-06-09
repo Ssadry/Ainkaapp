@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/native';
 import Logo from '../components/toLogin/logo';
 import Form from '../components/toLogin/form';
 import Buttons from '../components/toLogin/buttons';
 import {Dimensions, BackHandler} from 'react-native';
+
 
 const {width, height} = Dimensions.get('screen')
 const screenHeight = Math.round(height);
@@ -11,7 +12,7 @@ const inputWidth = Math.round(width * 0.8);
 
 
 const Login = ({navigation}) => {
-    const [email, setEmail] = useState(' ');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const [keepSessionOpen, setKeepSessionOpen] = useState(false);
@@ -40,6 +41,8 @@ const Login = ({navigation}) => {
                 navigation={navigation}
                 emailIsCorrect={emailIsCorrect}
                 passwordIsCorrect={passwordIsCorrect}
+                email={email}
+                password={password}
             />
         </Container>
     )

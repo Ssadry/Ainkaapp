@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import {AppContext} from '../../../application/provider';
 
@@ -27,16 +27,19 @@ import Splash from '../../../screens/splash';
 const Stack = createStackNavigator();
 
 export default () => {
-  const [routeName] = React.useContext(AppContext);
+  const [routeName] = useContext(AppContext);
   routeName.splash = Splash.name;
   routeName.login = Login.name;
   routeName.bottomNavigation = BottomNavigation.name;
+  routeName.checkIn = CheckIn.name;
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={routeName.splash} component={Splash}/>
-      <Stack.Screen name={routeName.login} component={Login}/>
-      <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>      
+      {/* <Stack.Screen name={routeName.splash} component={Splash}/> */}
+      {/* <Stack.Screen name={routeName.login} component={Login}/>
+      <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>
+      <Stack.Screen name={routeName.checkIn} component={CheckIn}/>            */}
+      <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>
     </Stack.Navigator>
   );
 }

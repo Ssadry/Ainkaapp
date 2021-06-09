@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styled from 'styled-components/native';
 import Carousel from '../components/toCheckIn/myCarousel/card';
 import Pagination from '../components/toCheckIn/myCarousel/pagination';
@@ -7,12 +7,14 @@ import Signup from '../components/toCheckIn/singup';
 import Welcome from '../components/toCheckIn/welcome';
 import Community from '../components/toCheckIn/community';
 import {Dimensions} from 'react-native';
+import {AppContext} from '../application/provider';
 
 const {width, height} = Dimensions.get('screen');
 
 const carouselHeight = height * 0.8;
 
-export default ({navigation}) => {
+const CheckIn = ({navigation}) => {
+    const [routeName] = useContext(AppContext);
     const [currentPos, setCurrentPos] = React.useState(0);
     const [currentPage, setCurrentPage] = React.useState(0);
 
@@ -22,7 +24,7 @@ export default ({navigation}) => {
     }
 
     const nextScreen = () => {
-        navigation.navigate('MyRouter');
+        navigation.navigate(routeName.bottomNavigation);
     }
 
     const data = [
@@ -62,6 +64,8 @@ export default ({navigation}) => {
         </Container>
     )
 }
+
+export default CheckIn;
 
 const Container = styled.View`
     flex: 1;

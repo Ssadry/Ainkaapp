@@ -27,3 +27,9 @@ export const ChecksContainer = styled.View`
     align-items: center;
     margin-bottom: 20px;
 `;
+
+export const BothPasswords = styled.Text`
+    color: ${({isVisible}) => isVisible ? 'transparent' : 'red'};
+    margin-top: 10px;
+    margin-bottom: 10px;
+`;

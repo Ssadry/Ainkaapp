@@ -21,7 +21,7 @@ const BottomNavigation = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName={routeName.home}
+      initialRouteName={routeName.saved}
       // backBehavior={() => {
       //   console.log('ñe')
       // }}
