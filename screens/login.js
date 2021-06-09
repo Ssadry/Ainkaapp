@@ -10,7 +10,7 @@ const screenHeight = Math.round(height);
 const inputWidth = Math.round(width * 0.8);
 
 
-const Login = ({navigation, navigator}) => {
+const Login = ({navigation}) => {
     const [email, setEmail] = useState(' ');
     const [password, setPassword] = useState('');
 
@@ -18,27 +18,8 @@ const Login = ({navigation, navigator}) => {
     const [emailIsCorrect, setEmailIsCorrect] = useState(false);
     const [passwordIsCorrect, setPasswordIsCorrect] = useState(false);
 
-    const lol = () => {
-        if (navigation.canGoBack()) {
-            navigation.pop(); // Go back to the root of the stack
-            return true;
-        }
-        return false;
-    }
-
-    //Disable back button
-    // useEffect(() => {
-    //     BackHandler.addEventListener('hardwareBackPress', () => true)
-    //     return BackHandler.removeEventListener('hardwareBackPress', () => true);
-    // }, [])
-
-    // useEffect(() => {
-    //     BackHandler.addEventListener('hardwareBackPress', () => lol())
-    //     return BackHandler.removeEventListener('hardwareBackPress', () => lol());
-    // }, []);
-
-    BackHandler.addEventListener('hardwareBackPress', () => lol())
-    BackHandler.removeEventListener('hardwareBackPress', () => lol());
+    BackHandler.addEventListener('hardwareBackPress', () => true)
+    BackHandler.removeEventListener('hardwareBackPress', () => true);
 
     return (
         <Container>
@@ -57,6 +38,8 @@ const Login = ({navigation, navigator}) => {
             />
             <Buttons
                 navigation={navigation}
+                emailIsCorrect={emailIsCorrect}
+                passwordIsCorrect={passwordIsCorrect}
             />
         </Container>
     )

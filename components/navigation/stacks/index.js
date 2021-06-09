@@ -34,17 +34,9 @@ export default () => {
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name='Login' component={Login}/>
-      <Stack.Screen name='CheckIn' component={CheckIn}/>
-      <Stack.Screen name='MyRouter' component={BottomNavigation}/>
-      <Stack.Screen name='WatchMoreItems' component={WatchMoreItems}/>
-      <Stack.Screen name='EditPost' component={EditPost}/> */}
-      {/* <Stack.Screen name={routeName.splash} component={Splash}/> */}
-      {/* <Stack.Screen name={routeName.login} component={Login}/> */}
-      <Stack.Screen name={'BottomNavigation'} component={BottomNavigation}/>
-
-      {/* <Stack.Screen name={BottomNavigation.name} component={BottomNavigation}/> */}
-      
+      <Stack.Screen name={routeName.splash} component={Splash}/>
+      <Stack.Screen name={routeName.login} component={Login}/>
+      <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>      
     </Stack.Navigator>
   );
 }

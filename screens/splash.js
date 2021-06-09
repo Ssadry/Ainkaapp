@@ -7,7 +7,7 @@ const Splash = ({navigation}) => {
     const [routeName] = React.useContext(AppContext);
 
     setTimeout(() => {
-        navigation.navigate('BottomNavigation');
+        navigation.navigate(routeName.login);
     }, 2000);
 
     return (
