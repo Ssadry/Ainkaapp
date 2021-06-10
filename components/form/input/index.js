@@ -40,7 +40,10 @@ export default Input = ({
                     isVisible={canTextHide}
                     onPress={() => setSecureTextEntry(!secureTextEntry)}
                 >
-                    <FontAwesomeIcon icon={secureTextEntry ? faEye : faEyeSlash}/>
+                    <FontAwesomeIcon 
+                        icon={secureTextEntry ? faEye : faEyeSlash}
+                        size={20}
+                    />
                 </IconButton>
                 <Line
                     width={width}

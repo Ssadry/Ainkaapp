@@ -1,27 +1,18 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import styled from 'styled-components/native';
 import Logo from '../components/toLogin/logo';
 import Form from '../components/toLogin/form';
 import Buttons from '../components/toLogin/buttons';
 import {Dimensions} from 'react-native';
-import { CommonActions } from '@react-navigation/native';
+import {AppContext} from '../application/provider';
+import {removeNavigationScreen} from '../application/navigation';
 
 const {width, height} = Dimensions.get('screen')
 const screenHeight = Math.round(height);
 const inputWidth = Math.round(width * 0.8);
 
 const Login = ({navigation}) => {
-
-    React.useEffect(() => {
-        navigation.dispatch((state) => {
-            const routes = state.routes.filter(r => r.name !== 'Splash');
-            return CommonActions.reset({
-                ...state,
-                routes,
-                index: routes.length - 1,
-              });
-        });
-    });
+    const [routeName] = useContext(AppContext);
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -29,6 +20,8 @@ const Login = ({navigation}) => {
     const [keepSessionOpen, setKeepSessionOpen] = useState(false);
     const [emailIsCorrect, setEmailIsCorrect] = useState(false);
     const [passwordIsCorrect, setPasswordIsCorrect] = useState(false);
+
+    useEffect(() => removeNavigationScreen(navigation, routeName.splash));
 
     return (
         <Container>

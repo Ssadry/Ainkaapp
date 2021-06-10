@@ -4,10 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { Text, TouchableOpacity, BackHandler } from 'react-native';
 
+const HARDWARE_BACK_PRESS = 'hardwareBackPress';
+
 export default ({
     navigation = null
 }) => {
-    const HARDWARE_BACK_PRESS = React.useRef('hardwareBackPress');
 
     const handleBackButtonClick = _ => {
         if (navigation != null) {

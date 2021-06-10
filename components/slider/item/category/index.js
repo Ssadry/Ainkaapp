@@ -11,7 +11,7 @@ import {
 
 export default Category = ({ width, title = 'Default' }) => {
     const contentWidth = width * 0.8;
-    const elementWidth = contentWidth * 0.9;
+    const elementWidth = contentWidth * 0.8;
     const imageWidth = elementWidth * 0.8;
     
     return (

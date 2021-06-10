@@ -11,8 +11,7 @@ import Input from '../../form/input';
 import Check from '../../form/check';
 import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
-import {post} from '../../../services';
-
+import {signup} from '../../../services';
 
 const isEmpty = (value) => value === '';
 const validateEmail = (email) => {
@@ -42,6 +41,8 @@ export default Signup = ({changePage}) => {
        password : false,
        confirmPassword : false, 
     });
+
+    const canCreateAccount = !Object.values(valuesAreCorrect).includes(false) && password === confirmPassword;
 
     const changeCorrectValues = (type, value) => {
         setValuesAreCorrect((prev) => ({
@@ -183,12 +184,14 @@ export default Signup = ({changePage}) => {
                         <FatButtom
                             click={() => alert('Iniciando sesión con google...')}
                             color='red'
+                            disabled={true}
                         >
                             INICIAR SESIÓN CON GOOGLE
                         </FatButtom>
                         <FatButtom
+                            disabled={!canCreateAccount}
                             click={() => {
-                                if (!Object.values(valuesAreCorrect).includes(false) && password === confirmPassword) {
+                                if (canCreateAccount) {
                                     const params = new URLSearchParams();
                                     params.append('Google', 0);
                                     params.append('EmailUser', email);
@@ -196,8 +199,14 @@ export default Signup = ({changePage}) => {
                                     params.append('NameUser', name);
                                     params.append('LastNameUser', lastName);
     
-                                    post('https://pablomonteserin.com/sites/ainkaa/index.php/users/register', params);
-                                    // changePage(1);
+                                    signup(params)
+                                        .then(({data}) => {
+                                            if (data[0].Status) changePage(1);       
+                                            else alert(data[0].Message);         
+
+                                            console.log(data);
+                                        })  
+                                        .catch(err => alert(`ERROR: ${err}`));
                                 }
                             }}
                         >

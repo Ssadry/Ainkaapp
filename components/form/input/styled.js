@@ -22,6 +22,8 @@ export const IconButton = styled.TouchableOpacity`
     justify-content: center;
     align-items: center;
     display: ${({isVisible}) => isVisible ? 'flex' : 'none'};
+    padding-left: 10px;
+    padding-right: 10px;
 `;
 
 export const Line = styled.View`

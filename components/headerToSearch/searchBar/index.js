@@ -1,44 +1,35 @@
-import React from 'react';
-import { Keyboard } from 'react-native';
-import { Container, SearchBar, TextInput, Icon, HoursContainer, GoToDefaultContent } from './styled';
+import React, {useEffect} from 'react';
+import { Keyboard, BackHandler } from 'react-native';
+import { Container, SearchBar, TextInput, Icon, HoursContainer } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faSearch, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Hours from '../../hours';
 
-export default ({width, setSearchText, textInputIsOnFocus, setTextInputIsOnFocus, searchText, click}) => {
-    const searchBarWidth = width * 0.8;
-    const profileContainerWidth = width * 0.1;
-    const textInputWidth = searchBarWidth * 0.85;
-    const imageWidth = searchBarWidth * 0.15;
+export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click, backToDefaultContent}) => {
+    useEffect(() => {
+        Keyboard.addListener('keyboardDidShow', () => {
+            setTextInputIsOnFocus(true);
+            BackHandler.addEventListener('hardwareBackPress', backToDefaultContent);
+        });
+    }, []);
+
+    useEffect(() => {
+        Keyboard.addListener('keyboardDidChangeFrame', () => {
+            console.log('ñe')            
+        });
+    }, []);
 
     return (
-        <Container>
-            <GoToDefaultContent
-                textInputIsOnFocus={textInputIsOnFocus}
-                onPress={() => {
-                    setTextInputIsOnFocus(false);
-                    setSearchText('');
-                    Keyboard.dismiss
-                }}
-            >
-                <FontAwesomeIcon 
-                    icon={faArrowLeft}
-                    size={25}
-                />
-            </GoToDefaultContent>
-            <SearchBar width={searchBarWidth}>
+        <Container
+            width={width}
+        >
+            <SearchBar>
                 <TextInput 
                     placeholder="Buscar..." 
                     value={searchText} 
-                    onChangeText={(text) => setSearchText(text)} 
-                    width={textInputWidth}
-                    onFocus={() => setTextInputIsOnFocus(true)}
-                    onSubmitEditing={() => {
-                        setTextInputIsOnFocus(false);
-                        Keyboard.dismiss
-                    }}
+                    onChangeText={(text) => setSearchText(text)}
                 />
-                <Icon width={imageWidth}>
+                <Icon>
                     <FontAwesomeIcon 
                         icon={faSearch} 
                         resizeMode='stretch'
@@ -48,7 +39,6 @@ export default ({width, setSearchText, textInputIsOnFocus, setTextInputIsOnFocus
             <HoursContainer>
                 <Hours 
                     click={click}
-                    width={profileContainerWidth}
                 >
                     3h
                 </Hours>

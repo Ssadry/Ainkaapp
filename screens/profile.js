@@ -6,9 +6,9 @@ import {ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 import Background from '../components/dropdown/background';
 
-export default ({navigation, route}) => {
+const Profile = ({navigation, route}) => {
     const [settingsAreActivated, setSettingsAreActivated] = React.useState(false);
-    const {isOwnProfile} = route?.params ?? true;
+    const {isOwnProfile} = route?.params || true;
     return (
         <Container>
             <TopSettings
@@ -29,6 +29,8 @@ export default ({navigation, route}) => {
     )
 }
 
-export const Container = styled.View`
+export default Profile;
+
+const Container = styled.View`
     flex: 1;
 `;

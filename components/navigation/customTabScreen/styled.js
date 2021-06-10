@@ -9,6 +9,7 @@ export const CustomTabScreen = styled.View`
     top: 0px;
     left: 0px;
     z-index: 10;
+    background-color: rgba(220, 220, 220, 1);
 `;
 
 export const Button = styled.TouchableOpacity`

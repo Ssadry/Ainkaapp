@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Icon from '../assets/icon.png';
 import styled from 'styled-components/native';
 import {AppContext} from '../application/provider';
 
 const Splash = ({navigation}) => {
-    const [routeName] = React.useContext(AppContext);
+    const [routeName] = useContext(AppContext);
 
     setTimeout(() => {
         navigation.navigate(routeName.login);

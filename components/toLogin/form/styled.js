@@ -5,6 +5,6 @@ export const Container = styled.View`
 `;
 
 export const CheckContainer = styled.View`
-    margin-top: 40px;
+    margin-top: 10px;
     margin-bottom: 40px;
 `;

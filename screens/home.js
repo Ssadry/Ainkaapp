@@ -1,31 +1,33 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import HeaderToSearch from '../components/headerToSearch';
 import styled from 'styled-components/native';
 import Default from '../components/toHome/containers/default';
 import Searching from '../components/toHome/containers/searching';
-import {Dimensions} from 'react-native';
+import {AppContext} from '../application/provider';
 
 const Home = ({navigation}) => {
-    const [searchText, setSearchText] = React.useState('');
-    const [textInputIsOnFocus, setTextInputIsOnFocus] = React.useState(false);
+    const [routeName] = useContext(AppContext);
+
+    const [searchText, setSearchText] = useState('');
+    const [textInputIsOnFocus, setTextInputIsOnFocus] = useState(false);
 
     return (
         <Container>
-            <HeaderToSearch 
+            <HeaderToSearch
                 setSearchText={setSearchText} 
                 textInputIsOnFocus={textInputIsOnFocus}
                 setTextInputIsOnFocus={setTextInputIsOnFocus}
-                click={_ => navigation.navigate('Profile')}
-                width={Math.round(Dimensions.get('screen').width)}
+                click={() => navigation.navigate(routeName.profile)}
+                navigation={navigation}
             />
             <Default 
                 textInputIsOnFocus={textInputIsOnFocus}
                 navigation={navigation}
             />
-            {/* El componente 'Searching' solo se visualiza cuando se escribe algo en el buscador. */}
+            {/* El componente 'Searching' solo se visualiza cuando se selecciona el buscador. */}
             <Searching 
                 textInputIsOnFocus={textInputIsOnFocus} 
-                click={_ => navigation.navigate('WatchProfile')}
+                click={() => navigation.navigate('WatchProfile')}
             />
         </Container>
     )

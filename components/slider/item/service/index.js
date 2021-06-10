@@ -9,18 +9,28 @@ export default Service = ({
 }) => {
     const contentWidth = width * 0.8;
     const imagenContainerWidth = contentWidth * 0.5;
-    const borderRadiusContent = imagenContainerWidth * 0.5;
+    const borderRadiusContent = imagenContainerWidth * 0.9;
 
     return (
-        <Container width={width}>
+        <Container 
+            width={width}
+        >
             <Content 
                 width={contentWidth}
                 borderRadius={borderRadiusContent}
             >
-                <ImageContainer width={imagenContainerWidth}>
-                    <Image source={Icon}/>
+                <ImageContainer 
+                    width={imagenContainerWidth}
+                >
+                    <Image 
+                        source={Icon}
+                    />
                 </ImageContainer>
-                <Text>{title}</Text>
+                <Text
+                    numberOfLines={1}
+                >
+                    {title}
+                </Text>
             </Content>
         </Container>
     )

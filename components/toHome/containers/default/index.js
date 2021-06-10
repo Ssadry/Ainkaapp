@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useState} from 'react';
 import {Container, ScrollView} from './styled';
 import Banner from './banner';
 import Slider from '../../../slider';
@@ -10,7 +10,7 @@ const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
 const AMOUNT_SLIDER_ITEMS = 9;
 
 export default ({textInputIsOnFocus, navigation}) => {
-    const [sliderItemWidth, setSliderItemWidth] = React.useState(0);
+    const [sliderItemWidth, setSliderItemWidth] = useState(0);
 
     const items = [];
     for (let i = 0; i < AMOUNT_SLIDER_ITEMS; i++)

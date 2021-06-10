@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {AppContext} from '../../../application/provider';
+import {removeNavigationScreen} from '../../../application/navigation';
 
 import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
@@ -9,27 +10,16 @@ import PostAd from '../../../screens/postAd';
 
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
-import { CommonActions } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = ({navigation}) => {
-  const [routeName] = React.useContext(AppContext);
+  const [routeName] = useContext(AppContext);
   routeName.home = Home.name;
   routeName.saved = Saved.name;
+  routeName.profile = Profile.name;
 
-  React.useEffect(() => {
-    navigation.dispatch((state) => {
-      console.log(state.routes);
-      const routes = state.routes.filter(r => r.name !== routeName.login);
-      return CommonActions.reset({
-          ...state,
-          routes,
-          index: routes.length - 1,
-        });
-    });
-  
-  })
+  useEffect(() => removeNavigationScreen(navigation, routeName.login));
 
   return (
     <Tab.Navigator
@@ -73,7 +63,7 @@ const BottomNavigation = ({navigation}) => {
         }}
       />
       <Tab.Screen 
-        name="Profile" 
+        name={routeName.profile} 
         component={Profile}
         options={{
           title: '',

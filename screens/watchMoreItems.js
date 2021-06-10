@@ -1,19 +1,11 @@
 import React from 'react';
-import {BackHandler} from 'react-native';
 import styled from 'styled-components/native';
 import Header from '../components/toWatchMoreItems/header';
 import Content from '../components/toWatchMoreItems/content';
 
-const handler = () => {
-
-}
-
 const WatchMoreItems = ({navigation, route}) => {
-    // BackHandler.addEventListener('hardwareBackPress', handler);
-    // BackHandler.removeEventListener('hardwareBackPress', handler);
-
-    const {title} = route.params;
-    const {itemName} = route.params;
+    const title = route?.params?.title || 'Title';
+    const itemName = route?.params?.itemName || 'Featured';
 
     return (
         <Container>

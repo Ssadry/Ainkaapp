@@ -9,7 +9,7 @@ export const Container = styled.View`
 `;
 
 export const Content = styled.View`
-    border-width: 5px;
+    border-width: 1px;
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
@@ -41,6 +41,6 @@ export const Image = styled.Image`
 
 export const Text = styled.Text`
     text-align: center;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-bottom: 25px;
 `;

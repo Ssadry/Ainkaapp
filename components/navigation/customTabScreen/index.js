@@ -1,7 +1,5 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {CustomTabScreen, Button} from './styled';
-import {SafeAreaView} from 'react-native';
-import {AppContext} from '../../../application/provider';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHome, faBookmark, faPlus, faUser, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,43 +11,28 @@ const icons = [
 export default ({state, navigation, activeTintColor, inactiveTintColor}) => {
     
     const {routes} = state;
-    // const [popUpIsVisible, setPopUpIsVisible] = useContext(AppContext);
     
     return (
-        <SafeAreaView>
-            <CustomTabScreen>
-                {
-                    routes.map((route, index) => {
-                        const isFocused = state.index === index;
-                        const tintColor = isFocused ? activeTintColor : inactiveTintColor;
-                        
-                        const onPress = () => {
-                            // if (route.name !== 'PostAd') {
-                            //     setPopUpIsVisible(false);
-                            //     navigation.navigate(route.name);
-                            // } else {
-                            //     setPopUpIsVisible(!popUpIsVisible);
-                            // }
-
-                            navigation.navigate(route.name);
-                        };
-            
-                        return (
-                            <Button 
-                                key={index} 
-                                onPress={onPress} 
-                            >
-                                <FontAwesomeIcon 
-                                    icon={icons[index]} 
-                                    size={ICON_SIZE}
-                                    // color={route.name !== 'PostAd' ? tintColor : popUpIsVisible ? 'blue' : inactiveTintColor}
-                                    color={tintColor}
-                                />
-                            </Button>
-                        );
-                    })
-                }
-            </CustomTabScreen>
-      </SafeAreaView>
+        <CustomTabScreen>
+            {
+                routes.map((route, i) => {
+                    const isFocused = state.index === i;
+                    const tintColor = isFocused ? activeTintColor : inactiveTintColor;
+                            
+                    return (
+                        <Button 
+                            key={i} 
+                            onPress={() => navigation.navigate(route.name)} 
+                        >
+                            <FontAwesomeIcon 
+                                icon={icons[i]} 
+                                size={ICON_SIZE}
+                                color={tintColor}
+                            />
+                        </Button>
+                    );
+                })
+            }
+        </CustomTabScreen>
     )
 }

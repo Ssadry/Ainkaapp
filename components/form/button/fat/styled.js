@@ -7,6 +7,7 @@ export const Container = styled.TouchableOpacity`
     align-items: center;
     border-radius: 10px;
     background-color: ${({color}) => color};
+    opacity: ${({disabled}) => disabled ? 0.5 : 1};
 `;
 
 export const Text = styled.Text`

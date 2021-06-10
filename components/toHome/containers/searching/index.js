@@ -8,6 +8,8 @@ const LazyCategory = lazy(_ => import('../../../slider/item/category'));
 const LazyProfile = lazy(_ => import('../../../slider/item/profile'));
 const LazyNeed = lazy(_ => import ('../../../slider/item/need'));
 
+console.log(LazyCategory.name);
+
 const types = {
     CATEGORY : {
         NAME : 'category',
