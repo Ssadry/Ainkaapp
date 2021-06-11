@@ -15,6 +15,7 @@ const WatchMoreItems = ({navigation, route}) => {
             />
             <Content
                 itemName={itemName}
+                navigation={navigation}
             />
         </Container>
     );

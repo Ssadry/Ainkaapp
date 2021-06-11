@@ -32,6 +32,7 @@ import FatButton from '../../form/button/fat';
 const padding = Dimensions.get('screen').width * 0.2;
 
 export default Content = ({
+    navigation,
     title = 'Título necesidad',
     isNeed = true,
     handleButton = () => alert('click'),

@@ -4,7 +4,7 @@ import Header from '../components/toInbox/header';
 import Content from '../components/toInbox/content';
 import SwitchView from '../components/switchView/buttons';
 
-export default Inbox = () => {
+const Inbox = ({navigation}) => {
     const [currentState, setCurrentState] = React.useState(0);
 
     return (
@@ -18,10 +18,13 @@ export default Inbox = () => {
             />
             <Content
                 currentState={currentState}
+                navigation={navigation}
             />
         </Container>
     )
 }
+
+export default Inbox;
 
 const Container = styled.View`
     flex: 1;

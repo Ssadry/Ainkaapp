@@ -3,7 +3,6 @@ import {Container, Profile, PhotoContainer, Photo, Name, AllImagesContainer, Ima
 import TopSettings from './topSettings';
 import Icon from '../../../assets/icon.png';
 import {Dimensions} from 'react-native';
-import BackgroundDropdown from '../../../components/dropdown/background';
 
 const lineWidth = Math.round(Dimensions.get('screen').width);
 
@@ -54,10 +53,6 @@ export default Header = () => {
             </AllImagesContainer>
             <Line 
                 width={lineWidth}
-            />
-            <BackgroundDropdown 
-                click={() => setSettingsAreActivated(!settingsAreActivated)}
-                isActivated={settingsAreActivated}
             />
         </Container>
     )

@@ -14,15 +14,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBookmark, faLink } from '@fortawesome/free-solid-svg-icons'
 import Icon from '../../../../assets/icon.png';
 
-export default Need = ({
+const Need = ({
     width = 200, 
     title = 'Need', 
-    hours = -1 
+    hours = -1 ,
+    click = () => alert('click')
 }) => {
     const contentWidth = width * 0.9;
     return (
-        <Container width={width}>
-            <Content width={contentWidth}>
+        <Container 
+            width={width}
+        >
+            <Content 
+                width={contentWidth}
+                onPress={click}
+            >
                 <ImageBackground 
                     source={Icon}
                     width={contentWidth}
@@ -61,5 +67,7 @@ export default Need = ({
                 </Info>
             </Content>
         </Container>
-    )
-}
+    );
+};
+
+export default Need;

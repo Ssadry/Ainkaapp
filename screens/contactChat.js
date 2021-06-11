@@ -1,12 +1,12 @@
-import React from 'react';
+import React, {useState, useRef} from 'react';
 import styled from 'styled-components/native';
 import Header from '../components/toContactChat/header';
 import Messages from '../components/toContactChat/messages';
 import Send from '../components/toContactChat/send';
 
-export default ContactChat = () => {
-    const [messages, setMessages] = React.useState(['a', 'v']);
-    const scrollViewRef = React.useRef();
+const ContactChat = () => {
+    const [messages, setMessages] = useState(['a', 'v']);
+    const scrollViewRef = useRef();
 
     return (
         <Container>
@@ -20,8 +20,10 @@ export default ContactChat = () => {
                 scrollToEnd={() => scrollViewRef.current.scrollToEnd({animated: true})}
             />
         </Container>
-    )
-}
+    );
+};
+
+export default ContactChat;
 
 const Container = styled.View`
     flex: 1;

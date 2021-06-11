@@ -4,7 +4,7 @@ import Header from '../components/toChat/header/index';
 import Messages from '../components/toChat/messages/index';
 import Send from '../components/toChat/send/index';
 
-export default ({navigation}) => {
+const Chat = ({navigation}) => {
     return (
         <View style={{ flex: 1 }}>
             <Header 
@@ -14,5 +14,7 @@ export default ({navigation}) => {
             <Messages />
             <Send />
         </View>
-    )
-}
+    );
+};
+
+export default Chat;

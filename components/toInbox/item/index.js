@@ -6,12 +6,14 @@ export default Item = ({
     width = 200,
     title = 'Title',
     paraph = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    isNew = false
+    isNew = false,
+    click = () => alert('click')
 }) => {
     const photoContainerWidth = width * 0.3;
     return (
         <Container
             width={width}
+            onPress={click}
         >
             <PhotoContainer
                 width={photoContainerWidth}

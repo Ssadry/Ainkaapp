@@ -7,11 +7,11 @@ import { Text, TouchableOpacity, BackHandler } from 'react-native';
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 
 export default ({
-    navigation = null
+    navigation
 }) => {
 
     const handleBackButtonClick = _ => {
-        if (navigation != null) {
+        if (navigation != null || navigation != undefined) {
             if (navigation.canGoBack()) {
                 navigation.goBack();
                 return true;
@@ -28,9 +28,7 @@ export default ({
     }, []);
 
     return (
-        <Container
-            navigation={navigation}
-        >
+        <Container>
             <TouchableOpacity onPress={handleBackButtonClick}>
                 <Text>
                     <FontAwesomeIcon icon={faArrowLeft} size={20}/>

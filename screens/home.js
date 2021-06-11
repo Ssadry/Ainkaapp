@@ -25,9 +25,10 @@ const Home = ({navigation}) => {
                 navigation={navigation}
             />
             {/* El componente 'Searching' solo se visualiza cuando se selecciona el buscador. */}
-            <Searching 
+            <Searching
                 textInputIsOnFocus={textInputIsOnFocus} 
-                click={() => navigation.navigate('WatchProfile')}
+                goToWatchMoreItems={() => navigation.navigate(routeName.watchMoreItems)}
+                goToProfile={() => navigation.navigate(routeName.profile)}
             />
         </Container>
     )

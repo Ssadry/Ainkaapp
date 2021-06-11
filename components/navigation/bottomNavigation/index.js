@@ -6,6 +6,7 @@ import {removeNavigationScreen} from '../../../application/navigation';
 import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
+import Inbox from '../../../screens/inbox';
 import PostAd from '../../../screens/postAd';
 
 import Saved from '../../../screens/saved';
@@ -18,6 +19,7 @@ const BottomNavigation = ({navigation}) => {
   routeName.home = Home.name;
   routeName.saved = Saved.name;
   routeName.profile = Profile.name;
+  routeName.inbox = Inbox.name;
 
   useEffect(() => removeNavigationScreen(navigation, routeName.login));
 
@@ -56,8 +58,8 @@ const BottomNavigation = ({navigation}) => {
         }}
       />
       <Tab.Screen 
-        name="ChatAndRequests" 
-        component={ChatsAndRequests}
+        name={routeName.inbox} 
+        component={Inbox}
         options={{
           title: '',
         }}

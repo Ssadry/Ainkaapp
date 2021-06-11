@@ -20,12 +20,18 @@ import Icon from '../../../../assets/icon.png';
 export default Featured = ({
     width = 200, 
     title = 'Title', 
-    hours = -1
+    hours = -1,
+    click = () => alert('click')
 }) => {
     const contentWidth = width * 0.9;
     return (
-        <Container width={width}>
-            <Content width={contentWidth}>
+        <Container 
+            width={width}
+        >
+            <Content 
+                width={contentWidth}
+                onPress={click}
+            >
                 <ImageBackground 
                     source={Icon}
                     width={contentWidth}

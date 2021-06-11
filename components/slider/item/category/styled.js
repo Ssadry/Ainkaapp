@@ -3,12 +3,12 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     justify-content: center;
     align-items: center;
-    margin-top: 1px;
+    margin-top: 0px;
     width: ${({width}) => width + 'px'};
     padding: 10px;
 `;
 
-export const Content = styled.View`
+export const Content = styled.TouchableOpacity`
     border-width: 1px;
     width: ${({width}) => width + 'px'};
     justify-content: center;

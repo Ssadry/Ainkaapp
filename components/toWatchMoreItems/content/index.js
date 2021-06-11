@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Container, Content} from './styled';
 import Featured from '../../slider/item/featured';
 import Need from '../../slider/item/need';
 import Profile from '../../slider/item/profile';
 import {Dimensions, ScrollView} from 'react-native';
+import { AppContext } from '../../../application/provider';
 
 const {width} = Dimensions.get('screen');
 const containerWidth = width * 0.9;
@@ -11,7 +12,8 @@ const itemsWidth = containerWidth * 0.5;
 
 const AMOUNT_ITEMS = 9;
 
-export default ({itemName}) => {
+export default ({itemName, navigation}) => {
+    const [routeName] = useContext(AppContext);
     const items = [];
 
     switch (itemName) {
@@ -23,6 +25,7 @@ export default ({itemName}) => {
                         width={itemsWidth}
                         title='Destacado'
                         hours={9}
+                        click={() => navigation.navigate(routeName.serviceOrNeed, {isNeed: false})}
                     />
             break;
         case Need.name:
@@ -33,6 +36,7 @@ export default ({itemName}) => {
                         width={itemsWidth}
                         title='Necesidad'
                         hours={4}
+                        click={() => navigation.navigate(routeName.serviceOrNeed, {isNeed: true})}
                     />
             break;
         case Profile.name:
@@ -42,7 +46,7 @@ export default ({itemName}) => {
                         key={i}
                         width={itemsWidth}
                         title='Perfil'
-                        click={() => alert('No recuerdo qué hace el botón :D')}
+                        click={() => navigation.navigate(routeName.profile)}
                     />
             break;
     }

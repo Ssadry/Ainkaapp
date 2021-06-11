@@ -5,7 +5,8 @@ import Item from '../../item';
 export default Requests = ({
     currentState,
     pos,
-    itemWidth
+    itemWidth,
+    click = () => alert('click')
 }) => {
 
     const items = [
@@ -74,6 +75,7 @@ export default Requests = ({
                         title={item.title}
                         paraph={item.paraph}
                         isNew={item.isNew}
+                        click={click}
                     />
                 )
             }

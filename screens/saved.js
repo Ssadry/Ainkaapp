@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components/native';
 import Header from '../components/toSaved/header';
@@ -7,19 +7,14 @@ import Need from '../components/slider/item/need';
 import Featured from '../components/slider/item/featured';
 import Profile from '../components/slider/item/profile';
 import {featured, needs, profiles} from '../components/toSaved/data';
-import {post} from '../services';
+// import {post} from '../services';
+import { AppContext } from '../application/provider';
 
 const ITEMS_DISPLAYED = 1.85;
-console.log(Featured.name);
 
 const Saved = ({navigation}) => {
-    const [itemsWidth, setItemsWidth] = React.useState(0);
-
-    // const params = new URLSearchParams();
-    // params.append('UserID', 1);
-    // params.append('UserFav', 2);
-
-    // post('https://pablomonteserin.com/sites/ainkaa/index.php/users/addfavoriteuser', params);
+    const [routeName] = useContext(AppContext);
+    const [itemsWidth, setItemsWidth] = useState(0);
 
     const itemFeatured = 
         featured.map((ftd, i) => 
@@ -28,6 +23,7 @@ const Saved = ({navigation}) => {
                 width={itemsWidth} 
                 title={ftd.title + ' - ' + i}
                 hours={ftd.hours}
+                click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Servicio', itemName: Featured.name})}
             />);
 
     const itemsNeeds = 
@@ -37,6 +33,7 @@ const Saved = ({navigation}) => {
                 width={itemsWidth} 
                 title={need.title + ' - ' + i} 
                 hours={need.hours}
+                click={() => navigation.navigate(routeName.watchMoreItems, {title: Need.name, itemName: Need.name})}
             />);
     
     const itemsProfiles = 
@@ -45,6 +42,7 @@ const Saved = ({navigation}) => {
                 key={i} 
                 width={itemsWidth} 
                 title={profile.title + ' - ' + i}
+                click={() => navigation.navigate(routeName.watchMoreItems, {title: Profile.name, itemName: Profile.name})}
             />);
 
     const sliders = [

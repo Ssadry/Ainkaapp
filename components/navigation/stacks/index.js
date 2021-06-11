@@ -5,7 +5,7 @@ import {AppContext} from '../../../application/provider';
 // import Signup from '../../../screens/signup';
 // import Home from '../../../screens/home';
 import WatchMoreItems from '../../../screens/watchMoreItems';
-import Profile from '../../../screens/profile';
+import AnotherProfile from '../../../screens/profile';
 import WatchProfile from '../../../screens/watchProfile';
 import Services from '../../../screens/services';
 import Chat from '../../../screens/chat';
@@ -33,15 +33,22 @@ export default () => {
   routeName.bottomNavigation = BottomNavigation.name;
   routeName.checkIn = CheckIn.name;
   routeName.watchMoreItems = WatchMoreItems.name;
+  routeName.anotherProfile = 'Another' + AnotherProfile.name;
+  routeName.serviceOrNeed = ServiceOrNeed.name;
+  routeName.request = Request.name;
+  routeName.contactChat = ContactChat.name;
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {/* <Stack.Screen name={routeName.splash} component={Splash}/>
+      <Stack.Screen name={routeName.splash} component={Splash}/>
       <Stack.Screen name={routeName.login} component={Login}/>
       <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>
       <Stack.Screen name={routeName.checkIn} component={CheckIn}/>         
-      <Stack.Screen name={routeName.watchMoreItems} component={WatchMoreItems}/>          */}
-      <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>         
+      <Stack.Screen name={routeName.watchMoreItems} component={WatchMoreItems}/>         
+      <Stack.Screen name={routeName.serviceOrNeed} component={ServiceOrNeed}/> 
+      <Stack.Screen name={routeName.request} component={Request}/> 
+      <Stack.Screen name={routeName.contactChat} component={ContactChat}/> 
+      <Stack.Screen name={routeName.anotherProfile} component={AnotherProfile}/> 
     </Stack.Navigator>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TopSettings from '../components/toProfile/topSettings';
 import Content from '../components/toProfile/content';
 import TopPhoto from '../components/toProfile/topPhoto';
@@ -7,8 +7,8 @@ import styled from 'styled-components/native';
 import Background from '../components/dropdown/background';
 
 const Profile = ({navigation, route}) => {
-    const [settingsAreActivated, setSettingsAreActivated] = React.useState(false);
-    const {isOwnProfile} = route?.params || true;
+    const [settingsAreActivated, setSettingsAreActivated] = useState(false);
+    const isOwnProfile = route?.params?.isOwnProfile || true;
     return (
         <Container>
             <TopSettings

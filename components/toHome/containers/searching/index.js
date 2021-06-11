@@ -8,8 +8,6 @@ const LazyCategory = lazy(_ => import('../../../slider/item/category'));
 const LazyProfile = lazy(_ => import('../../../slider/item/profile'));
 const LazyNeed = lazy(_ => import ('../../../slider/item/need'));
 
-console.log(LazyCategory.name);
-
 const types = {
     CATEGORY : {
         NAME : 'category',
@@ -31,7 +29,7 @@ const types = {
 const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const width = Math.round(Dimensions.get('screen').width);
 
-export default ({textInputIsOnFocus, click}) => {
+export default ({textInputIsOnFocus, goToWatchMoreItems, goToProfile}) => {
     const [currentState, setCurrentState] = useState(0);
 
     const createArray = (type, amount) => {
@@ -41,15 +39,31 @@ export default ({textInputIsOnFocus, click}) => {
         switch(type) {
             case types.CATEGORY.NAME:
                 elementWidth = width / types.CATEGORY.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = <LazyCategory width={elementWidth} key={i}/>
+                for (let i = 0; i < amount; i++) arr[i] = 
+                    <LazyCategory 
+                        width={elementWidth} 
+                        key={i}
+                        click={goToWatchMoreItems}
+                    />
                 break;
             case types.NEED.NAME:
                 elementWidth = width / types.NEED.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = <LazyNeed width={elementWidth} key={i} title={'Título de una necesidad'}/>
+                for (let i = 0; i < amount; i++) arr[i] = 
+                    <LazyNeed 
+                        width={elementWidth} 
+                        key={i} 
+                        title={'Título de una necesidad'}
+                        click={goToWatchMoreItems}
+                    />
                 break;
             case types.PROFILE.NAME:
                 elementWidth = width / types.PROFILE.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = <LazyProfile width={elementWidth} key={i} click={click}/>
+                for (let i = 0; i < amount; i++) arr[i] = 
+                    <LazyProfile 
+                        width={elementWidth} 
+                        key={i} 
+                        click={goToProfile}
+                    />
                 break;
         }
         return arr;

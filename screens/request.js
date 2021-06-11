@@ -6,7 +6,7 @@ import Icon from '../assets/icon.png';
 
 const height = Math.round(Dimensions.get('screen').height);
 
-export default ({navigation, route}) => {
+const Request = ({navigation, route}) => {
     const topPhoto = route?.params?.topPhoto ?? Icon;
     const title = route?.params?.title ?? 'Título por defecto';
     const isNeed = route?.params?.isNeed ?? true;
@@ -27,8 +27,9 @@ export default ({navigation, route}) => {
     )
 }
 
+export default Request;
+
 const Container = styled.View`
     flex: 1;
-    background-color: red;
     height: ${height + 'px'};
 `;

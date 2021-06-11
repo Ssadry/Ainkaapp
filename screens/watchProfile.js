@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-export default ({navigation}) => {
+const WatchProfile = ({navigation}) => {
     return (
         <Container>
         </Container>
     )
 }
+
+export default WatchProfile;
 
 export const Container = styled.View`
     flex: 1;

@@ -19,3 +19,5 @@ export const getServiceById = async(id) => {
 
     return await axios.post(`${URL}services/showservices`, params)
 };
+
+export const listCities = async() => await axios.get(`${URL}locations/recover`);
