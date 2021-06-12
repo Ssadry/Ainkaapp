@@ -29,7 +29,7 @@ const types = {
 const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const width = Math.round(Dimensions.get('screen').width);
 
-export default ({textInputIsOnFocus, goToWatchMoreItems, goToProfile}) => {
+export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
     const [currentState, setCurrentState] = useState(0);
 
     const createArray = (type, amount) => {
@@ -74,7 +74,7 @@ export default ({textInputIsOnFocus, goToWatchMoreItems, goToProfile}) => {
     const profiles = createArray(types.PROFILE.NAME, types.PROFILE.AMOUNT);
 
     return (
-        <Container textInputIsOnFocus={textInputIsOnFocus}>
+        <Container textInputIsOnFocus={isSearchingOnHome}>
             <SwitchButtons 
                 currentState={currentState}
                 setCurrentState={setCurrentState}

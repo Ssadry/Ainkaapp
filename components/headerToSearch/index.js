@@ -6,15 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {Dimensions} from 'react-native';
 
-export default ({searchText, textInputIsOnFocus, setTextInputIsOnFocus, setSearchText, click, navigation}) => {
+const HARDWARE_BACK_PRESS = 'hardwareBackPress';
+
+export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchText, click, navigation}) => {
     const [widthCurrentScreen, setWidthCurrentScreen] = useState(Math.round(Dimensions.get('screen').width));
 
     const sideWidth = widthCurrentScreen * 0.15;
     const middleWidth = widthCurrentScreen * 0.75;
 
     const backToDefaultContent = () => {
-        setTextInputIsOnFocus(false);
-        BackHandler.removeEventListener('hardwareBackPress', backToDefaultContent);
+        setIsSearchingOnHome(false);
+        BackHandler.removeEventListener(HARDWARE_BACK_PRESS, backToDefaultContent);
         return true;
     }
 
@@ -32,14 +34,14 @@ export default ({searchText, textInputIsOnFocus, setTextInputIsOnFocus, setSearc
             >
                 <GoToDefaultContent
                     width={sideWidth}
-                    textInputIsOnFocus={textInputIsOnFocus}
+                    textInputIsOnFocus={isSearchingOnHome}
                     onPress={() => {
-                        BackHandler.removeEventListener('hardwareBackPress', backToDefaultContent);
+                        BackHandler.removeEventListener(HARDWARE_BACK_PRESS, () => true);
 
                         Keyboard.dismiss();
-                        setTextInputIsOnFocus(false);
+                        setIsSearchingOnHome(false);
 
-                        BackHandler.addEventListener('hardwareBackPress', () => {
+                        BackHandler.addEventListener(HARDWARE_BACK_PRESS, () => {
                             if (navigation.canGoBack()) {
                                 navigation.goBack();
                                 return true;
@@ -48,7 +50,7 @@ export default ({searchText, textInputIsOnFocus, setTextInputIsOnFocus, setSearc
                             return false;
                         });
                     }}
-                    disabled={!textInputIsOnFocus}
+                    disabled={!isSearchingOnHome}
                 >
                     <FontAwesomeIcon 
                         icon={faArrowLeft}
@@ -61,7 +63,7 @@ export default ({searchText, textInputIsOnFocus, setTextInputIsOnFocus, setSearc
             >
                 <SearchBar 
                     width={middleWidth}
-                    setTextInputIsOnFocus={setTextInputIsOnFocus}
+                    setTextInputIsOnFocus={setIsSearchingOnHome}
                     setSearchText={setSearchText}
                     searchText={searchText}
                     click={click}

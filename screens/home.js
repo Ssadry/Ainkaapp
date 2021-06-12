@@ -6,27 +6,25 @@ import Searching from '../components/toHome/containers/searching';
 import {AppContext} from '../application/provider';
 
 const Home = ({navigation}) => {
-    const [routeName] = useContext(AppContext);
-
+    const [routeName, isSearchingOnHome, setIsSearchingOnHome] = useContext(AppContext);
     const [searchText, setSearchText] = useState('');
-    const [textInputIsOnFocus, setTextInputIsOnFocus] = useState(false);
 
     return (
         <Container>
             <HeaderToSearch
                 setSearchText={setSearchText} 
-                textInputIsOnFocus={textInputIsOnFocus}
-                setTextInputIsOnFocus={setTextInputIsOnFocus}
+                isSearchingOnHome={isSearchingOnHome}
+                setIsSearchingOnHome={setIsSearchingOnHome}
                 click={() => navigation.navigate(routeName.profile)}
                 navigation={navigation}
             />
             <Default 
-                textInputIsOnFocus={textInputIsOnFocus}
+                isSearchingOnHome={isSearchingOnHome}
                 navigation={navigation}
             />
             {/* El componente 'Searching' solo se visualiza cuando se selecciona el buscador. */}
             <Searching
-                textInputIsOnFocus={textInputIsOnFocus} 
+                isSearchingOnHome={isSearchingOnHome} 
                 goToWatchMoreItems={() => navigation.navigate(routeName.watchMoreItems)}
                 goToProfile={() => navigation.navigate(routeName.profile)}
             />

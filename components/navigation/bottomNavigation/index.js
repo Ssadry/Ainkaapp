@@ -35,8 +35,8 @@ const BottomNavigation = ({navigation}) => {
           descriptors={props.descriptors}
           state={props.state}
           navigation={props.navigation}
-          activeTintColor={'green'}
-          inactiveTintColor={'black'}
+          activeTintColor={activeTintColor}
+          inactiveTintColor={inactiveTintColor}
         />
       }
     >
@@ -61,9 +61,7 @@ const BottomNavigation = ({navigation}) => {
         component={PostAd}
         options={{
           title: PostAd.name,
-          tabBarIcon: (tintColor) => {
-            return <PlusIcon color={tintColor} size={ICON_SIZE}/>
-          } 
+          tabBarIcon: (tintColor) => <PlusIcon color={tintColor} size={ICON_SIZE}/>
         }}
       />
       <Tab.Screen 

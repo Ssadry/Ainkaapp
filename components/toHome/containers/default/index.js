@@ -9,7 +9,7 @@ const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
 
 const AMOUNT_SLIDER_ITEMS = 9;
 
-export default ({textInputIsOnFocus, navigation}) => {
+export default ({isSearchingOnHome, navigation}) => {
     const [sliderItemWidth, setSliderItemWidth] = useState(0);
 
     const items = [];
@@ -27,7 +27,7 @@ export default ({textInputIsOnFocus, navigation}) => {
     
     return (
         <ScrollView
-            textInputIsOnFocus={textInputIsOnFocus}
+            textInputIsOnFocus={isSearchingOnHome}
         >
             <Container>
                 <Banner/>
