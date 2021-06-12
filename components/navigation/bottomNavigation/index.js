@@ -8,9 +8,12 @@ import Profile from '../../../screens/profile';
 import ChatsAndRequests from '../../../screens/chatsAndRequests';
 import Inbox from '../../../screens/inbox';
 import PostAd from '../../../screens/postAd';
-
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
+import {HomeIcon, SavedIcon, PlusIcon, InboxIcon, ProfileIcon} from '../../../assets/svg/icon';
+
+const ICON_SIZE = 35;
+const activeTintColor = 'green', inactiveTintColor = 'black';
 
 const Tab = createBottomTabNavigator();
 
@@ -29,10 +32,11 @@ const BottomNavigation = ({navigation}) => {
       // backBehavior={true}
       tabBar={props =>
         <CustomTabScreen
+          descriptors={props.descriptors}
           state={props.state}
           navigation={props.navigation}
-          activeTintColor="green"
-          inactiveTintColor="black"
+          activeTintColor={'green'}
+          inactiveTintColor={'black'}
         />
       }
     >
@@ -40,35 +44,43 @@ const BottomNavigation = ({navigation}) => {
         name={routeName.home}
         component={Home}
         options={{
-          title: '',
+          title: Home.name,
+          tabBarIcon: (tintColor) => <HomeIcon color={tintColor} size={ICON_SIZE}/>
         }}
       />
       <Tab.Screen
         name={routeName.saved}
         component={Saved}
         options={{
-          title: '',
+          title: Saved.name,
+          tabBarIcon: (tintColor) => <SavedIcon color={tintColor} size={ICON_SIZE}/>
         }}
       />
       <Tab.Screen 
-        name="PostAd" 
+        name={PostAd.name} 
         component={PostAd}
         options={{
-          title: '',
+          title: PostAd.name,
+          tabBarIcon: (tintColor) => {
+            return <PlusIcon color={tintColor} size={ICON_SIZE}/>
+          } 
         }}
       />
       <Tab.Screen 
         name={routeName.inbox} 
         component={Inbox}
         options={{
-          title: '',
+          title: Inbox.name,
+          // tabBarBadge: 5,
+          tabBarIcon: (tintColor) => <InboxIcon size={ICON_SIZE} color={tintColor}/>
         }}
       />
       <Tab.Screen 
         name={routeName.profile} 
         component={Profile}
         options={{
-          title: '',
+          title: Profile.name,
+          tabBarIcon: (tintColor) => <ProfileIcon size={ICON_SIZE} color={tintColor}/>
         }}
       />
     </Tab.Navigator>
