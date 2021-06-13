@@ -5,11 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Hours from '../../hours';
 
+const HARDWARE_BACK_PRESS = 'hardwareBackPress';
+
 export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click, backToDefaultContent}) => {
     useEffect(() => {
         Keyboard.addListener('keyboardDidShow', () => {
             setTextInputIsOnFocus(true);
-            BackHandler.addEventListener('hardwareBackPress', backToDefaultContent);
+            BackHandler.addEventListener(HARDWARE_BACK_PRESS, backToDefaultContent);
         });
     }, []);
 
@@ -28,6 +30,10 @@ export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click,
                     placeholder="Buscar..." 
                     value={searchText} 
                     onChangeText={(text) => setSearchText(text)}
+                    onFocus={() => {
+                        setTextInputIsOnFocus(true);
+                        BackHandler.addEventListener(HARDWARE_BACK_PRESS, backToDefaultContent);
+                    }}
                 />
                 <Icon>
                     <FontAwesomeIcon 

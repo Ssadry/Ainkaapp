@@ -45,6 +45,7 @@ const BottomNavigation = ({navigation}) => {
         component={Home}
         options={{
           title: Home.name,
+          tabBarBadge: 0,
           tabBarIcon: (tintColor) => <HomeIcon color={tintColor} size={ICON_SIZE}/>
         }}
       />
@@ -53,6 +54,7 @@ const BottomNavigation = ({navigation}) => {
         component={Saved}
         options={{
           title: Saved.name,
+          tabBarBadge: 0,
           tabBarIcon: (tintColor) => <SavedIcon color={tintColor} size={ICON_SIZE}/>
         }}
       />
@@ -61,6 +63,7 @@ const BottomNavigation = ({navigation}) => {
         component={PostAd}
         options={{
           title: PostAd.name,
+          tabBarBadge: 0,
           tabBarIcon: (tintColor) => <PlusIcon color={tintColor} size={ICON_SIZE}/>
         }}
       />
@@ -69,7 +72,7 @@ const BottomNavigation = ({navigation}) => {
         component={Inbox}
         options={{
           title: Inbox.name,
-          // tabBarBadge: 5,
+          tabBarBadge: 5,
           tabBarIcon: (tintColor) => <InboxIcon size={ICON_SIZE} color={tintColor}/>
         }}
       />
@@ -78,6 +81,7 @@ const BottomNavigation = ({navigation}) => {
         component={Profile}
         options={{
           title: Profile.name,
+          tabBarBadge: 0,
           tabBarIcon: (tintColor) => <ProfileIcon size={ICON_SIZE} color={tintColor}/>
         }}
       />

@@ -15,12 +15,31 @@ export const CustomTabScreen = styled.View`
 export const Button = styled.TouchableOpacity`
     flex-direction: row;
     margin: 4px;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     padding: 8px;
     padding-right: 16px;
     padding-left: 16px;
-    border-radius: 50px;
     justify-content: center;
     align-items: center;
+`;
+
+export const Notification = styled.View`
+    opacity: ${({hasNotifications}) => hasNotifications > 0 ? 1 : 0};
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    background-color: red;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+`;
+
+export const NotificationText = styled.Text`
+    color: white;
+    text-align: center;
+    font-size: 10px;
 `;

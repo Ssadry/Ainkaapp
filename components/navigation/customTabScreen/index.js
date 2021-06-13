@@ -1,11 +1,26 @@
 import React, {useContext} from 'react';
-import {CustomTabScreen, Button} from './styled';
+import {CustomTabScreen, Button, Notification, NotificationText} from './styled';
 import { AppContext } from '../../../application/provider';
 import { BackHandler } from 'react-native';
 
+const HARDWARE_BACK_PRESS = 'hardwareBackPress';
+const HOME = 'Home';
+
+const resetHardwareBackPress = (setIsSearchingOnHome, navigation) => {
+    BackHandler.removeEventListener(HARDWARE_BACK_PRESS, () => true);
+    setIsSearchingOnHome(false);
+    BackHandler.addEventListener(HARDWARE_BACK_PRESS, () => {
+        if (navigation.canGoBack()) {
+            navigation.goBack();
+            return true;
+        }
+        BackHandler.exitApp();
+        return false;
+    });       
+}
+
 export default ({descriptors, state, navigation, activeTintColor, inactiveTintColor}) => {
     const [routeName, isSearchingOnHome, setIsSearchingOnHome] = useContext(AppContext);
-    console.log(isSearchingOnHome);
     const {routes} = state;
     return (
         <CustomTabScreen>
@@ -15,19 +30,26 @@ export default ({descriptors, state, navigation, activeTintColor, inactiveTintCo
                     const isFocused = state.index === i;
                     const tintColor = isFocused ? activeTintColor : inactiveTintColor;
                     const icon = options.tabBarIcon(tintColor);
+                    const {tabBarBadge} = options;
 
                     return (
                         <Button 
                             key={i} 
                             onPress={() => {
-                                if (isSearchingOnHome) {
-                                    BackHandler.removeEventListener('hardwareBackPress', () => true);
-                                    setIsSearchingOnHome(false);
-                                }
-                                navigation.navigate(route.name)
+                                if (route.name != HOME) resetHardwareBackPress(setIsSearchingOnHome, navigation);
+                                navigation.navigate(route.name);
                             }} 
                         >
-                            {icon}
+                        <Notification
+                            hasNotifications={tabBarBadge}
+                        >
+                            <NotificationText
+                                adjustFontSizeToFit
+                            >
+                                {tabBarBadge}
+                            </NotificationText>
+                        </Notification>
+                        {icon}
                         </Button>
                     );
                 })
