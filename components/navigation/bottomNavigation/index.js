@@ -17,14 +17,18 @@ const activeTintColor = 'green', inactiveTintColor = 'black';
 
 const Tab = createBottomTabNavigator();
 
-const BottomNavigation = ({navigation}) => {
+const BottomNavigation = ({navigation, route}) => {
   const [routeName] = useContext(AppContext);
+  const {prevScreen} = route.params;
   routeName.home = Home.name;
   routeName.saved = Saved.name;
   routeName.profile = Profile.name;
   routeName.inbox = Inbox.name;
 
-  useEffect(() => removeNavigationScreen(navigation, routeName.login));
+  useEffect(() => {
+    if (prevScreen != null)
+      removeNavigationScreen(navigation, prevScreen);
+  });
 
   return (
     <Tab.Navigator

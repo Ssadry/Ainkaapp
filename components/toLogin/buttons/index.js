@@ -3,23 +3,19 @@ import {Container, SlimButtons} from './styled';
 import FatButton from '../../form/button/fat';
 import SlimButton from '../../form/button/slim';
 import {AppContext} from '../../../application/provider';
-import {login, getServiceById} from '../../../services';
+import {login} from '../../../services';
+import {getObjectData, storeObjectData} from '../../../application/asyncStorage';
 
-export default Content = ({
+export default Buttons = ({
     navigation,
     emailIsCorrect = false, 
     passwordIsCorrect = false,
     email = 'loquesea@gmail.com',
-    password = 'password'
+    password = 'password',
+    keepSessionOpen = false
 }) => {
     const [routeName] = useContext(AppContext);
     const canGoToHome = emailIsCorrect && passwordIsCorrect;
-
-    // getServiceById(26)
-    //     .then((res) => {
-    //         console.log(res.data);
-    //     })
-    //     .catch(err => alert(`ERROR: ${err}`));
 
     return (
         <Container>
@@ -32,10 +28,20 @@ export default Content = ({
                         params.append('EmailUser', email);
                         params.append('PassUser', password);
 
+                        if (keepSessionOpen) {
+                            const KEY = '@Account';
+                            storeObjectData(KEY, {
+                                email: email,
+                                password: password
+                            });
+                        }
+
                         login(params)
                             .then(({data}) => {   
                                 if (data.length === 1) alert(data[0].Message);
-                                else navigation.navigate(routeName.bottomNavigation);
+                                else navigation.navigate(routeName.bottomNavigation, {
+                                    prevScreen: routeName.login
+                                });
                             })
                             .catch(err => alert(`ERROR: ${err}`));
                     };

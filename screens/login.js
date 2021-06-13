@@ -34,7 +34,6 @@ const Login = ({navigation}) => {
                 setPassword={setPassword}
                 keepSessionOpen={keepSessionOpen}
                 setKeepSessionOpen={setKeepSessionOpen}
-                setKeepSessionOpen={setKeepSessionOpen}
                 setEmailIsCorrect={setEmailIsCorrect}
                 setPasswordIsCorrect={setPasswordIsCorrect}
             />
@@ -44,6 +43,7 @@ const Login = ({navigation}) => {
                 passwordIsCorrect={passwordIsCorrect}
                 email={email}
                 password={password}
+                keepSessionOpen={keepSessionOpen}
             />
         </Container>
     )

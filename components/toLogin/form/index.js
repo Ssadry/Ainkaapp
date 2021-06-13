@@ -8,7 +8,7 @@ const isEmail = (email) => {
     return re.test(String(email).toLowerCase());
 }
 
-export default Content = ({
+export default Form = ({
     inputWidth, 
     email, 
     setEmail, 
