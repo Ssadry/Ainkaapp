@@ -46,7 +46,9 @@ export default ({itemName, navigation}) => {
                         key={i}
                         width={itemsWidth}
                         title='Perfil'
-                        click={() => navigation.navigate(routeName.profile)}
+                        click={() => {
+                            navigation.navigate(routeName.anotherProfile, {isOwnProfile: false})}
+                        }
                     />
             break;
     }
@@ -57,9 +59,7 @@ export default ({itemName, navigation}) => {
                 <Content
                     width={containerWidth}
                 >
-                    {
-                        items.map(item => item)
-                    }
+                    {items.map(item => item)}
                 </Content>
             </Container>
         </ScrollView>

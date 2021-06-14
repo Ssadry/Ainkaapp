@@ -20,7 +20,7 @@ export default ({changePage}) => {
             </TextContainer>
             <ButtonContainer>
                 <FatButton
-                    click={() => changePage(1)}
+                    click={() => changePage()}
                 >
                     COMENZAR
                 </FatButton>

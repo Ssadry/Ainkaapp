@@ -10,10 +10,10 @@ export const Container = styled.View`
     left: ${({parentLayout, ownSize}) => parentLayout.x - ownSize.width + parentLayout.width + 'px'};
     opacity: ${({isActive}) => isActive ? 1 : 0};
     margin-top: 15px;
+    z-index: 1;
 `;
 
 export const Button = styled.TouchableOpacity`
-    z-index: 100;
 `;
 
 export const Text = styled.Text`

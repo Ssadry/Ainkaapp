@@ -13,10 +13,11 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import Icon from '../../../../assets/icon.png';
+import {SavedIcon} from '../../../../assets/svg/icon';
 
 const AMOUNT_INTERESTS = 4;
 
-export default ({ 
+const Profile = ({ 
     width, 
     click = () => alert('click'),
     title = 'User name' 
@@ -41,15 +42,22 @@ export default ({
             </InterestsContent>;
 
     return (
-        <Container width={width}>
+        <Container 
+            width={width}
+        >
             <Content 
                 width={contentWidth} 
-                onPress={() => click()}
+                onPress={click}
             >
                 <BookMark>
-                    <FontAwesomeIcon icon={faBookmark} color='gray' size={25}/>
+                    <SavedIcon
+                        color='rgba(170, 170, 170, 1)' 
+                        size={30}
+                    />
                 </BookMark>
-                <ImageContainer width={imageWidth}>
+                <ImageContainer 
+                    width={imageWidth}
+                >
                     <Image 
                         source={Icon} 
                         width={imageWidth}
@@ -58,12 +66,14 @@ export default ({
                 <Name>
                     {title}
                 </Name>
-                <InterestsContainer width={interestContainerWidth}>
-                    {
-                        interests.map(interest => interest)
-                    }
+                <InterestsContainer 
+                    width={interestContainerWidth}
+                >
+                    {interests.map(interest => interest)}
                 </InterestsContainer>
             </Content>
         </Container>
-    )
-}
+    );
+};
+
+export default Profile;

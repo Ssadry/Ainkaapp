@@ -15,7 +15,9 @@ const Splash = ({navigation}) => {
 
         setTimeout(() => {
             if (account == null)
-                navigation.navigate(routeName.login);
+                navigation.navigate(routeName.login, {
+                    prevScreen: routeName.splash
+                });
             else {
                 const params = new URLSearchParams();
                 params.append('Google', 0);
@@ -24,10 +26,12 @@ const Splash = ({navigation}) => {
 
                 login(params)
                     .then(({data}) => {   
-                        if (data.length === 1) alert(data[0].Message);
-                        else navigation.navigate(routeName.bottomNavigation, {
-                            prevScreen: routeName.splash
-                        });
+                        if (data.length === 1) 
+                            alert(data[0].Message);
+                        else 
+                            navigation.navigate(routeName.bottomNavigation, {
+                                prevScreen: routeName.splash
+                            });
                     })
                     .catch(err => alert(`ERROR: ${err}`));
             }
@@ -40,8 +44,8 @@ const Splash = ({navigation}) => {
                 source={Icon}
             />
         </Container>
-    )
-}
+    );
+};
 
 export default Splash;
 

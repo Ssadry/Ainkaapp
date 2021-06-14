@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Container, Button, Text} from './styled';
 
 export default Dropdown = ({
@@ -7,7 +7,7 @@ export default Dropdown = ({
     optionsHandle = [() => alert('First'), () => alert('Second')],
     isActive = false
 }) => {
-    const [ownSize, setOwnSize] = React.useState({
+    const [ownSize, setOwnSize] = useState({
         width: 10, 
         height: 10
     });

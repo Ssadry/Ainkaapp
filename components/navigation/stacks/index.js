@@ -14,7 +14,6 @@ import ChatsAndRequests from '../../../screens/chatsAndRequests';
 import Request from '../../../screens/request';
 import BottomNavigation from '../bottomNavigation';
 import CheckIn from '../../../screens/checkIn';
-import Saved from '../../../screens/saved';
 import Login from '../../../screens/login';
 import PostAd from '../../../screens/postAd';
 import EditPost from '../../../screens/editPost';
@@ -37,18 +36,20 @@ export default () => {
   routeName.serviceOrNeed = ServiceOrNeed.name;
   routeName.request = Request.name;
   routeName.contactChat = ContactChat.name;
+  routeName.postAd = PostAd.name;
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name={routeName.splash} component={Splash}/>
       <Stack.Screen name={routeName.login} component={Login}/>
       <Stack.Screen name={routeName.bottomNavigation} component={BottomNavigation}/>
-      {/* <Stack.Screen name={routeName.checkIn} component={CheckIn}/>         
-      <Stack.Screen name={routeName.watchMoreItems} component={WatchMoreItems}/>         
-      <Stack.Screen name={routeName.serviceOrNeed} component={ServiceOrNeed}/> 
-      <Stack.Screen name={routeName.request} component={Request}/> 
-      <Stack.Screen name={routeName.contactChat} component={ContactChat}/> 
-      <Stack.Screen name={routeName.anotherProfile} component={AnotherProfile}/>  */}
+      <Stack.Screen name={routeName.checkIn} component={CheckIn}/>
+      <Stack.Screen name={routeName.watchMoreItems} component={WatchMoreItems}/>
+      <Stack.Screen name={routeName.serviceOrNeed} component={ServiceOrNeed}/>
+      <Stack.Screen name={routeName.request} component={Request}/>
+      <Stack.Screen name={routeName.contactChat} component={ContactChat}/>
+      <Stack.Screen name={routeName.anotherProfile} component={AnotherProfile}/>
+      {/* <Stack.Screen name={routeName.postAd} component={PostAd}/> */}
     </Stack.Navigator>
   );
 };

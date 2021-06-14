@@ -14,10 +14,11 @@ import {
     Star
 } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBookmark, faLink, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faStar } from '@fortawesome/free-solid-svg-icons'
+import {SavedIcon} from '../../../../assets/svg/icon';
 import Icon from '../../../../assets/icon.png';
 
-export default Featured = ({
+const Featured = ({
     width = 200, 
     title = 'Title', 
     hours = -1,
@@ -39,10 +40,9 @@ export default Featured = ({
                     <BookMark
                         onPress={() => alert('Guardado')}
                     >
-                        <FontAwesomeIcon 
-                            icon={faBookmark} 
+                        <SavedIcon
                             color='rgba(170, 170, 170, 1)'
-                            size={25}
+                            size={30}
                         />
                     </BookMark>
                 </ImageBackground>
@@ -56,9 +56,7 @@ export default Featured = ({
                         </Title>
                         <HoursContainer>
                             <Hours>
-                                {
-                                    hours + 'h'
-                                }
+                                {hours + 'h'}
                             </Hours>
                         </HoursContainer>
                     </Top>
@@ -89,6 +87,7 @@ export default Featured = ({
                 </Info>
             </Content>
         </Container>
-    )
-}
+    );
+};
 
+export default Featured;

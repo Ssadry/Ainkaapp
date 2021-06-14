@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Container, 
     PhotoProfileContainer, 
@@ -23,8 +23,8 @@ const padding = width * 0.2;
 export default Content = ({
     isOwnProfile = false
 }) => {
-    const [currentState, setCurrentState] = React.useState(2);
-    const [itemWidth, setItemWidth] = React.useState(0);
+    const [currentState, setCurrentState] = useState(2);
+    const [itemWidth, setItemWidth] = useState(0);
     const buttons = ['Perfil', 'Servicios', 'Necesidades'];
     return (
         <Container

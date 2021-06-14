@@ -23,7 +23,7 @@ const Saved = ({navigation}) => {
                 width={itemsWidth} 
                 title={ftd.title + ' - ' + i}
                 hours={ftd.hours}
-                click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Servicio', itemName: Featured.name})}
+                click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Servicios', itemName: Featured.name})}
             />);
 
     const itemsNeeds = 
@@ -33,7 +33,7 @@ const Saved = ({navigation}) => {
                 width={itemsWidth} 
                 title={need.title + ' - ' + i} 
                 hours={need.hours}
-                click={() => navigation.navigate(routeName.watchMoreItems, {title: Need.name, itemName: Need.name})}
+                click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Necesidades', itemName: Need.name})}
             />);
     
     const itemsProfiles = 
@@ -42,7 +42,7 @@ const Saved = ({navigation}) => {
                 key={i} 
                 width={itemsWidth} 
                 title={profile.title + ' - ' + i}
-                click={() => navigation.navigate(routeName.watchMoreItems, {title: Profile.name, itemName: Profile.name})}
+                click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Perfiles', itemName: Profile.name})}
             />);
 
     const sliders = [

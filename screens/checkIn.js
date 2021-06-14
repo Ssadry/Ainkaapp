@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import styled from 'styled-components/native';
 import Carousel from '../components/toCheckIn/myCarousel/card';
 import Pagination from '../components/toCheckIn/myCarousel/pagination';
@@ -15,8 +15,8 @@ const carouselHeight = height * 0.8;
 
 const CheckIn = ({navigation}) => {
     const [routeName] = useContext(AppContext);
-    const [currentPos, setCurrentPos] = React.useState(0);
-    const [currentPage, setCurrentPage] = React.useState(0);
+    const [currentPos, setCurrentPos] = useState(0);
+    const [currentPage, setCurrentPage] = useState(0);
 
     const changePage = (index) => {
         setCurrentPos(width * -(currentPos + index));
@@ -24,7 +24,7 @@ const CheckIn = ({navigation}) => {
     }
 
     const nextScreen = () => {
-        navigation.navigate(routeName.bottomNavigation);
+        navigation.navigate(routeName.bottomNavigation, {prevScreen: routeName.checkIn});
     }
 
     const data = [

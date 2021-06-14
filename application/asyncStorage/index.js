@@ -32,8 +32,8 @@ export const getObjectData = async(key) => {
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
         console.error(e);
-    }
-}
+    };
+};
 
 export const getAll = async() => {
     try {
@@ -46,4 +46,12 @@ export const getAll = async() => {
 
 export const clear = async() => {
     await AsyncStorage.clear();
-}
+};
+
+export const removeData = async(key) => {
+    try {
+        await AsyncStorage.removeItem(key);
+    } catch (e) {
+        console.error(e);
+    }
+};

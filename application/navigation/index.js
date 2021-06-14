@@ -1,4 +1,5 @@
-import { CommonActions } from '@react-navigation/native';
+import {CommonActions} from '@react-navigation/native';
+import {NavigationActions, StackActions} from 'react-navigation';
 
 export const removeNavigationScreen = (navigation, routeName) => {
     navigation.dispatch((state) => {
@@ -10,3 +11,12 @@ export const removeNavigationScreen = (navigation, routeName) => {
           });
     });
 };
+
+export const resetNavigationScreen = (navigation, defaultRouteName) => {
+    navigation.dispatch(() => {
+        StackActions.reset({
+            index: 0,
+            actions: [NavigationActions.navigate({routeName: defaultRouteName})]
+        });
+    });
+}

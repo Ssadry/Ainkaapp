@@ -5,11 +5,11 @@ import Icon from '../../../../assets/icon.png';
 
 export default Service = ({
     width = 200,
-    title = 'title'
+    title = 'Title'
 }) => {
     const contentWidth = width * 0.8;
     const imagenContainerWidth = contentWidth * 0.5;
-    const borderRadiusContent = imagenContainerWidth * 0.9;
+    const borderRadiusContent = imagenContainerWidth * 0.7;
 
     return (
         <Container 

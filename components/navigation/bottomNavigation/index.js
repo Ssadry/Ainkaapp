@@ -11,6 +11,7 @@ import PostAd from '../../../screens/postAd';
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
 import {HomeIcon, SavedIcon, PlusIcon, InboxIcon, ProfileIcon} from '../../../assets/svg/icon';
+import {getCityById} from '../../../services';
 
 const ICON_SIZE = 35;
 const activeTintColor = 'green', inactiveTintColor = 'black';
@@ -26,8 +27,11 @@ const BottomNavigation = ({navigation, route}) => {
   routeName.inbox = Inbox.name;
 
   useEffect(() => {
-    if (prevScreen != null)
+    if (prevScreen != null || prevScreen != undefined)
       removeNavigationScreen(navigation, prevScreen);
+    
+      getCityById(23)
+        .then(({data}) => console.log(data)); 
   });
 
   return (
