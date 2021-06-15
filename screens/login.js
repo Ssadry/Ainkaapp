@@ -5,8 +5,7 @@ import Form from '../components/toLogin/form';
 import Buttons from '../components/toLogin/buttons';
 import {Dimensions} from 'react-native';
 import {AppContext} from '../application/provider';
-import {removeNavigationScreen, resetNavigationScreen} from '../application/navigation';
-// import {getServiceById} from '../services';
+import {removeNavigationScreen, resetNavigationHistory} from '../application/navigation';
 
 const {width, height} = Dimensions.get('screen')
 const screenHeight = Math.round(height);
@@ -14,7 +13,6 @@ const inputWidth = Math.round(width * 0.8);
 
 const Login = ({navigation, route}) => {
     const prevScreen = route?.params?.prevScreen;
-    console.log(prevScreen);
     const [routeName] = useContext(AppContext);
     
     const [email, setEmail] = useState('');
@@ -23,15 +21,14 @@ const Login = ({navigation, route}) => {
     const [keepSessionOpen, setKeepSessionOpen] = useState(false);
     const [emailIsCorrect, setEmailIsCorrect] = useState(false);
     const [passwordIsCorrect, setPasswordIsCorrect] = useState(false);
+    
 
     useEffect(() => {
-        if (prevScreen != null || prevScreen != undefined) {
-            if (Array.isArray(prevScreen)) {
-
-            } else {
-                removeNavigationScreen(navigation, prevScreen);
-                // resetNavigationScreen(navigation, 'login');
+        if (prevScreen != undefined) {
+            if (prevScreen === routeName.profile) {
+                resetNavigationHistory(navigation);
             }
+            removeNavigationScreen(navigation, prevScreen);
         }
     });
 

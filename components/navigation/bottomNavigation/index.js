@@ -27,11 +27,8 @@ const BottomNavigation = ({navigation, route}) => {
   routeName.inbox = Inbox.name;
 
   useEffect(() => {
-    if (prevScreen != null || prevScreen != undefined)
+    if (prevScreen !== undefined)
       removeNavigationScreen(navigation, prevScreen);
-    
-      getCityById(23)
-        .then(({data}) => console.log(data)); 
   });
 
   return (

@@ -11,14 +11,15 @@ const Splash = ({navigation}) => {
     useEffect(() => {
         const KEY = '@Account';
         let account;
-        getObjectData(KEY).then(res => account = res);
+        getObjectData(KEY)
+            .then(res => account = res);
 
         setTimeout(() => {
-            if (account == null)
+            if (account === null) {
                 navigation.navigate(routeName.login, {
                     prevScreen: routeName.splash
                 });
-            else {
+            } else {
                 const params = new URLSearchParams();
                 params.append('Google', 0);
                 params.append('EmailUser', account.email);

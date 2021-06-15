@@ -1,11 +1,11 @@
 import React, {useState, useContext} from 'react';
 import {Container, IconsContainer, Icon} from './styled';
 import GoToBackButton from '../../goToBackButton';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faShareAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
+import {faShareAlt, faEllipsisV} from '@fortawesome/free-solid-svg-icons'
 import Dropdown from '../../dropdown';
 import {SavedIcon} from '../../../assets/svg/icon';
-import { AppContext } from '../../../application/provider';
+import {AppContext} from '../../../application/provider';
 import {removeData} from '../../../application/asyncStorage';
 
 const settingsOptions = {
@@ -33,7 +33,9 @@ export default TopSettings = ({
             () => {
                 const key = '@Account';
                 removeData(key);
-                navigation.navigate(routeName.login, {prevScreen: routeName.profile})
+                navigation.navigate(routeName.login, {
+                    prevScreen: routeName.profile
+                });
             }
         ],
         another : [() => alert('Problema reportado')]
