@@ -4,14 +4,17 @@ import {Container, IconContainer, Image, Text} from './styled';
 
 export default Button = ({
     text = 'Default',
-    navigation
+    click = () => alert('click')
 }) => {
+
     return (
         <Container
-            onPress={() => navigation.navigate('EditPost', {category: text})}
+            onPress={click}
         >
             <IconContainer>
-                <Image source={Icon}/>
+                <Image 
+                    source={Icon}
+                />
             </IconContainer>
             <Text>
                 {text}

@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Container, Top, Bottom} from './styled';
 import Button from '../button';
+import { AppContext } from '../../../application/provider';
 
 export default Content = ({navigation}) => {
+    const [routeName] = useContext(AppContext);
     return (
         <Container>
             <Top>
                 <Button
                     text='Necesidad'
-                    navigation={navigation}
+                    click={() => navigation.navigate(routeName.editPost)}
                 />
             </Top>
             <Bottom>
                 <Button
                     text='Servicio'
-                    navigation={navigation}
+                    click={() => navigation.navigate(routeName.editProfile)}
                 />
             </Bottom>
         </Container>

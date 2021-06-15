@@ -3,14 +3,16 @@ import styled from 'styled-components/native';
 import Content from '../components/toEditProfile/content';
 import Header from '../components/toEditProfile/header'
 
-export default EditProfile = () => {
+const EditProfile = () => {
     return (
         <Container>
             <Header/>
             <Content/>
         </Container>
-    )
-} 
+    );
+};
+
+export default EditProfile;
 
 const Container = styled.View`
     flex: 1;

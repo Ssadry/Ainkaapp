@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import Header from '../components/toEditPost/header';
 import Content from '../components/toEditPost/content';
 
-export default ({navigation, route}) => {
+const EditPost = ({navigation, route}) => {
     const category = route?.params?.category ?? 'Category';
     return (
         <Container>
@@ -16,6 +16,8 @@ export default ({navigation, route}) => {
         </Container>
     )
 }
+
+export default EditPost;
 
 const Container = styled.View`
     flex: 1;

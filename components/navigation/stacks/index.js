@@ -2,8 +2,6 @@ import React, {useContext} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import {AppContext} from '../../../application/provider';
 
-// import Signup from '../../../screens/signup';
-// import Home from '../../../screens/home';
 import WatchMoreItems from '../../../screens/watchMoreItems';
 import AnotherProfile from '../../../screens/profile';
 import WatchProfile from '../../../screens/watchProfile';
@@ -37,6 +35,8 @@ export default () => {
   routeName.request = Request.name;
   routeName.contactChat = ContactChat.name;
   routeName.postAd = PostAd.name;
+  routeName.editPost = EditPost.name;
+  routeName.editProfile = EditProfile.name;
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -49,7 +49,8 @@ export default () => {
       <Stack.Screen name={routeName.request} component={Request}/>
       <Stack.Screen name={routeName.contactChat} component={ContactChat}/>
       <Stack.Screen name={routeName.anotherProfile} component={AnotherProfile}/>
-      {/* <Stack.Screen name={routeName.postAd} component={PostAd}/> */}
+      <Stack.Screen name={routeName.editPost} component={EditPost}/>
+      <Stack.Screen name={routeName.editProfile} component={EditProfile}/>
     </Stack.Navigator>
   );
 };

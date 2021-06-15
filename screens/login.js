@@ -29,8 +29,8 @@ const Login = ({navigation, route}) => {
             if (Array.isArray(prevScreen)) {
 
             } else {
-                // removeNavigationScreen(navigation, prevScreen);
-                resetNavigationScreen(navigation, 'login');
+                removeNavigationScreen(navigation, prevScreen);
+                // resetNavigationScreen(navigation, 'login');
             }
         }
     });
