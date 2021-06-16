@@ -22,7 +22,6 @@ const Login = ({navigation, route}) => {
     const [emailIsCorrect, setEmailIsCorrect] = useState(false);
     const [passwordIsCorrect, setPasswordIsCorrect] = useState(false);
     
-
     useEffect(() => {
         if (prevScreen != undefined) {
             if (prevScreen === routeName.profile) {
