@@ -14,15 +14,13 @@ export const removeNavigationScreen = (navigation, routeName) => {
 export const resetNavigationHistory = (navigation) => {
     navigation.dispatch((state) => {
         const {history} = state.routes[0].state;
-        console.log('Pre:')
-        console.log(history);
         const length = history.length;
-        const routes = history[length - 1];
-        console.log('Pos:');
-        console.log(routes);
+
         return CommonActions.reset({
             ...state,
-            history: []
+            ...routes,
+            ...state,
+            history: new Array()
         });
     });
 };

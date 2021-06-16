@@ -25,7 +25,8 @@ const Login = ({navigation, route}) => {
     useEffect(() => {
         if (prevScreen != undefined) {
             if (prevScreen === routeName.profile) {
-                resetNavigationHistory(navigation);
+                const state = navigation.dangerouslyGetState();
+                console.log(state.routes[1].history);
             }
             removeNavigationScreen(navigation, prevScreen);
         }
