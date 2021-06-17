@@ -13,7 +13,6 @@ export const Top = styled.View`
 `;
 
 export const Bottom = styled.View`
-
 `;
 
 export const TextButton = styled.TouchableOpacity`
@@ -21,9 +20,12 @@ export const TextButton = styled.TouchableOpacity`
 `;
 
 export const LeftText = styled.Text`
-    font-size: 15px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 4px;
 `;
 
 export const RightText = styled.Text`
-    font-size: 12px;
+    font-size: 14px;
+    color: ${({color}) => color}
 `;

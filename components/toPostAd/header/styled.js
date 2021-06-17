@@ -2,7 +2,10 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex-direction: row;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
     justify-content: center;
     align-items: center;
 `;
@@ -10,7 +13,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
     margin-left: 20px;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
 `;
 
 export const TitleAndIcon = styled.View`

@@ -13,44 +13,59 @@ export const Content = styled.TouchableOpacity`
     margin: 20px;
     border-radius: ${({width}) => width * 0.05 + 'px'};
     overflow: hidden;
-    border: 1px solid rgba(170, 170, 170, 1);
+    background-color: ${({backgroundColor}) => backgroundColor};
 `;
 
-export const ImageBackground = styled.ImageBackground`
+export const ImageContainer = styled.View`
+    justify-content: center;
+    align-items: center;
     width: ${({width}) => width + 'px'};
     height: ${({width}) => width + 'px'};
 `;
 
-export const BookMark = styled.TouchableOpacity`
+export const Image = styled.Image`
+    width: 70%;
+    height: 50%;
+`;
+
+export const BookMark = styled.TouchableOpacity` 
     justify-content: center;
-    align-items: flex-end;
-    margin: 5px;
+    align-items: center;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
 `;
 
 export const Info = styled.View`
-    background-color: rgba(170, 170, 170, 1);
     width: ${({width}) => width + 'px'};
     justify-content: space-between;
     padding: 5px;
+    background-color: ${({backgroundColor}) => backgroundColor};
 `;
 
 export const Title = styled.Text`
     font-weight: bold;
-    color: white;
-    flex: 0.8;
+    color: ${({color}) => color};
+    flex: 1;
+    font-size: 15px;
 `;
 
 export const HoursContainer = styled.View`
-    border: 1px solid white;
+    border: 2px solid ${({color}) => color};
     margin-bottom: 5px;
     justify-content: center;
     align-items: center;
-    border-radius: 100px;
+    border-radius: 150px;
+    width: 30px;
+    height: 30px;
 `;
 
 export const Hours = styled.Text`
-    color: white;
+    color: ${({color}) => color};
     text-align: center;
+    font-size: 12px;
     margin: 5px;
 `;
 
@@ -62,6 +77,7 @@ export const Top = styled.View`
 export const Bottom = styled.View`
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 `;
 
 export const StarsContainer = styled.View`
@@ -69,5 +85,8 @@ export const StarsContainer = styled.View`
 `;
 
 export const Star = styled.View`
-    margin: 2px;
+`;
+
+export const FreeChangeContainer = styled.View`
+    margin-right: 2px;
 `;

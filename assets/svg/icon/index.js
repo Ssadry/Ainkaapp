@@ -1,12 +1,12 @@
 import React from 'react';
-import Svg, { Path, G, Rect } from 'react-native-svg';
+import Svg, { Path, G, Rect, ClipPath, Defs } from 'react-native-svg';
 import defaultColors from '../../colors/defaultColors.json';
 
-const BLACK = '#000000', SIZE = 36;
+const DARK_BLUE = defaultColors.AzulOscuro, SIZE = 36;
 
 export const HomeIcon = ({
-    color = BLACK, 
-    size = SIZE
+    size = SIZE,
+    color = DARK_BLUE
 }) => {
     return (
         <Svg 
@@ -14,18 +14,17 @@ export const HomeIcon = ({
             height={size} 
             viewBox="0 0 36 36"
         >
-            <Path 
-                fill={color}
-                fillRule='evenodd'
-                d="M13.755,26.345V19h6.087v7.346a1.5,1.5,0,0,0,1.522,1.469h4.565a1.5,1.5,0,0,0,1.522-1.469V16.061h2.587a.726.726,0,0,0,.5-1.278L17.818,3.72a1.575,1.575,0,0,0-2.039,0L3.058,14.783a.728.728,0,0,0,.5,1.278H6.147V26.345a1.5,1.5,0,0,0,1.522,1.469h4.565A1.5,1.5,0,0,0,13.755,26.345Z"
-                transform="translate(1.198 2.42)"
-            />
+        <Path 
+            d="M13.755,29.664V21.258h6.087v8.406a1.612,1.612,0,0,0,1.522,1.681h4.565a1.612,1.612,0,0,0,1.522-1.681V17.9h2.587a.849.849,0,0,0,.5-1.463L17.818,3.774a1.427,1.427,0,0,0-2.039,0L3.058,16.433a.852.852,0,0,0,.5,1.463H6.147V29.664a1.612,1.612,0,0,0,1.522,1.681h4.565A1.612,1.612,0,0,0,13.755,29.664Z" 
+            transform="translate(1.198 0.655)"
+            fill={color}
+        />
         </Svg>
     );
 };
 
 export const InboxIcon = ({
-    color = BLACK, 
+    color = DARK_BLUE, 
     size = SIZE
 }) => {
     return (
@@ -44,7 +43,7 @@ export const InboxIcon = ({
 };
 
 export const PlusIcon = ({
-    color = BLACK, 
+    color = DARK_BLUE, 
     size = SIZE
 }) => {
     return (
@@ -72,7 +71,7 @@ export const PlusIcon = ({
 };
 
 export const ProfileIcon = ({
-    color = BLACK, 
+    color = DARK_BLUE, 
     size = SIZE
 }) => {
     return (
@@ -90,7 +89,7 @@ export const ProfileIcon = ({
 };
 
 export const SavedIcon = ({
-    color = BLACK, 
+    color = DARK_BLUE, 
     size = SIZE
 }) => {
     return (
@@ -109,7 +108,7 @@ export const SavedIcon = ({
 };
 
 export const SearchIcon = ({
-    color = BLACK,
+    color = DARK_BLUE,
     size = SIZE
 }) => {
     return (
@@ -219,7 +218,7 @@ export const UnCheckIcon = ({
 
 export const ArtIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -238,7 +237,7 @@ export const ArtIcon = ({
 
 export const KitchenIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg 
@@ -261,7 +260,7 @@ export const KitchenIcon = ({
 
 export const SportIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg 
@@ -295,7 +294,7 @@ export const SportIcon = ({
 
 export const CraftIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -317,7 +316,7 @@ export const CraftIcon = ({
 
 export const MusicIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -339,7 +338,7 @@ export const MusicIcon = ({
 
 export const LeisureIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg 
@@ -361,7 +360,7 @@ export const LeisureIcon = ({
 
 export const OtherIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -402,7 +401,7 @@ export const OtherIcon = ({
 
 export const TechnologyIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -424,7 +423,7 @@ export const TechnologyIcon = ({
 
 export const TransportIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -453,7 +452,7 @@ export const TransportIcon = ({
 
 export const IdiomIcon = ({
     size = SIZE,
-    color = BLACK
+    color = DARK_BLUE
 }) => {
     return (
         <Svg
@@ -469,6 +468,341 @@ export const IdiomIcon = ({
                 transform="translate(3 3.438)"
                 fill={color}
             />
+        </Svg>
+    );
+};
+
+export const StarIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg
+            width={size}
+            height={size} 
+            viewBox="0 0 36 36"
+        >
+            <Path
+                d="M0,0H36V36H0Z" 
+                fill="none"
+            />
+            <Path
+                d="M16,24.5,24.652,30l-2.3-10.36L30,12.669l-10.066-.9L16,2l-3.934,9.771L2,12.669,9.644,19.64,7.348,30Z" 
+                transform="translate(2 2)"
+                fill={color}
+            />
+        </Svg>
+    );
+};
+
+export const FreeChangeIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg 
+            width={size}
+            height={size}
+            viewBox="0 0 48 48"
+        >
+            <Defs>
+                <ClipPath>
+                <Rect 
+                    width={size}
+                    height={size}
+                />
+                </ClipPath>
+            </Defs>
+            <G
+                clip-path="url(#clip-icon_home_4)"
+            >
+                <Rect 
+                    width={size}
+                    height={size}
+                />
+                <G>
+                    <Path
+                        d="M0,0H48V48H0Z" 
+                        // fill={color}
+                    />
+                    <Path
+                        d="M30,24H22V19.44h8c3.419,0,6.2-3.337,6.2-7.44S33.419,4.56,30,4.56H22V0h8c5.514,0,10,5.383,10,12S35.514,24,30,24ZM18,24H10C4.486,24,0,18.617,0,12S4.486,0,10,0h8V4.56H10C6.581,4.56,3.8,7.9,3.8,12s2.781,7.44,6.2,7.44h8V24Z" 
+                        transform="translate(4 12)" 
+                        fill={color}
+                    />
+                    <Rect 
+                        width={size}
+                        height={size}
+                    />
+                </G>
+            </G>
+        </Svg>
+    );
+};
+
+export const UnsaveIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg 
+            width={size}
+            height={size}
+            viewBox="0 0 44 44"
+        >
+            <G 
+                transform="translate(7.825 4)"
+            >
+                <G 
+                    stroke-miterlimit="10"
+                >
+                    <Path 
+                        d="M 26.40009880065918 33.72198486328125 L 14.54270935058594 28.62206077575684 L 13.95004940032959 28.36714935302734 L 13.35738945007324 28.62206077575684 L 1.499999403953552 33.72198486328125 L 1.499999403953552 4 C 1.499999403953552 2.621500015258789 2.615089416503906 1.5 3.985729455947876 1.5 L 23.91436958312988 1.5 C 25.28500938415527 1.5 26.40009880065918 2.621500015258789 26.40009880065918 4 L 26.40009880065918 33.72198486328125 Z" 
+                        stroke="none"
+                    />
+                    <Path 
+                        d="M 3.98573112487793 3 C 3.451414108276367 3 3.000001907348633 3.457942962646484 3.000001907348633 4 L 3.000001907348633 31.4439582824707 L 13.95004940032959 26.73428344726562 L 24.90009689331055 31.4439582824707 L 24.90009689331055 4 C 24.90009689331055 3.457942962646484 24.44868469238281 3 23.91436767578125 3 L 3.98573112487793 3 M 3.98573112487793 0 L 23.91436767578125 0 C 26.10651969909668 0 27.90009689331055 1.799999237060547 27.90009689331055 4 L 27.90009689331055 36 L 13.95004940032959 30 L 1.9073486328125e-06 36 L 1.9073486328125e-06 4 C 1.9073486328125e-06 1.799999237060547 1.7935791015625 0 3.98573112487793 0 Z" 
+                        stroke="none" 
+                        fill={color}
+                    />
+                </G>
+            </G>
+            <G 
+                transform="translate(7.825 4)" 
+                stroke-miterlimit="10"
+            >
+                <Path 
+                    d="M 26.40009880065918 33.72198486328125 L 14.54270935058594 28.62206077575684 L 13.95004940032959 28.36714935302734 L 13.35738945007324 28.62206077575684 L 1.499999403953552 33.72198486328125 L 1.499999403953552 4 C 1.499999403953552 2.621500015258789 2.615089416503906 1.5 3.985729455947876 1.5 L 23.91436958312988 1.5 C 25.28500938415527 1.5 26.40009880065918 2.621500015258789 26.40009880065918 4 L 26.40009880065918 33.72198486328125 Z" 
+                    stroke='none'
+                />
+                <Path 
+                    d="M 3.98573112487793 3 C 3.451414108276367 3 3.000001907348633 3.457942962646484 3.000001907348633 4 L 3.000001907348633 31.4439582824707 L 13.95004940032959 26.73428344726562 L 24.90009689331055 31.4439582824707 L 24.90009689331055 4 C 24.90009689331055 3.457942962646484 24.44868469238281 3 23.91436767578125 3 L 3.98573112487793 3 M 3.98573112487793 0 L 23.91436767578125 0 C 26.10651969909668 0 27.90009689331055 1.799999237060547 27.90009689331055 4 L 27.90009689331055 36 L 13.95004940032959 30 L 1.9073486328125e-06 36 L 1.9073486328125e-06 4 C 1.9073486328125e-06 1.799999237060547 1.7935791015625 0 3.98573112487793 0 Z" 
+                    stroke="none" 
+                    fill={color}
+                />
+            </G>
+        </Svg>
+    );
+};
+
+export const LeftArrowIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg 
+            width={size}
+            height={size}
+            viewBox="0 0 44 44"
+        >
+            <Path 
+                d="M0,0H44V44H0Z" 
+                fill="none"
+            />
+            <Path 
+                d="M39,16H10.66l7.16-7.18L15,6,3,18,15,30l2.82-2.82L10.66,20H39Z" 
+                transform="translate(1 4.176)"
+                fill={color}
+            />
+        </Svg>
+    );
+};
+
+export const SettingsIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg 
+            width={size}
+            height={size}
+            viewBox="0 0 36 36"
+        >
+            <Defs>
+                <ClipPath>
+                    <Rect 
+                        width={size}
+                        height={size}
+                    />
+                </ClipPath>
+            </Defs>
+            <G 
+                clip-path="url(#clip-icon_reportar)"
+            >
+                <Rect 
+                    width={size}
+                    height={size}
+                />
+                <G>
+                    <Path 
+                        d="M3.875,0A4.006,4.006,0,0,0,0,4.1a4.006,4.006,0,0,0,3.875,4.1A4.006,4.006,0,0,0,7.75,4.1,4.006,4.006,0,0,0,3.875,0Z" 
+                        transform="translate(22.103 2.5) rotate(90)"
+                        fill={color}
+                    />
+                    <Path 
+                        d="M3.875,0A4.006,4.006,0,0,0,0,4.1a4.006,4.006,0,0,0,3.875,4.1A4.006,4.006,0,0,0,7.75,4.1,4.006,4.006,0,0,0,3.875,0Z" 
+                        transform="translate(22.103 25.75) rotate(90)"
+                        fill={color}
+                    />
+                    <Path
+                        d="M3.875,0A4.006,4.006,0,0,0,0,4.1a4.006,4.006,0,0,0,3.875,4.1A4.006,4.006,0,0,0,7.75,4.1,4.006,4.006,0,0,0,3.875,0Z" 
+                        transform="translate(22.103 14.125) rotate(90)"
+                        fill={color}
+                    />
+                    <Rect 
+                        width={size}
+                        height={size}
+                    />
+                </G>
+            </G>
+        </Svg>
+    );
+};
+
+export const ShareIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg 
+            width={size} 
+            height={size}
+            viewBox="0 0 36 36"
+        >
+        <Defs>
+            <ClipPath>
+                <Rect 
+                    width={size}
+                    height={size}
+                />
+            </ClipPath>
+        </Defs>
+        <G
+            clip-path="url(#clip-icon_compartir_perfil)"
+        >
+            <Rect 
+                width={size}
+                height={size}
+            />
+            <G>
+                <Path
+                    d="M23.333,21.2a4.612,4.612,0,0,0-3.049,1.16L9.193,16.114a4.782,4.782,0,0,0,.14-1.054,4.782,4.782,0,0,0-.14-1.054L20.16,7.816a4.73,4.73,0,0,0,3.173,1.22A4.588,4.588,0,0,0,28,4.518a4.669,4.669,0,0,0-9.333,0,4.782,4.782,0,0,0,.14,1.054L7.84,11.762a4.73,4.73,0,0,0-3.173-1.22,4.52,4.52,0,1,0,0,9.036,4.73,4.73,0,0,0,3.173-1.22l11.076,6.265a4.121,4.121,0,0,0-.124.979,4.545,4.545,0,1,0,4.542-4.4Z" 
+                    transform="translate(4 3)"
+                    fill={color}
+                />
+                <Rect
+                    width={size}
+                    height={size}
+                    fill="none"
+                />
+            </G>
+        </G>
+        </Svg>
+
+    );
+};
+
+export const EditIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg 
+            width={size}
+            height={size}
+            viewBox="0 0 36 36"
+        >
+            <Path 
+                d="M0,0H36V36H0Z" 
+                fill="none"
+            />
+            <Path 
+                d="M3,25.168V31H8.833l17.2-17.2L20.2,7.964ZM30.549,9.286a1.549,1.549,0,0,0,0-2.193l-3.64-3.64a1.549,1.549,0,0,0-2.193,0L21.869,6.3,27.7,12.133l2.847-2.847Z" 
+                transform="translate(0.998 1)"
+                fill={color}
+            />
+        </Svg>
+    );
+};
+
+export const InPersonIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg
+            width={size}
+            height={size} 
+            viewBox="0 0 48 48"
+        >
+            <Defs>
+                <ClipPath>
+                    <Rect 
+                        width={size} 
+                        height={size}
+                    />
+                </ClipPath>
+            </Defs>
+            <G
+                clip-path="url(#clip-icon_presencial)"
+            >
+                <Rect 
+                    width={size}
+                    height={size}
+                />
+                <G>
+                    <Path 
+                        d="M0,0H48V48H0Z" 
+                        fill="none"
+                    />
+                    <Path 
+                        d="M16,21.5A2.5,2.5,0,1,0,18.5,24,2.5,2.5,0,0,0,16,21.5Zm12,0A2.5,2.5,0,1,0,30.5,24,2.5,2.5,0,0,0,28,21.5ZM22,2A20,20,0,1,0,42,22,20.007,20.007,0,0,0,22,2Zm0,36A16.021,16.021,0,0,1,6,22a16.216,16.216,0,0,1,.1-1.72A20.123,20.123,0,0,0,16.52,9.54,19.948,19.948,0,0,0,32.84,18a19.521,19.521,0,0,0,4.5-.52A15.976,15.976,0,0,1,22,38Z" 
+                        transform="translate(2 2)" 
+                        fill={color}
+                    />
+                </G>
+            </G>
+        </Svg>
+    );
+};
+
+export const OnlineIcon = ({
+    size = SIZE,
+    color = DARK_BLUE
+}) => {
+    return (
+        <Svg
+            width={size} 
+            height={size}
+            viewBox="0 0 48 48"
+        >
+            <Defs>
+                <ClipPath>
+                    <Rect 
+                        width={size}
+                        height={size}
+                    />
+                </ClipPath>
+            </Defs>
+            <G
+                clip-path="url(#clip-icon_home_3)"
+            >
+                <Rect 
+                    width={size}
+                    height={size}
+                    />
+                <G>
+                    <Path 
+                        d="M0,0H48V48H0Z" 
+                        fill="none"
+                    />
+                    <Path 
+                        d="M21.98,2A20,20,0,1,0,42,22,19.99,19.99,0,0,0,21.98,2ZM35.84,14h-5.9a31.3,31.3,0,0,0-2.76-7.12A16.059,16.059,0,0,1,35.84,14ZM22,6.08A28.174,28.174,0,0,1,25.82,14H18.18A28.174,28.174,0,0,1,22,6.08ZM6.52,26a15.645,15.645,0,0,1,0-8h6.76A33.03,33.03,0,0,0,13,22a33.03,33.03,0,0,0,.28,4Zm1.64,4h5.9a31.3,31.3,0,0,0,2.76,7.12A15.974,15.974,0,0,1,8.16,30Zm5.9-16H8.16a15.974,15.974,0,0,1,8.66-7.12A31.3,31.3,0,0,0,14.06,14ZM22,37.92A28.174,28.174,0,0,1,18.18,30h7.64A28.174,28.174,0,0,1,22,37.92ZM26.68,26H17.32A29.425,29.425,0,0,1,17,22a29.169,29.169,0,0,1,.32-4h9.36A29.169,29.169,0,0,1,27,22,29.425,29.425,0,0,1,26.68,26Zm.5,11.12A31.3,31.3,0,0,0,29.94,30h5.9A16.059,16.059,0,0,1,27.18,37.12ZM30.72,26A33.031,33.031,0,0,0,31,22a33.031,33.031,0,0,0-.28-4h6.76a15.645,15.645,0,0,1,0,8Z" 
+                        transform="translate(1.989 1.989)" 
+                        fill={color}
+                    />
+                </G>
+            </G>
         </Svg>
     );
 };

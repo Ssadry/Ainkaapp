@@ -10,44 +10,46 @@ export const Content = styled.TouchableOpacity`
     width: ${({width}) => width + 'px'};
     align-items: center;
     justify-content: center;
-    border-width: 1px;
     margin: 20px;
     border-radius: ${({width}) => width * 0.05 + 'px'};
+    background-color: ${({backgroundColor}) => backgroundColor};
 `;
 
 export const BookMark = styled.View`
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    right: 0px;
-    top: 0px;
-    margin-top: 5px;
-    margin-right: 5px;
+    top: 3px;
+    right: 3px;
+    width: 30px;
+    height: 30px;
 `;
 
 export const ImageContainer = styled.View`
     width: ${({width}) => width + 'px'};
     height: ${({width}) => width + 'px'};
-    border: 1px solid black;
     border-radius: ${({width}) => width * 0.2 + 'px'};
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 40px;
 `;
 
 export const Image = styled.Image`
-    width: ${({width}) => width + 'px'};
-    height: ${({width}) => width + 'px'};
+    width: 70%;
+    height: 80%;
 `;
 
 export const Name = styled.Text`
-
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
 `;
 
 export const InterestsContainer = styled.View`
     width: ${({width}) => width + 'px'};
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 25px;
+    margin-top: 20px;
     flex-direction: row;
     justify-content: space-evenly;
 `;
@@ -55,8 +57,9 @@ export const InterestsContainer = styled.View`
 export const InterestsContent = styled.View`
     width: ${({width}) => width + 'px'};
     height: ${({width}) => width + 'px'};
-    border-width: 1px;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const InterestImage = styled.Image`

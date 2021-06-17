@@ -1,9 +1,9 @@
 import React from 'react';
 import {Container, IconsContainer, Icon} from './styled';
 import GoToBackButton from '../../goToBackButton';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBookmark, faShareAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons'
-import Hours from '../../hours';
+import { ShareIcon, UnsaveIcon, SettingsIcon } from '../../../assets/svg/icon';
+
+const SIZE_ICON = 25;
 
 export default Header = ({navigation}) => {
     return (
@@ -15,28 +15,18 @@ export default Header = ({navigation}) => {
                 onPress={() => alert('Todavía no sé qué debe hacer este botón.')}
             >
                 <Icon>
-                    <Hours
-                        width={30}
-                    >
-                        2h
-                    </Hours>
-                </Icon>
-                <Icon>
-                    <FontAwesomeIcon 
-                        icon={faBookmark}
-                        size={25}
+                    <UnsaveIcon
+                        size={SIZE_ICON}
                     />
                 </Icon>
                 <Icon>
-                    <FontAwesomeIcon 
-                        icon={faShareAlt}
-                        size={25}
+                    <ShareIcon
+                        size={SIZE_ICON}
                     />
                 </Icon>
                 <Icon>
-                    <FontAwesomeIcon 
-                        icon={faEllipsisV}
-                        size={25}
+                    <SettingsIcon
+                        size={SIZE_ICON}
                     />
                 </Icon>
             </IconsContainer>

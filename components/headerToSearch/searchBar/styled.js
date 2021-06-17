@@ -13,6 +13,7 @@ export const SearchBar = styled.View`
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
+    border: 2px solid ${({isSearchingOnHome, colorToIsSearching}) => isSearchingOnHome ? colorToIsSearching : 'transparent'};
     flex: 1;
 `;
 

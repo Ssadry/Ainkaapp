@@ -11,6 +11,7 @@ import {
 } from './styled';
 import {Dimensions} from 'react-native';
 import Icon from '../../../assets/icon.png';
+import David from '../../../assets/images/people/davidpng.png'
 import SwitchView from '../../switchView/buttons';
 import ContentProfile from './profile';
 import ContentServicies from './servicies';
@@ -18,7 +19,7 @@ import ContentNeeds from './needs';
 import Hours from '../../hours';
 
 const width = Math.round(Dimensions.get('screen').width);
-const padding = width * 0.2;
+const padding = width * 0.1;
 
 export default Content = ({
     isOwnProfile = false
@@ -35,7 +36,7 @@ export default Content = ({
                     <AnotherPhotoProfileContainer>
                         <PhotoProfile 
                             resizeMode='stretch'
-                            source={Icon}
+                            source={David}
                         />
                     </AnotherPhotoProfileContainer>
                     <HoursContainer
@@ -70,11 +71,13 @@ export default Content = ({
                     currentState={currentState}
                     pos={1}
                     itemWidth={itemWidth}
+                    isOwnProfile={isOwnProfile}
                 />
                 <ContentNeeds
                     currentState={currentState}
                     pos={2}
                     itemWidth={itemWidth}
+                    isOwnProfile={isOwnProfile}
                 />
             </Info>
         </Container>

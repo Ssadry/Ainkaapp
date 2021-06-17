@@ -8,6 +8,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
+    display: ${({isOwnProfile}) => isOwnProfile ? 'none' : 'flex'};
     width: 100%;
     font-size: 15px;
     font-weight: bold;

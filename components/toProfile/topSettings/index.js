@@ -1,10 +1,9 @@
 import React, {useState, useContext} from 'react';
 import {Container, IconsContainer, Icon} from './styled';
 import GoToBackButton from '../../goToBackButton';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome'
-import {faShareAlt, faEllipsisV} from '@fortawesome/free-solid-svg-icons'
+import {ShareIcon, SettingsIcon} from '../../../assets/svg/icon';
 import Dropdown from '../../dropdown';
-import {SavedIcon} from '../../../assets/svg/icon';
+import {SavedIcon, EditIcon} from '../../../assets/svg/icon';
 import {AppContext} from '../../../application/provider';
 import {removeData} from '../../../application/asyncStorage';
 
@@ -12,6 +11,8 @@ const settingsOptions = {
     own : ['Reportar problemas', 'Cerrar sesión'],
     another : ['Reportar problemas']
 };
+
+const SIZE_ICON = 25;
 
 export default TopSettings = ({
     navigation,
@@ -26,6 +27,23 @@ export default TopSettings = ({
         width: 50, 
         height: 25,
     });
+
+    const editOrSave = !isOwnProfile ? 
+        <Icon
+            onPress={() => alert('Guardar')}
+        >
+            <SavedIcon 
+                size={SIZE_ICON}
+            />
+        </Icon> 
+        : 
+        <Icon
+            onPress={() => alert('Editar')}
+        >
+            <EditIcon 
+                size={SIZE_ICON}
+            />
+        </Icon> 
 
     const handleSettingsOptions = {
         own : [
@@ -47,15 +65,10 @@ export default TopSettings = ({
             navigation={navigation}
         />
         <IconsContainer>
+            {editOrSave}
             <Icon>
-                <SavedIcon 
-                    size={30}
-                />
-            </Icon>
-            <Icon>
-                <FontAwesomeIcon 
-                    icon={faShareAlt}
-                    size={25}
+                <ShareIcon
+                    size={SIZE_ICON}
                 />
             </Icon>
             <Icon
@@ -67,9 +80,8 @@ export default TopSettings = ({
                 }
                 onPress={changeSettingsVisibility}
             >
-                <FontAwesomeIcon 
-                    icon={faEllipsisV}
-                    size={25}
+                <SettingsIcon
+                    size={SIZE_ICON}
                 />
             </Icon>
             <Dropdown

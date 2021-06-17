@@ -20,7 +20,3 @@ export const TitleAndIcon = styled.View`
     justify-content: space-between;
     align-items: center;
 `;
-
-export const Plus = styled.TouchableOpacity`
-    
-`;

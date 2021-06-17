@@ -5,24 +5,24 @@ export const Container = styled.View`
     justify-content: center;
     align-items: center;
     background-color: ${({bakcgroundColor}) => bakcgroundColor};
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
 `;
 
 export const Left = styled.View`
-    flex: 1;
     justify-content: center;
     align-items: center;
 `;
 
 export const Middle = styled.View`
+    flex: 1;
     justify-content: center;
     align-items: center;
     height: 40px;
 `;
 
 export const Right = styled.View`
-    flex: 1;
+    height: 40px;
 `;
 
 export const GoToDefaultContent = styled.TouchableOpacity`

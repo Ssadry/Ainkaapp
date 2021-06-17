@@ -21,7 +21,7 @@ const Saved = ({navigation}) => {
             <Featured
                 key={i} 
                 width={itemsWidth} 
-                title={ftd.title + ' - ' + i}
+                title={ftd.title}
                 hours={ftd.hours}
                 click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Servicios', itemName: Featured.name})}
             />);
@@ -31,7 +31,7 @@ const Saved = ({navigation}) => {
             <Need 
                 key={i}     
                 width={itemsWidth} 
-                title={need.title + ' - ' + i} 
+                title={need.title} 
                 hours={need.hours}
                 click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Necesidades', itemName: Need.name})}
             />);
@@ -41,7 +41,7 @@ const Saved = ({navigation}) => {
             <Profile 
                 key={i} 
                 width={itemsWidth} 
-                title={profile.title + ' - ' + i}
+                title={profile.title}
                 click={() => navigation.navigate(routeName.watchMoreItems, {title: 'Perfiles', itemName: Profile.name})}
             />);
 
@@ -54,7 +54,7 @@ const Saved = ({navigation}) => {
         },
         {
             items: itemsNeeds,
-            leftText: 'Necesidad',
+            leftText: 'Necesidades',
             itemName: Need.name,
             rightText: 'Ver más',
         },
@@ -102,6 +102,4 @@ export const Container = styled.View`
 
 export const Content = styled.View`
     flex: 1;
-    padding-left: 20px;
-    padding-right: 20px;
 `;

@@ -2,17 +2,18 @@ import React, {useState} from 'react';
 import {Keyboard, BackHandler} from 'react-native';
 import { Container, GoToDefaultContent, Left, Right, Middle } from './styled';
 import SearchBar from './searchBar';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {Dimensions} from 'react-native';
 import defaultColors from '../../assets/colors/defaultColors.json';
+import { LeftArrowIcon} from '../../assets/svg/icon';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 
 export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchText, click, navigation}) => {
     const [widthCurrentScreen, setWidthCurrentScreen] = useState(Math.round(Dimensions.get('screen').width));
 
-    const sideWidth = widthCurrentScreen * 0.05;
+    const sideWidth = widthCurrentScreen * 0.15;
+    const leftWidth = sideWidth * 0.7;
+    const rightWidth = sideWidth * 0.3;
     const middleWidth = widthCurrentScreen * 0.85;
 
     const backToDefaultContent = () => {
@@ -23,7 +24,7 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
 
     return (
         <Container
-            bakcgroundColor={defaultColors.Lila}
+            bakcgroundColor={isSearchingOnHome ? 'transparent' : defaultColors.Lila}
             onLayout={
                 ({nativeEvent}) => {
                     const {width} = nativeEvent.layout;
@@ -32,10 +33,10 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
             }
         >
             <Left
-                width={sideWidth}
+                width={leftWidth}
             >
                 <GoToDefaultContent
-                    width={sideWidth}
+                    width={leftWidth}
                     textInputIsOnFocus={isSearchingOnHome}
                     onPress={() => {
                         BackHandler.removeEventListener(HARDWARE_BACK_PRESS, () => true);
@@ -54,9 +55,9 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
                     }}
                     disabled={!isSearchingOnHome}
                 >
-                    <FontAwesomeIcon 
-                        icon={faArrowLeft}
-                        size={15}
+                    <LeftArrowIcon
+                        size={25}
+                        color={defaultColors.Lila}
                     />
                 </GoToDefaultContent>
             </Left>
@@ -65,6 +66,7 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
             >
                 <SearchBar 
                     width={middleWidth}
+                    isSearchingOnHome={isSearchingOnHome}
                     setTextInputIsOnFocus={setIsSearchingOnHome}
                     setSearchText={setSearchText}
                     searchText={searchText}
@@ -73,7 +75,7 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
                 />
             </Middle>
             <Right
-                width={sideWidth}
+                width={rightWidth}
             />
         </Container>
     )

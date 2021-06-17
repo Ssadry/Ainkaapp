@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import Default from '../components/toHome/containers/default';
 import Searching from '../components/toHome/containers/searching';
 import {AppContext} from '../application/provider';
+import defaultColors from '../assets/colors/defaultColors.json';
 
 const Home = ({navigation}) => {
     const [routeName, isSearchingOnHome, setIsSearchingOnHome] = useContext(AppContext);
@@ -36,4 +37,5 @@ export default Home;
 
 const Container = styled.View`
     flex: 1;
+    background-color: ${defaultColors.GrisPerla};
 `;

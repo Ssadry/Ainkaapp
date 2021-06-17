@@ -3,7 +3,7 @@ import {
     Container, 
     Info, 
     TopLeft, 
-    TopRight, 
+    IconsContainer, 
     Middle, 
     Paraph, 
     Title, 
@@ -21,15 +21,18 @@ import {
     TitleLocationIcons,
     StarsContainer,
     Star,
-    ButtonContainer
+    ButtonContainer,
+    Bottom,
+    HoursContainer
 } from './styled';
 import {Dimensions} from 'react-native';
 import Icon from '../../../assets/icon.png';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faSmile, faGlobe, faLink, faStar } from '@fortawesome/free-solid-svg-icons'
 import FatButton from '../../form/button/fat';
+import { OnlineIcon, InPersonIcon, FreeChangeIcon, StarIcon, SportIcon, ArtIcon, MusicIcon, TechnologyIcon } from '../../../assets/svg/icon';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
-const padding = Dimensions.get('screen').width * 0.2;
+const padding = Math.round(Dimensions.get('screen').width) * 0.2;
+const SIZE_ICON = 32;
 
 export default Content = ({
     navigation,
@@ -54,27 +57,23 @@ export default Content = ({
                 </Name>
                 <Images>
                     <ImageContainer>
-                        <Image                        
-                            resizeMode='stretch'
-                            source={Icon}
+                        <SportIcon                        
+                            size={'100%'}
                         />
                     </ImageContainer>
                     <ImageContainer>
-                        <Image                        
-                            resizeMode='stretch'
-                            source={Icon}
+                        <ArtIcon                        
+                            size={'100%'}
                         />
                     </ImageContainer>
                     <ImageContainer>
-                        <Image                        
-                            resizeMode='stretch'
-                            source={Icon}
+                        <MusicIcon                        
+                            size={'100%'}
                         />
                     </ImageContainer>
                     <ImageContainer>
-                        <Image                        
-                            resizeMode='stretch'
-                            source={Icon}
+                        <TechnologyIcon                        
+                            size={'100%'}
                         />
                     </ImageContainer>
                 </Images>
@@ -89,79 +88,77 @@ export default Content = ({
                             Ubicación
                         </Location>
                     </TopLeft>
-                    <TopRight>
-                        <TopRightImage>
-                            <FontAwesomeIcon 
-                                icon={faSmile}
-                                size={32}
-                            />
-                        </TopRightImage>
-                        <TopRightImage>
-                            <FontAwesomeIcon 
-                                icon={faGlobe}
-                                size={32}
-                            />
-                        </TopRightImage>
-                        <TopRightImage>
-                            <FontAwesomeIcon 
-                                icon={faLink}
-                                size={32}
-                            />
-                        </TopRightImage>
-                    </TopRight>
                 </TitleLocationIcons>
                 <Middle>
                     <Description>
                         Descripción
                     </Description>
-                    <Hours>
-                        2h
-                    </Hours>
                 </Middle>
                 <Paraph>
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
                 </Paraph>
-                <StarsContainer
-                    isNeed={isNeed}
-                >
-                    <Star>
-                        <FontAwesomeIcon 
-                            icon={faStar}
-                            size={25}
+                <IconsContainer>
+                    <TopRightImage>
+                        <InPersonIcon
+                            size={SIZE_ICON}
                         />
-                    </Star>
-                    <Star>
-                        <FontAwesomeIcon 
-                            icon={faStar}
-                            size={25}
+                    </TopRightImage>
+                    <TopRightImage>
+                        <OnlineIcon 
+                            size={32}
                         />
-                    </Star>
-                    <Star>
-                        <FontAwesomeIcon 
-                            icon={faStar}
-                            size={25}
+                    </TopRightImage>
+                    <TopRightImage>
+                        <FreeChangeIcon 
+                            size={32}
                         />
-                    </Star>
-                    <Star>
-                        <FontAwesomeIcon 
-                            icon={faStar}
-                            size={25}
-                        />
-                    </Star>
-                    <Star>
-                        <FontAwesomeIcon 
-                            icon={faStar}
-                            size={25}
-                        />
-                    </Star>
-                </StarsContainer>
-                <ButtonContainer>
-                    <FatButton
-                        click={handleButton}
+                    </TopRightImage>
+                    <HoursContainer>
+                        <Hours
+                            color={defaultColors.AzulOscuro}
+                        >
+                            2h
+                        </Hours>
+                    </HoursContainer>
+                </IconsContainer>
+                <Bottom>
+                    <StarsContainer
+                        isNeed={isNeed}
                     >
-                        {textButton}
-                    </FatButton>
-                </ButtonContainer>
+                        <Star>
+                            <StarIcon 
+                                size={25}
+                            />
+                        </Star>
+                        <Star>
+                            <StarIcon 
+                                size={25}
+                            />
+                        </Star>
+                        <Star>
+                            <StarIcon 
+                                size={25}
+                            />
+                        </Star>
+                        <Star>
+                            <StarIcon 
+                                size={25}
+                            />
+                        </Star>
+                        <Star>
+                            <StarIcon 
+                                size={25}
+                            />
+                        </Star>
+                    </StarsContainer>
+                    <ButtonContainer>
+                        <FatButton
+                            click={handleButton}
+                        >
+                            {textButton}
+                        </FatButton>
+                    </ButtonContainer>
+                </Bottom>
             </Info>
         </Container>
     )

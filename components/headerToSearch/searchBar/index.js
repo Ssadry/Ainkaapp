@@ -5,10 +5,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Hours from '../../hours';
 import defaultColors from '../../../assets/colors/defaultColors.json';
+import {SearchIcon} from '../../../assets/svg/icon';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 
-export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click, backToDefaultContent}) => {
+export default ({
+    width, 
+    setSearchText, 
+    setTextInputIsOnFocus, 
+    searchText, 
+    click, 
+    backToDefaultContent,
+    isSearchingOnHome
+}) => {
     useEffect(() => {
         Keyboard.addListener('keyboardDidShow', () => {
             setTextInputIsOnFocus(true);
@@ -16,17 +25,14 @@ export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click,
         });
     }, []);
 
-    useEffect(() => {
-        Keyboard.addListener('keyboardDidChangeFrame', () => {
-            console.log('ñe')            
-        });
-    }, []);
-
     return (
         <Container
             width={width}
         >
-            <SearchBar>
+            <SearchBar
+                isSearchingOnHome={isSearchingOnHome}
+                colorToIsSearching={defaultColors.Lila}
+            >
                 <TextInput 
                     placeholder="Buscar..."
                     placeholderTextColor={defaultColors.GrisOscuro} 
@@ -38,15 +44,15 @@ export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click,
                     }}
                 />
                 <Icon>
-                    <FontAwesomeIcon 
-                        icon={faSearch} 
-                        resizeMode='stretch'
+                    <SearchIcon
+                        size={20}
                     />
                 </Icon>
             </SearchBar>
             <HoursContainer>
                 <Hours 
                     click={click}
+                    changeColor={isSearchingOnHome}
                 >
                     3h
                 </Hours>

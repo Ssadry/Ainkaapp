@@ -1,6 +1,7 @@
 import React from 'react';
-import {Container, PhotoContainer, Photo, Info, Title, Paraph, NotificationPoint} from './styled';
-import Icon from '../../../assets/icon.png';
+import {Container, PhotoContainer, Info, Title, Paraph, NotificationPoint} from './styled';
+import defaultColors from '../../../assets/colors/defaultColors.json';
+import { LogoIcon } from '../../../assets/svg/icon';
 
 export default Item = ({
     width = 200,
@@ -12,15 +13,16 @@ export default Item = ({
     const photoContainerWidth = width * 0.3;
     return (
         <Container
+            style={{elevation: 2}}
             width={width}
             onPress={click}
+            backgroundColor={defaultColors.Blanco}
         >
             <PhotoContainer
                 width={photoContainerWidth}
             >
-                <Photo 
-                    source={Icon}
-                    resizeMode='stretch'
+                <LogoIcon
+                    size={'80%'}
                 />
             </PhotoContainer>
             <Info>
@@ -36,6 +38,7 @@ export default Item = ({
                 </Paraph>
             </Info>
             <NotificationPoint
+                backgroundColor={defaultColors.Rojo}
                 isNew={isNew}
             />
         </Container>

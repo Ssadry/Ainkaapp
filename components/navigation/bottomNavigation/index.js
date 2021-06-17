@@ -11,9 +11,10 @@ import PostAd from '../../../screens/postAd';
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
 import {HomeIcon, SavedIcon, PlusIcon, InboxIcon, ProfileIcon} from '../../../assets/svg/icon';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
-const ICON_SIZE = 50;
-const ACTIVE_TINT_COLOR = 'green', INACTIVE_TINT_COLOR = 'black';
+const ICON_SIZE = 30;
+const ACTIVE_TINT_COLOR = defaultColors.Lila, INACTIVE_TINT_COLOR = defaultColors.AzulOscuro;
 
 const Tab = createBottomTabNavigator();
 

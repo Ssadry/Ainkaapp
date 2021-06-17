@@ -2,7 +2,7 @@
 export const featured = [
     {
         title: 'Servicio',
-        hours: 56,
+        hours: 9,
     },
     {
         title: 'Servicio',
@@ -16,20 +16,20 @@ export const featured = [
 
 export const needs = [
     {
-        title: 'Necesidad',
+        title: 'Necesidades',
         hours: 6
     },
     {
-        title: 'Necesidad',
+        title: 'Necesidades',
         hours: 6
     },
     {
-        title: 'Necesidad',
+        title: 'Necesidades',
         hours: 2
     },
     {
-        title: 'Necesidad',
-        hours: 56
+        title: 'Necesidades',
+        hours: 4
     },
 ];
 

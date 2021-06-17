@@ -7,7 +7,7 @@ import { ScrollView } from 'react-native';
 import {Dimensions} from 'react-native';
 import { AppContext } from '../../../application/provider';
 
-const {width} = Dimensions.get('screen');
+const width = Math.round(Dimensions.get('screen').width);
 const itemWidth = width * 0.8;
 
 export default Content = ({currentState = 0, navigation}) => {

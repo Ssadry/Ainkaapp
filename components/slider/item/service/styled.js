@@ -5,9 +5,11 @@ export const Container = styled.View`
     justify-content: center;
     align-items: center;
     /* border: 1px solid transparent; */
+    margin-top: 5px;
+    margin-bottom: 5px;
 `;
 
-export const Content = styled.View`
+export const Content = styled.TouchableOpacity`
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
@@ -16,7 +18,7 @@ export const Content = styled.View`
     padding-right: 5px;
     padding-top: 15px;
     padding-bottom: 15px;
-    border: 1px solid black;
+    background-color: ${({backgroundColor}) => backgroundColor};
 `;
 
 export const IconContainer = styled.View`

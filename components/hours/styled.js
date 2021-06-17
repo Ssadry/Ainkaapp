@@ -8,12 +8,12 @@ export const Profile = styled.View`
     height: ${({width}) => width + 'px'};
     border-radius: ${({width}) => width * 0.5 + 'px'};;
     justify-content: center;
-    border: 2px solid white;
+    border: 2px solid ${({lineColor}) => lineColor};
 `;
 
 export const Text = styled.Text`
     text-align: center;
-    color: white;
+    color: ${({lineColor}) => lineColor};;
 `;
 
 export const NotificationPoint = styled.View`

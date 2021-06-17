@@ -3,10 +3,17 @@ import {Container} from './styled';
 import SwitchButtons from '../../../switchView/buttons';
 import {Dimensions, Text} from 'react-native';
 import Content from './content';
-
+import {ArtIcon, KitchenIcon, SportIcon, CraftIcon, MusicIcon, LeisureIcon, TechnologyIcon, TransportIcon, IdiomIcon, OtherIcon} from '../../../../assets/svg/icon';
+import David from '../../../../assets/images/people/davidpng.png';
+import Maria from '../../../../assets/images/people/mariapng.png';
+import Paquita from '../../../../assets/images/people/paquitapng.png';
 const LazyCategory = lazy(_ => import('../../../slider/item/category'));
 const LazyProfile = lazy(_ => import('../../../slider/item/profile'));
 const LazyNeed = lazy(_ => import ('../../../slider/item/need'));
+
+const people = [
+    Paquita, David, Maria
+]
 
 const types = {
     CATEGORY : {
@@ -24,7 +31,72 @@ const types = {
         AMOUNT : 17,
         COLUMNS: 2
     },
-}
+};
+
+const SIZE_ICON = 45;
+
+const categoriesValues = [
+    {
+        name: 'Arte',
+        icon: <ArtIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Cocina',
+        icon: <KitchenIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Deportes',
+        icon: <SportIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Manualiades',
+        icon: <CraftIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Música',
+        icon: <MusicIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Ocio',
+        icon: <LeisureIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Tecnología',
+        icon: <TechnologyIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Transporte',
+        icon: <TransportIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Idiomas',
+        icon: <IdiomIcon
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Otros',
+        icon: <OtherIcon
+            size={SIZE_ICON}
+        />
+    },
+];
 
 const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const width = Math.round(Dimensions.get('screen').width);
@@ -33,18 +105,24 @@ export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
     const [currentState, setCurrentState] = useState(0);
 
     const createArray = (type, amount) => {
-        const arr = [amount];
+        const arr = [];
         let elementWidth;
         
         switch(type) {
             case types.CATEGORY.NAME:
                 elementWidth = width / types.CATEGORY.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = 
-                    <LazyCategory 
-                        width={elementWidth} 
-                        key={i}
-                        click={goToWatchMoreItems}
-                    />
+
+                categoriesValues.forEach((category, i) => {
+                    arr.push(
+                        <LazyCategory 
+                            width={elementWidth} 
+                            key={i}
+                            click={goToWatchMoreItems}
+                            image={category.icon}
+                            title={category.name}
+                        />
+                    );
+                });
                 break;
             case types.NEED.NAME:
                 elementWidth = width / types.NEED.COLUMNS * 0.9;
@@ -57,13 +135,22 @@ export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
                     />
                 break;
             case types.PROFILE.NAME:
+                let orderPeople = 0;
                 elementWidth = width / types.PROFILE.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = 
-                    <LazyProfile 
-                        width={elementWidth} 
-                        key={i} 
-                        click={goToProfile}
-                    />
+                for (let i = 0; i < amount; i++) {
+                    arr.push(
+                        <LazyProfile 
+                            width={elementWidth} 
+                            key={i} 
+                            click={goToProfile}
+                            image={people[orderPeople]}
+                        />
+                    );
+                    orderPeople++;
+
+                    if (orderPeople >= people.length)
+                        orderPeople = 0;
+                }
                 break;
         }
         return arr;
@@ -74,7 +161,9 @@ export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
     const profiles = createArray(types.PROFILE.NAME, types.PROFILE.AMOUNT);
 
     return (
-        <Container textInputIsOnFocus={isSearchingOnHome}>
+        <Container 
+            textInputIsOnFocus={isSearchingOnHome}
+        >
             <SwitchButtons 
                 currentState={currentState}
                 setCurrentState={setCurrentState}

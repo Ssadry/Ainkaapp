@@ -16,8 +16,8 @@ export const BarContainer = styled.View`
 `;
 
 export const EmptyBar = styled.View`
-    width: 300px;
-    height: 30px;
+    width: 250px;
+    height: 15px;
     background-color: rgb(220, 220, 220);
     border-radius: 20px;
     flex-direction: row;
@@ -26,10 +26,10 @@ export const EmptyBar = styled.View`
 
 export const FillBar = styled.View`
     background-color: rgb(180, 180, 180);
-    width: 200px;
-    max-width: 300px;
+    width: 160px;
+    max-width: 250px;
     min-width: 0px;
-    height: 30px;
+    height: 15px;
     border-radius: 20px;
 `;
 
@@ -40,11 +40,11 @@ export const Star = styled.View`
 export const Total = styled.Text`
     text-align: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     color: black;
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     right: 10px;
 `;
 
@@ -62,11 +62,13 @@ export const LeftExchanges = styled.View`
 `;
 
 export const AmountLeftExchanges = styled.Text`
-
+    font-weight: bold;
+    color: ${({color}) => color};
 `;
 
 export const TextLeftExchanges = styled.Text`
     text-align: center;
+    color: ${({color}) => color};
 `;
 
 export const RightExchanges = styled.View`
@@ -76,24 +78,28 @@ export const RightExchanges = styled.View`
 `;
 
 export const AmountRightExchanges = styled.Text`
-
+    font-weight: bold;
+    color: ${({color}) => color};
 `;
 
 export const TextRightExchanges = styled.Text`
     text-align: center;
+    color: ${({color}) => color};
 `;
 
 export const Bottom = styled.View`
+    margin-left: 15px;
 `;
 
 export const Title = styled.Text`
-    font-size: 17px;
+    font-size: 18px;
     font-weight: bold;
     margin-top: 30px;
 `;
 
 export const Description = styled.Text`
     margin-top: 15px;
+    font-size: 16px;
 `;
 
 export const ImagesContainer = styled.View`

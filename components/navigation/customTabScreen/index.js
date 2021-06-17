@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {CustomTabScreen, Button, Notification, NotificationText} from './styled';
 import { AppContext } from '../../../application/provider';
 import { BackHandler } from 'react-native';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 const HOME = 'Home';
@@ -23,7 +24,9 @@ export default ({descriptors, state, navigation, activeTintColor, inactiveTintCo
     const [routeName, isSearchingOnHome, setIsSearchingOnHome] = useContext(AppContext);
     const {routes} = state;
     return (
-        <CustomTabScreen>
+        <CustomTabScreen
+            backgroundColor={defaultColors.Blanco}
+        >
             {
                 routes.map((route, i) => {
                     const {options} = descriptors[route.key];
@@ -42,6 +45,7 @@ export default ({descriptors, state, navigation, activeTintColor, inactiveTintCo
                         >
                         <Notification
                             hasNotifications={tabBarBadge}
+                            backgroundColor={defaultColors.Rojo}
                         >
                             <NotificationText
                                 adjustFontSizeToFit

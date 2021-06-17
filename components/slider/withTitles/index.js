@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Top, Bottom, TextButton, LeftText, RightText} from './styled';
 import Slider from '../../slider';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 export default ({
     numberItemsDisplayed, 
@@ -23,7 +24,9 @@ export default ({
                         itemName: itemName,
                     });
                 }}>
-                    <RightText>
+                    <RightText
+                        color={defaultColors.Lila}
+                    >
                         {rightText}
                     </RightText>
                 </TextButton>

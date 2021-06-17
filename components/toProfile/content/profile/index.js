@@ -27,7 +27,9 @@ import {
 } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { StarIcon } from '../../../../assets/svg/icon';
 import Icon from '../../../../assets/icon.png';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
 
 export default Profile = ({currentState = 0, pos = 0}) => {
     return (
@@ -40,9 +42,8 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                     <EmptyBar>
                         <FillBar/>
                         <Star>
-                            <FontAwesomeIcon 
-                                icon={faStar}
-                                size={50}
+                            <StarIcon
+                                size={40}
                             />
                             <Total>
                                 12
@@ -52,18 +53,26 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                 </BarContainer> 
                 <Exchanges>
                     <LeftExchanges>
-                        <AmountLeftExchanges>
+                        <AmountLeftExchanges
+                            color={defaultColors.AzulOscuro}
+                        >
                             7
                         </AmountLeftExchanges>
-                        <TextLeftExchanges>
+                        <TextLeftExchanges
+                            color={defaultColors.Lila}
+                        >
                             Intercambios ofrecidos
                         </TextLeftExchanges>
                     </LeftExchanges>
                     <RightExchanges>
-                        <AmountRightExchanges>
+                        <AmountRightExchanges
+                            color={defaultColors.AzulOscuro}        
+                        >
                             12
                         </AmountRightExchanges>
-                        <TextRightExchanges>
+                        <TextRightExchanges
+                            color={defaultColors.Lila}
+                        >
                             Intercambios realizados
                         </TextRightExchanges>
                     </RightExchanges>
@@ -74,7 +83,7 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                     Descripción
                 </Title>
                 <Description>
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dui lorem, congue in nisl ac, fermentum convallis ipsum. Nulla nec luctus ipsum. Donec luctus lorem dui, nec elementum tortor consectetur eget. Pellentesque convallis turpis ac arcu eleifend, vitae pellentesque mi et.
                 </Description>
                 <Title>
                     Intereses

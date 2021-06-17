@@ -22,8 +22,8 @@ export const HoursContainer = styled.View`
 `;
 
 export const PhotoProfileContainer = styled.View`
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
 `;
 
 export const AnotherPhotoProfileContainer = styled.View`

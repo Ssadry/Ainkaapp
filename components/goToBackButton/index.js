@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { Container } from './styled';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { LeftArrowIcon } from '../../assets/svg/icon';
 import { Text, TouchableOpacity, BackHandler } from 'react-native';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
@@ -31,7 +32,9 @@ export default ({
         <Container>
             <TouchableOpacity onPress={handleBackButtonClick}>
                 <Text>
-                    <FontAwesomeIcon icon={faArrowLeft} size={20}/>
+                    <LeftArrowIcon
+                        size={30}
+                    />
                 </Text>
             </TouchableOpacity>
         </Container>

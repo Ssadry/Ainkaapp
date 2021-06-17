@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const CustomTabScreen = styled.View`
-    height: 70px;
+    height: 60px;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
@@ -9,7 +9,7 @@ export const CustomTabScreen = styled.View`
     top: 0px;
     left: 0px;
     z-index: 10;
-    background-color: rgba(220, 220, 220, 1);
+    background-color: ${({backgroundColor}) => backgroundColor};
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -29,7 +29,7 @@ export const Notification = styled.View`
     width: 18px;
     height: 18px;
     border-radius: 9px;
-    background-color: red;
+    background-color: ${({backgroundColor}) => backgroundColor};
     position: absolute;
     top: 0px;
     right: 0px;

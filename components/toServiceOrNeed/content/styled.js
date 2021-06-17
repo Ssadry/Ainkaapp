@@ -1,15 +1,18 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
+    flex: 1;
     padding-left: ${({myPadding}) => myPadding * 0.5 + 'px'};
     padding-right: ${({myPadding}) => myPadding * 0.5 + 'px'};
+    background-color: rebeccapurple;
+    border: 10px solid red;
 `;
 
 export const Profile = styled.View`
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: -75.5px;
+    /* position: relative;
+    top: -75.5px; */
 `;
 
 export const PhotoProfileContainer = styled.View`
@@ -39,8 +42,6 @@ export const Images = styled.View`
 export const ImageContainer = styled.View`
     width: 35px;
     height: 35px;
-    border: 1px solid gray;
-    border-radius: 10px;
     overflow: hidden;
     margin-left: 5px;
     margin-right: 5px;
@@ -52,11 +53,10 @@ export const Image = styled.Image`
 `;
 
 export const Info = styled.View`
+    flex: 1;
     margin-top: 20px;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    top: -75.5px;
+    /* position: relative;
+    top: -75.5px; */
 `;
 
 export const TitleLocationIcons = styled.View`
@@ -69,13 +69,13 @@ export const TopLeft = styled.View`
     flex: 1;
 `;
 
-export const TopRight = styled.View`
+export const IconsContainer = styled.View`
+    margin-top: 20px;
     flex-direction: row;
 `;
 
 export const TopRightImage = styled.View`
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 20px;
 `;
 
 export const Title = styled.Text`
@@ -103,7 +103,13 @@ export const Description = styled.Text`
     font-weight: bold;
 `;
 
+export const HoursContainer = styled.View`
+    justify-content: center;
+    align-items: center;
+`;
+
 export const Hours = styled.Text`
+    color: ${({color}) => color};
     font-size: 18px;
     font-weight: bold;
 `;
@@ -113,8 +119,8 @@ export const Paraph = styled.Text`
 `;
 
 export const StarsContainer = styled.View`
+    margin-top: 50px;
     flex-direction: row;
-    margin-top: 40px;
     display: ${({isNeed}) => isNeed ? 'none' : 'flex'};
 `;
 
@@ -124,5 +130,10 @@ export const Star = styled.View`
 `;
 
 export const ButtonContainer = styled.View`
-    margin-top: 30px;
+    /* margin-top: 30px; */
+`;
+
+export const Bottom = styled.View`
+    justify-content: center;
+    align-items: center;
 `;

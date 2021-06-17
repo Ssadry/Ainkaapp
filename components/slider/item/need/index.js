@@ -1,25 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Container,
     Content,
-    ImageBackground,
+    ImageContainer,
     BookMark,
     Info,
     Title,
-    Icons,
     HoursContainer,
-    Hours
+    Hours,
+    StarsContainer,
+    Top,
+    Bottom,
+    Star,
+    Image,
+    FreeChangeContainer
 } from './styled';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBookmark, faLink } from '@fortawesome/free-solid-svg-icons'
-import Icon from '../../../../assets/icon.png';
+import Logo from '../../../../assets/images/logo.png';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
+import { FreeChangeIcon } from '../../../../assets/svg/icon';
+import {CheckBox} from 'react-native-elements';
+import {SavedIcon, UnsaveIcon} from '../../../../assets/svg/icon';
 
-const Need = ({
+const DRAK_BLUE = defaultColors.AzulOscuro;
+
+const Featured = ({
     width = 200, 
-    title = 'Need', 
-    hours = -1 ,
-    click = () => alert('click')
+    title = 'Title', 
+    hours = 0,
+    click = () => alert('click'),
+    backgroundColor = defaultColors.Blanco,
+    titleColor = defaultColors.Negro,
+    hoursColor = DRAK_BLUE,
+    starsColor = DRAK_BLUE,
+    linkColor = DRAK_BLUE
 }) => {
+    const [isSaved, setIsSaved] = useState(false);
     const contentWidth = width * 0.9;
     return (
         <Container 
@@ -28,46 +43,59 @@ const Need = ({
             <Content 
                 width={contentWidth}
                 onPress={click}
+                backgroundColor={backgroundColor}
+                style={{elevation: 2}}
             >
-                <ImageBackground 
-                    source={Icon}
+                <ImageContainer
                     width={contentWidth}
                 >
-                    <BookMark
-                        onPress={() => alert('Guardado')}
-                    >
-                        <FontAwesomeIcon 
-                            icon={faBookmark} 
-                            color='rgba(170, 170, 170, 1)'
-                            size={25}
+                    <Image
+                        source={Logo}
+                        resizeMode='stretch'
+                    />
+                    <BookMark>
+                        <CheckBox
+                            center
+                            checkedIcon={<SavedIcon size={30} color={defaultColors.Lila}/>}
+                            uncheckedIcon={<UnsaveIcon size={30} color={defaultColors.Lila}/>}
+                            checked={isSaved}
+                            onPress={() => setIsSaved(!isSaved)}
                         />
                     </BookMark>
-                </ImageBackground>
-                <Info width={contentWidth}>
-                    <Title
-                        adjustFontSizeToFit
-                        numberOfLines={2}
-                    >
-                        {title}
-                    </Title>
-                    <Icons>
-                        <HoursContainer>
-                            <Hours>
-                                {
-                                    hours + 'h'
-                                }
+                </ImageContainer>
+                <Info 
+                    width={contentWidth}
+                    backgroundColor={backgroundColor}
+                >
+                    <Top>
+                        <Title
+                            color={titleColor}
+                            adjustFontSizeToFit
+                            numberOfLines={2}
+                        >
+                            {title}
+                        </Title>
+                        <HoursContainer
+                            color={hoursColor}
+                        >
+                            <Hours
+                                color={hoursColor}
+                            >
+                                {hours + 'h'}
                             </Hours>
                         </HoursContainer>
-                        <FontAwesomeIcon 
-                            icon={faLink} 
-                            color={'white'} 
-                            size={25}
-                        />
-                    </Icons>
+                    </Top>
+                    <Bottom>
+                        <FreeChangeContainer>
+                            <FreeChangeIcon
+                                size={25}
+                            />
+                        </FreeChangeContainer>
+                    </Bottom>
                 </Info>
             </Content>
         </Container>
     );
 };
 
-export default Need;
+export default Featured;

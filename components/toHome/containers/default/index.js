@@ -111,6 +111,7 @@ export default ({
                 fallback={<Text>Cargando...</Text>}
             >
                 <LazyServiceItem 
+                    backgroundColor={defaultColors.Blanco}
                     width={sliderItemWidth}
                     title={category.name}
                     icon={category.icon}

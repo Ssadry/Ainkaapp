@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Container,
     Content,
@@ -10,22 +10,41 @@ import {
     BookMark,
     InterestsContent
 } from './styled';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-import Icon from '../../../../assets/icon.png';
-import {SavedIcon} from '../../../../assets/svg/icon';
+import Logo from '../../../../assets/images/logo.png';
+import {SavedIcon, UnsaveIcon} from '../../../../assets/svg/icon';
+import {CheckBox} from 'react-native-elements';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
+import { ArtIcon, KitchenIcon, MusicIcon, SportIcon } from '../../../../assets/svg/icon';
 
 const AMOUNT_INTERESTS = 4;
+const SIZE_ICON = '100%';
+
+const interestsIcons = [
+    <ArtIcon
+        size={SIZE_ICON}
+    />,
+    <KitchenIcon
+        size={SIZE_ICON}
+    />,
+    <MusicIcon
+        size={SIZE_ICON}
+    />,
+    <SportIcon
+        size={SIZE_ICON}
+    />,
+]
 
 const Profile = ({ 
     width, 
     click = () => alert('click'),
-    title = 'User name' 
+    title = 'Nombre',
+    image = Logo
 }) => {
     const contentWidth = width * 0.9;
-    const imageWidth = contentWidth * 0.6;
+    const imageWidth = contentWidth * 0.5;
     const interestContainerWidth = contentWidth * 0.9;
-    const interestWidth = interestContainerWidth / AMOUNT_INTERESTS * 0.9;
+    const interestWidth = interestContainerWidth / AMOUNT_INTERESTS * 0.7;
+    const [isSaved, setIsSaved] = useState(false);
 
     const interests = [];
 
@@ -35,12 +54,8 @@ const Profile = ({
                 key={i} 
                 width={interestWidth}
             >
-                <InterestImage 
-                    source={Icon} 
-                    resizeMode='stretch'
-                />
+                {interestsIcons[i]}
             </InterestsContent>;
-
     return (
         <Container 
             width={width}
@@ -48,19 +63,25 @@ const Profile = ({
             <Content 
                 width={contentWidth} 
                 onPress={click}
+                backgroundColor={defaultColors.Blanco}
+                style={{elevation: 2}}
             >
                 <BookMark>
-                    <SavedIcon
-                        color='rgba(170, 170, 170, 1)' 
-                        size={30}
+                    <CheckBox
+                        center
+                        checkedIcon={<SavedIcon size={30} color={defaultColors.Lila}/>}
+                        uncheckedIcon={<UnsaveIcon size={30} color={defaultColors.Lila}/>}
+                        checked={isSaved}
+                        onPress={() => setIsSaved(!isSaved)}
                     />
                 </BookMark>
                 <ImageContainer 
+                    style={{elevation: 1}}
                     width={imageWidth}
                 >
                     <Image 
-                        source={Icon} 
-                        width={imageWidth}
+                        source={image} 
+                        resizeMode='stretch'
                     />
                 </ImageContainer>
                 <Name>

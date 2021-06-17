@@ -19,19 +19,21 @@ const ServiceOrNeed = ({navigation, route}) => {
     return (
         <Container>
             <TopSettings/>
-            <ScrollView>
-                <TopPhoto
-                    icon={topPhoto}
-                />
-                <Content
-                    navigation={navigation}
-                    title={title}
-                    isNeed={isNeed}
-                    button={handleButton}
-                    textButton={textButton}
-                    handleButton={() => navigation.navigate(routeName.request)}
-                />
-            </ScrollView>
+                <ScrollView
+                    style={{flex: 1}}
+                >
+                    <TopPhoto
+                        icon={topPhoto}
+                    />
+                    <Content
+                        navigation={navigation}
+                        title={title}
+                        isNeed={isNeed}
+                        button={handleButton}
+                        textButton={textButton}
+                        handleButton={() => navigation.navigate(routeName.request)}
+                    />
+                </ScrollView>
         </Container>
     );
 };
@@ -40,4 +42,6 @@ export default ServiceOrNeed;
 
 const Container = styled.View`
     flex: 1;
+    background-color: cyan;
+    border: 10px;
 `;

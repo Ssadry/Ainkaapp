@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from '../../../../assets/icon.png';
 import { 
     Container,
     Content,
@@ -8,34 +7,35 @@ import {
     Text,
     Element
 } from './styled';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
 
 export default Category = ({ 
     width = 100,
     title = 'Default', 
-    click = () => alert('click') 
+    click = () => alert('click'),
+    image
 }) => {
     const contentWidth = width * 0.8;
     const elementWidth = contentWidth * 0.8;
     const imageWidth = elementWidth * 0.8;
-    
+ 
     return (
         <Container 
             width={width}
         >
             <Content 
                 width={contentWidth}
-                onPress={click}>
+                onPress={click}
+                backgroundColor={defaultColors.Blanco}
+                style={{elevation: 2}}
+            >
                 <Element 
                     width={elementWidth}
                 >
-                    <ImageContainer 
-                        width={imageWidth}
+                    {image}
+                    <Text
+                        numberOfLines={1}
                     >
-                        <Image 
-                            source={Icon}
-                        />
-                    </ImageContainer>
-                    <Text>
                         {title}
                     </Text>
                 </Element>

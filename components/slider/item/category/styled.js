@@ -5,21 +5,21 @@ export const Container = styled.View`
     align-items: center;
     margin-top: 0px;
     width: ${({width}) => width + 'px'};
-    padding: 10px;
+    padding: 20px;
 `;
 
 export const Content = styled.TouchableOpacity`
-    border-width: 1px;
     width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
-    border-radius: 55px;
+    border-radius: ${({width}) => width * 0.3 + 'px'};
+    background-color: ${({backgroundColor}) => backgroundColor};
 `;
 
 export const Element = styled.View`
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 30px;
 `;
 
 export const ImageContainer = styled.View`
@@ -42,5 +42,4 @@ export const Image = styled.Image`
 export const Text = styled.Text`
     text-align: center;
     margin-top: 15px;
-    margin-bottom: 25px;
 `;
