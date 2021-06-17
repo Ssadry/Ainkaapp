@@ -16,7 +16,7 @@ const carouselHeight = height * 0.8;
 const CheckIn = ({navigation}) => {
     const [routeName] = useContext(AppContext);
     const [currentPos, setCurrentPos] = useState(0);
-    const [currentPage, setCurrentPage] = useState(0);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const changePage = (index) => {
         setCurrentPos(width * -(currentPos + index));

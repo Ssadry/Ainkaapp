@@ -11,16 +11,15 @@ import PostAd from '../../../screens/postAd';
 import Saved from '../../../screens/saved';
 import CustomTabScreen from '../customTabScreen/index';
 import {HomeIcon, SavedIcon, PlusIcon, InboxIcon, ProfileIcon} from '../../../assets/svg/icon';
-import {getCityById} from '../../../services';
 
-const ICON_SIZE = 35;
-const activeTintColor = 'green', inactiveTintColor = 'black';
+const ICON_SIZE = 50;
+const ACTIVE_TINT_COLOR = 'green', INACTIVE_TINT_COLOR = 'black';
 
 const Tab = createBottomTabNavigator();
 
 const BottomNavigation = ({navigation, route}) => {
   const [routeName] = useContext(AppContext);
-  const {prevScreen} = route.params;
+  const prevScreen = route?.params?.prevScreen;
   routeName.home = Home.name;
   routeName.saved = Saved.name;
   routeName.profile = Profile.name;
@@ -40,8 +39,8 @@ const BottomNavigation = ({navigation, route}) => {
           descriptors={props.descriptors}
           state={props.state}
           navigation={props.navigation}
-          activeTintColor={activeTintColor}
-          inactiveTintColor={inactiveTintColor}
+          activeTintColor={ACTIVE_TINT_COLOR}
+          inactiveTintColor={INACTIVE_TINT_COLOR}
         />
       }
     >

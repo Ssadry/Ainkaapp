@@ -18,4 +18,5 @@ export const CheckBoxContainer = styled.View`
 
 export const Text = styled.Text`
     flex: 1;
+    font-size: 14px;
 `;

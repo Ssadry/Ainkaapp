@@ -3,28 +3,121 @@ import {Container, ScrollView} from './styled';
 import Banner from './banner';
 import Slider from '../../../slider';
 import {Text} from 'react-native';
+import item from '../../../toInbox/item';
+import {
+    ArtIcon, 
+    KitchenIcon, 
+    SportIcon, 
+    CraftIcon, 
+    MusicIcon, 
+    LeisureIcon, 
+    OtherIcon, 
+    TechnologyIcon, 
+    TransportIcon,
+    IdiomIcon
+} from '../../../../assets/svg/icon';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
 
 const LazyContent = lazy(() => import('./content'));
 const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
 
-const AMOUNT_SLIDER_ITEMS = 9;
+const DARK_BLUE = defaultColors.AzulOscuro;
+const SIZE_ICON = 30;
 
-export default ({isSearchingOnHome, navigation}) => {
+const categories = [
+    {
+        name: 'Arte',
+        icon: <ArtIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Cocina',
+        icon: <KitchenIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Deportes',
+        icon: <SportIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Manualiades',
+        icon: <CraftIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Música',
+        icon: <MusicIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Ocio',
+        icon: <LeisureIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Tecnología',
+        icon: <TechnologyIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Transporte',
+        icon: <TransportIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Idiomas',
+        icon: <IdiomIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+    {
+        name: 'Otros',
+        icon: <OtherIcon
+            color={DARK_BLUE}
+            size={SIZE_ICON}
+        />
+    },
+]
+
+export default ({
+    isSearchingOnHome, 
+    navigation
+}) => {
     const [sliderItemWidth, setSliderItemWidth] = useState(0);
 
     const items = [];
-    for (let i = 0; i < AMOUNT_SLIDER_ITEMS; i++)
-        items[i] = 
+    categories.forEach((category, i) => {
+        items.push(
             <Suspense 
                 key={i} 
                 fallback={<Text>Cargando...</Text>}
             >
                 <LazyServiceItem 
                     width={sliderItemWidth}
-                    title={'Cocina'}
+                    title={category.name}
+                    icon={category.icon}
                 />
             </Suspense>
-    
+        );
+    });
     return (
         <ScrollView
             textInputIsOnFocus={isSearchingOnHome}

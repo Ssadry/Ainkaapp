@@ -5,14 +5,15 @@ import SearchBar from './searchBar';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {Dimensions} from 'react-native';
+import defaultColors from '../../assets/colors/defaultColors.json';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 
 export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchText, click, navigation}) => {
     const [widthCurrentScreen, setWidthCurrentScreen] = useState(Math.round(Dimensions.get('screen').width));
 
-    const sideWidth = widthCurrentScreen * 0.15;
-    const middleWidth = widthCurrentScreen * 0.75;
+    const sideWidth = widthCurrentScreen * 0.05;
+    const middleWidth = widthCurrentScreen * 0.85;
 
     const backToDefaultContent = () => {
         setIsSearchingOnHome(false);
@@ -22,6 +23,7 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
 
     return (
         <Container
+            bakcgroundColor={defaultColors.Lila}
             onLayout={
                 ({nativeEvent}) => {
                     const {width} = nativeEvent.layout;

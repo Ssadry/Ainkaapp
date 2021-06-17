@@ -19,16 +19,10 @@ export const Content = styled.View`
     border: 1px solid black;
 `;
 
-export const ImageContainer = styled.View`
-    width: ${({width}) => width + 'px'};
-    height: ${({width}) => width + 'px'};
-    border-width: 1px;
-    overflow: hidden;
-    border-radius: ${({width}) => width * 0.5 + 'px'};
-    margin-bottom: 15px;
+export const IconContainer = styled.View`
+    margin-top: 5px;
 `;
 
-export const Image = styled.Image`
-    width: 100%;
-    height: 100%;
+export const Title = styled.Text`
+    margin-top: 10px;
 `;

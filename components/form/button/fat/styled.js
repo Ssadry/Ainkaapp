@@ -13,8 +13,8 @@ export const Container = styled.TouchableOpacity`
 export const Text = styled.Text`
     margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: ${({fontSize}) => fontSize + 'px'};
     text-align: center;
-    color: white;
+    color: ${({color}) => color};
     font-weight: bold;
 `;

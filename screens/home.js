@@ -29,7 +29,7 @@ const Home = ({navigation}) => {
                 goToProfile={() => navigation.navigate(routeName.profile)}
             />
         </Container>
-    )
+    );
 };
 
 export default Home;

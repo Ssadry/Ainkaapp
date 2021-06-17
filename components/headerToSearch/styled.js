@@ -4,7 +4,7 @@ export const Container = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgba(220, 220, 220, 1);
+    background-color: ${({bakcgroundColor}) => bakcgroundColor};
     padding-top: 20px;
     padding-bottom: 20px;
 `;

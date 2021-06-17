@@ -29,7 +29,7 @@ export const Icon = styled.View`
 `;
 
 export const HoursContainer = styled.View`
-    flex: 0.3;
+    flex: 0.16;
     align-items: flex-end;
     padding-left: 5px;
 `;

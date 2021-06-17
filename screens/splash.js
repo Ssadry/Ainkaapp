@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import {AppContext} from '../application/provider';
 import {getObjectData} from '../application/asyncStorage';
 import {login} from '../services';
+import {LogoIcon} from '../assets/svg/icon';
 
 const Splash = ({navigation}) => {
     const [routeName] = useContext(AppContext);
@@ -41,8 +42,8 @@ const Splash = ({navigation}) => {
 
     return (
         <Container>
-            <Logo
-                source={Icon}
+            <LogoIcon 
+                size={150}
             />
         </Container>
     );
@@ -54,9 +55,5 @@ const Container = styled.View`
     flex: 1;
     justify-content: center;
     align-items: center;
-`;
-
-const Logo = styled.Image`
-    width: 200px;
-    height: 200px;
+    background-color: #F3F2F3;
 `;

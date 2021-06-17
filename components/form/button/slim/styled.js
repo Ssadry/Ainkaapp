@@ -10,8 +10,8 @@ export const Container = styled.TouchableOpacity`
 `;
 
 export const Text = styled.Text`
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
-    color: black;
+    color: ${({color}) => color};
     text-decoration: underline;
 `;

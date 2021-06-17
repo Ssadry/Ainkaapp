@@ -11,7 +11,7 @@ export const Content = styled.View`
 `;
 
 export const TextInput = styled.TextInput`
-    font-size: 15px;
+    font-size: 16px;
     flex: 1;
     justify-content: center;
     align-items: center;
@@ -31,7 +31,7 @@ export const Line = styled.View`
     bottom: 0px;
     width: ${({width}) => width + 'px'};
     height: ${({isCorrect, hasBeenFocused}) => isCorrect ? hasBeenFocused ? '2px' : '1px' : hasBeenFocused ? '2px' : '1px'};
-    background-color: ${({isCorrect, hasBeenFocused}) => isCorrect ? hasBeenFocused ? 'green' : 'black' : hasBeenFocused ? 'red' : 'black'};
+    background-color: ${({isCorrect, hasBeenFocused, colorToIsCorrect, colorToNotCorrect, underLineColor}) => isCorrect ? hasBeenFocused ? colorToIsCorrect : underLineColor : hasBeenFocused ? colorToNotCorrect : underLineColor};
 `;
 
 export const TextsContainer = styled.View`

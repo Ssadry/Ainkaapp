@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     width: 150px;
     height: 150px;
-    border-width: 1px;
     overflow: hidden;
     justify-content: center;
     align-items: center;

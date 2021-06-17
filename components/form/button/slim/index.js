@@ -4,14 +4,17 @@ import {Container, Text} from './styled';
 export default Button = ({
     children, 
     click, 
-    disabled = false
+    disabled = false,
+    color = 'black'
 }) => {
     return (
         <Container
             onPress={click}
             disabled={disabled}
         >
-            <Text>
+            <Text
+                color={color}
+            >
                 {children}
             </Text>
         </Container>

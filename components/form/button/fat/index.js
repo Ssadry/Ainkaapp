@@ -1,19 +1,25 @@
 import React from 'react';
 import {Container, Text} from './styled';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
 
 export default Button = ({
     children = 'Button',
     click = () => alert('click'),
-    color = 'rgb(73, 73, 73)',
-    width = 300,
-    disabled = false 
+    backgroundColor = defaultColors.Verde,
+    color = defaultColors.AzulOscuro,
+    width = 250,
+    disabled = false,
+    fontSize = 20
 }) => <Container
     onPress={click}
-    color={color}
+    color={backgroundColor}
     width={width}
     disabled={disabled}
 >
-    <Text>
+    <Text
+        color={color}
+        fontSize={fontSize}
+    >
         {children}
     </Text>
 </Container>

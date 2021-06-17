@@ -2,7 +2,7 @@ import React from 'react';
 import {Container, Title, Paraph, ButtonContainer, TextContainer} from './styled';
 import {useFonts} from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import QuicksandRegular from '../../../assets/fonts/Quicksand-Regular.ttf';
+import QuicksandRegular from '../../../assets/fonts/Quicksand-Light.ttf';
 import FatButton from '../../form/button/fat';
 
 export default ({changePage}) => {

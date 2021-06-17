@@ -4,6 +4,7 @@ import { Container, SearchBar, TextInput, Icon, HoursContainer } from './styled'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Hours from '../../hours';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 
@@ -27,7 +28,8 @@ export default ({width, setSearchText, setTextInputIsOnFocus, searchText, click,
         >
             <SearchBar>
                 <TextInput 
-                    placeholder="Buscar..." 
+                    placeholder="Buscar..."
+                    placeholderTextColor={defaultColors.GrisOscuro} 
                     value={searchText} 
                     onChangeText={(text) => setSearchText(text)}
                     onFocus={() => {

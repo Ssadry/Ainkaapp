@@ -16,7 +16,7 @@ export default () => {
 }
 
 const Container = styled.SafeAreaView`
-    height: ${Dimensions.get('screen').height + 'px'};
+    height: ${Math.round(Dimensions.get('screen').height) + 'px'};
     flex: 1;
     padding-top: ${Platform.OS === 'android' ? StatusBar.currentHeight + 'px' : 0};
 `;

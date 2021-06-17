@@ -1,8 +1,7 @@
 import React from 'react';
 import {CheckBox} from 'react-native-elements';
 import {Container, Text, CheckBoxContainer} from './styled';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCheckSquare, faSquareFull } from '@fortawesome/free-solid-svg-icons'
+import {CheckIcon, UnCheckIcon} from '../../../assets/svg/icon';
 
 export default Check = ({
     setValue, 
@@ -17,8 +16,8 @@ export default Check = ({
             <CheckBoxContainer>
                 <CheckBox
                     center
-                    checkedIcon={<FontAwesomeIcon icon={faCheckSquare}/>}
-                    uncheckedIcon={<FontAwesomeIcon icon={faSquareFull}/>}
+                    checkedIcon={<CheckIcon size={30}/>}
+                    uncheckedIcon={<UnCheckIcon size={30}/>}
                     checkedColor='black'
                     uncheckedColor='white'
                     checked={value}

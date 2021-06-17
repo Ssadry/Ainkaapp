@@ -12,6 +12,9 @@ import Check from '../../form/check';
 import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
 import {signup} from '../../../services';
+import {useFonts} from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import QuicksandRegular from '../../../assets/fonts/Quicksand-Regular.ttf';
 
 const isEmpty = (value) => value === '';
 const validateEmail = (email) => {
@@ -24,6 +27,7 @@ const validateLenght = (characters, length) => characters.length >= length;
 export default Signup = ({changePage}) => {
     const [containerWidth, setContainerWidth] = useState(0);
     let contentWidth = containerWidth * 0.8;
+    const [fontsLoaded] = useFonts({'QuicksandRegular': QuicksandRegular});
 
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -129,7 +133,7 @@ export default Signup = ({changePage}) => {
         }
     ];
 
-    return (
+    return !fontsLoaded ? <AppLoading/> : 
         <ScrollView>
             <Container
                 onLayout={
@@ -162,12 +166,12 @@ export default Signup = ({changePage}) => {
                                     />
                                 )
                             }
+                            <BothPasswords
+                                isVisible={password === confirmPassword}
+                            >
+                                Las contraseñas no coindiden.
+                            </BothPasswords>
                         </FormContainer>
-                        <BothPasswords
-                            isVisible={password === confirmPassword}
-                        >
-                            Las contraseñas no coindiden.
-                        </BothPasswords>
                         <ChecksContainer>
                             {
                                 checks.map((check, i) =>
@@ -183,8 +187,8 @@ export default Signup = ({changePage}) => {
                         </ChecksContainer>
                         <FatButtom
                             click={() => alert('Iniciando sesión con google...')}
-                            color='red'
                             disabled={true}
+                            fontSize={17}
                         >
                             INICIAR SESIÓN CON GOOGLE
                         </FatButtom>
@@ -215,5 +219,4 @@ export default Signup = ({changePage}) => {
                     </Content>
             </Container>
         </ScrollView>
-    )
 }

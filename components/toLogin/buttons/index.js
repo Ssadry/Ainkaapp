@@ -5,6 +5,7 @@ import SlimButton from '../../form/button/slim';
 import {AppContext} from '../../../application/provider';
 import {login} from '../../../services';
 import {getObjectData, storeObjectData} from '../../../application/asyncStorage';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 export default Buttons = ({
     navigation,
@@ -53,11 +54,13 @@ export default Buttons = ({
                 <SlimButton
                     click={() => alert('Habértela apuntado')}
                     disabled={true}
+                    color={defaultColors.Lila}
                 >
                     ¿Olvidaste la contraseña?
                 </SlimButton>
                 <SlimButton
                     click={() => navigation.navigate(routeName.checkIn)}
+                    color={defaultColors.Lila}
                 >
                     Únete a la comunidad AINKAA
                 </SlimButton>

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
-import { Container, Content, ImageContainer, Image } from './styled';
-import Icon from '../../../../assets/icon.png';
+import { Container, Content, IconContainer, Title } from './styled';
 
 export default Service = ({
     width = 200,
-    title = 'Title'
+    title = 'Title',
+    icon = Icon
 }) => {
     const contentWidth = width * 0.8;
     const imagenContainerWidth = contentWidth * 0.5;
@@ -19,18 +18,14 @@ export default Service = ({
                 width={contentWidth}
                 borderRadius={borderRadiusContent}
             >
-                <ImageContainer 
-                    width={imagenContainerWidth}
-                >
-                    <Image 
-                        source={Icon}
-                    />
-                </ImageContainer>
-                <Text
+                <IconContainer>
+                    {icon}
+                </IconContainer>
+                <Title
                     numberOfLines={1}
                 >
                     {title}
-                </Text>
+                </Title>
             </Content>
         </Container>
     )
