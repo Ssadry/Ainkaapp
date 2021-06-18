@@ -3,8 +3,6 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     justify-content: center;
     align-items: center;
-    background-color: blueviolet;
-    border: 5px;
 `;
 
 export const Line = styled.View`
@@ -18,5 +16,4 @@ export const Line = styled.View`
 export const PhotoServicie = styled.View`
     width: ${({width}) => width + 'px'};
     height: 100px;
-    background-color: white;
 `;

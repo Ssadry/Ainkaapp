@@ -21,3 +21,10 @@ export const Icon = styled.TouchableOpacity`
     margin-left: 10px;
     margin-right: 10px;
 `;
+
+export const CheckContainer = styled(Icon)`
+    width: 30px;
+    height: 30px;;
+    justify-content: center;
+    align-items: center;
+`;

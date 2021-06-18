@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Container} from './styled';
 import Need from '../../../../slider/item/need';
-import Featured from '../../../../slider/item/featured';
+import Services from '../../../../slider/item/featured';
 import SliderWithTitles from '../../../../slider/withTitles';
 import { AppContext } from '../../../../../application/provider';
 
@@ -69,21 +69,74 @@ export default ({navigation}) => {
         },
     ];
 
+    const art = [
+        {
+            title: 'Aprende cerámica',
+            hours: 5
+        },
+        {
+            title: 'Dibujo digital',
+            hours: 6
+        },
+        {
+            title: 'Clases de pintura',
+            hours: 7
+        },
+        {
+            title: 'Clases de body paint',
+            hours: 2
+        },
+        {
+            title: 'Sesión de patronaje',
+            hours: 7
+        },
+        {
+            title: 'Clases de fotografía',
+            hours: 4
+        },
+    ];
+
+    const kitchen = [
+        {
+            title: 'Aprende a hacer postres',
+            hours: 5
+        },
+        {
+            title: 'Cocina Ecuatoriana',
+            hours: 6
+        },
+        {
+            title: 'Platos creativos',
+            hours: 7
+        },
+        {
+            title: 'Aprende cocina vegetariana',
+            hours: 2
+        },
+        {
+            title: 'Platos deconstruidos',
+            hours: 7
+        }
+    ]
+
     const mySliders = [
         {
             items: () => 
                 myFeatureds.map((featured, i) => 
-                    <Featured 
+                    <Services 
                         key={i}
                         width={itemsWidth}
                         title={featured.title}
                         hours={featured.hours}
-                        click={() => navigation.navigate(routeName.serviceOrNeed, {isNeed: false})}
+                        click={() => navigation.navigate(routeName.serviceOrNeed, {
+                            isNeed: false,
+                            textButton: 'SOLICITAR SERVICIO'
+                        })}
                     />   
                 ),
             leftText: 'Destacados',
             rightText: 'Ver más',
-            itemName: Featured.name
+            itemName: Services.name
         },
         {
             items: () => 
@@ -93,6 +146,10 @@ export default ({navigation}) => {
                         width={itemsWidth}
                         title={need.title}
                         hours={need.hours}
+                        click={() => navigation.navigate(routeName.serviceOrNeed, {
+                            isNeed: true,
+                            textButton: 'CUBRIR NECESIDAD'
+                        })}
                     />   
                 ),
             leftText: 'Necesidades',
@@ -101,29 +158,37 @@ export default ({navigation}) => {
         },
         {
             items: () => 
-                myNeeds.map((need, i) => 
-                    <Need 
+                art.map((a, i) => 
+                    <Services 
                         key={i}
                         width={itemsWidth}
-                        title={need.title + ' - ' + i}
-                        hours={need.hours}
+                        title={a.title}
+                        hours={a.hours}
+                        click={() => navigation.navigate(routeName.serviceOrNeed, {
+                            isNeed: false,
+                            textButton: 'SOLICITAR SERVICIO'
+                        })}
                     />   
                 ),
-            leftText: 'Prueba',
+            leftText: 'Arte',
             rightText: 'Ver más',
             itemName: Need.name
         },
         {
             items: () => 
-                myNeeds.map((need, i) => 
-                    <Need 
+                kitchen.map((k, i) => 
+                    <Services 
                         key={i}
                         width={itemsWidth}
-                        title={need.title + ' - ' + i}
-                        hours={need.hours}
+                        title={k.title}
+                        hours={k.hours}
+                        click={() => navigation.navigate(routeName.serviceOrNeed, {
+                            isNeed: false,
+                            textButton: 'SOLICITAR SERVICIO'
+                        })}
                     />   
                 ),
-            leftText: 'Prueba 1',
+            leftText: 'Cocina',
             rightText: 'Ver más',
             itemName: Need.name
         },

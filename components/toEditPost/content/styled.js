@@ -6,12 +6,6 @@ export const Container = styled.View`
     align-items: center;
 `;
 
-export const Line = styled.View`
-    width: ${({width}) => width + 'px'};
-    height: 1px;
-    background-color: gray;
-`;
-
 export const Form = styled.View`
     margin-top: 20px;
 `;
@@ -19,6 +13,24 @@ export const Form = styled.View`
 export const Title = styled.Text`
     margin-bottom: 5px;
     align-self: flex-start;
+    font-weight: bold;
+    font-size: 18px;
+`;
+
+export const NeedContainer = styled.View`
+    display: ${({isNeed}) => isNeed ? 'none' : 'flex'};
+`;
+
+export const Description = styled(Title)`
+    margin-top: 10px;
+`;
+
+export const Category = styled(Title)`
+    margin-top: 10px;
+`;
+
+export const SubTitle = styled.Text`
+    color: ${({color}) => color};
 `;
 
 export const CategoriesChecksContainer = styled.View`

@@ -6,6 +6,7 @@ export default Service = ({
     title = 'Title',
     icon = Icon,
     backgroundColor = '#FFFFFF',
+    click = () => alert('click')
 }) => {
     const contentWidth = width * 0.8;
     const imagenContainerWidth = contentWidth * 0.5;
@@ -16,6 +17,7 @@ export default Service = ({
             width={width}
         >
             <Content
+                onPress={click}
                 backgroundColor={backgroundColor}
                 width={contentWidth}
                 borderRadius={borderRadiusContent}

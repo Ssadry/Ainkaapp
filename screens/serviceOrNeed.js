@@ -18,7 +18,9 @@ const ServiceOrNeed = ({navigation, route}) => {
     
     return (
         <Container>
-            <TopSettings/>
+            <TopSettings
+                navigation={navigation}
+            />
                 <ScrollView
                     style={{flex: 1}}
                 >
@@ -42,6 +44,4 @@ export default ServiceOrNeed;
 
 const Container = styled.View`
     flex: 1;
-    background-color: cyan;
-    border: 10px;
 `;

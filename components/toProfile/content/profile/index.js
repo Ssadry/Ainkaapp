@@ -25,11 +25,11 @@ import {
     SocialWebTitle,
     SocialWebText
 } from './styled';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { StarIcon } from '../../../../assets/svg/icon';
-import Icon from '../../../../assets/icon.png';
 import defaultColors from '../../../../assets/colors/defaultColors.json';
+import { ArtIcon, KitchenIcon, SportIcon, MusicIcon } from '../../../../assets/svg/icon';
+
+const SIZE_ICON = 30;
 
 export default Profile = ({currentState = 0, pos = 0}) => {
     return (
@@ -90,21 +90,23 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                 </Title>
                 <ImagesContainer>
                     <ImageContainer>
-                        <Image
-                            source={Icon}
-                            resizeMode='stretch'
+                        <ArtIcon
+                            size={SIZE_ICON}
                         />
                     </ImageContainer>
                     <ImageContainer>
-                        <Image
-                            source={Icon}
-                            resizeMode='stretch'
+                        <KitchenIcon
+                            size={SIZE_ICON}
+                        />  
+                    </ImageContainer>
+                    <ImageContainer>
+                        <SportIcon
+                            size={SIZE_ICON}
                         />
                     </ImageContainer>
                     <ImageContainer>
-                        <Image
-                            source={Icon}
-                            resizeMode='stretch'
+                        <MusicIcon
+                            size={SIZE_ICON}
                         />
                     </ImageContainer>
                 </ImagesContainer>
@@ -113,7 +115,9 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                 </Title>
                 <SocialsWebs>
                     <SocialWeb>
-                        <SocialWebTitle>
+                        <SocialWebTitle
+                            color={defaultColors.Lila}
+                        >
                             Instagram:
                         </SocialWebTitle>
                         <SocialWebText>
@@ -121,7 +125,9 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                         </SocialWebText>
                     </SocialWeb>
                     <SocialWeb>
-                        <SocialWebTitle>
+                        <SocialWebTitle
+                            color={defaultColors.Lila}
+                        >                            
                             Facebook:
                         </SocialWebTitle>
                         <SocialWebText>
@@ -129,8 +135,10 @@ export default Profile = ({currentState = 0, pos = 0}) => {
                         </SocialWebText>
                     </SocialWeb>
                     <SocialWeb>
-                        <SocialWebTitle>
-                            LinkedIn:
+                        <SocialWebTitle
+                            color={defaultColors.Lila}
+                        >                            
+                        LinkedIn:
                         </SocialWebTitle>
                         <SocialWebText>
                             aewdfjiewhfurluihneinforefrefre

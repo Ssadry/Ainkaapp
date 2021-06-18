@@ -2,16 +2,19 @@ import React from 'react';
 import styled from 'styled-components/native';
 import Header from '../components/toEditPost/header';
 import Content from '../components/toEditPost/content';
+import defaultColors from '../assets/colors/defaultColors.json';
 
 const EditPost = ({navigation, route}) => {
-    const category = route?.params?.category ?? 'Category';
+    const textbutton = route?.params?.textbutton ?? 'PUBLICAR';
+    const isNeed = route?.params?.isNeed ?? true;
     return (
         <Container>
             <Header
                 navigation={navigation}
             />
             <Content
-                category={category}
+                isNeed={isNeed}
+                textbutton={textbutton}
             />
         </Container>
     )
@@ -21,5 +24,5 @@ export default EditPost;
 
 const Container = styled.View`
     flex: 1;
-    background-color: white;
+    background-color: ${defaultColors.GrisPerla};
 `;

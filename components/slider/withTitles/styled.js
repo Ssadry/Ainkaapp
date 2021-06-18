@@ -21,11 +21,11 @@ export const TextButton = styled.TouchableOpacity`
 
 export const LeftText = styled.Text`
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 4px;
 `;
 
 export const RightText = styled.Text`
-    font-size: 14px;
+    font-size: 16px;
     color: ${({color}) => color}
 `;

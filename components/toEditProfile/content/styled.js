@@ -18,10 +18,11 @@ export const Form = styled.View`
 `;
 
 export const Title = styled.Text`
+    font-weight: bold;
     margin-top: 10px;
     margin-bottom: 5px;
     align-self: flex-start;
-    font-size: 15px;
+    font-size: 18px;
 `;
 
 export const CategoriesChecksContainer = styled.View`
@@ -41,10 +42,12 @@ export const ButtonContainer = styled.View`
 export const ProfileContainer = styled.ImageBackground`
     width: 150px;
     height: 150px;
+    border-radius: 20px;
     border-width: 1px;
     margin-top: -75px;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 `;
 
 export const UploadPhoto = styled.ImageBackground`

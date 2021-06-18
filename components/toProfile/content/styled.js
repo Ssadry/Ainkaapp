@@ -9,32 +9,30 @@ export const Profile = styled.View`
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -75.5px;
-`;
-
-export const HoursContainer = styled.View`
-    justify-content: center;
-    align-items: center;
-    position: ${({isOwnProfile}) => isOwnProfile ? 'absolute' : 'relative'};;
-    top: -20px;
-    left: -20px;
-    display: ${({isOwnProfile}) => isOwnProfile ? 'flex' : 'none'};
+    top: -65px;
 `;
 
 export const PhotoProfileContainer = styled.View`
     width: 140px;
     height: 140px;
+    align-items: center;
 `;
 
 export const AnotherPhotoProfileContainer = styled.View`
     overflow: hidden;
     border: 1px solid gray;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+    width: 130px;
+    height: 130px;
 `;
 
 export const PhotoProfile = styled.Image`
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 60%;
 `;
 
 export const Name = styled.Text`
@@ -46,7 +44,7 @@ export const Name = styled.Text`
 export const Info = styled.View`
     flex: 1;
     position: relative;
-    top: -75.5px;
+    top: -65px;
     margin-top: 30px;
     margin-bottom: -75.5px;
 `;

@@ -2,7 +2,6 @@ import React from 'react';
 import {Container, CheckContainer} from './styled';
 import Input from '../../form/input';
 import Check from '../../form/check';
-import defaultColors from '../../../assets/colors/defaultColors.json';
 
 const isEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

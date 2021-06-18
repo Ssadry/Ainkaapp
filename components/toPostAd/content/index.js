@@ -10,13 +10,19 @@ export default Content = ({navigation}) => {
             <Top>
                 <Button
                     text='Necesidad'
-                    click={() => navigation.navigate(routeName.editPost)}
+                    click={() => navigation.navigate(routeName.editPost, {
+                        textbutton: 'PUBLICAR NECESIDAD',
+                        isNeed: true
+                    })}
                 />
             </Top>
             <Bottom>
                 <Button
                     text='Servicio'
-                    click={() => navigation.navigate(routeName.editProfile)}
+                    click={() => navigation.navigate(routeName.editPost, {
+                        textbutton: 'PUBLICAR SERVICIO',
+                        isNeed: false
+                    })}
                 />
             </Bottom>
         </Container>

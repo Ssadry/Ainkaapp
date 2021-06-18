@@ -1,19 +1,14 @@
-import React, {useState, lazy, Suspense} from 'react';
+import React, {useState, lazy, Suspense, useContext} from 'react';
 import {Container} from './styled';
 import SwitchButtons from '../../../switchView/buttons';
 import {Dimensions, Text} from 'react-native';
 import Content from './content';
 import {ArtIcon, KitchenIcon, SportIcon, CraftIcon, MusicIcon, LeisureIcon, TechnologyIcon, TransportIcon, IdiomIcon, OtherIcon} from '../../../../assets/svg/icon';
-import David from '../../../../assets/images/people/davidpng.png';
-import Maria from '../../../../assets/images/people/mariapng.png';
-import Paquita from '../../../../assets/images/people/paquitapng.png';
+import Logo from '../../../../assets/images/logo.png';
+import { AppContext } from '../../../../application/provider';
 const LazyCategory = lazy(_ => import('../../../slider/item/category'));
 const LazyProfile = lazy(_ => import('../../../slider/item/profile'));
 const LazyNeed = lazy(_ => import ('../../../slider/item/need'));
-
-const people = [
-    Paquita, David, Maria
-]
 
 const types = {
     CATEGORY : {
@@ -101,7 +96,8 @@ const categoriesValues = [
 const buttonsName = ['Categorías', 'Necesidades', 'Perfiles'];
 const width = Math.round(Dimensions.get('screen').width);
 
-export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
+export default ({isSearchingOnHome, navigation}) => {
+    const [routeName] = useContext(AppContext);
     const [currentState, setCurrentState] = useState(0);
 
     const createArray = (type, amount) => {
@@ -117,7 +113,7 @@ export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
                         <LazyCategory 
                             width={elementWidth} 
                             key={i}
-                            click={goToWatchMoreItems}
+                            click={() => navigation.navigate(routeName.watchMoreItems, {title: category.name})}
                             image={category.icon}
                             title={category.name}
                         />
@@ -126,30 +122,27 @@ export default ({isSearchingOnHome, goToWatchMoreItems, goToProfile}) => {
                 break;
             case types.NEED.NAME:
                 elementWidth = width / types.NEED.COLUMNS * 0.9;
-                for (let i = 0; i < amount; i++) arr[i] = 
-                    <LazyNeed 
-                        width={elementWidth} 
-                        key={i} 
-                        title={'Título de una necesidad'}
-                        click={goToWatchMoreItems}
-                    />
+                for (let i = 0; i < amount; i++) 
+                    arr.push( 
+                        <LazyNeed 
+                            width={elementWidth} 
+                            key={i} 
+                            title={'Título de una necesidad'}
+                            click={() => navigation.navigate(routeName.serviceOrNeed, {isNeed: true})}
+                        />
+                    );
                 break;
             case types.PROFILE.NAME:
-                let orderPeople = 0;
                 elementWidth = width / types.PROFILE.COLUMNS * 0.9;
                 for (let i = 0; i < amount; i++) {
                     arr.push(
                         <LazyProfile 
                             width={elementWidth} 
                             key={i} 
-                            click={goToProfile}
-                            image={people[orderPeople]}
+                            click={() => navigation.navigate(routeName.anotherProfile, {isOwnProfile: false})}
+                            image={Logo}
                         />
                     );
-                    orderPeople++;
-
-                    if (orderPeople >= people.length)
-                        orderPeople = 0;
                 }
                 break;
         }

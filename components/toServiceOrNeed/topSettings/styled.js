@@ -2,19 +2,29 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex-direction: row;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
     justify-content: space-between;
     align-items: center;
 `;
 
 export const IconsContainer = styled.View`
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 `;
 
 export const Icon = styled.TouchableOpacity`
-    margin-left: 10px;
-    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+`;
+
+export const CheckBoxContainer = styled.View`
+    width: ${({size}) => size + 'px'};
+    height: ${({size}) => size + 'px'};
+    justify-content: center;
+    align-items: center;
 `;

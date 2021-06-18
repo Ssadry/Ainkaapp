@@ -26,8 +26,7 @@ const Home = ({navigation}) => {
             {/* El componente 'Searching' solo se visualiza cuando se selecciona el buscador. */}
             <Searching
                 isSearchingOnHome={isSearchingOnHome} 
-                goToWatchMoreItems={() => navigation.navigate(routeName.watchMoreItems)}
-                goToProfile={() => navigation.navigate(routeName.profile)}
+                navigation={navigation}
             />
         </Container>
     );

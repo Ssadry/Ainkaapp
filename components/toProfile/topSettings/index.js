@@ -1,11 +1,14 @@
 import React, {useState, useContext} from 'react';
-import {Container, IconsContainer, Icon} from './styled';
+import {Container, IconsContainer, Icon, CheckContainer} from './styled';
 import GoToBackButton from '../../goToBackButton';
 import {ShareIcon, SettingsIcon} from '../../../assets/svg/icon';
 import Dropdown from '../../dropdown';
-import {SavedIcon, EditIcon} from '../../../assets/svg/icon';
+import {SavedIcon, UnsaveIcon, EditIcon} from '../../../assets/svg/icon';
 import {AppContext} from '../../../application/provider';
 import {removeData} from '../../../application/asyncStorage';
+import {CheckBox} from 'react-native-elements';
+import Hours from '../../hours';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 const settingsOptions = {
     own : ['Reportar problemas', 'Cerrar sesión'],
@@ -20,6 +23,7 @@ export default TopSettings = ({
     settingsAreActivated = false,
     isOwnProfile = true
 }) => {
+    const [value, setValue] = useState(false);
     const [routeName] = useContext(AppContext);
     const [settingsLayout, setSettginsLayout] = useState({
         x: 0, 
@@ -29,16 +33,20 @@ export default TopSettings = ({
     });
 
     const editOrSave = !isOwnProfile ? 
-        <Icon
+        <CheckContainer
             onPress={() => alert('Guardar')}
         >
-            <SavedIcon 
-                size={SIZE_ICON}
+            <CheckBox
+                center
+                checkedIcon={<SavedIcon size={30}/>}
+                uncheckedIcon={<UnsaveIcon size={30}/>}
+                checked={value}
+                onPress={() => setValue(!value)}
             />
-        </Icon> 
+        </CheckContainer> 
         : 
         <Icon
-            onPress={() => alert('Editar')}
+            onPress={() => navigation.navigate(routeName.editProfile)}
         >
             <EditIcon 
                 size={SIZE_ICON}
@@ -65,6 +73,11 @@ export default TopSettings = ({
             navigation={navigation}
         />
         <IconsContainer>
+            <Icon>
+                <Hours
+                    color={defaultColors.AzulOscuro}
+                />
+            </Icon>
             {editOrSave}
             <Icon>
                 <ShareIcon

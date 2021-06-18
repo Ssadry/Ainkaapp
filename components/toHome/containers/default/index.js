@@ -1,9 +1,9 @@
-import React, {lazy, Suspense, useState} from 'react';
+import React, {lazy, Suspense, useState, useContext} from 'react';
 import {Container, ScrollView} from './styled';
 import Banner from './banner';
 import Slider from '../../../slider';
 import {Text} from 'react-native';
-import item from '../../../toInbox/item';
+// import item from '../../../toInbox/item';
 import {
     ArtIcon, 
     KitchenIcon, 
@@ -17,6 +17,7 @@ import {
     IdiomIcon
 } from '../../../../assets/svg/icon';
 import defaultColors from '../../../../assets/colors/defaultColors.json';
+import { AppContext } from '../../../../application/provider';
 
 const LazyContent = lazy(() => import('./content'));
 const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
@@ -27,73 +28,83 @@ const SIZE_ICON = 30;
 const categories = [
     {
         name: 'Arte',
-        icon: <ArtIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <ArtIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Cocina',
-        icon: <KitchenIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <KitchenIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Deportes',
-        icon: <SportIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <SportIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Manualiades',
-        icon: <CraftIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <CraftIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Música',
-        icon: <MusicIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <MusicIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Ocio',
-        icon: <LeisureIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <LeisureIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Tecnología',
-        icon: <TechnologyIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <TechnologyIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Transporte',
-        icon: <TransportIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <TransportIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Idiomas',
-        icon: <IdiomIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <IdiomIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
     {
         name: 'Otros',
-        icon: <OtherIcon
-            color={DARK_BLUE}
-            size={SIZE_ICON}
-        />
+        icon: 
+            <OtherIcon
+                color={DARK_BLUE}
+                size={SIZE_ICON}
+            />
     },
 ]
 
@@ -102,6 +113,7 @@ export default ({
     navigation
 }) => {
     const [sliderItemWidth, setSliderItemWidth] = useState(0);
+    const [routeName] = useContext(AppContext);
 
     const items = [];
     categories.forEach((category, i) => {
@@ -110,7 +122,8 @@ export default ({
                 key={i} 
                 fallback={<Text>Cargando...</Text>}
             >
-                <LazyServiceItem 
+                <LazyServiceItem
+                    click={() => navigation.navigate(routeName.watchMoreItems, {title: category.name})}
                     backgroundColor={defaultColors.Blanco}
                     width={sliderItemWidth}
                     title={category.name}

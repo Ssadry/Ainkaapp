@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
 import { Container } from './styled';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { LeftArrowIcon } from '../../assets/svg/icon';
 import { Text, TouchableOpacity, BackHandler } from 'react-native';
+import defaultColors from '../../assets/colors/defaultColors.json';
 
 const HARDWARE_BACK_PRESS = 'hardwareBackPress';
 
@@ -18,6 +17,7 @@ export default ({
                 return true;
             }
         }
+        alert('No mas pasao el navigation')
         return false;
     }
     
@@ -30,10 +30,13 @@ export default ({
 
     return (
         <Container>
-            <TouchableOpacity onPress={handleBackButtonClick}>
+            <TouchableOpacity 
+                onPress={handleBackButtonClick}
+            >
                 <Text>
                     <LeftArrowIcon
                         size={30}
+                        color={defaultColors.Lila}
                     />
                 </Text>
             </TouchableOpacity>

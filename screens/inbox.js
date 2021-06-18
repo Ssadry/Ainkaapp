@@ -10,7 +10,9 @@ const Inbox = ({navigation}) => {
 
     return (
         <Container>
-            <Header/>
+            <Header
+                navigation={navigation}
+            />
             <SwitchView
                 currentState={currentState}
                 setCurrentState={setCurrentState}

@@ -6,7 +6,7 @@ import Profile from '../../slider/item/profile';
 import {Dimensions, ScrollView} from 'react-native';
 import { AppContext } from '../../../application/provider';
 
-const {width} = Dimensions.get('screen');
+const width = Math.round(Dimensions.get('screen').width);
 const containerWidth = width * 0.9;
 const itemsWidth = containerWidth * 0.5;
 

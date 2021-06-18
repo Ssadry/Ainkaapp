@@ -4,20 +4,18 @@ export const Container = styled.View`
     flex: 1;
     padding-left: ${({myPadding}) => myPadding * 0.5 + 'px'};
     padding-right: ${({myPadding}) => myPadding * 0.5 + 'px'};
-    background-color: rebeccapurple;
-    border: 10px solid red;
 `;
 
 export const Profile = styled.View`
     justify-content: center;
     align-items: center;
-    /* position: relative;
-    top: -75.5px; */
+    position: relative;
+    top: -60px;
 `;
 
 export const PhotoProfileContainer = styled.View`
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border: 1px solid gray;
     border-radius: 20px;
     overflow: hidden;
@@ -30,6 +28,7 @@ export const PhotoProfile = styled.Image`
 
 export const Name = styled.Text`
     text-align: center;
+    font-weight: bold;
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -40,8 +39,8 @@ export const Images = styled.View`
 `;
 
 export const ImageContainer = styled.View`
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     overflow: hidden;
     margin-left: 5px;
     margin-right: 5px;
@@ -55,8 +54,8 @@ export const Image = styled.Image`
 export const Info = styled.View`
     flex: 1;
     margin-top: 20px;
-    /* position: relative;
-    top: -75.5px; */
+    position: relative;
+    top: -60px;
 `;
 
 export const TitleLocationIcons = styled.View`
@@ -84,12 +83,10 @@ export const Title = styled.Text`
 `;
 
 export const Location = styled.Text`
-    font-size: 18px;
+    font-size: 14px;
 `;
 
 export const Middle = styled.View`
-    font-size: 18px;
-    font-weight: bold;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -115,13 +112,13 @@ export const Hours = styled.Text`
 `;
 
 export const Paraph = styled.Text`
-
+    font-size: 15px;
 `;
 
 export const StarsContainer = styled.View`
     margin-top: 50px;
     flex-direction: row;
-    display: ${({isNeed}) => isNeed ? 'none' : 'flex'};
+    opacity: ${({isNeed}) => isNeed ? 0 : 1};
 `;
 
 export const Star = styled.View`

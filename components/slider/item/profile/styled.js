@@ -37,7 +37,7 @@ export const ImageContainer = styled.View`
 
 export const Image = styled.Image`
     width: 70%;
-    height: 80%;
+    height: 55%;
 `;
 
 export const Name = styled.Text`

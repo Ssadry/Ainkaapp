@@ -154,9 +154,6 @@ export default Content = () => {
                     <Title>
                         Información general
                     </Title>
-                    <Line 
-                        width={formWidth}
-                    />
                     <Input 
                         width={formWidth}
                         placeHolder={'Nombre*'}
@@ -176,9 +173,12 @@ export default Content = () => {
                         isCorrect={true}
                         errorText={''}
                     />
+                    <Title>
+                        Descripción
+                    </Title>
                     <Input 
                         width={formWidth}
-                        placeHolder={'Descripción*'}
+                        placeHolder={'Escribe aquí tu descripción...'}
                         setValue={setDescription}
                         value={description}
                         canTextHide={false}
@@ -190,9 +190,6 @@ export default Content = () => {
                     <Title>
                         Intereses
                     </Title>
-                    <Line 
-                        width={formWidth}
-                    />
                     <CategoriesChecksContainer>
                         {
                             categories.map((category, i) =>
@@ -209,9 +206,6 @@ export default Content = () => {
                     <Title>
                         Redes
                     </Title>
-                    <Line 
-                        width={formWidth}
-                    />
                     <Input 
                         width={formWidth}
                         placeHolder={'Instagram*'}
@@ -245,9 +239,6 @@ export default Content = () => {
                     <Title>
                         Información privada
                     </Title>
-                    <Line 
-                        width={formWidth}
-                    />
                     <Input 
                         width={formWidth}
                         placeHolder={'Cambiar correo electrónico*'}

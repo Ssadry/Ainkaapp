@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
 import { ScrollView, Dimensions } from 'react-native';
 import Slider from '@react-native-community/slider';
-import {Container, Form, Line, Title, CategoriesChecksContainer, SliderContainer, Hours, MySlider, ModalitiesChecksContainer, ButtonContainer} from './styled';
+import {Container, Form, Title, CategoriesChecksContainer, NeedContainer, Description, Category, SliderContainer, SubTitle, Hours, MySlider, ModalitiesChecksContainer, ButtonContainer} from './styled';
 import Input from '../../../components/form/input';
 import Check from '../../../components/form/check';
 import FatButton from '../../../components/form/button/fat';
 import UploadPhoto from './uploadPhoto';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 const width = Math.round(Dimensions.get('screen').width);
 const formWidth = width * 0.8;
 const checksWidth = formWidth * 0.5;
 
-export default Content = ({category}) => {
+export default Content = ({textbutton, isNeed}) => {
     const [title, setTitle] = useState('');
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
@@ -147,43 +148,48 @@ export default Content = ({category}) => {
                         isCorrect={true}
                         errorText={''}
                     />
-
+                    <Description>
+                        Descripción
+                    </Description>
                     <Input 
                         width={formWidth}
-                        placeHolder={'Descripción*'}
+                        placeHolder={'Escribe aquí tu descripción...'}
                         setValue={setDescription}
                         value={description}
                         canTextHide={false}
                         isCorrect={description.length > 0}
                         errorText={'Descripción obligatoria.'}
                         multiline={true}
-                        maxLength={200}
+                        maxLength={300}
                     />
-                    <Title>
-                        Categoría: {category}
-                    </Title>
-                    <Line 
-                        width={formWidth}
-                    />
-                    <CategoriesChecksContainer>
-                        {
-                            categories.map((category, i) =>
-                                <Check 
-                                    key={i}
-                                    width={checksWidth}
-                                    setValue={(value) => handleChangeCheckeds('categories', category.name, value)}
-                                    value={category.value}
-                                    text={category.text}
-                                />
-                            )
-                        }
-                    </CategoriesChecksContainer>
+                    <NeedContainer
+                        isNeed={isNeed}
+                    >
+                        <Category>
+                            Categoría
+                        </Category>
+                        <SubTitle
+                            color={defaultColors.GrisOscuro}
+                        >
+                            Selecciona una categoría para el anuncio
+                        </SubTitle>
+                        <CategoriesChecksContainer>
+                            {
+                                categories.map((category, i) =>
+                                    <Check 
+                                        key={i}
+                                        width={checksWidth}
+                                        setValue={(value) => handleChangeCheckeds('categories', category.name, value)}
+                                        value={category.value}
+                                        text={category.text}
+                                    />
+                                )
+                            }
+                        </CategoriesChecksContainer>
+                    </NeedContainer>  
                     <Title>
                         Tiempo de duración del servicio*
                     </Title>
-                    <Line 
-                        width={formWidth}
-                    />
                     <SliderContainer
                         onLayout={
                             ({nativeEvent}) => {
@@ -214,9 +220,11 @@ export default Content = ({category}) => {
                     <Title>
                         Modalidad
                     </Title>
-                    <Line 
-                        width={formWidth}
-                    />
+                    <SubTitle
+                        color={defaultColors.GrisOscuro}
+                    >
+                        Selecciona la modalidad del anuncio
+                    </SubTitle>
                     <ModalitiesChecksContainer>
                         {
                             modatilies.map((modality, i) =>
@@ -231,10 +239,8 @@ export default Content = ({category}) => {
                         }
                     </ModalitiesChecksContainer>
                     <ButtonContainer>
-                        <FatButton 
-
-                        >
-                            PUBLICAR ANUNCIO
+                        <FatButton >
+                            {textbutton}
                         </FatButton>
                     </ButtonContainer>
                 </Form>

@@ -26,7 +26,7 @@ const DRAK_BLUE = defaultColors.AzulOscuro;
 const Featured = ({
     width = 200, 
     title = 'Title', 
-    hours = -1,
+    hours = 0,
     click = () => alert('click'),
     backgroundColor = defaultColors.Blanco,
     titleColor = defaultColors.Negro,

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Container, Title, AllIcons, Icons, Edit, Settings} from './styled';
+import {Container, AllIcons, Icons, Settings} from './styled';
 import GoToBackButton from '../../../components/goToBackButton';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faEllipsisV, faPen } from '@fortawesome/free-solid-svg-icons'
+import { SettingsIcon } from '../../../assets/svg/icon';
 
 export default Header = ({navigation}) => {
     return (
@@ -14,16 +13,9 @@ export default Header = ({navigation}) => {
                 <Icons
                     onPress={() => alert('Todavía no sé qué debe hacer este botón.')}
                 >
-                    <Edit>
-                        <FontAwesomeIcon 
-                            icon={faPen}
-                            size={20}
-                        />
-                    </Edit>
                     <Settings>
-                        <FontAwesomeIcon 
-                            icon={faEllipsisV}
-                            size={20}
+                        <SettingsIcon 
+                            size={25}
                         />
                     </Settings>
                 </Icons>

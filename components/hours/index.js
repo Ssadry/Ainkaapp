@@ -7,6 +7,7 @@ export default Hours = ({
     width = 40,
     children = '3h',
     changeColor = false,
+    color = defaultColors.Blanco
 }) => {
     const notificationPointWidth = width * 0.6;
     return (
@@ -16,12 +17,12 @@ export default Hours = ({
         >
             <Profile 
                 width={width}
-                lineColor={changeColor ? defaultColors.AzulOscuro : defaultColors.Blanco}
+                lineColor={changeColor ? defaultColors.Lila : color}
             >
                 <Text 
                     adjustFontSizeToFit={true} 
                     numberOfLines={1}
-                    lineColor={changeColor ? defaultColors.AzulOscuro : defaultColors.Blanco}
+                    lineColor={changeColor ? defaultColors.Lila : color}
                 >
                     {children}
                 </Text>

@@ -129,11 +129,13 @@ export const SocialsWebs = styled.View`
 
 export const SocialWeb = styled.View`
     flex-direction: row;
+    margin-top: 5px;
 `;
 
 export const SocialWebTitle = styled.Text`
     font-weight: bold;
     margin-right: 10px;
+    color: ${({color}) => color};
 `;
 
 export const SocialWebText = styled.Text`
