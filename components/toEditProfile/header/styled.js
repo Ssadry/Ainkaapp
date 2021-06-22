@@ -21,7 +21,6 @@ export const Icons = styled.View`
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: red;
 `;
 
 export const Settings = styled.TouchableOpacity`

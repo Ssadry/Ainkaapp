@@ -66,7 +66,6 @@ export default Input = ({
                 <LengthText
                     maxLength={maxLength}
                     currentValueLength={value.length}
-                    hasBeenFocused={hasBeenFocused}
                 >
                     {maxLength - value.length} caracteres restantes
                 </LengthText>

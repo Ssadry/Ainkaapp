@@ -1,5 +1,8 @@
 import styled from 'styled-components/native';
 
+const PROFILE_SIZE = 130;
+const TOP = `${-(PROFILE_SIZE * 0.5 + 1.5)}px`; //El 1.5 es el grosor de la línea central.
+
 export const Container = styled.View`
     padding-left: ${({myPadding}) => myPadding * 0.5 + 'px'};
     padding-right: ${({myPadding}) => myPadding * 0.5 + 'px'};
@@ -9,16 +12,10 @@ export const Profile = styled.View`
     justify-content: center;
     align-items: center;
     position: relative;
-    top: -65px;
+    top: ${TOP};
 `;
 
 export const PhotoProfileContainer = styled.View`
-    width: 140px;
-    height: 140px;
-    align-items: center;
-`;
-
-export const AnotherPhotoProfileContainer = styled.View`
     overflow: hidden;
     border: 1px solid gray;
     border-radius: 20px;
@@ -26,8 +23,8 @@ export const AnotherPhotoProfileContainer = styled.View`
     align-items: center;
     overflow: hidden;
     background-color: white;
-    width: 130px;
-    height: 130px;
+    width: ${`${PROFILE_SIZE}px`};
+    height: ${`${PROFILE_SIZE}px`};
 `;
 
 export const PhotoProfile = styled.Image`
@@ -44,9 +41,9 @@ export const Name = styled.Text`
 export const Info = styled.View`
     flex: 1;
     position: relative;
-    top: -65px;
+    top: ${TOP};
     margin-top: 30px;
-    margin-bottom: -75.5px;
+    margin-bottom: -65px;
 `;
 
 export const BarContainer = styled.View`

@@ -16,6 +16,7 @@ import {
     BottomLine
 } from './styled';
 import Input from '../../../components/form/input';
+import InputDescription from '../../form/inputDescription';
 import Check from '../../../components/form/check';
 import FatButton from '../../../components/form/button/fat';
 import Icon from '../../../assets/icon.png';
@@ -190,16 +191,10 @@ export default Content = () => {
                     <Title>
                         Descripción
                     </Title>
-                    <Input 
-                        width={formWidth}
-                        placeHolder={'Escribe aquí tu descripción...'}
-                        setValue={setDescription}
+                    <InputDescription
+                        maxLength={300}
                         value={description}
-                        canTextHide={false}
-                        isCorrect={true}
-                        errorText={'Descripción obligatoria.'}
-                        multiline={true}
-                        maxLength={200}
+                        setValue={setDescription}
                     />
                     <Title>
                         Intereses

@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ainkaa",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/logo.png",
     "version": "1.0.0",
     "slug": "your-app-slug",
     "orientation": "portrait",

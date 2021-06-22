@@ -4,6 +4,8 @@ import Need from '../../../../slider/item/need';
 import Services from '../../../../slider/item/featured';
 import SliderWithTitles from '../../../../slider/withTitles';
 import { AppContext } from '../../../../../application/provider';
+import {FixedSizeList} from 'react-window';
+// import AutoSizer from 'react-virua'
 
 const ITEMS_DISPLAYED = 1.8;
 

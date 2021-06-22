@@ -5,8 +5,7 @@ import {
     Name, 
     PhotoProfile,
     Profile,
-    Info,
-    AnotherPhotoProfileContainer
+    Info
 } from './styled';
 import {Dimensions} from 'react-native';
 import Logo from '../../../assets/images//logo.png'
@@ -30,12 +29,10 @@ export default Content = ({
         >
             <Profile>
                 <PhotoProfileContainer>
-                    <AnotherPhotoProfileContainer>
-                        <PhotoProfile 
-                            resizeMode='stretch'
-                            source={Logo}
-                        />
-                    </AnotherPhotoProfileContainer>
+                    <PhotoProfile 
+                        resizeMode='stretch'
+                        source={Logo}
+                    />
                 </PhotoProfileContainer>
                 <Name>
                     Nombre
