@@ -21,10 +21,11 @@ const Tab = createBottomTabNavigator();
 const BottomNavigation = ({navigation, route}) => {
   const [routeName] = useContext(AppContext);
   const prevScreen = route?.params?.prevScreen;
-  routeName.home = Home.name;
-  routeName.saved = Saved.name;
-  routeName.profile = Profile.name;
-  routeName.inbox = Inbox.name;
+  
+  routeName.home = `${Home.name}12`;
+  routeName.saved = `${Saved.name}13`;
+  routeName.profile = `${Profile.name}14`;
+  routeName.inbox = `${Inbox.name}15`;
 
   useEffect(() => {
     if (prevScreen !== undefined)

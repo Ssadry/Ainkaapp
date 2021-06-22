@@ -1,14 +1,9 @@
 import React from 'react';
 import {Container, Title, Paraph, ButtonContainer, TextContainer} from './styled';
-import {useFonts} from 'expo-font';
-import AppLoading from 'expo-app-loading';
-import QuicksandRegular from '../../../assets/fonts/Quicksand-Regular.ttf';
 import FatButton from '../../form/button/fat';
 
 export default ({changePage}) => {
-    const [fontsLoaded] = useFonts({'QuicksandRegular': QuicksandRegular});
-
-    return !fontsLoaded ? <AppLoading/> : 
+    return (
         <Container>
             <TextContainer>
                 <Title>
@@ -26,4 +21,5 @@ export default ({changePage}) => {
                 </FatButton>
             </ButtonContainer>
         </Container>
-}
+    );
+};

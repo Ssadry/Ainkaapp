@@ -12,9 +12,6 @@ import Check from '../../form/check';
 import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
 import {signup} from '../../../services';
-import {useFonts} from 'expo-font';
-import AppLoading from 'expo-app-loading';
-import QuicksandRegular from '../../../assets/fonts/Quicksand-Regular.ttf';
 
 const isEmpty = (value) => value === '';
 const validateEmail = (email) => {
@@ -27,7 +24,6 @@ const validateLenght = (characters, length) => characters.length >= length;
 export default Signup = ({changePage}) => {
     const [containerWidth, setContainerWidth] = useState(0);
     let contentWidth = containerWidth * 0.8;
-    const [fontsLoaded] = useFonts({'QuicksandRegular': QuicksandRegular});
 
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -133,8 +129,7 @@ export default Signup = ({changePage}) => {
         }
     ];
 
-    return !fontsLoaded ? <AppLoading/> : 
-        <ScrollView>
+    return (
             <Container
                 onLayout={
                     ({nativeEvent}) => {
@@ -143,9 +138,8 @@ export default Signup = ({changePage}) => {
                     }
                 }
             >
-                    <Content
-                        width={contentWidth}
-                    >
+                <ScrollView style={{flex: 1}}>
+                    <Content>
                         <Title>
                             ¡Estás a un paso de ser parte de AINKAA!
                         </Title>
@@ -217,6 +211,7 @@ export default Signup = ({changePage}) => {
                             CREAR CUENTA
                         </FatButtom>
                     </Content>
+                </ScrollView>
             </Container>
-        </ScrollView>
-}
+    );
+};

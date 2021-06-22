@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Container, Top, Bottom, TextButton, LeftText, RightText} from './styled';
 import Slider from '../../slider';
 import defaultColors from '../../../assets/colors/defaultColors.json';
+import { AppContext } from '../../../application/provider';
 
 export default ({
     numberItemsDisplayed, 
@@ -12,18 +13,19 @@ export default ({
     rightText, 
     navigation
 }) => {
+    const [routeName] = useContext(AppContext);
     return (
         <Container>
             <Top>
                 <LeftText>
                     {leftText}
                 </LeftText>
-                <TextButton onPress={() => {
-                    navigation.navigate('WatchMoreItems', {
+                <TextButton onPress={() => 
+                    navigation.navigate(routeName.watchMoreItems, {
                         title: leftText,
                         itemName: itemName,
-                    });
-                }}>
+                    })}
+                >
                     <RightText
                         color={defaultColors.Lila}
                     >

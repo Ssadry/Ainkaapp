@@ -1,8 +1,20 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { ScrollView, Dimensions } from 'react-native';
-import {Platform} from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import {Container, Form, Line, Title, CategoriesChecksContainer, ButtonContainer, ButtonProfile, ProfileContainer, UploadPhoto, Button, Text, BottomLine} from './styled';
+// import {Platform} from 'react-native';
+// import * as ImagePicker from 'expo-image-picker';
+import {
+    Container, 
+    Form, 
+    Title, 
+    CategoriesChecksContainer, 
+    ButtonContainer, 
+    ButtonProfile, 
+    ProfileContainer, 
+    UploadPhoto, 
+    Button, 
+    Text, 
+    BottomLine
+} from './styled';
 import Input from '../../../components/form/input';
 import Check from '../../../components/form/check';
 import FatButton from '../../../components/form/button/fat';
@@ -22,7 +34,7 @@ export default Content = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState(null);
 
     const [allChecks, setAllChecks] = useState({
         art: false,
@@ -97,34 +109,36 @@ export default Content = () => {
         },
     ];
 
-    useEffect(() => {
-        (async () => {
-            if (Platform.OS !== 'web') {
-                const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync();
-                if (status !== 'granted') 
-                    alert('Che, boludo, necesitamos permisos para espiarte.');
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         if (Platform.OS !== 'web') {
+    //             const {status} = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    //             if (status !== 'granted') 
+    //                 alert('Che, boludo, necesitamos permisos para espiarte.');
+    //         }
+    //     })();
+    // }, []);
 
-    const pickImage = async() => {
-        let result = await ImagePicker.launchImageLibraryAsync({
-            mediaTypes: ImagePicker.MediaTypeOptions.Images,
-            allowsEditing: true,
-            aspect: [4, 3],
-            quality: 1,
-        });
+    // const pickImage = async() => {
+    //     let result = await ImagePicker.launchImageLibraryAsync({
+    //         mediaTypes: ImagePicker.MediaTypeOptions.Images,
+    //         allowsEditing: true,
+    //         aspect: [4, 3],
+    //         quality: 1,
+    //     });
 
-        if (!result.cancelled) setImage(result.uri);
-        else alert('¿en serio? ¿ninguna imagen?'); 
-    }
+    //     if (!result.cancelled) setImage(result.uri);
+    //     else alert('¿en serio? ¿ninguna imagen?'); 
+    // }
+
+    const pickImage = () => alert('ñe');
 
     return (
         <ScrollView>
             <Container>
                 <UploadPhoto
                     width={width}
-                    source={{uri: image}}
+                    // source={{uri: image}}
                     resizeMode={'cover'}
                 >
                     <Button

@@ -4,11 +4,9 @@ import TopSettings from '../components/toServiceOrNeed/topSettings';
 import TopPhoto from '../components/toServiceOrNeed/topPhoto';
 import Content from '../components/toServiceOrNeed/content';
 import {ScrollView} from 'react-native';
-import Icon from '../assets/icon.png';
 import { AppContext } from '../application/provider';
 
 const ServiceOrNeed = ({navigation, route}) => {
-    const topPhoto = route?.params?.topPhoto ?? Icon;
     const title = route?.params?.title ?? 'Título por defecto';
     const isNeed = route?.params?.isNeed ?? true;
     const handleButton = route?.params?.button ?? (() => alert('click'));
@@ -24,9 +22,7 @@ const ServiceOrNeed = ({navigation, route}) => {
                 <ScrollView
                     style={{flex: 1}}
                 >
-                    <TopPhoto
-                        icon={topPhoto}
-                    />
+                    <TopPhoto/>
                     <Content
                         navigation={navigation}
                         title={title}

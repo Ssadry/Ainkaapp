@@ -23,9 +23,7 @@ export default ({
     
     useEffect(() => {
         BackHandler.addEventListener(HARDWARE_BACK_PRESS, handleBackButtonClick);
-        return () => {
-            BackHandler.removeEventListener(HARDWARE_BACK_PRESS, handleBackButtonClick);
-        };
+        return () => BackHandler.removeEventListener(HARDWARE_BACK_PRESS, handleBackButtonClick);
     }, []);
 
     return (
@@ -41,5 +39,5 @@ export default ({
                 </Text>
             </TouchableOpacity>
         </Container>
-    )
-}
+    );
+};

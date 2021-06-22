@@ -626,9 +626,7 @@ export const SettingsIcon = ({
                     />
                 </ClipPath>
             </Defs>
-            <G 
-                clip-path="url(#clip-icon_reportar)"
-            >
+            <G>
                 <Rect 
                     width={size}
                     height={size}

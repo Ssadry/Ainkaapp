@@ -21,12 +21,7 @@ export const Icons = styled.View`
     justify-content: center;
     align-items: center;
     flex-direction: row;
-`;
-
-export const Edit = styled.TouchableOpacity`
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
+    background-color: red;
 `;
 
 export const Settings = styled.TouchableOpacity`

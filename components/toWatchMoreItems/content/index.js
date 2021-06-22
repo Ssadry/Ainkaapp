@@ -46,9 +46,7 @@ export default ({itemName, navigation}) => {
                         key={i}
                         width={itemsWidth}
                         title='Perfil'
-                        click={() => {
-                            navigation.navigate(routeName.anotherProfile, {isOwnProfile: false})}
-                        }
+                        click={() => navigation.navigate(routeName.anotherProfile, {isOwnProfile: false})}
                     />
             break;
     }

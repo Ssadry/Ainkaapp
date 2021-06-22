@@ -6,13 +6,6 @@ export const Container = styled.View`
     align-items: center;
 `;
 
-export const Line = styled.View`
-    width: ${({width}) => width + 'px'};
-    height: 1px;
-    margin-bottom: 20px;
-    background-color: gray;
-`;
-
 export const Form = styled.View`
     margin-top: 20px;
 `;

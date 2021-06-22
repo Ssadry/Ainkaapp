@@ -18,6 +18,7 @@ import {
 } from '../../../../assets/svg/icon';
 import defaultColors from '../../../../assets/colors/defaultColors.json';
 import { AppContext } from '../../../../application/provider';
+import Featured from '../../../slider/item/featured';
 
 const LazyContent = lazy(() => import('./content'));
 const LazyServiceItem = lazy(() => import('../../../slider/item/service'));
@@ -123,7 +124,10 @@ export default ({
                 fallback={<Text>Cargando...</Text>}
             >
                 <LazyServiceItem
-                    click={() => navigation.navigate(routeName.watchMoreItems, {title: category.name})}
+                    click={() => navigation.navigate(routeName.watchMoreItems, {
+                        title: category.name,
+                        itemName: Featured.name
+                    })}
                     backgroundColor={defaultColors.Blanco}
                     width={sliderItemWidth}
                     title={category.name}

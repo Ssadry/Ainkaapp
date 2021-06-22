@@ -9,14 +9,15 @@ import Community from '../components/toCheckIn/community';
 import {Dimensions} from 'react-native';
 import {AppContext} from '../application/provider';
 
-const {width, height} = Dimensions.get('screen');
+const width = Math.round(Dimensions.get('screen').width);
 
-const carouselHeight = height * 0.8;
+const carouselFlex = 0.9;
+const paginationFlex = 0.1;
 
 const CheckIn = ({navigation}) => {
     const [routeName] = useContext(AppContext);
     const [currentPos, setCurrentPos] = useState(0);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(0);
 
     const changePage = (index) => {
         setCurrentPos(width * -(currentPos + index));
@@ -53,11 +54,12 @@ const CheckIn = ({navigation}) => {
             <Carousel
                 items={data}
                 itemWidth={width}
-                height={carouselHeight}
+                flex={carouselFlex}
                 currentPage={currentPage}
             />
             <Pagination
                 width={width}
+                flex={paginationFlex}
                 amountItems={data.length}
                 currentPage={currentPage}
             />

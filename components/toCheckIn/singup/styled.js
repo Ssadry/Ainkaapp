@@ -1,21 +1,18 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
+    padding: 30px;
     flex: 1;
-    justify-content: center;
-    align-items: center;
-    padding-top: 40px;
+    justify-content: space-between;
 `;
 
 export const Content = styled.View`
     flex: 1;
-    width: ${({width}) => width + 'px'};
     justify-content: center;
     align-items: center;
 `;
 
 export const Title = styled.Text`
-    font-family: 'QuicksandRegular';
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;

@@ -10,13 +10,11 @@ export const TextContainer = styled.View`
 `;
 
 export const Title = styled.Text`
-    font-family: 'QuicksandRegular';
     font-size: 30px;
     margin-bottom: 10px;
 `;
 
 export const Paraph = styled.Text`
-    font-family: 'QuicksandRegular';
     font-size: 30px;
     margin-top: 10px;
 `;

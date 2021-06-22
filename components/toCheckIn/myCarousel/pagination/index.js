@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Circle, Text} from './styled';
 
-export default Pagination = ({width, amountItems, currentPage}) => {
+export default Pagination = ({width, flex, amountItems, currentPage}) => {
     const circles = [];
     for (let i = 0; i < amountItems; i++) 
         circles[i] = 
@@ -21,6 +21,7 @@ export default Pagination = ({width, amountItems, currentPage}) => {
     return (
         <Container
             width={width}
+            flex={flex}
         >
             {
                 circles.map(circle => circle)
