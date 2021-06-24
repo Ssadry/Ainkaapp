@@ -10,17 +10,3 @@ export const removeNavigationScreen = (navigation, routeName) => {
         });
     });
 };
-
-export const resetNavigationHistory = (navigation) => {
-    navigation.dispatch((state) => {
-        const {history} = state.routes[0].state;
-        const length = history.length;
-
-        return CommonActions.reset({
-            ...state,
-            ...routes,
-            ...state,
-            history: new Array()
-        });
-    });
-};

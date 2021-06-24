@@ -5,7 +5,8 @@ import Form from '../components/toLogin/form';
 import Buttons from '../components/toLogin/buttons';
 import {Dimensions} from 'react-native';
 import {AppContext} from '../application/provider';
-import {removeNavigationScreen, resetNavigationHistory} from '../application/navigation';
+import {removeNavigationScreen} from '../application/navigation';
+import { BackHandler } from 'react-native';
 
 const {width, height} = Dimensions.get('screen')
 const screenHeight = Math.round(height);
@@ -13,7 +14,7 @@ const inputWidth = Math.round(width * 0.8);
 
 const Login = ({navigation, route}) => {
     const prevScreen = route?.params?.prevScreen;
-    const [routeName] = useContext(AppContext);
+    const [routeName, isSearchingOnHome, setIsSearchingOnHome] = useContext(AppContext);
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,12 +25,24 @@ const Login = ({navigation, route}) => {
     
     useEffect(() => {
         if (prevScreen != undefined) {
+            console.log('prev: ' + prevScreen)
             if (prevScreen === routeName.profile) {
-                const state = navigation.dangerouslyGetState();
-                console.log(state.routes[1].history);
+                setIsSearchingOnHome(false);
+                removeNavigationScreen(navigation, routeName.bottomNavigation);
             }
             removeNavigationScreen(navigation, prevScreen);
         }
+        // const state = navigation.dangerouslyGetState();
+        // console.log(state);
+
+        BackHandler.addEventListener('hardwareBackPress', () => {
+            if (navigation.canGoBack()) {
+                navigation.goBack();
+                return true;
+            }
+            BackHandler.exitApp();
+            return false;
+        })
     });
 
     return (

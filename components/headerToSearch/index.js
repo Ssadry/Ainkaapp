@@ -22,8 +22,6 @@ export default ({searchText, isSearchingOnHome, setIsSearchingOnHome, setSearchT
         return true;
     }
 
-    console.log('xd');
-
     return (
         <Container
             bakcgroundColor={isSearchingOnHome ? 'transparent' : defaultColors.Lila}

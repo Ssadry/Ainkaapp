@@ -10,6 +10,6 @@ export const Text = styled.Text`
     text-align: center;
     margin-bottom: 25px;
     font-size: 24px;
-    font-weight: bold;
-
+    color: black;
+    font-family: 'QuicksandLight';
 `;
