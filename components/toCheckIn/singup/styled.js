@@ -16,6 +16,7 @@ export const Title = styled.Text`
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'QuicksandBold';
 `;
 
 export const FormContainer = styled.View`

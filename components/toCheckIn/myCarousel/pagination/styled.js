@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import defaultColors from '../../../../assets/colors/defaultColors.json';
 
 export const Container = styled.View`
     flex: ${({flex}) => flex};
@@ -8,21 +9,20 @@ export const Container = styled.View`
 `;
 
 export const Circle = styled.View`
-    background-color: ${({index, currentPage}) => index === currentPage ? 'white' : 'transparent'};
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 15px;
     width: 30px;
     height: 30px;
-    border: ${({index, currentPage}) => index === currentPage ? '1px solid gray' : '0px solid gray'};
+    border: ${({index, currentPage}) => index === currentPage ? `2px solid ${defaultColors.Lila}` : `0px solid ${defaultColors.GrisOscuro}`};
 `;
 
 export const Text = styled.Text`
-    color: ${({index, currentPage}) => index === currentPage ? 'black' : 'gray'};
+    color: ${({index, currentPage}) => index === currentPage ? defaultColors.Lila : 'gray'};
     text-align: center;
-    margin: 10px;
+    font-size: 18px;
     font-weight: ${({index, currentPage}) => index === currentPage ? 'bold' : 'normal'};
 `;

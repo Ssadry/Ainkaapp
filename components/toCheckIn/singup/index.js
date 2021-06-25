@@ -12,6 +12,7 @@ import Check from '../../form/check';
 import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
 import {signup} from '../../../services';
+import defaultColors from '../../../assets/colors/defaultColors.json';
 
 const isEmpty = (value) => value === '';
 const validateEmail = (email) => {
@@ -183,6 +184,7 @@ export default Signup = ({changePage}) => {
                             click={() => alert('Iniciando sesión con google...')}
                             disabled={true}
                             fontSize={17}
+                            backgroundColor={defaultColors.Rojo}
                         >
                             INICIAR SESIÓN CON GOOGLE
                         </FatButtom>
@@ -201,12 +203,11 @@ export default Signup = ({changePage}) => {
                                         .then(({data}) => {
                                             if (data[0].Status) changePage(1);       
                                             else alert(data[0].Message);         
-
-                                            console.log(data);
                                         })  
                                         .catch(err => alert(`ERROR: ${err}`));
                                 }
-                            }}
+                            }
+                        }
                         >
                             CREAR CUENTA
                         </FatButtom>

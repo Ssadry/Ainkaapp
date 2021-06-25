@@ -8,6 +8,7 @@ import Welcome from '../components/toCheckIn/welcome';
 import Community from '../components/toCheckIn/community';
 import {Dimensions} from 'react-native';
 import {AppContext} from '../application/provider';
+import defaultColors from '../assets/colors/defaultColors.json';
 
 const width = Math.round(Dimensions.get('screen').width);
 
@@ -50,7 +51,8 @@ const CheckIn = ({navigation}) => {
     ];
 
     return (
-        <Container>
+        <Container
+        >
             <Carousel
                 items={data}
                 itemWidth={width}
@@ -71,4 +73,5 @@ export default CheckIn;
 
 const Container = styled.View`
     flex: 1;
+    background-color: ${defaultColors.GrisPerla};
 `;
