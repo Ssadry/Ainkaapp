@@ -11,5 +11,5 @@ export const Text = styled.Text`
     margin-bottom: 25px;
     font-size: 24px;
     color: black;
-    font-family: 'QuicksandLight';
+    font-family: 'QuicksandBold';
 `;
