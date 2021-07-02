@@ -32,8 +32,6 @@ const Login = ({navigation, route}) => {
             }
             removeNavigationScreen(navigation, prevScreen);
         }
-        // const state = navigation.dangerouslyGetState();
-        // console.log(state);
 
         BackHandler.addEventListener('hardwareBackPress', () => {
             if (navigation.canGoBack()) {

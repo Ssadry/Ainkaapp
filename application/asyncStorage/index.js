@@ -23,8 +23,8 @@ export const storeObjectData = async(key, value) => {
         await AsyncStorage.setItem(key, jsonValue);
     } catch (e) {
         console.error(e);
-    };
-};
+    }
+}
 
 export const getObjectData = async(key) => {
     try {
@@ -32,8 +32,8 @@ export const getObjectData = async(key) => {
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
         console.error(e);
-    };
-};
+    }
+}
 
 export const getAll = async() => {
     try {
@@ -41,12 +41,12 @@ export const getAll = async() => {
         if (keys != null) return await AsyncStorage.multiGet(keys);
     } catch (e) {
         console.error(e);
-    };
-};
+    }
+}
 
 export const clear = async() => {
     await AsyncStorage.clear();
-};
+}
 
 export const removeData = async(key) => {
     try {
@@ -54,4 +54,4 @@ export const removeData = async(key) => {
     } catch (e) {
         console.error(e);
     }
-};
+}
