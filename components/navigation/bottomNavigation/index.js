@@ -5,7 +5,7 @@ import {removeNavigationScreen} from '../../../application/navigation';
 
 import Home from '../../../screens/home';
 import Profile from '../../../screens/profile';
-import ChatsAndRequests from '../../../screens/chatsAndRequests';
+// import ChatsAndRequests from '../../../screens/chatsAndRequests';
 import Inbox from '../../../screens/inbox';
 import PostAd from '../../../screens/postAd';
 import Saved from '../../../screens/saved';

@@ -51,8 +51,7 @@ const CheckIn = ({navigation}) => {
     ];
 
     return (
-        <Container
-        >
+        <Container>
             <Carousel
                 items={data}
                 itemWidth={width}

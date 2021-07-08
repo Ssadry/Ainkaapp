@@ -8,13 +8,13 @@ import {AppContext} from '../application/provider';
 import {removeNavigationScreen} from '../application/navigation';
 import { BackHandler } from 'react-native';
 
-const {width, height} = Dimensions.get('screen')
+const {width, height} = Dimensions.get('screen');
 const screenHeight = Math.round(height);
 const inputWidth = Math.round(width * 0.8);
 
 const Login = ({navigation, route}) => {
     const prevScreen = route?.params?.prevScreen;
-    const [routeName, isSearchingOnHome, setIsSearchingOnHome] = useContext(AppContext);
+    const [routeName, setIsSearchingOnHome] = useContext(AppContext);
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,7 +25,6 @@ const Login = ({navigation, route}) => {
     
     useEffect(() => {
         if (prevScreen != undefined) {
-            console.log('prev: ' + prevScreen)
             if (prevScreen === routeName.profile) {
                 setIsSearchingOnHome(false);
                 removeNavigationScreen(navigation, routeName.bottomNavigation);

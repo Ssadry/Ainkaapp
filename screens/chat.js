@@ -6,7 +6,7 @@ import Send from '../components/toChat/send/index';
 
 const Chat = ({navigation}) => {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1}}>
             <Header 
                 width={Dimensions.get('window').width}
                 navigation={navigation}

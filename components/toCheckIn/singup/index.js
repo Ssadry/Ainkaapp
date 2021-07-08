@@ -13,6 +13,10 @@ import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
 import {signup} from '../../../services';
 import defaultColors from '../../../assets/colors/defaultColors.json';
+import { addUser, getUserByEmail, signUp } from '../../../services';
+import { LogBox } from 'react-native';
+
+LogBox.ignoreLogs(['Setting a timer']);
 
 const isEmpty = (value) => value === '';
 const validateEmail = (email) => {
@@ -192,19 +196,34 @@ export default Signup = ({changePage}) => {
                             disabled={!canCreateAccount}
                             click={() => {
                                 if (canCreateAccount) {
-                                    const params = new URLSearchParams();
-                                    params.append('Google', 0);
-                                    params.append('EmailUser', email);
-                                    params.append('PassUser', password);
-                                    params.append('NameUser', name);
-                                    params.append('LastNameUser', lastName);
+                                    // const params = new URLSearchParams();
+                                    // params.append('Google', 0);
+                                    // params.append('EmailUser', email);
+                                    // params.append('PassUser', password);
+                                    // params.append('NameUser', name);
+                                    // params.append('LastNameUser', lastName);
     
-                                    signup(params)
-                                        .then(({data}) => {
-                                            if (data[0].Status) changePage(1);       
-                                            else alert(data[0].Message);         
-                                        })  
-                                        .catch(err => alert(`ERROR: ${err}`));
+                                    // signup(params)
+                                    //     .then(({data}) => {
+                                    //         if (data[0].Status) changePage(1);       
+                                    //         else alert(data[0].Message);         
+                                    //     })  
+                                    //     .catch(err => alert(`ERROR: ${err}`));
+                                    
+                                    //Compruebo si el correo introducido ya existe en la base de datos.
+                                    // getUserByEmail(email)
+                                    //     .then(e => {
+                                    //         if (!e.empty) alert("Ya existe una cuenta con ese correo electrónico.");
+                                    //         else //Si no existe, entonces dejo crear la cuenta con ese correo.
+                                    //             addUser(email, password, name, lastName)
+                                    //                 .then(_ => changePage(1));
+                                            
+                                    //     });
+                                    signUp(email, password)
+                                        .then(_ => {
+                                            alert("La cuenta ha sido creada correctamente.");
+                                            changePage(1);
+                                        })
                                 }
                             }
                         }
