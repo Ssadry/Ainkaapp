@@ -11,7 +11,7 @@ import Input from '../../form/input';
 import Check from '../../form/check';
 import FatButtom from '../../form/button/fat';
 import {ScrollView} from 'react-native';
-import {signup} from '../../../services';
+// import {signup} from '../../../services';
 import defaultColors from '../../../assets/colors/defaultColors.json';
 import { addUser, getUserByEmail, signUp } from '../../../services';
 import { LogBox } from 'react-native';
@@ -219,7 +219,7 @@ export default Signup = ({changePage}) => {
                                     //                 .then(_ => changePage(1));
                                             
                                     //     });
-                                    signUp(email, password)
+                                    signUp(email, password, name, lastName)
                                         .then(_ => {
                                             alert("La cuenta ha sido creada correctamente.");
                                             changePage(1);
