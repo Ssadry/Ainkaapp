@@ -33,31 +33,19 @@ const tables = {
     users : 'users'
 }
 
-export const addUser = async(email, password, name, lastName) => await 
-    db.collection(tables.users).add({
-        email: email,
-        password: password,
-        name: name,
-        lastName: lastName
-    }
-);
-
-export const getUserByEmail = async(email) => await db.collection(tables.users).where('email', '==', email).get();
+export const addUser = async(name, lastName) => await
+    db
+        .collection(tables.users)
+        .doc(firebase.auth().currentUser.uid)
+        .set({
+            name: name,
+            lastName: lastName
+        })
 
 export const signUp = async(email, password, name, lastName) => await 
     firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
-        .then(_ => {
-            const user = firebase.auth().currentUser;
-
-            user.updateProfile({
-                displayName: `${name, lastName}`,
-                photoURL: 'ñe'
-            })
-        })
-        .catch(err => console.log(err));
-
 
 export const logIn = async(email, password) => await 
     firebase
