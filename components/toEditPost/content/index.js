@@ -7,10 +7,13 @@ import Check from '../../../components/form/check';
 import FatButton from '../../../components/form/button/fat';
 import UploadPhoto from './uploadPhoto';
 import defaultColors from '../../../assets/colors/defaultColors.json';
+import { addService, addNeed } from '../../../services';
 
 const width = Math.round(Dimensions.get('screen').width);
 const formWidth = width * 0.8;
 const checksWidth = formWidth * 0.5;
+
+const getCurrCheckedValue = check => Object.values(check).filter(c => c.value === true)[0].name;
 
 export default Content = ({textbutton, isNeed}) => {
     const [title, setTitle] = useState('');
@@ -19,7 +22,7 @@ export default Content = ({textbutton, isNeed}) => {
 
     const [allChecks, setAllChecks] = useState({
        categories: {
-            art: false,
+            art: true,
             music: false,
             kitchen: false,
             sport: false,
@@ -31,13 +34,14 @@ export default Content = ({textbutton, isNeed}) => {
             others: false
        },
        modalities: {
-            faceToFace: false, 
-            online: false,
-            freeNegociation: false
-       }
+            faceToFace: true, 
+            online: false
+        }
     });
 
-    const [value, setValue] = useState(0);
+    const [freeNegotitation, setFreeNegotitation] = useState(false);
+
+    const [time, setTime] = useState(0);
     const [sliderContainerWidth, setSliderContainerWidth] = useState(100);
 
     const handleChangeCheckeds = (type, name, value) => {
@@ -112,11 +116,6 @@ export default Content = ({textbutton, isNeed}) => {
             name: 'online',
             value: allChecks.modalities.online,
             text: 'Online'
-        },
-        {
-            name: 'freeNegociation',
-            value: allChecks.modalities.freeNegociation,
-            text: 'Negociación libre'
         }
     ];
 
@@ -182,6 +181,7 @@ export default Content = ({textbutton, isNeed}) => {
                                         setValue={(value) => handleChangeCheckeds('categories', category.name, value)}
                                         value={category.value}
                                         text={category.text}
+                                        unchangingTruth={true}
                                     />
                                 )
                             }
@@ -206,7 +206,7 @@ export default Content = ({textbutton, isNeed}) => {
                                 minimumValue={0}
                                 maximumValue={3}
                                 step={1}
-                                onValueChange={(value) => setValue(value)}
+                                onValueChange={(value) => setTime(value)}
                                 minimumTrackTintColor="green"
                                 maximumTrackTintColor="#000000"
                             />
@@ -214,7 +214,7 @@ export default Content = ({textbutton, isNeed}) => {
                         <Hours
                             width={sliderContainerWidth * 0.1}
                         >
-                            {value} h
+                            {time} h
                         </Hours>
                     </SliderContainer>
                     <Title>
@@ -234,12 +234,30 @@ export default Content = ({textbutton, isNeed}) => {
                                     setValue={(value) => handleChangeCheckeds('modalities', modality.name, value)}
                                     value={modality.value}
                                     text={modality.text}
+                                    unchangingTruth={true}
                                 />
                             )
                         }
                     </ModalitiesChecksContainer>
+                    <Check                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        width={checksWidth}
+                        setValue={(value) => setFreeNegotitation(value)}
+                        value={freeNegotitation}
+                        text={'Negociación libre'}
+                    />
                     <ButtonContainer>
-                        <FatButton >
+                        <FatButton
+                            click={() => {
+                                isNeed ? 
+                                    addNeed()
+                                        .then(_ => alert("La necesidad ha sido subida correctamente."))
+                                        .catch(err => alert(err))
+                                    : 
+                                    addService(title, location, description, getCurrCheckedValue(categories), time, getCurrCheckedValue(modatilies), freeNegotitation)
+                                        .then(_ => alert("Se ha subido el servicio correctamente."))
+                                        .catch(err => alert(err));
+                            }}
+                        >
                             {textbutton}
                         </FatButton>
                     </ButtonContainer>

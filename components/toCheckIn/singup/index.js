@@ -199,7 +199,8 @@ export default Signup = ({changePage}) => {
                                     signUp(email, password)
                                         .then(_ => {
                                             addUser(name, lastName)
-                                                .then(_ => changePage(1));
+                                                .then(_ => changePage(1))
+                                                .catch(err => alert(err));
                                         })
                                         .catch(err => alert(err));
                                 }
